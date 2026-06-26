@@ -381,6 +381,196 @@
             ]
           }
         ]
+      },
+      sql: {
+        label: "SQL",
+        topics: [
+          {
+            topic: "SELECT and WHERE",
+            questions: [
+              {
+                topic: "SELECT and WHERE",
+                difficulty: "Easy",
+                question: "Which SQL keyword is used to choose columns from a table?",
+                options: ["SELECT", "WHERE", "GROUP", "JOIN"],
+                correctAnswer: "SELECT",
+                explanation: "SELECT tells SQL which columns or expressions to return from a query."
+              },
+              {
+                topic: "SELECT and WHERE",
+                difficulty: "Medium",
+                question: "Which clause filters rows before they are returned?",
+                options: ["WHERE", "ORDER BY", "SELECT", "LIMIT"],
+                correctAnswer: "WHERE",
+                explanation: "WHERE applies row-level conditions before the result set is returned."
+              },
+              {
+                topic: "SELECT and WHERE",
+                difficulty: "Hard",
+                question: "Which query returns customers from London with purchases above 100?",
+                options: ["SELECT * FROM customers WHERE city = 'London' AND purchases > 100", "SELECT * FROM customers WHERE city = 'London' OR purchases > 100", "SELECT city = 'London' FROM customers AND purchases > 100", "WHERE city = 'London' SELECT * FROM customers"],
+                correctAnswer: "SELECT * FROM customers WHERE city = 'London' AND purchases > 100",
+                explanation: "AND requires both conditions to be true: city is London and purchases are above 100."
+              },
+              {
+                topic: "SELECT and WHERE",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: SELECT name FROM employees ___ department = 'Sales';",
+                options: ["WHERE", "GROUP BY", "JOIN", "HAVING"],
+                correctAnswer: "WHERE",
+                explanation: "WHERE filters rows based on conditions such as department = 'Sales'."
+              }
+            ]
+          },
+          {
+            topic: "GROUP BY and aggregation",
+            questions: [
+              {
+                topic: "GROUP BY and aggregation",
+                difficulty: "Easy",
+                question: "Which function counts rows in SQL?",
+                options: ["COUNT()", "TOTAL()", "ROWS()", "NUMBER()"],
+                correctAnswer: "COUNT()",
+                explanation: "COUNT() returns the number of rows or non-null values in a group."
+              },
+              {
+                topic: "GROUP BY and aggregation",
+                difficulty: "Medium",
+                question: "What does GROUP BY do?",
+                options: ["Combines rows into groups for aggregate calculations", "Sorts rows alphabetically only", "Deletes duplicate rows", "Creates a new database"],
+                correctAnswer: "Combines rows into groups for aggregate calculations",
+                explanation: "GROUP BY groups rows with matching values so aggregate functions can summarize each group."
+              },
+              {
+                topic: "GROUP BY and aggregation",
+                difficulty: "Hard",
+                question: "Which clause filters grouped aggregate results?",
+                options: ["HAVING", "WHERE", "SELECT", "JOIN"],
+                correctAnswer: "HAVING",
+                explanation: "HAVING filters after grouping, often using aggregate conditions such as COUNT(*) > 5."
+              },
+              {
+                topic: "GROUP BY and aggregation",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: SELECT region, SUM(sales) FROM orders ___ region;",
+                options: ["GROUP BY", "WHERE", "ORDER", "JOIN"],
+                correctAnswer: "GROUP BY",
+                explanation: "GROUP BY region creates one summary row per region."
+              }
+            ]
+          },
+          {
+            topic: "JOINs",
+            questions: [
+              {
+                topic: "JOINs",
+                difficulty: "Easy",
+                question: "What is a JOIN used for?",
+                options: ["Combining rows from related tables", "Deleting all rows", "Renaming a database", "Counting characters"],
+                correctAnswer: "Combining rows from related tables",
+                explanation: "JOINs combine data from tables using related columns such as IDs."
+              },
+              {
+                topic: "JOINs",
+                difficulty: "Medium",
+                question: "Which JOIN returns only matching rows from both tables?",
+                options: ["INNER JOIN", "LEFT JOIN", "FULL JOIN", "CROSS JOIN"],
+                correctAnswer: "INNER JOIN",
+                explanation: "INNER JOIN returns rows where the join condition matches in both tables."
+              },
+              {
+                topic: "JOINs",
+                difficulty: "Hard",
+                question: "What does a LEFT JOIN return?",
+                options: ["All rows from the left table and matching rows from the right table", "Only unmatched rows", "Only rows from the right table", "No null values ever"],
+                correctAnswer: "All rows from the left table and matching rows from the right table",
+                explanation: "LEFT JOIN preserves all rows from the left table and fills missing right-side matches with nulls."
+              },
+              {
+                topic: "JOINs",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: SELECT * FROM orders o JOIN customers c ___ o.customer_id = c.id;",
+                options: ["ON", "WHERE", "GROUP BY", "AS"],
+                correctAnswer: "ON",
+                explanation: "ON defines the join condition between the two tables."
+              }
+            ]
+          },
+          {
+            topic: "Subqueries",
+            questions: [
+              {
+                topic: "Subqueries",
+                difficulty: "Easy",
+                question: "What is a subquery?",
+                options: ["A query nested inside another query", "A table backup", "A chart type", "A column alias only"],
+                correctAnswer: "A query nested inside another query",
+                explanation: "A subquery is a SELECT statement used inside another SQL statement."
+              },
+              {
+                topic: "Subqueries",
+                difficulty: "Medium",
+                question: "Where can a subquery commonly appear?",
+                options: ["Inside WHERE, FROM, or SELECT", "Only after ORDER BY", "Only before SELECT", "Only inside table names"],
+                correctAnswer: "Inside WHERE, FROM, or SELECT",
+                explanation: "Subqueries can be used in multiple clauses depending on the problem."
+              },
+              {
+                topic: "Subqueries",
+                difficulty: "Hard",
+                question: "Which query finds products priced above the average product price?",
+                options: ["SELECT * FROM products WHERE price > (SELECT AVG(price) FROM products)", "SELECT * FROM products WHERE AVG(price) > price", "SELECT AVG(price) FROM products WHERE price > products", "SELECT * FROM products GROUP BY price > AVG(price)"],
+                correctAnswer: "SELECT * FROM products WHERE price > (SELECT AVG(price) FROM products)",
+                explanation: "The subquery calculates the average price, and the outer query compares each product price to it."
+              },
+              {
+                topic: "Subqueries",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: SELECT name FROM employees WHERE salary > (SELECT ___(salary) FROM employees);",
+                options: ["AVG", "JOIN", "WHERE", "COUNT ROWS"],
+                correctAnswer: "AVG",
+                explanation: "AVG(salary) calculates the average salary used by the outer query."
+              }
+            ]
+          },
+          {
+            topic: "Window functions",
+            questions: [
+              {
+                topic: "Window functions",
+                difficulty: "Easy",
+                question: "What can a window function do?",
+                options: ["Calculate across related rows while keeping row detail", "Delete duplicate databases", "Replace every JOIN", "Only filter rows"],
+                correctAnswer: "Calculate across related rows while keeping row detail",
+                explanation: "Window functions calculate values over a set of rows without collapsing the result into groups."
+              },
+              {
+                topic: "Window functions",
+                difficulty: "Medium",
+                question: "Which clause is commonly used with window functions?",
+                options: ["OVER", "UNDER", "WINDOWS ONLY", "GROUP EACH"],
+                correctAnswer: "OVER",
+                explanation: "OVER defines the window of rows used by a window function."
+              },
+              {
+                topic: "Window functions",
+                difficulty: "Hard",
+                question: "What does PARTITION BY do in a window function?",
+                options: ["Splits rows into groups for the window calculation", "Deletes partitions from a disk", "Filters rows before SELECT", "Creates a table backup"],
+                correctAnswer: "Splits rows into groups for the window calculation",
+                explanation: "PARTITION BY divides rows into groups while still returning row-level results."
+              },
+              {
+                topic: "Window functions",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: ROW_NUMBER() ___ (PARTITION BY customer_id ORDER BY order_date) assigns row numbers.",
+                options: ["OVER", "GROUP", "WHERE", "JOIN"],
+                correctAnswer: "OVER",
+                explanation: "ROW_NUMBER() uses OVER to define how rows are partitioned and ordered."
+              }
+            ]
+          }
+        ]
       }
     }
   };
