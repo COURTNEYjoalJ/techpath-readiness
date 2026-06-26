@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodePath Academy | Learn Programming Free</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Learn Python, JavaScript, Java, SQL, HTML, CSS and C++ with beginner-friendly roadmaps, mini lessons, quizzes and practice projects." />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand">CodePath<span>Academy</span></div>
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#languages">Languages</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#projects">Projects</a>
+        <a href="#quiz">Quiz</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="tag">Free beginner-friendly programming hub</p>
+        <h1>Learn programming languages with clear paths, simple examples, and practice tasks.</h1>
+        <p class="subtitle">
+          Start with Python, JavaScript, SQL, HTML/CSS, Java or C++. Pick a language, follow the roadmap,
+          practise daily, and test yourself with quick quizzes.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#languages">Start Learning</a>
+          <a class="btn secondary" href="#quiz">Take Beginner Quiz</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="terminal-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <pre><code>print("Hello, future developer!")
+
+skills = ["Python", "JavaScript", "SQL"]
+for skill in skills:
+    print("Learning", skill)</code></pre>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="stats">
+      <div>
+        <h2>6</h2>
+        <p>Core languages</p>
+      </div>
+      <div>
+        <h2>30+</h2>
+        <p>Practice tasks</p>
+      </div>
+      <div>
+        <h2>Beginner</h2>
+        <p>Friendly content</p>
+      </div>
+    </section>
+
+    <section class="section" id="languages">
+      <div class="section-heading">
+        <p class="tag">Choose your path</p>
+        <h2>Programming Languages</h2>
+        <p>Pick one language based on your goal. Do not learn everything at once.</p>
+      </div>
+
+      <div class="grid cards">
+        <article class="card">
+          <h3>Python</h3>
+          <p>Best for beginners, data science, AI, automation and backend basics.</p>
+          <ul>
+            <li>Variables, loops, functions</li>
+            <li>Lists, dictionaries, files</li>
+            <li>Mini projects and data tasks</li>
+          </ul>
+          <button onclick="showLesson('python')">View Lesson</button>
+        </article>
+
+        <article class="card">
+          <h3>JavaScript</h3>
+          <p>Best for websites, interactive pages, browser games and full-stack development.</p>
+          <ul>
+            <li>DOM, events, functions</li>
+            <li>Arrays and objects</li>
+            <li>Frontend projects</li>
+          </ul>
+          <button onclick="showLesson('javascript')">View Lesson</button>
+        </article>
+
+        <article class="card">
+          <h3>SQL</h3>
+          <p>Best for databases, analytics, business intelligence and data roles.</p>
+          <ul>
+            <li>SELECT, WHERE, GROUP BY</li>
+            <li>Joins and aggregations</li>
+            <li>Dashboard-ready queries</li>
+          </ul>
+          <button onclick="showLesson('sql')">View Lesson</button>
+        </article>
+
+        <article class="card">
+          <h3>HTML & CSS</h3>
+          <p>Best for building website structure, layouts, landing pages and portfolios.</p>
+          <ul>
+            <li>Semantic HTML</li>
+            <li>Responsive CSS</li>
+            <li>Forms and components</li>
+          </ul>
+          <button onclick="showLesson('htmlcss')">View Lesson</button>
+        </article>
+
+        <article class="card">
+          <h3>Java</h3>
+          <p>Best for object-oriented programming, backend systems and enterprise software.</p>
+          <ul>
+            <li>Classes and objects</li>
+            <li>Methods and arrays</li>
+            <li>OOP practice</li>
+          </ul>
+          <button onclick="showLesson('java')">View Lesson</button>
+        </article>
+
+        <article class="card">
+          <h3>C++</h3>
+          <p>Best for performance, problem solving, systems programming and competitive coding.</p>
+          <ul>
+            <li>Syntax and memory basics</li>
+            <li>Functions and arrays</li>
+            <li>Problem-solving patterns</li>
+          </ul>
+          <button onclick="showLesson('cpp')">View Lesson</button>
+        </article>
+      </div>
+
+      <div class="lesson-box" id="lessonBox">
+        <h3>Select a language to view a mini lesson.</h3>
+        <p>The lesson will appear here with a beginner example and practice task.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="roadmap">
+      <div class="section-heading">
+        <p class="tag">Simple roadmap</p>
+        <h2>How to Learn Programming</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="step">
+          <span>1</span>
+          <h3>Pick one goal</h3>
+          <p>Website development, data science, automation, app development or problem solving.</p>
+        </div>
+        <div class="step">
+          <span>2</span>
+          <h3>Learn basics</h3>
+          <p>Understand variables, conditions, loops, functions, arrays/lists and errors.</p>
+        </div>
+        <div class="step">
+          <span>3</span>
+          <h3>Build small projects</h3>
+          <p>Calculator, quiz app, to-do list, expense tracker, portfolio page or data dashboard.</p>
+        </div>
+        <div class="step">
+          <span>4</span>
+          <h3>Practise daily</h3>
+          <p>Spend 30–60 minutes every day solving small tasks instead of only watching tutorials.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <p class="tag">Practice</p>
+        <h2>Beginner Project Ideas</h2>
+      </div>
+
+      <div class="project-list">
+        <div>
+          <h3>HTML/CSS</h3>
+          <p>Personal portfolio, product landing page, restaurant menu page.</p>
+        </div>
+        <div>
+          <h3>JavaScript</h3>
+          <p>Quiz app, tip calculator, typing speed test, memory card game.</p>
+        </div>
+        <div>
+          <h3>Python</h3>
+          <p>Password generator, file organiser, expense tracker, simple chatbot.</p>
+        </div>
+        <div>
+          <h3>SQL</h3>
+          <p>Student marks database, sales report queries, customer analysis table.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="quiz">
+      <div class="section-heading">
+        <p class="tag">Test yourself</p>
+        <h2>Beginner Programming Quiz</h2>
+        <p>Answer 5 quick questions and check your score.</p>
+      </div>
+
+      <div class="quiz-card">
+        <div id="quizContainer"></div>
+        <button class="btn primary" onclick="submitQuiz()">Submit Quiz</button>
+        <p id="quizResult" class="quiz-result"></p>
+      </div>
+    </section>
+
+    <section class="section newsletter">
+      <h2>Learn one concept every day</h2>
+      <p>Use this section later to collect emails, share weekly lessons, or promote your tutoring/course.</p>
+      <form onsubmit="event.preventDefault(); alert('Demo form only. Connect this to a backend later.');">
+        <input type="email" placeholder="Enter your email" required />
+        <button class="btn primary">Join Free</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 CodePath Academy. Built for learning programming languages.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
