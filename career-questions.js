@@ -1331,6 +1331,196 @@
             ]
           }
         ]
+      },
+      "power-bi": {
+        label: "Power BI",
+        topics: [
+          {
+            topic: "Power BI interface and data loading",
+            questions: [
+              {
+                topic: "Power BI interface and data loading",
+                difficulty: "Easy",
+                question: "Which Power BI command is commonly used to import data from files, databases, or online sources?",
+                options: ["Format visual", "Get data", "New measure", "Publish"],
+                correctAnswer: "Get data",
+                explanation: "Get data opens the connectors used to import or connect to data sources."
+              },
+              {
+                topic: "Power BI interface and data loading",
+                difficulty: "Medium",
+                question: "Which Power BI view is useful for inspecting rows and columns after data is loaded?",
+                options: ["Model view", "Data view", "Report view", "Theme view"],
+                correctAnswer: "Data view",
+                explanation: "Data view lets you inspect loaded tables, columns, and values."
+              },
+              {
+                topic: "Power BI interface and data loading",
+                difficulty: "Hard",
+                question: "What is a key difference between Import mode and DirectQuery?",
+                options: ["DirectQuery stores all data only inside the report file", "Import mode cannot create visuals", "Import mode loads data into the model, while DirectQuery queries the source when needed", "DirectQuery removes the need for relationships"],
+                correctAnswer: "Import mode loads data into the model, while DirectQuery queries the source when needed",
+                explanation: "Import mode stores a copy in the Power BI model; DirectQuery leaves data in the source and queries it at runtime."
+              },
+              {
+                topic: "Power BI interface and data loading",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To import a CSV file, choose ___ and then select Text/CSV.",
+                options: ["New page", "Transform visual", "Get data", "Manage roles"],
+                correctAnswer: "Get data",
+                explanation: "Text/CSV is one of the connectors available from Get data."
+              }
+            ]
+          },
+          {
+            topic: "Power Query cleaning",
+            questions: [
+              {
+                topic: "Power Query cleaning",
+                difficulty: "Easy",
+                question: "What is Power Query mainly used for in Power BI?",
+                options: ["Designing slide transitions", "Writing CSS styles", "Cleaning and transforming data before loading it", "Creating user passwords"],
+                correctAnswer: "Cleaning and transforming data before loading it",
+                explanation: "Power Query prepares data by removing errors, changing types, splitting columns, and applying other transformations."
+              },
+              {
+                topic: "Power Query cleaning",
+                difficulty: "Medium",
+                question: "Which Power Query area records each transformation so it can run again on refresh?",
+                options: ["Applied Steps", "Canvas Layers", "Visual Filters", "Relationship Cards"],
+                correctAnswer: "Applied Steps",
+                explanation: "Applied Steps stores the transformation sequence and replays it when the query refreshes."
+              },
+              {
+                topic: "Power Query cleaning",
+                difficulty: "Hard",
+                question: "Why is it usually better to clean repeatable data issues in Power Query instead of manually editing cells?",
+                options: ["Manual edits refresh automatically", "Power Query blocks all bad data forever", "Power Query transformations are reusable and refreshable", "Manual edits create relationships"],
+                correctAnswer: "Power Query transformations are reusable and refreshable",
+                explanation: "Power Query keeps cleaning logic as steps, making the process repeatable when new data arrives."
+              },
+              {
+                topic: "Power Query cleaning",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: A customer name column has extra spaces around each name. Which Power Query transform is most suitable?",
+                options: ["Unpivot", "Trim", "Merge queries", "Keep top rows"],
+                correctAnswer: "Trim",
+                explanation: "Trim removes leading and trailing spaces from text values."
+              }
+            ]
+          },
+          {
+            topic: "Data modelling and relationships",
+            questions: [
+              {
+                topic: "Data modelling and relationships",
+                difficulty: "Easy",
+                question: "What does a relationship do in a Power BI data model?",
+                options: ["Changes the report background", "Deletes duplicate visuals", "Publishes the file online", "Links tables using matching key columns"],
+                correctAnswer: "Links tables using matching key columns",
+                explanation: "Relationships let filters and calculations work across connected tables."
+              },
+              {
+                topic: "Data modelling and relationships",
+                difficulty: "Medium",
+                question: "Which example best describes a one-to-many relationship?",
+                options: ["Many products each have many unrelated dates", "One customer row connects to many sales rows", "One chart connects to one color palette", "Every table has no key"],
+                correctAnswer: "One customer row connects to many sales rows",
+                explanation: "A customer table can contain one row per customer, while a sales table can contain many transactions for that customer."
+              },
+              {
+                topic: "Data modelling and relationships",
+                difficulty: "Hard",
+                question: "Why is a star schema often useful in Power BI?",
+                options: ["It removes all need for DAX", "It stores visuals inside tables", "It separates fact and dimension tables, making filtering and measures clearer", "It forces every relationship to be many-to-many"],
+                correctAnswer: "It separates fact and dimension tables, making filtering and measures clearer",
+                explanation: "A star schema keeps measurable events in fact tables and descriptive fields in dimension tables."
+              },
+              {
+                topic: "Data modelling and relationships",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To relate Sales to Customers, Sales[CustomerID] should connect to Customers[___].",
+                options: ["CustomerID", "ChartColor", "PageName", "MeasureTotal"],
+                correctAnswer: "CustomerID",
+                explanation: "Matching key columns connect the transaction table to the customer lookup table."
+              }
+            ]
+          },
+          {
+            topic: "DAX basics",
+            questions: [
+              {
+                topic: "DAX basics",
+                difficulty: "Easy",
+                question: "What is a DAX measure used for?",
+                options: ["Changing imported file names only", "Calculating values dynamically in report context", "Deleting report pages", "Setting a dashboard password"],
+                correctAnswer: "Calculating values dynamically in report context",
+                explanation: "Measures calculate results such as totals, counts, and ratios based on the current filters."
+              },
+              {
+                topic: "DAX basics",
+                difficulty: "Medium",
+                question: "Which DAX expression sums the Amount column in the Sales table?",
+                options: ["COUNTROWS(Sales[Amount])", "SUMXONLY(Sales)", "SUM(Sales[Amount])", "TOTAL(Sales.Amount)"],
+                correctAnswer: "SUM(Sales[Amount])",
+                explanation: "SUM adds numeric values from a single column."
+              },
+              {
+                topic: "DAX basics",
+                difficulty: "Hard",
+                question: "What does CALCULATE commonly do in DAX?",
+                options: ["Changes or applies filter context for an expression", "Imports data from CSV files", "Creates a new visual theme", "Renames every column"],
+                correctAnswer: "Changes or applies filter context for an expression",
+                explanation: "CALCULATE evaluates an expression under modified filter conditions."
+              },
+              {
+                topic: "DAX basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To count rows in a Customers table, use ___(Customers).",
+                options: ["SUM", "COUNTROWS", "FILTERTEXT", "RELATE"],
+                correctAnswer: "COUNTROWS",
+                explanation: "COUNTROWS returns the number of rows in a table."
+              }
+            ]
+          },
+          {
+            topic: "Visuals and dashboards",
+            questions: [
+              {
+                topic: "Visuals and dashboards",
+                difficulty: "Easy",
+                question: "Which visual is usually best for showing sales over time?",
+                options: ["Line chart", "Card visual only", "Table with no dates", "Map without locations"],
+                correctAnswer: "Line chart",
+                explanation: "Line charts are commonly used to show trends across dates or periods."
+              },
+              {
+                topic: "Visuals and dashboards",
+                difficulty: "Medium",
+                question: "What is a good dashboard design principle?",
+                options: ["Use every visual type on one page", "Hide all labels", "Keep key metrics clear and avoid clutter", "Use tiny text to fit more charts"],
+                correctAnswer: "Keep key metrics clear and avoid clutter",
+                explanation: "Dashboards should help users scan important information quickly."
+              },
+              {
+                topic: "Visuals and dashboards",
+                difficulty: "Hard",
+                question: "What is filter context in Power BI?",
+                options: ["The set of filters affecting a DAX calculation or visual", "The browser cache used by Power BI", "A list of imported file names", "A dashboard color palette only"],
+                correctAnswer: "The set of filters affecting a DAX calculation or visual",
+                explanation: "Filter context comes from slicers, relationships, visual filters, rows, columns, and DAX filters."
+              },
+              {
+                topic: "Visuals and dashboards",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You need users to filter the whole report by Region. Which Power BI element is most suitable?",
+                options: ["Slicer", "New measure", "Data type", "Applied step"],
+                correctAnswer: "Slicer",
+                explanation: "Slicers give report users interactive filtering controls."
+              }
+            ]
+          }
+        ]
       }
     }
   };
