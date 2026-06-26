@@ -571,6 +571,196 @@
             ]
           }
         ]
+      },
+      "machine-learning": {
+        label: "Machine Learning",
+        topics: [
+          {
+            topic: "Supervised learning",
+            questions: [
+              {
+                topic: "Supervised learning",
+                difficulty: "Easy",
+                question: "What is supervised learning?",
+                options: ["Learning from labelled examples", "Finding groups without labels", "Deleting missing values", "Sorting rows alphabetically"],
+                correctAnswer: "Learning from labelled examples",
+                explanation: "Supervised learning trains models using input data paired with known target labels."
+              },
+              {
+                topic: "Supervised learning",
+                difficulty: "Medium",
+                question: "Which task is a supervised learning problem?",
+                options: ["Predicting house prices from labelled sales data", "Grouping customers without labels", "Finding duplicate files", "Compressing an image"],
+                correctAnswer: "Predicting house prices from labelled sales data",
+                explanation: "House price prediction uses examples where the correct price is known during training."
+              },
+              {
+                topic: "Supervised learning",
+                difficulty: "Hard",
+                question: "Why does supervised learning need a target variable?",
+                options: ["The model needs correct outputs to learn the input-output relationship", "The target variable replaces all features", "It prevents all overfitting automatically", "It removes the need for evaluation"],
+                correctAnswer: "The model needs correct outputs to learn the input-output relationship",
+                explanation: "The target variable gives the model feedback about what it should predict from the features."
+              },
+              {
+                topic: "Supervised learning",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: In supervised learning, X usually contains features and y contains the ___.",
+                options: ["target", "row index", "model name", "file path"],
+                correctAnswer: "target",
+                explanation: "y usually stores the labels or target values that the model is trained to predict."
+              }
+            ]
+          },
+          {
+            topic: "Unsupervised learning",
+            questions: [
+              {
+                topic: "Unsupervised learning",
+                difficulty: "Easy",
+                question: "What is unsupervised learning commonly used for?",
+                options: ["Finding patterns without labelled targets", "Predicting known labels only", "Writing SQL joins", "Creating website layouts"],
+                correctAnswer: "Finding patterns without labelled targets",
+                explanation: "Unsupervised learning looks for structure in data when no target labels are provided."
+              },
+              {
+                topic: "Unsupervised learning",
+                difficulty: "Medium",
+                question: "Which method is commonly associated with unsupervised learning?",
+                options: ["Clustering", "Linear regression with labels", "Train/test split only", "Manual data entry"],
+                correctAnswer: "Clustering",
+                explanation: "Clustering groups similar observations without using predefined labels."
+              },
+              {
+                topic: "Unsupervised learning",
+                difficulty: "Hard",
+                question: "Why can evaluating unsupervised models be harder than supervised models?",
+                options: ["There may be no known correct label to compare against", "They never produce outputs", "They cannot use numeric data", "They always have perfect accuracy"],
+                correctAnswer: "There may be no known correct label to compare against",
+                explanation: "Without ground-truth labels, evaluation often relies on indirect metrics or business usefulness."
+              },
+              {
+                topic: "Unsupervised learning",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: K-means is commonly used for ___.",
+                options: ["clustering", "classification labels", "HTML styling", "database backups"],
+                correctAnswer: "clustering",
+                explanation: "K-means is an unsupervised algorithm that groups data points into clusters."
+              }
+            ]
+          },
+          {
+            topic: "Train/test split",
+            questions: [
+              {
+                topic: "Train/test split",
+                difficulty: "Easy",
+                question: "Why do we split data into training and test sets?",
+                options: ["To evaluate the model on data it did not train on", "To make the dataset smaller only", "To remove all errors", "To avoid using features"],
+                correctAnswer: "To evaluate the model on data it did not train on",
+                explanation: "A test set estimates how well the model may perform on new, unseen data."
+              },
+              {
+                topic: "Train/test split",
+                difficulty: "Medium",
+                question: "Which set is used to fit the model parameters?",
+                options: ["Training set", "Test set", "Future production data only", "Column names"],
+                correctAnswer: "Training set",
+                explanation: "The model learns patterns from the training set."
+              },
+              {
+                topic: "Train/test split",
+                difficulty: "Hard",
+                question: "What is data leakage?",
+                options: ["When information from outside the training data unfairly helps the model", "When files are deleted", "When rows are sorted", "When a model has no features"],
+                correctAnswer: "When information from outside the training data unfairly helps the model",
+                explanation: "Data leakage makes evaluation too optimistic because the model has access to information it should not have."
+              },
+              {
+                topic: "Train/test split",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: A common split is 80% training and ___% testing.",
+                options: ["20", "80", "100", "0"],
+                correctAnswer: "20",
+                explanation: "An 80/20 split uses most data for training and keeps 20% aside for testing."
+              }
+            ]
+          },
+          {
+            topic: "Model evaluation",
+            questions: [
+              {
+                topic: "Model evaluation",
+                difficulty: "Easy",
+                question: "What does accuracy measure in classification?",
+                options: ["The proportion of predictions that are correct", "The number of input columns", "The model training time only", "The file size"],
+                correctAnswer: "The proportion of predictions that are correct",
+                explanation: "Accuracy is correct predictions divided by total predictions."
+              },
+              {
+                topic: "Model evaluation",
+                difficulty: "Medium",
+                question: "Which metric is useful when false positives and false negatives matter differently?",
+                options: ["Precision and recall", "File size", "Column count", "Random seed"],
+                correctAnswer: "Precision and recall",
+                explanation: "Precision and recall separate different types of classification errors."
+              },
+              {
+                topic: "Model evaluation",
+                difficulty: "Hard",
+                question: "Why can accuracy be misleading on imbalanced datasets?",
+                options: ["A model can score high by mostly predicting the majority class", "Accuracy cannot be calculated for classification", "It always ignores labels", "It only works for text data"],
+                correctAnswer: "A model can score high by mostly predicting the majority class",
+                explanation: "If one class dominates, a model may look accurate while performing poorly on the minority class."
+              },
+              {
+                topic: "Model evaluation",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: For regression, mean absolute error measures average absolute ___.",
+                options: ["prediction error", "row count", "class label", "feature name"],
+                correctAnswer: "prediction error",
+                explanation: "MAE averages the absolute differences between predicted and actual values."
+              }
+            ]
+          },
+          {
+            topic: "Overfitting and underfitting",
+            questions: [
+              {
+                topic: "Overfitting and underfitting",
+                difficulty: "Easy",
+                question: "What is overfitting?",
+                options: ["When a model learns training data too closely and performs poorly on new data", "When a model has no data", "When a model is always too simple", "When labels are missing only"],
+                correctAnswer: "When a model learns training data too closely and performs poorly on new data",
+                explanation: "Overfitting means the model memorizes noise or detail that does not generalize."
+              },
+              {
+                topic: "Overfitting and underfitting",
+                difficulty: "Medium",
+                question: "What is underfitting?",
+                options: ["When a model is too simple to capture the real pattern", "When a model memorizes every row", "When a model has perfect test performance", "When test data leaks into training"],
+                correctAnswer: "When a model is too simple to capture the real pattern",
+                explanation: "Underfitting happens when the model is not flexible enough to learn the important relationships."
+              },
+              {
+                topic: "Overfitting and underfitting",
+                difficulty: "Hard",
+                question: "Which sign suggests overfitting?",
+                options: ["Very high training score but much lower test score", "Low training score and low test score", "No training data", "Identical feature names"],
+                correctAnswer: "Very high training score but much lower test score",
+                explanation: "A large gap between training and test performance often means the model does not generalize well."
+              },
+              {
+                topic: "Overfitting and underfitting",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: Regularization can help reduce ___.",
+                options: ["overfitting", "all missing values", "database joins", "test labels"],
+                correctAnswer: "overfitting",
+                explanation: "Regularization penalizes overly complex models, which can reduce overfitting."
+              }
+            ]
+          }
+        ]
       }
     }
   };
