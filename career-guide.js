@@ -81,6 +81,29 @@
     return getQuestionGroups(questionSet).flatMap((group) => group.questions);
   }
 
+  function shuffleArray(items) {
+    const shuffled = [...items];
+
+    for (let index = shuffled.length - 1; index > 0; index--) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      const currentItem = shuffled[index];
+      shuffled[index] = shuffled[randomIndex];
+      shuffled[randomIndex] = currentItem;
+    }
+
+    return shuffled;
+  }
+
+  function createAttemptQuestionGroups(questionGroups) {
+    return questionGroups.map((group) => ({
+      topic: group.topic,
+      questions: group.questions.map((question) => ({
+        ...question,
+        options: shuffleArray(question.options)
+      }))
+    }));
+  }
+
   function getScoreKey(countryKey, roleKey, skillKey) {
     return `careerGuideScore:${countryKey}:${roleKey}:${skillKey}`;
   }
@@ -241,8 +264,8 @@
       return;
     }
 
-    const questionGroups = getQuestionGroups(questionSet);
-    const flatQuestions = getFlatQuestions(questionSet);
+    let questionGroups = createAttemptQuestionGroups(getQuestionGroups(questionSet));
+    const flatQuestions = questionGroups.flatMap((group) => group.questions);
     const totalQuestions = flatQuestions.length;
     const attempt = {
       answers: new Array(totalQuestions).fill(""),
@@ -384,6 +407,9 @@
     }
 
     function resetAttempt() {
+      questionGroups = createAttemptQuestionGroups(getQuestionGroups(questionSet));
+      const shuffledFlatQuestions = questionGroups.flatMap((group) => group.questions);
+      flatQuestions.splice(0, flatQuestions.length, ...shuffledFlatQuestions);
       attempt.answers = new Array(totalQuestions).fill("");
       attempt.completedTopics.clear();
       showTopicSelection();
