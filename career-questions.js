@@ -761,6 +761,196 @@
             ]
           }
         ]
+      },
+      maths: {
+        label: "Maths",
+        topics: [
+          {
+            topic: "Algebra",
+            questions: [
+              {
+                topic: "Algebra",
+                difficulty: "Easy",
+                question: "What is the value of x in the equation x + 5 = 12?",
+                options: ["7", "5", "12", "17"],
+                correctAnswer: "7",
+                explanation: "Subtract 5 from both sides: x = 12 - 5, so x = 7."
+              },
+              {
+                topic: "Algebra",
+                difficulty: "Medium",
+                question: "If 3x = 18, what is x?",
+                options: ["6", "3", "15", "21"],
+                correctAnswer: "6",
+                explanation: "Divide both sides by 3 to isolate x: x = 18 / 3 = 6."
+              },
+              {
+                topic: "Algebra",
+                difficulty: "Hard",
+                question: "Which expression is equivalent to 2(x + 4) - x?",
+                options: ["x + 8", "3x + 4", "2x + 8", "x + 4"],
+                correctAnswer: "x + 8",
+                explanation: "Expand 2(x + 4) to 2x + 8, then subtract x to get x + 8."
+              },
+              {
+                topic: "Algebra",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: To solve 5x - 10 = 0, first add 10 to both sides, then divide by ___.",
+                options: ["5", "10", "0", "x"],
+                correctAnswer: "5",
+                explanation: "After adding 10, the equation is 5x = 10, so divide by 5."
+              }
+            ]
+          },
+          {
+            topic: "Linear algebra basics",
+            questions: [
+              {
+                topic: "Linear algebra basics",
+                difficulty: "Easy",
+                question: "What is a vector?",
+                options: ["An ordered list of numbers", "A single database row only", "A chart title", "A text paragraph"],
+                correctAnswer: "An ordered list of numbers",
+                explanation: "A vector stores values in order, often representing a point, direction, or feature set."
+              },
+              {
+                topic: "Linear algebra basics",
+                difficulty: "Medium",
+                question: "What does the dot product of two equal-length vectors produce?",
+                options: ["A single number", "A new table", "A random category", "A missing value"],
+                correctAnswer: "A single number",
+                explanation: "The dot product multiplies matching entries and sums the results, producing one scalar value."
+              },
+              {
+                topic: "Linear algebra basics",
+                difficulty: "Hard",
+                question: "Why is linear algebra important in machine learning?",
+                options: ["Models often represent data, weights, and transformations as vectors and matrices", "It replaces all statistics", "It removes the need for features", "It only formats charts"],
+                correctAnswer: "Models often represent data, weights, and transformations as vectors and matrices",
+                explanation: "Many algorithms use vector and matrix operations to calculate predictions and update model weights."
+              },
+              {
+                topic: "Linear algebra basics",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: The dot product of [1, 2] and [3, 4] is 1*3 + 2*4 = ___.",
+                options: ["11", "7", "10", "24"],
+                correctAnswer: "11",
+                explanation: "Multiply matching positions and add them: 3 + 8 = 11."
+              }
+            ]
+          },
+          {
+            topic: "Calculus basics",
+            questions: [
+              {
+                topic: "Calculus basics",
+                difficulty: "Easy",
+                question: "What does a derivative describe?",
+                options: ["Rate of change", "Total row count", "Database size", "Text length"],
+                correctAnswer: "Rate of change",
+                explanation: "A derivative describes how quickly one value changes with respect to another."
+              },
+              {
+                topic: "Calculus basics",
+                difficulty: "Medium",
+                question: "What is the derivative of f(x) = x^2?",
+                options: ["2x", "x", "x^3", "2"],
+                correctAnswer: "2x",
+                explanation: "Using the power rule, the derivative of x^2 is 2x."
+              },
+              {
+                topic: "Calculus basics",
+                difficulty: "Hard",
+                question: "In model training, why are gradients useful?",
+                options: ["They show which direction changes can reduce a loss function", "They store raw labels only", "They delete outliers automatically", "They replace all test data"],
+                correctAnswer: "They show which direction changes can reduce a loss function",
+                explanation: "Gradients guide optimization by showing how the loss changes as model parameters change."
+              },
+              {
+                topic: "Calculus basics",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: Gradient descent updates weights by moving in the direction that reduces the ___.",
+                options: ["loss", "file name", "column title", "row index"],
+                correctAnswer: "loss",
+                explanation: "Gradient descent adjusts weights to reduce the loss or error measure."
+              }
+            ]
+          },
+          {
+            topic: "Vectors",
+            questions: [
+              {
+                topic: "Vectors",
+                difficulty: "Easy",
+                question: "Which example is a 3-dimensional vector?",
+                options: ["[2, 4, 6]", "[2]", "[2, 4, 6, 8, 10]", "name = Alice"],
+                correctAnswer: "[2, 4, 6]",
+                explanation: "A 3-dimensional vector has three ordered values."
+              },
+              {
+                topic: "Vectors",
+                difficulty: "Medium",
+                question: "What is [1, 3] + [2, 4]?",
+                options: ["[3, 7]", "[2, 12]", "[1, 2, 3, 4]", "[1, 7]"],
+                correctAnswer: "[3, 7]",
+                explanation: "Vector addition adds matching positions: [1 + 2, 3 + 4] = [3, 7]."
+              },
+              {
+                topic: "Vectors",
+                difficulty: "Hard",
+                question: "What does vector magnitude measure?",
+                options: ["The length of a vector", "The number of table columns only", "The spelling of labels", "The order of a SQL query"],
+                correctAnswer: "The length of a vector",
+                explanation: "Magnitude measures the vector's length from the origin in its coordinate space."
+              },
+              {
+                topic: "Vectors",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: The vector [3, 4] has magnitude sqrt(3^2 + 4^2) = ___.",
+                options: ["5", "7", "12", "25"],
+                correctAnswer: "5",
+                explanation: "sqrt(9 + 16) = sqrt(25) = 5."
+              }
+            ]
+          },
+          {
+            topic: "Matrices",
+            questions: [
+              {
+                topic: "Matrices",
+                difficulty: "Easy",
+                question: "What is a matrix?",
+                options: ["A rectangular grid of numbers", "A single text label", "A chart color", "A browser button"],
+                correctAnswer: "A rectangular grid of numbers",
+                explanation: "A matrix arranges numbers in rows and columns."
+              },
+              {
+                topic: "Matrices",
+                difficulty: "Medium",
+                question: "How many rows and columns does [[1, 2], [3, 4], [5, 6]] have?",
+                options: ["3 rows and 2 columns", "2 rows and 3 columns", "1 row and 6 columns", "6 rows and 1 column"],
+                correctAnswer: "3 rows and 2 columns",
+                explanation: "There are three inner lists, each with two values, so the matrix is 3 by 2."
+              },
+              {
+                topic: "Matrices",
+                difficulty: "Hard",
+                question: "When can two matrices A and B be multiplied as A * B?",
+                options: ["When the number of columns in A equals the number of rows in B", "When they have identical names", "When both contain only zeros", "When A has fewer rows than B"],
+                correctAnswer: "When the number of columns in A equals the number of rows in B",
+                explanation: "Matrix multiplication requires compatible inner dimensions."
+              },
+              {
+                topic: "Matrices",
+                difficulty: "Debug or Fill Gap",
+                question: "Fill the gap: A 2 x 3 matrix multiplied by a 3 x 1 matrix produces a ___ x 1 matrix.",
+                options: ["2", "3", "1", "6"],
+                correctAnswer: "2",
+                explanation: "The inner dimensions match and the output takes the outer dimensions: 2 x 1."
+              }
+            ]
+          }
+        ]
       }
     }
   };
