@@ -76,6 +76,33 @@
         "Create DAX measures and a dashboard page"
       ],
       miniProject: "Build a Power BI sales dashboard with KPIs and filters"
+    },
+    "cloud-fundamentals": {
+      study: "cloud computing basics, compute services, storage services, networking basics, IAM and security basics",
+      actions: [
+        "Compare IaaS, PaaS and SaaS with practical examples",
+        "Review virtual machines, object storage, VPCs and IAM roles",
+        "Practise cloud cost and least-privilege security scenarios"
+      ],
+      miniProject: "Design a basic cloud architecture for a small web application"
+    },
+    linux: {
+      study: "file navigation, permissions, processes, packages, services and shell scripting",
+      actions: [
+        "Practise pwd, ls, cd, chmod, ps, top and kill commands",
+        "Inspect service status and logs on a Linux system",
+        "Write a small shell script that checks files and prints a report"
+      ],
+      miniProject: "Create a Linux server health-check script"
+    },
+    git: {
+      study: "Git basics, branching, commit workflow, merge conflicts and remote repositories",
+      actions: [
+        "Practise git status, add, commit, branch and switch",
+        "Resolve a simple merge conflict in a test repository",
+        "Push a project to GitHub and pull updates back locally"
+      ],
+      miniProject: "Publish an infrastructure scripts repository with clear commits and branches"
     }
   };
   const strongPortfolioSuggestions = {
@@ -86,7 +113,10 @@
     maths: "Use Maths in a visual explainer that connects vectors, matrices, or gradients to model behaviour.",
     communication: "Use Communication in a short business report or slide deck that turns analysis into decisions.",
     excel: "Use Excel in a sales performance dashboard with formulas, pivot tables, charts, and slicers.",
-    "power-bi": "Use Power BI in an interactive dashboard with cleaned data, relationships, DAX measures, KPIs, and filters."
+    "power-bi": "Use Power BI in an interactive dashboard with cleaned data, relationships, DAX measures, KPIs, and filters.",
+    "cloud-fundamentals": "Use Cloud Fundamentals in a portfolio architecture diagram with compute, storage, networking and IAM choices.",
+    linux: "Use Linux in a server automation project that includes commands, logs, permissions and a shell script.",
+    git: "Use Git in a portfolio repository that shows clean commits, branches, merges and a documented workflow."
   };
 
   if (!data || !countrySelect || !roleSelect || !skillTableArea) {

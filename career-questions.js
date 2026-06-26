@@ -1521,6 +1521,576 @@
             ]
           }
         ]
+      },
+      "cloud-fundamentals": {
+        label: "Cloud Fundamentals",
+        topics: [
+          {
+            topic: "Cloud computing basics",
+            questions: [
+              {
+                topic: "Cloud computing basics",
+                difficulty: "Easy",
+                question: "What is cloud computing?",
+                options: ["Only storing files on a laptop", "Using computing resources over the internet on demand", "Writing code without a computer", "Replacing all networks with spreadsheets"],
+                correctAnswer: "Using computing resources over the internet on demand",
+                explanation: "Cloud computing provides services such as compute, storage and databases over the internet when needed."
+              },
+              {
+                topic: "Cloud computing basics",
+                difficulty: "Medium",
+                question: "Which option best describes IaaS?",
+                options: ["A finished software application", "A charting library", "Virtual machines, storage and networking managed as infrastructure", "A single HTML page"],
+                correctAnswer: "Virtual machines, storage and networking managed as infrastructure",
+                explanation: "IaaS gives teams infrastructure building blocks such as virtual machines, disks and networks."
+              },
+              {
+                topic: "Cloud computing basics",
+                difficulty: "Hard",
+                question: "What is the difference between a cloud region and an availability zone?",
+                options: ["A region is a geographic area, while zones are isolated locations inside that region", "A zone is always larger than a region", "A region is only for billing and cannot run services", "They are two names for the same thing"],
+                correctAnswer: "A region is a geographic area, while zones are isolated locations inside that region",
+                explanation: "Regions are broad locations, and availability zones provide separate facilities for resilience inside a region."
+              },
+              {
+                topic: "Cloud computing basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: A team wants to deploy an app without managing operating system patches. Which model is often a better fit?",
+                options: ["IaaS only", "Local desktop only", "Manual hardware purchase", "PaaS"],
+                correctAnswer: "PaaS",
+                explanation: "PaaS abstracts more infrastructure management so teams can focus on application code."
+              }
+            ]
+          },
+          {
+            topic: "Compute services",
+            questions: [
+              {
+                topic: "Compute services",
+                difficulty: "Easy",
+                question: "What is a virtual machine in the cloud?",
+                options: ["A spreadsheet formula", "A software-based server running on cloud infrastructure", "A static image file", "A database table key"],
+                correctAnswer: "A software-based server running on cloud infrastructure",
+                explanation: "Virtual machines provide server-like compute capacity without owning physical hardware."
+              },
+              {
+                topic: "Compute services",
+                difficulty: "Medium",
+                question: "Why might a team use auto scaling for compute services?",
+                options: ["To adjust capacity based on demand", "To disable monitoring", "To make every server permanent", "To remove all network security"],
+                correctAnswer: "To adjust capacity based on demand",
+                explanation: "Auto scaling helps add or remove compute resources as traffic changes."
+              },
+              {
+                topic: "Compute services",
+                difficulty: "Hard",
+                question: "What is one benefit of serverless compute?",
+                options: ["It always costs the same as a large VM", "It requires manual server patching every hour", "It can run code without managing the underlying servers", "It cannot respond to events"],
+                correctAnswer: "It can run code without managing the underlying servers",
+                explanation: "Serverless platforms manage server provisioning and scaling while developers provide the function code."
+              },
+              {
+                topic: "Compute services",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: A cloud ___ is commonly used when you need a configurable server with an operating system.",
+                options: ["bucket", "virtual machine", "tag", "route table"],
+                correctAnswer: "virtual machine",
+                explanation: "A virtual machine gives you a configurable server environment in the cloud."
+              }
+            ]
+          },
+          {
+            topic: "Storage services",
+            questions: [
+              {
+                topic: "Storage services",
+                difficulty: "Easy",
+                question: "What is object storage commonly used for?",
+                options: ["Storing files such as images, backups and logs", "Running CPU instructions directly", "Creating user passwords only", "Replacing all databases"],
+                correctAnswer: "Storing files such as images, backups and logs",
+                explanation: "Object storage is suited to storing unstructured files as objects with metadata."
+              },
+              {
+                topic: "Storage services",
+                difficulty: "Medium",
+                question: "Which storage type is usually attached to a virtual machine like a disk?",
+                options: ["Block storage", "Object storage only", "DNS storage", "IAM storage"],
+                correctAnswer: "Block storage",
+                explanation: "Block storage provides disk-like volumes that can be attached to compute instances."
+              },
+              {
+                topic: "Storage services",
+                difficulty: "Hard",
+                question: "Why should lifecycle policies be used for cloud storage?",
+                options: ["They help move or delete data over time to control cost and retention", "They make data impossible to delete", "They replace every database query", "They disable backups"],
+                correctAnswer: "They help move or delete data over time to control cost and retention",
+                explanation: "Lifecycle policies can archive or delete older objects according to business rules."
+              },
+              {
+                topic: "Storage services",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You need a low-cost place to store static website images. Which service type is usually best?",
+                options: ["Virtual private network", "Object storage", "Compute autoscaling", "IAM role"],
+                correctAnswer: "Object storage",
+                explanation: "Object storage is commonly used for static assets because it is durable and cost-effective."
+              }
+            ]
+          },
+          {
+            topic: "Networking basics",
+            questions: [
+              {
+                topic: "Networking basics",
+                difficulty: "Easy",
+                question: "What is a VPC or virtual private cloud?",
+                options: ["A private network space for cloud resources", "A password manager only", "A code editor", "A spreadsheet template"],
+                correctAnswer: "A private network space for cloud resources",
+                explanation: "A VPC lets you define networking boundaries for cloud resources."
+              },
+              {
+                topic: "Networking basics",
+                difficulty: "Medium",
+                question: "What is the purpose of a firewall or security group rule?",
+                options: ["To control allowed network traffic", "To increase file font size", "To create database rows", "To rename cloud regions"],
+                correctAnswer: "To control allowed network traffic",
+                explanation: "Firewall rules control which traffic can reach resources based on ports, protocols and sources."
+              },
+              {
+                topic: "Networking basics",
+                difficulty: "Hard",
+                question: "Why might public and private subnets be separated?",
+                options: ["To keep internal resources away from direct internet access", "To make every server public", "To remove the need for routing", "To stop applications from using databases"],
+                correctAnswer: "To keep internal resources away from direct internet access",
+                explanation: "Private subnets help protect internal services such as databases from direct public exposure."
+              },
+              {
+                topic: "Networking basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: HTTP traffic usually uses port ___.",
+                options: ["22", "80", "4430", "3306"],
+                correctAnswer: "80",
+                explanation: "HTTP commonly uses port 80, while HTTPS commonly uses port 443."
+              }
+            ]
+          },
+          {
+            topic: "IAM and security basics",
+            questions: [
+              {
+                topic: "IAM and security basics",
+                difficulty: "Easy",
+                question: "What does IAM help manage?",
+                options: ["Charts and dashboards only", "Users, roles, permissions and access policies", "Only server CPU speed", "HTML page structure"],
+                correctAnswer: "Users, roles, permissions and access policies",
+                explanation: "IAM controls who can access cloud resources and what actions they can perform."
+              },
+              {
+                topic: "IAM and security basics",
+                difficulty: "Medium",
+                question: "What does least privilege mean?",
+                options: ["Give every user admin access", "Give only the permissions needed for the task", "Disable all logging", "Avoid using roles"],
+                correctAnswer: "Give only the permissions needed for the task",
+                explanation: "Least privilege reduces risk by limiting access to what is necessary."
+              },
+              {
+                topic: "IAM and security basics",
+                difficulty: "Hard",
+                question: "Why are IAM roles often preferred over hardcoded access keys on servers?",
+                options: ["Roles can provide managed temporary credentials without storing secrets in code", "Roles remove all security checks", "Roles only work for public buckets", "Hardcoded keys rotate automatically"],
+                correctAnswer: "Roles can provide managed temporary credentials without storing secrets in code",
+                explanation: "IAM roles reduce secret exposure and can issue temporary credentials to trusted resources."
+              },
+              {
+                topic: "IAM and security basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: A developer only needs to read objects from one storage bucket. What permission approach is safest?",
+                options: ["Grant full administrator access", "Grant read access only to that bucket", "Share the root account", "Disable audit logs"],
+                correctAnswer: "Grant read access only to that bucket",
+                explanation: "The safest approach is least privilege: only the required read permission for the specific bucket."
+              }
+            ]
+          }
+        ]
+      },
+      linux: {
+        label: "Linux",
+        topics: [
+          {
+            topic: "File system navigation",
+            questions: [
+              {
+                topic: "File system navigation",
+                difficulty: "Easy",
+                question: "Which command prints the current working directory?",
+                options: ["ls", "pwd", "cd", "mkdir"],
+                correctAnswer: "pwd",
+                explanation: "pwd shows the full path of the directory you are currently in."
+              },
+              {
+                topic: "File system navigation",
+                difficulty: "Medium",
+                question: "What does cd .. do?",
+                options: ["Moves to the parent directory", "Lists hidden files", "Deletes the current directory", "Prints the file contents"],
+                correctAnswer: "Moves to the parent directory",
+                explanation: "The .. path refers to the parent directory."
+              },
+              {
+                topic: "File system navigation",
+                difficulty: "Hard",
+                question: "Which path is absolute?",
+                options: ["../logs/app.log", "./app.log", "logs/app.log", "/var/log/app.log"],
+                correctAnswer: "/var/log/app.log",
+                explanation: "An absolute path starts from the root directory, represented by /."
+              },
+              {
+                topic: "File system navigation",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To list files including hidden files, use ls ___.",
+                options: ["-a", "-d", "-x", "-run"],
+                correctAnswer: "-a",
+                explanation: "ls -a includes files whose names start with a dot."
+              }
+            ]
+          },
+          {
+            topic: "File permissions",
+            questions: [
+              {
+                topic: "File permissions",
+                difficulty: "Easy",
+                question: "Which command changes file permissions?",
+                options: ["chmod", "chdir", "ps", "grep"],
+                correctAnswer: "chmod",
+                explanation: "chmod changes read, write and execute permissions on files or directories."
+              },
+              {
+                topic: "File permissions",
+                difficulty: "Medium",
+                question: "What does the x permission allow on a script file?",
+                options: ["Reading the file only", "Editing the file owner only", "Executing the file as a program", "Compressing the file"],
+                correctAnswer: "Executing the file as a program",
+                explanation: "The execute bit allows a script or binary to be run."
+              },
+              {
+                topic: "File permissions",
+                difficulty: "Hard",
+                question: "What does chmod 600 secrets.txt usually mean?",
+                options: ["Owner can read/write; group and others have no permissions", "Everyone can read and write", "Only others can execute", "The file is deleted after 600 seconds"],
+                correctAnswer: "Owner can read/write; group and others have no permissions",
+                explanation: "In numeric permissions, 6 is read plus write for the owner, and 0 gives no permissions to group and others."
+              },
+              {
+                topic: "File permissions",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: A deployment script cannot run because permission is denied. What permission is likely missing?",
+                options: ["write", "execute", "read", "hidden"],
+                correctAnswer: "execute",
+                explanation: "Scripts need execute permission to run directly."
+              }
+            ]
+          },
+          {
+            topic: "Process management",
+            questions: [
+              {
+                topic: "Process management",
+                difficulty: "Easy",
+                question: "Which command can list running processes?",
+                options: ["ps", "pwd", "cd", "touch"],
+                correctAnswer: "ps",
+                explanation: "ps displays information about running processes."
+              },
+              {
+                topic: "Process management",
+                difficulty: "Medium",
+                question: "What is top commonly used for?",
+                options: ["Viewing live process and resource usage", "Changing file permissions", "Creating directories", "Installing packages only"],
+                correctAnswer: "Viewing live process and resource usage",
+                explanation: "top shows live CPU, memory and process information."
+              },
+              {
+                topic: "Process management",
+                difficulty: "Hard",
+                question: "Why should kill -9 be used carefully?",
+                options: ["It forcefully terminates a process without graceful cleanup", "It only lists processes", "It changes file owners", "It installs missing software"],
+                correctAnswer: "It forcefully terminates a process without graceful cleanup",
+                explanation: "SIGKILL cannot be caught by the process, so it may skip cleanup steps."
+              },
+              {
+                topic: "Process management",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To stop a process by process ID, use kill ___.",
+                options: ["PID", "PWD", "PATH", "HOME"],
+                correctAnswer: "PID",
+                explanation: "kill sends a signal to the process identified by its PID."
+              }
+            ]
+          },
+          {
+            topic: "Package and service management",
+            questions: [
+              {
+                topic: "Package and service management",
+                difficulty: "Easy",
+                question: "What is a package manager used for?",
+                options: ["Installing and updating software packages", "Changing monitor brightness", "Writing database rows", "Creating Git branches"],
+                correctAnswer: "Installing and updating software packages",
+                explanation: "Package managers such as apt or yum install, update and remove software."
+              },
+              {
+                topic: "Package and service management",
+                difficulty: "Medium",
+                question: "Which command checks the status of a systemd service?",
+                options: ["systemctl status service-name", "cd status service-name", "chmod status service-name", "git status service-name"],
+                correctAnswer: "systemctl status service-name",
+                explanation: "systemctl status shows whether a systemd-managed service is running and recent log lines."
+              },
+              {
+                topic: "Package and service management",
+                difficulty: "Hard",
+                question: "Why should logs be checked when a Linux service fails to start?",
+                options: ["Logs often show the error that caused the service failure", "Logs automatically fix packages", "Logs remove bad permissions", "Logs replace the service file"],
+                correctAnswer: "Logs often show the error that caused the service failure",
+                explanation: "Service logs can reveal missing files, permission errors, port conflicts or configuration problems."
+              },
+              {
+                topic: "Package and service management",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You changed a service config and need to restart it. Which command pattern is commonly used?",
+                options: ["systemctl restart service-name", "pwd restart service-name", "ls restart service-name", "chmod restart service-name"],
+                correctAnswer: "systemctl restart service-name",
+                explanation: "systemctl restart stops and starts a systemd service again."
+              }
+            ]
+          },
+          {
+            topic: "Shell scripting basics",
+            questions: [
+              {
+                topic: "Shell scripting basics",
+                difficulty: "Easy",
+                question: "What is a shell script?",
+                options: ["A file containing shell commands that can be run together", "A database index", "A cloud region", "A spreadsheet chart"],
+                correctAnswer: "A file containing shell commands that can be run together",
+                explanation: "Shell scripts automate command-line tasks by running commands from a file."
+              },
+              {
+                topic: "Shell scripting basics",
+                difficulty: "Medium",
+                question: "What does a shebang such as #!/bin/bash do?",
+                options: ["Tells the system which interpreter should run the script", "Deletes comments", "Creates a new user", "Lists all processes"],
+                correctAnswer: "Tells the system which interpreter should run the script",
+                explanation: "The shebang points to the interpreter used to execute the script."
+              },
+              {
+                topic: "Shell scripting basics",
+                difficulty: "Hard",
+                question: "Why should variables in shell scripts often be quoted, such as \"$filename\"?",
+                options: ["To handle spaces and avoid unwanted word splitting", "To make every command faster", "To disable permissions", "To force the script to run as root"],
+                correctAnswer: "To handle spaces and avoid unwanted word splitting",
+                explanation: "Quoting variables helps preserve values that contain spaces or special characters."
+              },
+              {
+                topic: "Shell scripting basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: In bash, assign a variable with name=___, without spaces around the equals sign.",
+                options: ["value", "$value", "echo value", "var value"],
+                correctAnswer: "value",
+                explanation: "Bash variable assignment uses name=value with no spaces around the equals sign."
+              }
+            ]
+          }
+        ]
+      },
+      git: {
+        label: "Git",
+        topics: [
+          {
+            topic: "Git basics",
+            questions: [
+              {
+                topic: "Git basics",
+                difficulty: "Easy",
+                question: "What does git init do?",
+                options: ["Creates a new Git repository in the current project", "Deletes all branches", "Uploads code to GitHub automatically", "Formats JavaScript files"],
+                correctAnswer: "Creates a new Git repository in the current project",
+                explanation: "git init creates the repository metadata needed for Git to track changes."
+              },
+              {
+                topic: "Git basics",
+                difficulty: "Medium",
+                question: "Which command shows changed files and staging status?",
+                options: ["git status", "git delete", "git cloud", "git package"],
+                correctAnswer: "git status",
+                explanation: "git status reports modified, staged and untracked files."
+              },
+              {
+                topic: "Git basics",
+                difficulty: "Hard",
+                question: "Why is Git useful for infrastructure or application projects?",
+                options: ["It tracks changes so teams can review, revert and collaborate safely", "It replaces all testing", "It automatically fixes security issues", "It runs cloud servers without code"],
+                correctAnswer: "It tracks changes so teams can review, revert and collaborate safely",
+                explanation: "Git provides version history and collaboration workflows for code and configuration."
+              },
+              {
+                topic: "Git basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To start tracking a changed file before committing, use git ___.",
+                options: ["push", "add", "merge", "remote"],
+                correctAnswer: "add",
+                explanation: "git add stages changes so they can be included in the next commit."
+              }
+            ]
+          },
+          {
+            topic: "Branching",
+            questions: [
+              {
+                topic: "Branching",
+                difficulty: "Easy",
+                question: "What is a Git branch?",
+                options: ["A separate line of development", "A database password", "A cloud storage bucket", "A CSS selector"],
+                correctAnswer: "A separate line of development",
+                explanation: "Branches let you work on changes without directly modifying another branch."
+              },
+              {
+                topic: "Branching",
+                difficulty: "Medium",
+                question: "Which command creates and switches to a new branch in modern Git?",
+                options: ["git branch-only feature", "git switch -c feature", "git push -c feature", "git status -c feature"],
+                correctAnswer: "git switch -c feature",
+                explanation: "git switch -c creates a new branch and switches to it."
+              },
+              {
+                topic: "Branching",
+                difficulty: "Hard",
+                question: "Why create a feature branch before making a risky change?",
+                options: ["It isolates work until it is ready to merge", "It deletes the main branch", "It makes conflicts impossible", "It uploads secrets automatically"],
+                correctAnswer: "It isolates work until it is ready to merge",
+                explanation: "Feature branches let you develop and review work before integrating it."
+              },
+              {
+                topic: "Branching",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You need to move from main to an existing branch called fix-login. Which command is suitable?",
+                options: ["git switch fix-login", "git init fix-login", "git commit fix-login", "git remote fix-login"],
+                correctAnswer: "git switch fix-login",
+                explanation: "git switch moves your working tree to another existing branch."
+              }
+            ]
+          },
+          {
+            topic: "Commit workflow",
+            questions: [
+              {
+                topic: "Commit workflow",
+                difficulty: "Easy",
+                question: "What is a commit?",
+                options: ["A saved snapshot of staged changes", "A running Linux process", "A cloud firewall rule", "A spreadsheet formula"],
+                correctAnswer: "A saved snapshot of staged changes",
+                explanation: "A commit records the staged changes in the repository history."
+              },
+              {
+                topic: "Commit workflow",
+                difficulty: "Medium",
+                question: "What is the correct basic workflow for saving changes?",
+                options: ["git add, then git commit", "git commit, then git init every time", "git push, then git add only", "git merge, then git status only"],
+                correctAnswer: "git add, then git commit",
+                explanation: "Changes are staged with git add and then saved to history with git commit."
+              },
+              {
+                topic: "Commit workflow",
+                difficulty: "Hard",
+                question: "Why are small focused commits useful?",
+                options: ["They make review, debugging and rollback easier", "They hide changes from teammates", "They prevent all merge conflicts", "They remove the need for messages"],
+                correctAnswer: "They make review, debugging and rollback easier",
+                explanation: "Focused commits make history easier to understand and specific changes easier to revert."
+              },
+              {
+                topic: "Commit workflow",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To create a commit with a message, use git commit -m \"___\".",
+                options: ["message text", "branch name only", "remote URL only", "file permission"],
+                correctAnswer: "message text",
+                explanation: "The -m flag supplies a commit message describing the change."
+              }
+            ]
+          },
+          {
+            topic: "Merge and conflict basics",
+            questions: [
+              {
+                topic: "Merge and conflict basics",
+                difficulty: "Easy",
+                question: "What does merging do in Git?",
+                options: ["Combines changes from one branch into another", "Deletes every commit", "Installs project dependencies", "Creates a cloud account"],
+                correctAnswer: "Combines changes from one branch into another",
+                explanation: "A merge integrates changes from another branch into the current branch."
+              },
+              {
+                topic: "Merge and conflict basics",
+                difficulty: "Medium",
+                question: "When can a merge conflict happen?",
+                options: ["When Git cannot automatically combine changes to the same lines", "Only when no files changed", "When a branch has no commits", "When a file is read successfully"],
+                correctAnswer: "When Git cannot automatically combine changes to the same lines",
+                explanation: "Conflicts happen when competing edits need a human decision."
+              },
+              {
+                topic: "Merge and conflict basics",
+                difficulty: "Hard",
+                question: "What is the correct high-level way to resolve a merge conflict?",
+                options: ["Edit the conflicted file, choose the correct content, stage it and commit", "Delete the repository immediately", "Ignore conflict markers and push", "Run git init again"],
+                correctAnswer: "Edit the conflicted file, choose the correct content, stage it and commit",
+                explanation: "Resolving conflicts means deciding the final content and committing that resolution."
+              },
+              {
+                topic: "Merge and conflict basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: Conflict markers often include <<<<<<<, ======= and ___.",
+                options: [">>>>>>>", "///////", "COMMIT", "REMOTE_ONLY"],
+                correctAnswer: ">>>>>>>",
+                explanation: "Git uses these markers to show the conflicting sections that must be resolved."
+              }
+            ]
+          },
+          {
+            topic: "Remote repositories",
+            questions: [
+              {
+                topic: "Remote repositories",
+                difficulty: "Easy",
+                question: "What is a remote repository?",
+                options: ["A shared repository hosted outside your local machine", "A Linux file permission", "A cloud CPU type", "A JavaScript variable"],
+                correctAnswer: "A shared repository hosted outside your local machine",
+                explanation: "Remote repositories, such as GitHub repos, let teams share and sync work."
+              },
+              {
+                topic: "Remote repositories",
+                difficulty: "Medium",
+                question: "Which command sends local commits to a remote repository?",
+                options: ["git status", "git push", "git init", "git add"],
+                correctAnswer: "git push",
+                explanation: "git push uploads local commits to the configured remote branch."
+              },
+              {
+                topic: "Remote repositories",
+                difficulty: "Hard",
+                question: "What does git pull usually do?",
+                options: ["Fetches remote changes and integrates them into the current branch", "Deletes the remote repository", "Only stages local files", "Creates a new cloud server"],
+                correctAnswer: "Fetches remote changes and integrates them into the current branch",
+                explanation: "git pull is commonly equivalent to fetching remote commits and merging or rebasing them locally."
+              },
+              {
+                topic: "Remote repositories",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You cloned a GitHub repo and need to see its remote URL. Which command helps?",
+                options: ["git remote -v", "git commit -v", "git chmod -v", "git service -v"],
+                correctAnswer: "git remote -v",
+                explanation: "git remote -v lists configured remotes and their fetch/push URLs."
+              }
+            ]
+          }
+        ]
       }
     }
   };

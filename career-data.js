@@ -93,6 +93,48 @@
             reason: "Communication turns findings into practical next steps for managers, clients and teams."
           }
         ]
+      },
+      "cloud-engineer": {
+        label: "Cloud Engineer",
+        totalWeight: 100,
+        skills: [
+          {
+            name: "Cloud Fundamentals",
+            weight: 30,
+            requiredTopics: ["Cloud computing basics", "compute services", "storage services", "networking basics", "IAM and security basics"],
+            reason: "Cloud fundamentals help you understand how modern infrastructure is built, secured and scaled."
+          },
+          {
+            name: "Linux",
+            weight: 20,
+            requiredTopics: ["File system navigation", "file permissions", "process management", "package and service management", "shell scripting basics"],
+            reason: "Linux is widely used on cloud servers, containers and automation environments."
+          },
+          {
+            name: "Git",
+            weight: 15,
+            requiredTopics: ["Git basics", "branching", "commit workflow", "merge and conflict basics", "remote repositories"],
+            reason: "Git supports safe version control for infrastructure code, scripts and deployment workflows."
+          },
+          {
+            name: "Python",
+            weight: 15,
+            requiredTopics: ["Python syntax", "automation scripts", "files", "APIs", "basic debugging"],
+            reason: "Python is useful for automation, cloud tooling and operational scripts."
+          },
+          {
+            name: "SQL",
+            weight: 10,
+            requiredTopics: ["SELECT queries", "filters", "joins", "aggregations", "database basics"],
+            reason: "SQL helps cloud engineers inspect application data, logs and managed database systems."
+          },
+          {
+            name: "Communication",
+            weight: 10,
+            requiredTopics: ["Incident updates", "technical explanations", "documentation", "stakeholder communication"],
+            reason: "Communication helps cloud engineers explain incidents, tradeoffs and infrastructure decisions clearly."
+          }
+        ]
       }
     }
   };
