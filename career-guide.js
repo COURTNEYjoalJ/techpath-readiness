@@ -1,5 +1,6 @@
 (function () {
   const data = window.careerGuideData;
+  const questionData = window.careerGuideQuestions;
   const countrySelect = document.getElementById("countrySelect");
   const roleSelect = document.getElementById("roleSelect");
   const skillTableArea = document.getElementById("skillTableArea");
@@ -29,6 +30,214 @@
     const cell = document.createElement(tagName);
     cell.textContent = text;
     return cell;
+  }
+
+  function getSkillKey(skillName) {
+    return skillName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  }
+
+  function getSkillQuestions(skillKey) {
+    return questionData && questionData.skills ? questionData.skills[skillKey] : null;
+  }
+
+  function getScoreKey(countryKey, roleKey, skillKey) {
+    return `careerGuideScore:${countryKey}:${roleKey}:${skillKey}`;
+  }
+
+  function loadSavedScore(countryKey, roleKey, skillKey) {
+    try {
+      const savedScore = localStorage.getItem(getScoreKey(countryKey, roleKey, skillKey));
+      return savedScore ? JSON.parse(savedScore) : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveSkillScore(countryKey, roleKey, skillKey, score) {
+    try {
+      localStorage.setItem(getScoreKey(countryKey, roleKey, skillKey), JSON.stringify(score));
+    } catch (error) {
+      // Score persistence is helpful, but the test should still work if storage is unavailable.
+    }
+  }
+
+  function formatScore(score) {
+    return score ? `${score.correct}/${score.total} (${score.percentage}%)` : "Not tested";
+  }
+
+  function removeTestPanel() {
+    const existingPanel = skillTableArea.querySelector(".skill-test-panel");
+
+    if (existingPanel) {
+      existingPanel.remove();
+    }
+  }
+
+  function updateSkillScoreCell(countryKey, roleKey, skillKey) {
+    const scoreCell = skillTableArea.querySelector(`[data-skill-score="${skillKey}"]`);
+
+    if (scoreCell) {
+      scoreCell.textContent = formatScore(loadSavedScore(countryKey, roleKey, skillKey));
+    }
+  }
+
+  function createQuestionOption(questionIndex, optionText) {
+    const label = document.createElement("label");
+    label.className = "test-option";
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `python-question-${questionIndex}`;
+    input.value = optionText;
+
+    const text = document.createElement("span");
+    text.textContent = optionText;
+
+    label.appendChild(input);
+    label.appendChild(text);
+    return label;
+  }
+
+  function renderTestResults(resultArea, questions, answers, score) {
+    resultArea.innerHTML = "";
+
+    const summary = document.createElement("p");
+    summary.className = "test-score-summary";
+    summary.textContent = `Score: ${score.correct}/${score.total} (${score.percentage}%)`;
+    resultArea.appendChild(summary);
+
+    const wrongAnswers = questions
+      .map((question, index) => ({
+        question,
+        index,
+        selectedAnswer: answers[index]
+      }))
+      .filter((item) => item.selectedAnswer !== item.question.correctAnswer);
+
+    if (wrongAnswers.length === 0) {
+      const success = document.createElement("p");
+      success.textContent = "All answers correct.";
+      resultArea.appendChild(success);
+      return;
+    }
+
+    wrongAnswers.forEach((item) => {
+      const explanation = document.createElement("div");
+      explanation.className = "test-explanation";
+
+      const title = document.createElement("h4");
+      title.textContent = `Question ${item.index + 1}: ${item.question.topic}`;
+
+      const selected = document.createElement("p");
+      selected.textContent = `Your answer: ${item.selectedAnswer || "No answer selected"}`;
+
+      const correct = document.createElement("p");
+      correct.textContent = `Correct answer: ${item.question.correctAnswer}`;
+
+      const reason = document.createElement("p");
+      reason.textContent = item.question.explanation;
+
+      explanation.appendChild(title);
+      explanation.appendChild(selected);
+      explanation.appendChild(correct);
+      explanation.appendChild(reason);
+      resultArea.appendChild(explanation);
+    });
+  }
+
+  function renderPythonTest(countryKey, roleKey) {
+    const skillKey = "python";
+    const questionSet = getSkillQuestions(skillKey);
+
+    if (!questionSet) {
+      return;
+    }
+
+    removeTestPanel();
+
+    const panel = document.createElement("div");
+    panel.className = "guide-placeholder skill-test-panel";
+
+    const heading = document.createElement("div");
+    heading.className = "skill-test-heading";
+
+    const title = document.createElement("h2");
+    title.textContent = "Python Mini Test";
+
+    const subtitle = document.createElement("p");
+    subtitle.textContent = "Answer all 5 questions. Your score will be saved for this country and role.";
+
+    heading.appendChild(title);
+    heading.appendChild(subtitle);
+
+    const form = document.createElement("form");
+    form.className = "skill-test-form";
+
+    questionSet.questions.forEach((question, questionIndex) => {
+      const questionBlock = document.createElement("fieldset");
+      questionBlock.className = "test-question";
+
+      const legend = document.createElement("legend");
+      legend.textContent = `${questionIndex + 1}. ${question.question}`;
+
+      const topic = document.createElement("p");
+      topic.className = "test-topic";
+      topic.textContent = question.topic;
+
+      const options = document.createElement("div");
+      options.className = "test-options";
+
+      question.options.forEach((option) => {
+        options.appendChild(createQuestionOption(questionIndex, option));
+      });
+
+      questionBlock.appendChild(legend);
+      questionBlock.appendChild(topic);
+      questionBlock.appendChild(options);
+      form.appendChild(questionBlock);
+    });
+
+    const submitButton = document.createElement("button");
+    submitButton.className = "btn primary test-submit-button";
+    submitButton.type = "submit";
+    submitButton.textContent = "Submit Test";
+
+    const resultArea = document.createElement("div");
+    resultArea.className = "test-result-area";
+    resultArea.setAttribute("aria-live", "polite");
+
+    form.appendChild(submitButton);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const answers = questionSet.questions.map((question, questionIndex) => {
+        const selected = form.querySelector(`input[name="python-question-${questionIndex}"]:checked`);
+        return selected ? selected.value : "";
+      });
+
+      const correct = questionSet.questions.reduce((total, question, index) => {
+        return total + (answers[index] === question.correctAnswer ? 1 : 0);
+      }, 0);
+      const total = questionSet.questions.length;
+      const percentage = Math.round((correct / total) * 100);
+      const score = {
+        correct,
+        total,
+        percentage,
+        updatedAt: new Date().toISOString()
+      };
+
+      saveSkillScore(countryKey, roleKey, skillKey, score);
+      updateSkillScoreCell(countryKey, roleKey, skillKey);
+      renderTestResults(resultArea, questionSet.questions, answers, score);
+    });
+
+    panel.appendChild(heading);
+    panel.appendChild(form);
+    panel.appendChild(resultArea);
+    skillTableArea.appendChild(panel);
+    panel.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function renderSkillTable(countryKey, roleKey) {
@@ -73,19 +282,32 @@
 
     const tbody = document.createElement("tbody");
     role.skills.forEach((skill) => {
+      const skillKey = getSkillKey(skill.name);
+      const skillQuestions = getSkillQuestions(skillKey);
       const row = document.createElement("tr");
       row.appendChild(createCell(skill.name, "td"));
       row.appendChild(createCell(skill.requiredTopics.join(", "), "td"));
       row.appendChild(createCell(skill.reason, "td"));
       row.appendChild(createCell(`${skill.weight}`, "td"));
-      row.appendChild(createCell("Not tested", "td"));
+
+      const scoreCell = createCell(formatScore(loadSavedScore(countryKey, roleKey, skillKey)), "td");
+      scoreCell.dataset.skillScore = skillKey;
+      row.appendChild(scoreCell);
 
       const actionCell = document.createElement("td");
       const actionButton = document.createElement("button");
-      actionButton.className = "disabled-test-button";
       actionButton.type = "button";
-      actionButton.disabled = true;
-      actionButton.textContent = "Test coming next";
+
+      if (skillKey === "python" && skillQuestions) {
+        actionButton.className = "active-test-button";
+        actionButton.textContent = "Start Test";
+        actionButton.addEventListener("click", () => renderPythonTest(countryKey, roleKey));
+      } else {
+        actionButton.className = "disabled-test-button";
+        actionButton.disabled = true;
+        actionButton.textContent = "Test coming next";
+      }
+
       actionCell.appendChild(actionButton);
       row.appendChild(actionCell);
 

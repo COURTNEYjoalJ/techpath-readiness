@@ -336,6 +336,117 @@ a {
   padding: 10px 14px;
 }
 
+.active-test-button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border: 0;
+  border-radius: 999px;
+  color: #06111d;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 10px 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.active-test-button:hover,
+.active-test-button:focus {
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.22);
+  outline: none;
+  transform: scale(1.03);
+}
+
+.skill-test-panel {
+  margin-top: 22px;
+}
+
+.skill-test-heading {
+  margin-bottom: 20px;
+}
+
+.skill-test-heading h2 {
+  color: var(--text);
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.skill-test-form {
+  display: grid;
+  gap: 18px;
+}
+
+.test-question {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.test-question legend {
+  color: var(--text);
+  font-weight: 800;
+  padding-right: 10px;
+}
+
+.test-topic {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.test-options {
+  display: grid;
+  gap: 10px;
+}
+
+.test-option {
+  align-items: center;
+  background: rgba(6, 17, 29, 0.42);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.test-option:hover,
+.test-option:focus-within {
+  background: rgba(102, 227, 255, 0.12);
+  border-color: var(--gold);
+  transform: scale(1.01);
+}
+
+.test-submit-button {
+  justify-self: start;
+}
+
+.test-result-area {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.test-score-summary {
+  color: var(--success);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.test-explanation {
+  background: rgba(6, 17, 29, 0.42);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.test-explanation h4 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
 .tag {
   color: var(--accent);
   text-transform: uppercase;
