@@ -4,6 +4,71 @@
   const countrySelect = document.getElementById("countrySelect");
   const roleSelect = document.getElementById("roleSelect");
   const skillTableArea = document.getElementById("skillTableArea");
+  const readinessRoleKey = "data-scientist";
+  const skillStudyPlans = {
+    python: {
+      study: "Python syntax, pandas, NumPy, data cleaning, notebooks",
+      actions: [
+        "Practise loops, functions and dictionaries",
+        "Complete 10 pandas data-cleaning exercises",
+        "Build a small notebook using CSV data"
+      ],
+      miniProject: "Clean and analyse a sales dataset using pandas"
+    },
+    statistics: {
+      study: "descriptive statistics, probability, distributions, hypothesis testing, regression basics",
+      actions: [
+        "Revise mean, variance and standard deviation",
+        "Practise probability and distribution questions",
+        "Learn hypothesis testing with simple examples"
+      ],
+      miniProject: "Analyse whether two groups have different average scores"
+    },
+    sql: {
+      study: "SELECT, WHERE, GROUP BY, JOINs, subqueries, window functions",
+      actions: [
+        "Practise 20 SELECT and WHERE queries",
+        "Build JOIN queries using two related tables",
+        "Practise GROUP BY and window functions"
+      ],
+      miniProject: "Create a small customer-orders database and answer business questions"
+    },
+    "machine-learning": {
+      study: "supervised learning, unsupervised learning, train/test split, model evaluation, overfitting",
+      actions: [
+        "Learn classification vs regression",
+        "Practise train/test split and accuracy scoring",
+        "Compare two simple models"
+      ],
+      miniProject: "Build a basic house price or customer churn prediction model"
+    },
+    maths: {
+      study: "algebra, linear algebra basics, calculus basics, vectors, matrices",
+      actions: [
+        "Revise equations and functions",
+        "Practise vectors and matrices",
+        "Learn how maths connects to ML models"
+      ],
+      miniProject: "Build a small matrix/vector calculator explanation page"
+    },
+    communication: {
+      study: "explaining insights, business understanding, data storytelling, stakeholder communication, presentation basics",
+      actions: [
+        "Practise explaining charts in simple language",
+        "Convert one analysis into business recommendations",
+        "Create a 5-slide insight presentation"
+      ],
+      miniProject: "Turn a dataset analysis into a short business report"
+    }
+  };
+  const strongPortfolioSuggestions = {
+    python: "Use Python in a portfolio notebook that cleans messy CSV data and explains the final insights.",
+    statistics: "Use Statistics in an A/B test or hypothesis-testing project where you justify the conclusion.",
+    sql: "Use SQL in a customer-orders project with joins, grouped metrics, subqueries, and window functions.",
+    "machine-learning": "Use Machine Learning in a prediction project that compares models and explains evaluation metrics.",
+    maths: "Use Maths in a visual explainer that connects vectors, matrices, or gradients to model behaviour.",
+    communication: "Use Communication in a short business report or slide deck that turns analysis into decisions."
+  };
 
   if (!data || !countrySelect || !roleSelect || !skillTableArea) {
     return;
@@ -135,6 +200,388 @@
     if (scoreCell) {
       scoreCell.textContent = formatScore(loadSavedScore(countryKey, roleKey, skillKey));
     }
+  }
+
+  function formatReadinessNumber(value) {
+    const rounded = Math.round(value * 10) / 10;
+    return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+  }
+
+  function getReadinessLabel(score) {
+    if (score >= 80) {
+      return "Strong foundation - start portfolio projects and applications";
+    }
+
+    if (score >= 60) {
+      return "Good progress - improve weak areas and build projects";
+    }
+
+    if (score >= 40) {
+      return "Beginner/intermediate - revise fundamentals first";
+    }
+
+    return "Start from basics - follow the beginner roadmap";
+  }
+
+  function getRoleSkillScoreItems(countryKey, roleKey, role) {
+    return role.skills.map((skill) => {
+      const skillKey = getSkillKey(skill.name);
+      const score = loadSavedScore(countryKey, roleKey, skillKey);
+      const percentage = score && Number.isFinite(Number(score.percentage))
+        ? Number(score.percentage)
+        : null;
+
+      return {
+        skill,
+        skillKey,
+        score,
+        percentage,
+        isComplete: percentage !== null
+      };
+    });
+  }
+
+  function getReadinessResult(countryKey, roleKey, role) {
+    const skillScores = getRoleSkillScoreItems(countryKey, roleKey, role);
+    const isComplete = skillScores.every((item) => item.isComplete);
+
+    if (!isComplete) {
+      return {
+        isComplete,
+        skillScores
+      };
+    }
+
+    const breakdown = skillScores.map((item) => ({
+      ...item,
+      weightedContribution: item.percentage * item.skill.weight / 100
+    }));
+    const overallScore = breakdown.reduce((total, item) => total + item.weightedContribution, 0);
+
+    return {
+      isComplete,
+      overallScore,
+      label: getReadinessLabel(overallScore),
+      breakdown,
+      weakSkills: breakdown.filter((item) => item.percentage < 60),
+      strongSkills: breakdown.filter((item) => item.percentage >= 75)
+    };
+  }
+
+  function getReadinessSummary(score, roleLabel) {
+    if (score >= 80) {
+      return `You have a strong foundation for the ${roleLabel} pathway. Your results show you are ready to turn these skills into portfolio projects and start preparing applications.`;
+    }
+
+    if (score >= 60) {
+      return `You are making good progress toward the ${roleLabel} pathway, but your weaker areas show what you should revise before applying confidently.`;
+    }
+
+    if (score >= 40) {
+      return `You are building the ${roleLabel} foundations, but the score shows you should revise core topics and complete focused practice before moving into larger projects.`;
+    }
+
+    return `You should start from the basics for the ${roleLabel} pathway. Focus on one weak skill at a time, practise the fundamentals, then retake the tests after revision.`;
+  }
+
+  function getSkillStatus(item) {
+    if (item.percentage >= 75) {
+      return {
+        label: "Strong",
+        className: "strong"
+      };
+    }
+
+    if (item.percentage >= 40) {
+      return {
+        label: "Needs improvement",
+        className: "needs-improvement"
+      };
+    }
+
+    return {
+      label: "Critical focus",
+      className: "critical-focus"
+    };
+  }
+
+  function appendReadinessMetric(container, label, value) {
+    const metric = document.createElement("div");
+    metric.className = "readiness-metric";
+
+    const metricLabel = document.createElement("span");
+    metricLabel.textContent = label;
+
+    const metricValue = document.createElement("strong");
+    metricValue.textContent = value;
+
+    metric.appendChild(metricLabel);
+    metric.appendChild(metricValue);
+    container.appendChild(metric);
+  }
+
+  function createReadinessSkillCard(item) {
+    const status = getSkillStatus(item);
+    const card = document.createElement("article");
+    card.className = `readiness-skill-card ${status.className}`;
+
+    const header = document.createElement("div");
+    header.className = "readiness-skill-card-header";
+
+    const title = document.createElement("h3");
+    title.textContent = item.skill.name;
+
+    const badge = document.createElement("span");
+    badge.className = `readiness-status-badge ${status.className}`;
+    badge.textContent = status.label;
+
+    header.appendChild(title);
+    header.appendChild(badge);
+
+    const metrics = document.createElement("div");
+    metrics.className = "readiness-card-metrics";
+    appendReadinessMetric(metrics, "Test score", `${item.percentage}%`);
+    appendReadinessMetric(metrics, "Skill weight", `${item.skill.weight}`);
+    appendReadinessMetric(metrics, "Contribution", `${formatReadinessNumber(item.weightedContribution)} pts`);
+
+    card.appendChild(header);
+    card.appendChild(metrics);
+    return card;
+  }
+
+  function appendStudyPlan(container, item) {
+    const plan = skillStudyPlans[item.skillKey];
+    const card = document.createElement("article");
+    card.className = "readiness-study-card";
+
+    const title = document.createElement("h4");
+    title.textContent = `${item.skill.name} study plan`;
+
+    card.appendChild(title);
+
+    if (plan) {
+      const study = document.createElement("p");
+      study.className = "readiness-study-line";
+      study.textContent = `Study: ${plan.study}`;
+      card.appendChild(study);
+
+      const actionsLabel = document.createElement("p");
+      actionsLabel.className = "readiness-study-label";
+      actionsLabel.textContent = "Actions:";
+      card.appendChild(actionsLabel);
+
+      const actions = document.createElement("ol");
+      plan.actions.forEach((action) => {
+        const itemNode = document.createElement("li");
+        itemNode.textContent = action;
+        actions.appendChild(itemNode);
+      });
+      card.appendChild(actions);
+
+      const project = document.createElement("p");
+      project.className = "readiness-mini-project";
+      project.textContent = `Mini project: ${plan.miniProject}`;
+      card.appendChild(project);
+    } else {
+      const fallback = document.createElement("p");
+      fallback.textContent = "Review the required topics, practise weak areas, and retake the full skill test.";
+      card.appendChild(fallback);
+    }
+
+    container.appendChild(card);
+  }
+
+  function appendStrongSkillUse(container, item) {
+    const card = document.createElement("article");
+    card.className = "readiness-strong-card";
+
+    const title = document.createElement("h4");
+    title.textContent = `You are strong in ${item.skill.name}`;
+
+    const suggestion = document.createElement("p");
+    suggestion.textContent = strongPortfolioSuggestions[item.skillKey] || "Use this strength in a portfolio project and explain the result clearly.";
+
+    card.appendChild(title);
+    card.appendChild(suggestion);
+    container.appendChild(card);
+  }
+
+  function getSevenDayPlanItems(breakdown, weakSkills) {
+    const focusSkills = (weakSkills.length > 0 ? weakSkills : [...breakdown])
+      .sort((first, second) => first.percentage - second.percentage);
+    const primarySkill = focusSkills[0] ? focusSkills[0].skill.name : "your weakest skill";
+    const secondarySkill = focusSkills[1] ? focusSkills[1].skill.name : primarySkill;
+
+    return [
+      `Revise ${primarySkill} basics`,
+      `Practise topic questions for ${primarySkill}`,
+      "Review wrong answers and write short correction notes",
+      `Build a mini project focused on ${primarySkill}`,
+      `Practise ${secondarySkill} fundamentals`,
+      `Combine ${primarySkill} and ${secondarySkill} in one small project`,
+      "Retake weak skill tests"
+    ];
+  }
+
+  function createReadinessPanel(countryKey, roleKey, role) {
+    const result = getReadinessResult(countryKey, roleKey, role);
+    const panel = document.createElement("div");
+    panel.className = "guide-placeholder readiness-panel";
+    panel.dataset.readinessSection = "true";
+
+    const heading = document.createElement("div");
+    heading.className = "readiness-heading";
+
+    const title = document.createElement("h2");
+    title.textContent = "Career Readiness Report";
+
+    const eyebrow = document.createElement("p");
+    eyebrow.textContent = `${role.label} pathway`;
+
+    heading.appendChild(title);
+    heading.appendChild(eyebrow);
+    panel.appendChild(heading);
+
+    if (!result.isComplete) {
+      const locked = document.createElement("p");
+      locked.className = "readiness-locked-message";
+      locked.textContent = "Complete all skill tests to unlock your overall readiness report.";
+      panel.appendChild(locked);
+      return panel;
+    }
+
+    const reportHero = document.createElement("div");
+    reportHero.className = "readiness-report-hero";
+
+    const scoreRing = document.createElement("div");
+    scoreRing.className = "readiness-score-ring";
+    scoreRing.style.setProperty("--score-percent", Math.min(100, Math.max(0, result.overallScore)));
+    scoreRing.setAttribute("aria-label", `Overall score ${formatReadinessNumber(result.overallScore)} out of 100`);
+
+    const ringInner = document.createElement("div");
+    ringInner.className = "readiness-score-ring-inner";
+
+    const scoreValue = document.createElement("strong");
+    scoreValue.textContent = formatReadinessNumber(result.overallScore);
+
+    const outOf = document.createElement("span");
+    outOf.textContent = "/100";
+
+    ringInner.appendChild(scoreValue);
+    ringInner.appendChild(outOf);
+    scoreRing.appendChild(ringInner);
+
+    const reportSummary = document.createElement("div");
+    reportSummary.className = "readiness-report-summary";
+
+    const scoreCaption = document.createElement("p");
+    scoreCaption.className = "readiness-score-caption";
+    scoreCaption.textContent = "Overall readiness score";
+
+    const label = document.createElement("p");
+    label.className = "readiness-label";
+    label.textContent = result.label;
+
+    const summaryText = document.createElement("p");
+    summaryText.className = "readiness-summary-text";
+    summaryText.textContent = getReadinessSummary(result.overallScore, role.label);
+
+    reportSummary.appendChild(scoreCaption);
+    reportSummary.appendChild(label);
+    reportSummary.appendChild(summaryText);
+    reportHero.appendChild(scoreRing);
+    reportHero.appendChild(reportSummary);
+    panel.appendChild(reportHero);
+
+    const skillCardsSection = document.createElement("section");
+    skillCardsSection.className = "readiness-report-section";
+    const skillCardsTitle = document.createElement("h3");
+    skillCardsTitle.textContent = "Skill performance";
+    const skillCardGrid = document.createElement("div");
+    skillCardGrid.className = "readiness-skill-card-grid";
+    result.breakdown.forEach((item) => {
+      skillCardGrid.appendChild(createReadinessSkillCard(item));
+    });
+    skillCardsSection.appendChild(skillCardsTitle);
+    skillCardsSection.appendChild(skillCardGrid);
+    panel.appendChild(skillCardsSection);
+
+    const suggestionsSection = document.createElement("section");
+    suggestionsSection.className = "readiness-report-section readiness-suggestions";
+    const suggestionTitle = document.createElement("h3");
+    suggestionTitle.textContent = "Detailed study suggestions";
+    suggestionsSection.appendChild(suggestionTitle);
+
+    if (result.weakSkills.length === 0) {
+      const message = document.createElement("p");
+      message.textContent = "No weak skills below 60%. Keep applying these skills in portfolio projects.";
+      suggestionsSection.appendChild(message);
+    } else {
+      result.weakSkills.forEach((item) => {
+        appendStudyPlan(suggestionsSection, item);
+      });
+    }
+
+    panel.appendChild(suggestionsSection);
+
+    const strongSection = document.createElement("section");
+    strongSection.className = "readiness-report-section readiness-strong-skills";
+    const strongTitle = document.createElement("h3");
+    strongTitle.textContent = "Strong Skills";
+    strongSection.appendChild(strongTitle);
+
+    if (result.strongSkills.length === 0) {
+      const emptyStrong = document.createElement("p");
+      emptyStrong.textContent = "No skills are at 75% or above yet. Use the improvement plan to build a stronger portfolio base.";
+      strongSection.appendChild(emptyStrong);
+    } else {
+      result.strongSkills.forEach((item) => {
+        appendStrongSkillUse(strongSection, item);
+      });
+    }
+
+    panel.appendChild(strongSection);
+
+    const sevenDaySection = document.createElement("section");
+    sevenDaySection.className = "readiness-report-section readiness-seven-day";
+    const sevenDayTitle = document.createElement("h3");
+    sevenDayTitle.textContent = "7-day improvement plan";
+    const sevenDayList = document.createElement("div");
+    sevenDayList.className = "readiness-seven-day-list";
+    getSevenDayPlanItems(result.breakdown, result.weakSkills).forEach((step, index) => {
+      const item = document.createElement("article");
+      item.className = "readiness-day-card";
+      const day = document.createElement("strong");
+      day.className = "readiness-day-label";
+      day.textContent = `Day ${index + 1}`;
+      const text = document.createElement("p");
+      text.className = "readiness-day-task";
+      text.textContent = step;
+      item.appendChild(day);
+      item.appendChild(text);
+      sevenDayList.appendChild(item);
+    });
+    sevenDaySection.appendChild(sevenDayTitle);
+    sevenDaySection.appendChild(sevenDayList);
+    panel.appendChild(sevenDaySection);
+
+    return panel;
+  }
+
+  function updateReadinessSection(countryKey, roleKey, role) {
+    const existingSection = skillTableArea.querySelector("[data-readiness-section]");
+
+    if (existingSection) {
+      existingSection.remove();
+    }
+
+    const selectedRole = role || data.roles[roleKey];
+
+    if (roleKey !== readinessRoleKey || !selectedRole) {
+      return;
+    }
+
+    skillTableArea.appendChild(createReadinessPanel(countryKey, roleKey, selectedRole));
   }
 
   function createQuestionOption(skillKey, questionIndex, optionText) {
@@ -428,6 +875,7 @@
 
       saveSkillScore(countryKey, roleKey, skillKey, score);
       updateSkillScoreCell(countryKey, roleKey, skillKey);
+      updateReadinessSection(countryKey, roleKey);
 
       modal.title.textContent = `${questionSet.label} Test Results`;
       modal.body.innerHTML = "";
@@ -531,6 +979,7 @@
     panel.appendChild(heading);
     panel.appendChild(tableWrap);
     skillTableArea.appendChild(panel);
+    updateReadinessSection(countryKey, roleKey, role);
   }
 
   function updateGuide() {
