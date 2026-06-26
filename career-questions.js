@@ -951,6 +951,196 @@
             ]
           }
         ]
+      },
+      communication: {
+        label: "Communication",
+        topics: [
+          {
+            topic: "Explaining insights",
+            questions: [
+              {
+                topic: "Explaining insights",
+                difficulty: "Easy",
+                question: "What is the main goal when explaining a data insight?",
+                options: ["Help the audience understand the finding and its meaning", "Show every raw row in the dataset", "Use as many technical terms as possible", "Avoid discussing business impact"],
+                correctAnswer: "Help the audience understand the finding and its meaning",
+                explanation: "A useful insight explains what was found and why it matters to the audience."
+              },
+              {
+                topic: "Explaining insights",
+                difficulty: "Medium",
+                question: "Which explanation is most useful for a non-technical stakeholder?",
+                options: ["Sales dropped 12% after the price change, mainly in returning customers", "The dataframe index shifted after a groupby operation", "The query used an inner join with a CTE", "The model stored values in a NumPy array"],
+                correctAnswer: "Sales dropped 12% after the price change, mainly in returning customers",
+                explanation: "Non-technical stakeholders need the result, scale, and business meaning in clear language."
+              },
+              {
+                topic: "Explaining insights",
+                difficulty: "Hard",
+                question: "Why should you include context when presenting a metric change?",
+                options: ["Context helps the audience judge whether the change is meaningful", "Context makes charts unnecessary", "Context hides uncertainty", "Context replaces the actual result"],
+                correctAnswer: "Context helps the audience judge whether the change is meaningful",
+                explanation: "A number alone can be misleading; context such as time period, baseline, and segment makes it interpretable."
+              },
+              {
+                topic: "Explaining insights",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: A dashboard shows churn increased from 4% to 6%. What should you explain first?",
+                options: ["The size and business meaning of the increase", "The font used in the dashboard", "Every formula in the spreadsheet", "Only the database table name"],
+                correctAnswer: "The size and business meaning of the increase",
+                explanation: "Start with the practical meaning: churn rose by 2 percentage points, which may affect revenue and retention plans."
+              }
+            ]
+          },
+          {
+            topic: "Business understanding",
+            questions: [
+              {
+                topic: "Business understanding",
+                difficulty: "Easy",
+                question: "Why is business understanding important in data work?",
+                options: ["It helps connect analysis to real decisions", "It removes the need to check data quality", "It means code is never needed", "It guarantees every chart is correct"],
+                correctAnswer: "It helps connect analysis to real decisions",
+                explanation: "Business understanding keeps analysis focused on useful questions and actions."
+              },
+              {
+                topic: "Business understanding",
+                difficulty: "Medium",
+                question: "Before starting analysis, what should you clarify first?",
+                options: ["The decision or problem the analysis should support", "The final chart color", "The longest possible report title", "The number of slides before seeing the question"],
+                correctAnswer: "The decision or problem the analysis should support",
+                explanation: "Knowing the decision or problem helps choose the right data, method, and level of detail."
+              },
+              {
+                topic: "Business understanding",
+                difficulty: "Hard",
+                question: "A metric improved, but customer complaints increased. What is the best communication response?",
+                options: ["Explain the tradeoff and investigate whether the metric misses customer experience", "Report only the improved metric", "Ignore complaints because the number improved", "Delete the metric from the report"],
+                correctAnswer: "Explain the tradeoff and investigate whether the metric misses customer experience",
+                explanation: "Good analysis considers whether metrics align with business outcomes and customer impact."
+              },
+              {
+                topic: "Business understanding",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: A good analysis question should be tied to a business ___.",
+                options: ["decision", "font", "shortcut", "folder"],
+                correctAnswer: "decision",
+                explanation: "Analysis is more valuable when it supports a concrete decision or priority."
+              }
+            ]
+          },
+          {
+            topic: "Data storytelling",
+            questions: [
+              {
+                topic: "Data storytelling",
+                difficulty: "Easy",
+                question: "What is data storytelling?",
+                options: ["Using data, visuals, and narrative to explain a finding", "Writing fiction about a dataset", "Showing charts without explanation", "Only exporting tables to CSV"],
+                correctAnswer: "Using data, visuals, and narrative to explain a finding",
+                explanation: "Data storytelling combines evidence and explanation so an audience can follow the message."
+              },
+              {
+                topic: "Data storytelling",
+                difficulty: "Medium",
+                question: "Which story structure is usually clearest for an insight?",
+                options: ["Context, finding, evidence, recommendation", "Recommendation, raw logs, unrelated notes, appendix only", "All visuals first, no conclusion", "Code, code comments, then chart colors"],
+                correctAnswer: "Context, finding, evidence, recommendation",
+                explanation: "A clear story moves from the situation to the insight, supports it with evidence, then explains what to do next."
+              },
+              {
+                topic: "Data storytelling",
+                difficulty: "Hard",
+                question: "Why should a chart in a story have one main message?",
+                options: ["It reduces confusion and helps the audience focus on the decision-relevant point", "It prevents anyone from asking questions", "It means labels are unnecessary", "It hides the underlying data"],
+                correctAnswer: "It reduces confusion and helps the audience focus on the decision-relevant point",
+                explanation: "Focused visuals make the evidence easier to understand and remember."
+              },
+              {
+                topic: "Data storytelling",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: Your chart has five trends, but only one explains the recommendation. What should you do?",
+                options: ["Highlight the important trend and reduce visual noise", "Add more colors to every line", "Remove the title", "Show the raw table instead of explaining"],
+                correctAnswer: "Highlight the important trend and reduce visual noise",
+                explanation: "Good storytelling guides attention to the evidence that supports the key message."
+              }
+            ]
+          },
+          {
+            topic: "Stakeholder communication",
+            questions: [
+              {
+                topic: "Stakeholder communication",
+                difficulty: "Easy",
+                question: "Who is a stakeholder in a data project?",
+                options: ["Someone affected by or interested in the project outcome", "Only the person who wrote the code", "Only the database administrator", "A random user outside the business"],
+                correctAnswer: "Someone affected by or interested in the project outcome",
+                explanation: "Stakeholders include people who need the analysis, make decisions from it, or are affected by the results."
+              },
+              {
+                topic: "Stakeholder communication",
+                difficulty: "Medium",
+                question: "What is the best way to communicate uncertainty to stakeholders?",
+                options: ["State the uncertainty clearly and explain what it means for the decision", "Hide uncertainty to sound confident", "Use only technical formulas", "Avoid giving any conclusion"],
+                correctAnswer: "State the uncertainty clearly and explain what it means for the decision",
+                explanation: "Clear uncertainty builds trust and helps stakeholders understand risk."
+              },
+              {
+                topic: "Stakeholder communication",
+                difficulty: "Hard",
+                question: "A stakeholder asks for a metric that could be misleading. What should you do?",
+                options: ["Explain the risk and suggest a better metric or supporting context", "Provide it without comment", "Refuse all future questions", "Change the data silently"],
+                correctAnswer: "Explain the risk and suggest a better metric or supporting context",
+                explanation: "Strong communication helps stakeholders avoid poor decisions while still supporting their goals."
+              },
+              {
+                topic: "Stakeholder communication",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: For executives, communication should usually be concise and focused on ___.",
+                options: ["decisions", "syntax errors", "file extensions", "keyboard shortcuts"],
+                correctAnswer: "decisions",
+                explanation: "Executive audiences usually need the implication, risk, and recommended action more than implementation detail."
+              }
+            ]
+          },
+          {
+            topic: "Presentation basics",
+            questions: [
+              {
+                topic: "Presentation basics",
+                difficulty: "Easy",
+                question: "What should a presentation slide title usually communicate?",
+                options: ["The main takeaway of the slide", "Only the chart type", "The file path", "A vague label such as Results"],
+                correctAnswer: "The main takeaway of the slide",
+                explanation: "Takeaway titles help the audience understand the point before reading the details."
+              },
+              {
+                topic: "Presentation basics",
+                difficulty: "Medium",
+                question: "Which practice improves readability in a data presentation?",
+                options: ["Use clear labels and avoid overcrowding slides", "Put every detail on one slide", "Remove all axis labels", "Use tiny text to fit more data"],
+                correctAnswer: "Use clear labels and avoid overcrowding slides",
+                explanation: "Readable slides make it easier for the audience to understand the key evidence."
+              },
+              {
+                topic: "Presentation basics",
+                difficulty: "Hard",
+                question: "Why should recommendations be separated from supporting detail when presenting?",
+                options: ["It helps the audience grasp the decision first and review evidence as needed", "It hides the evidence", "It makes the recommendation impossible to challenge", "It removes the need for analysis"],
+                correctAnswer: "It helps the audience grasp the decision first and review evidence as needed",
+                explanation: "Separating the recommendation from detail keeps the message clear while still allowing evidence review."
+              },
+              {
+                topic: "Presentation basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You have ten analysis details but only five minutes to present. What should you prioritize?",
+                options: ["Key finding, impact, recommendation, and critical evidence", "Every spreadsheet cell", "The full code history", "All possible chart variations"],
+                correctAnswer: "Key finding, impact, recommendation, and critical evidence",
+                explanation: "Short presentations should focus on what the audience needs to know to act."
+              }
+            ]
+          }
+        ]
       }
     }
   };
