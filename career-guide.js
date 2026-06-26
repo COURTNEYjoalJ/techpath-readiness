@@ -4,7 +4,6 @@
   const countrySelect = document.getElementById("countrySelect");
   const roleSelect = document.getElementById("roleSelect");
   const skillTableArea = document.getElementById("skillTableArea");
-  const readinessRoleKey = "data-scientist";
   const skillStudyPlans = {
     python: {
       study: "Python syntax, pandas, NumPy, data cleaning, notebooks",
@@ -59,6 +58,24 @@
         "Create a 5-slide insight presentation"
       ],
       miniProject: "Turn a dataset analysis into a short business report"
+    },
+    excel: {
+      study: "formulas and functions, lookup functions, pivot tables, charts, dashboards, data cleaning",
+      actions: [
+        "Practise SUMIF, COUNTIF, XLOOKUP and IF formulas",
+        "Build pivot tables from a sales dataset",
+        "Create a small dashboard using charts and slicers"
+      ],
+      miniProject: "Build an Excel sales performance dashboard"
+    },
+    "power-bi": {
+      study: "data loading, Power Query, relationships, DAX basics, visuals and dashboards",
+      actions: [
+        "Load and clean a CSV dataset in Power Query",
+        "Build relationships between fact and dimension tables",
+        "Create DAX measures and a dashboard page"
+      ],
+      miniProject: "Build a Power BI sales dashboard with KPIs and filters"
     }
   };
   const strongPortfolioSuggestions = {
@@ -67,7 +84,9 @@
     sql: "Use SQL in a customer-orders project with joins, grouped metrics, subqueries, and window functions.",
     "machine-learning": "Use Machine Learning in a prediction project that compares models and explains evaluation metrics.",
     maths: "Use Maths in a visual explainer that connects vectors, matrices, or gradients to model behaviour.",
-    communication: "Use Communication in a short business report or slide deck that turns analysis into decisions."
+    communication: "Use Communication in a short business report or slide deck that turns analysis into decisions.",
+    excel: "Use Excel in a sales performance dashboard with formulas, pivot tables, charts, and slicers.",
+    "power-bi": "Use Power BI in an interactive dashboard with cleaned data, relationships, DAX measures, KPIs, and filters."
   };
 
   if (!data || !countrySelect || !roleSelect || !skillTableArea) {
@@ -433,7 +452,7 @@
     heading.className = "readiness-heading";
 
     const title = document.createElement("h2");
-    title.textContent = "Career Readiness Report";
+    title.textContent = `${role.label} Career Readiness Report`;
 
     const eyebrow = document.createElement("p");
     eyebrow.textContent = `${role.label} pathway`;
@@ -577,7 +596,7 @@
 
     const selectedRole = role || data.roles[roleKey];
 
-    if (roleKey !== readinessRoleKey || !selectedRole) {
+    if (!selectedRole) {
       return;
     }
 
