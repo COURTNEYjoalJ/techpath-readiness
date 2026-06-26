@@ -373,6 +373,17 @@ a {
   gap: 18px;
 }
 
+.test-topic-group {
+  display: grid;
+  gap: 14px;
+}
+
+.test-topic-heading {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-top: 6px;
+}
+
 .test-question {
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -380,9 +391,25 @@ a {
 }
 
 .test-question legend {
+  align-items: center;
   color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   font-weight: 800;
   padding-right: 10px;
+}
+
+.difficulty-badge {
+  background: rgba(102, 227, 255, 0.12);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 5px 9px;
+  text-transform: uppercase;
 }
 
 .test-topic {

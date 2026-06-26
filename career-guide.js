@@ -40,6 +40,37 @@
     return questionData && questionData.skills ? questionData.skills[skillKey] : null;
   }
 
+  function getQuestionGroups(questionSet) {
+    if (Array.isArray(questionSet.topics)) {
+      return questionSet.topics.map((group) => ({
+        topic: group.topic,
+        questions: group.questions || []
+      }));
+    }
+
+    if (!Array.isArray(questionSet.questions)) {
+      return [];
+    }
+
+    const groups = [];
+    questionSet.questions.forEach((question) => {
+      let group = groups.find((item) => item.topic === question.topic);
+
+      if (!group) {
+        group = { topic: question.topic, questions: [] };
+        groups.push(group);
+      }
+
+      group.questions.push(question);
+    });
+
+    return groups;
+  }
+
+  function getFlatQuestions(questionSet) {
+    return getQuestionGroups(questionSet).flatMap((group) => group.questions);
+  }
+
   function getScoreKey(countryKey, roleKey, skillKey) {
     return `careerGuideScore:${countryKey}:${roleKey}:${skillKey}`;
   }
@@ -81,13 +112,13 @@
     }
   }
 
-  function createQuestionOption(questionIndex, optionText) {
+  function createQuestionOption(skillKey, questionIndex, optionText) {
     const label = document.createElement("label");
     label.className = "test-option";
 
     const input = document.createElement("input");
     input.type = "radio";
-    input.name = `python-question-${questionIndex}`;
+    input.name = `${skillKey}-question-${questionIndex}`;
     input.value = optionText;
 
     const text = document.createElement("span");
@@ -126,7 +157,7 @@
       explanation.className = "test-explanation";
 
       const title = document.createElement("h4");
-      title.textContent = `Question ${item.index + 1}: ${item.question.topic}`;
+      title.textContent = `Question ${item.index + 1}: ${item.question.topic} (${item.question.difficulty})`;
 
       const selected = document.createElement("p");
       selected.textContent = `Your answer: ${item.selectedAnswer || "No answer selected"}`;
@@ -145,13 +176,15 @@
     });
   }
 
-  function renderPythonTest(countryKey, roleKey) {
-    const skillKey = "python";
+  function renderSkillTest(countryKey, roleKey, skillKey) {
     const questionSet = getSkillQuestions(skillKey);
 
     if (!questionSet) {
       return;
     }
+
+    const questionGroups = getQuestionGroups(questionSet);
+    const flatQuestions = getFlatQuestions(questionSet);
 
     removeTestPanel();
 
@@ -162,10 +195,10 @@
     heading.className = "skill-test-heading";
 
     const title = document.createElement("h2");
-    title.textContent = "Python Mini Test";
+    title.textContent = `${questionSet.label} Mini Test`;
 
     const subtitle = document.createElement("p");
-    subtitle.textContent = "Answer all 5 questions. Your score will be saved for this country and role.";
+    subtitle.textContent = `Answer all ${flatQuestions.length} questions. Your score will be saved for this country and role.`;
 
     heading.appendChild(title);
     heading.appendChild(subtitle);
@@ -173,28 +206,47 @@
     const form = document.createElement("form");
     form.className = "skill-test-form";
 
-    questionSet.questions.forEach((question, questionIndex) => {
-      const questionBlock = document.createElement("fieldset");
-      questionBlock.className = "test-question";
+    let globalQuestionIndex = 0;
+    questionGroups.forEach((group) => {
+      const topicSection = document.createElement("section");
+      topicSection.className = "test-topic-group";
 
-      const legend = document.createElement("legend");
-      legend.textContent = `${questionIndex + 1}. ${question.question}`;
+      const topicHeading = document.createElement("h3");
+      topicHeading.className = "test-topic-heading";
+      topicHeading.textContent = group.topic;
+      topicSection.appendChild(topicHeading);
 
-      const topic = document.createElement("p");
-      topic.className = "test-topic";
-      topic.textContent = question.topic;
+      group.questions.forEach((question) => {
+        const questionIndex = globalQuestionIndex;
+        const questionBlock = document.createElement("fieldset");
+        questionBlock.className = "test-question";
 
-      const options = document.createElement("div");
-      options.className = "test-options";
+        const legend = document.createElement("legend");
 
-      question.options.forEach((option) => {
-        options.appendChild(createQuestionOption(questionIndex, option));
+        const questionText = document.createElement("span");
+        questionText.textContent = `${questionIndex + 1}. ${question.question}`;
+
+        const difficulty = document.createElement("span");
+        difficulty.className = "difficulty-badge";
+        difficulty.textContent = question.difficulty;
+
+        const options = document.createElement("div");
+        options.className = "test-options";
+
+        question.options.forEach((option) => {
+          options.appendChild(createQuestionOption(skillKey, questionIndex, option));
+        });
+
+        legend.appendChild(questionText);
+        legend.appendChild(difficulty);
+        questionBlock.appendChild(legend);
+        questionBlock.appendChild(options);
+        topicSection.appendChild(questionBlock);
+
+        globalQuestionIndex++;
       });
 
-      questionBlock.appendChild(legend);
-      questionBlock.appendChild(topic);
-      questionBlock.appendChild(options);
-      form.appendChild(questionBlock);
+      form.appendChild(topicSection);
     });
 
     const submitButton = document.createElement("button");
@@ -211,15 +263,15 @@
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      const answers = questionSet.questions.map((question, questionIndex) => {
-        const selected = form.querySelector(`input[name="python-question-${questionIndex}"]:checked`);
+      const answers = flatQuestions.map((question, questionIndex) => {
+        const selected = form.querySelector(`input[name="${skillKey}-question-${questionIndex}"]:checked`);
         return selected ? selected.value : "";
       });
 
-      const correct = questionSet.questions.reduce((total, question, index) => {
+      const correct = flatQuestions.reduce((total, question, index) => {
         return total + (answers[index] === question.correctAnswer ? 1 : 0);
       }, 0);
-      const total = questionSet.questions.length;
+      const total = flatQuestions.length;
       const percentage = Math.round((correct / total) * 100);
       const score = {
         correct,
@@ -230,7 +282,7 @@
 
       saveSkillScore(countryKey, roleKey, skillKey, score);
       updateSkillScoreCell(countryKey, roleKey, skillKey);
-      renderTestResults(resultArea, questionSet.questions, answers, score);
+      renderTestResults(resultArea, flatQuestions, answers, score);
     });
 
     panel.appendChild(heading);
@@ -284,13 +336,15 @@
     role.skills.forEach((skill) => {
       const skillKey = getSkillKey(skill.name);
       const skillQuestions = getSkillQuestions(skillKey);
+      const questionCount = skillQuestions ? getFlatQuestions(skillQuestions).length : 0;
       const row = document.createElement("tr");
       row.appendChild(createCell(skill.name, "td"));
       row.appendChild(createCell(skill.requiredTopics.join(", "), "td"));
       row.appendChild(createCell(skill.reason, "td"));
       row.appendChild(createCell(`${skill.weight}`, "td"));
 
-      const scoreCell = createCell(formatScore(loadSavedScore(countryKey, roleKey, skillKey)), "td");
+      const savedScore = questionCount > 0 ? loadSavedScore(countryKey, roleKey, skillKey) : null;
+      const scoreCell = createCell(formatScore(savedScore), "td");
       scoreCell.dataset.skillScore = skillKey;
       row.appendChild(scoreCell);
 
@@ -298,10 +352,10 @@
       const actionButton = document.createElement("button");
       actionButton.type = "button";
 
-      if (skillKey === "python" && skillQuestions) {
+      if (questionCount > 0) {
         actionButton.className = "active-test-button";
         actionButton.textContent = "Start Test";
-        actionButton.addEventListener("click", () => renderPythonTest(countryKey, roleKey));
+        actionButton.addEventListener("click", () => renderSkillTest(countryKey, roleKey, skillKey));
       } else {
         actionButton.className = "disabled-test-button";
         actionButton.disabled = true;
