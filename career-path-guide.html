@@ -23,9 +23,9 @@
         </p>
 
         <form class="guide-selectors" aria-label="Career path guide filters">
-          <label for="countrySelect">
-            Country
-            <select id="countrySelect" name="country">
+          <div class="custom-select-field">
+            <label for="countrySelect">Country</label>
+            <select class="native-select" id="countrySelect" name="country" tabindex="-1" aria-hidden="true">
               <option value="">Select country</option>
               <option value="uk">UK</option>
               <option value="usa">USA</option>
@@ -34,11 +34,27 @@
               <option value="netherlands">Netherlands</option>
               <option value="australia">Australia</option>
             </select>
-          </label>
 
-          <label for="roleSelect">
-            Career Role
-            <select id="roleSelect" name="role">
+            <div class="custom-dropdown" data-custom-select data-select-id="countrySelect">
+              <button class="custom-dropdown-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="custom-dropdown-value">Select country</span>
+                <span class="custom-dropdown-icon" aria-hidden="true">v</span>
+              </button>
+              <div class="custom-dropdown-menu" role="listbox" aria-label="Country options">
+                <button type="button" role="option" data-value="">Select country</button>
+                <button type="button" role="option" data-value="uk">UK</button>
+                <button type="button" role="option" data-value="usa">USA</button>
+                <button type="button" role="option" data-value="canada">Canada</button>
+                <button type="button" role="option" data-value="germany">Germany</button>
+                <button type="button" role="option" data-value="netherlands">Netherlands</button>
+                <button type="button" role="option" data-value="australia">Australia</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="custom-select-field">
+            <label for="roleSelect">Career Role</label>
+            <select class="native-select" id="roleSelect" name="role" tabindex="-1" aria-hidden="true">
               <option value="">Select career role</option>
               <option value="data-scientist">Data Scientist</option>
               <option value="data-analyst">Data Analyst</option>
@@ -46,7 +62,22 @@
               <option value="frontend-developer">Frontend Developer</option>
               <option value="backend-developer">Backend Developer</option>
             </select>
-          </label>
+
+            <div class="custom-dropdown" data-custom-select data-select-id="roleSelect">
+              <button class="custom-dropdown-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="custom-dropdown-value">Select career role</span>
+                <span class="custom-dropdown-icon" aria-hidden="true">v</span>
+              </button>
+              <div class="custom-dropdown-menu" role="listbox" aria-label="Career role options">
+                <button type="button" role="option" data-value="">Select career role</button>
+                <button type="button" role="option" data-value="data-scientist">Data Scientist</button>
+                <button type="button" role="option" data-value="data-analyst">Data Analyst</button>
+                <button type="button" role="option" data-value="cloud-engineer">Cloud Engineer</button>
+                <button type="button" role="option" data-value="frontend-developer">Frontend Developer</button>
+                <button type="button" role="option" data-value="backend-developer">Backend Developer</button>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </section>
@@ -59,5 +90,8 @@
       </div>
     </section>
   </main>
+
+  <script src="career-data.js"></script>
+  <script src="career-guide.js"></script>
 </body>
 </html>
