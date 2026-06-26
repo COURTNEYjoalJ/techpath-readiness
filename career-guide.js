@@ -40,6 +40,16 @@
     return questionData && questionData.skills ? questionData.skills[skillKey] : null;
   }
 
+  function getQuestionsForSkill(skillId) {
+    // Current provider: hardcoded career-questions.js data. Future AI output can replace this return value.
+    return getSkillQuestions(skillId);
+  }
+
+  function futureGenerateQuestionsWithAI(skillId, topics, difficultyPattern) {
+    // Placeholder for a future backend/API integration. Do not put API keys in frontend JavaScript.
+    return null;
+  }
+
   function getQuestionGroups(questionSet) {
     if (Array.isArray(questionSet.topics)) {
       return questionSet.topics.map((group) => ({
@@ -96,14 +106,6 @@
     return score ? `${score.correct}/${score.total} (${score.percentage}%)` : "Not tested";
   }
 
-  function removeTestPanel() {
-    const existingPanel = skillTableArea.querySelector(".skill-test-panel");
-
-    if (existingPanel) {
-      existingPanel.remove();
-    }
-  }
-
   function updateSkillScoreCell(countryKey, roleKey, skillKey) {
     const scoreCell = skillTableArea.querySelector(`[data-skill-score="${skillKey}"]`);
 
@@ -127,6 +129,62 @@
     label.appendChild(input);
     label.appendChild(text);
     return label;
+  }
+
+  function closeSkillTestModal() {
+    const existingModal = document.querySelector(".quiz-modal-overlay");
+
+    if (existingModal) {
+      existingModal.remove();
+    }
+
+    document.body.classList.remove("modal-open");
+  }
+
+  function createModalShell() {
+    closeSkillTestModal();
+
+    const overlay = document.createElement("div");
+    overlay.className = "quiz-modal-overlay";
+
+    const modal = document.createElement("div");
+    modal.className = "quiz-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "quizModalTitle");
+
+    const header = document.createElement("div");
+    header.className = "quiz-modal-header";
+
+    const title = document.createElement("h2");
+    title.id = "quizModalTitle";
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "quiz-modal-close";
+    closeButton.type = "button";
+    closeButton.textContent = "Close";
+
+    const body = document.createElement("div");
+    body.className = "quiz-modal-body";
+
+    closeButton.addEventListener("click", closeSkillTestModal);
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) {
+        closeSkillTestModal();
+      }
+    });
+
+    header.appendChild(title);
+    header.appendChild(closeButton);
+    modal.appendChild(header);
+    modal.appendChild(body);
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+    document.body.classList.add("modal-open");
+
+    closeButton.focus();
+
+    return { body, title };
   }
 
   function renderTestResults(resultArea, questions, answers, score) {
@@ -177,7 +235,7 @@
   }
 
   function renderSkillTest(countryKey, roleKey, skillKey) {
-    const questionSet = getSkillQuestions(skillKey);
+    const questionSet = getQuestionsForSkill(skillKey);
 
     if (!questionSet) {
       return;
@@ -185,111 +243,184 @@
 
     const questionGroups = getQuestionGroups(questionSet);
     const flatQuestions = getFlatQuestions(questionSet);
+    const totalQuestions = flatQuestions.length;
+    const attempt = {
+      answers: new Array(totalQuestions).fill(""),
+      completedTopics: new Set()
+    };
+    const modal = createModalShell();
 
-    removeTestPanel();
+    function showTopicSelection() {
+      if (attempt.completedTopics.size === questionGroups.length) {
+        showFinalResults();
+        return;
+      }
 
-    const panel = document.createElement("div");
-    panel.className = "guide-placeholder skill-test-panel";
+      modal.title.textContent = `${questionSet.label} Skill Test`;
+      modal.body.innerHTML = "";
 
-    const heading = document.createElement("div");
-    heading.className = "skill-test-heading";
+      const intro = document.createElement("p");
+      intro.textContent = "Choose a topic to start first.";
 
-    const title = document.createElement("h2");
-    title.textContent = `${questionSet.label} Mini Test`;
+      const progress = document.createElement("p");
+      progress.className = "topic-progress";
+      progress.textContent = `${attempt.completedTopics.size} of ${questionGroups.length} topics completed.`;
 
-    const subtitle = document.createElement("p");
-    subtitle.textContent = `Answer all ${flatQuestions.length} questions. Your score will be saved for this country and role.`;
+      const topicGrid = document.createElement("div");
+      topicGrid.className = "topic-button-grid";
 
-    heading.appendChild(title);
-    heading.appendChild(subtitle);
+      questionGroups.forEach((group) => {
+        const isCompleted = attempt.completedTopics.has(group.topic);
+        const topicButton = document.createElement("button");
+        topicButton.className = `topic-choice-button${isCompleted ? " completed" : ""}`;
+        topicButton.type = "button";
 
-    const form = document.createElement("form");
-    form.className = "skill-test-form";
+        const topicName = document.createElement("span");
+        topicName.textContent = group.topic;
+        topicButton.appendChild(topicName);
 
-    let globalQuestionIndex = 0;
-    questionGroups.forEach((group) => {
-      const topicSection = document.createElement("section");
-      topicSection.className = "test-topic-group";
+        if (isCompleted) {
+          const completed = document.createElement("span");
+          completed.className = "topic-status-pill";
+          completed.textContent = "Completed";
+          topicButton.disabled = true;
+          topicButton.appendChild(completed);
+        } else {
+          topicButton.addEventListener("click", () => startTopicQuiz(group));
+        }
 
-      const topicHeading = document.createElement("h3");
-      topicHeading.className = "test-topic-heading";
-      topicHeading.textContent = group.topic;
-      topicSection.appendChild(topicHeading);
+        topicGrid.appendChild(topicButton);
+      });
 
-      group.questions.forEach((question) => {
-        const questionIndex = globalQuestionIndex;
-        const questionBlock = document.createElement("fieldset");
-        questionBlock.className = "test-question";
+      modal.body.appendChild(intro);
+      modal.body.appendChild(progress);
+      modal.body.appendChild(topicGrid);
+    }
 
-        const legend = document.createElement("legend");
+    function startTopicQuiz(group) {
+      const questions = group.questions;
+      let currentQuestionIndex = 0;
 
-        const questionText = document.createElement("span");
-        questionText.textContent = `${questionIndex + 1}. ${question.question}`;
+      function getAnsweredCount() {
+        return attempt.answers.filter(Boolean).length;
+      }
+
+      function showQuestion() {
+        const question = questions[currentQuestionIndex];
+        const globalQuestionIndex = flatQuestions.indexOf(question);
+        modal.title.textContent = `${questionSet.label} Skill Test`;
+        modal.body.innerHTML = "";
+
+        const meta = document.createElement("div");
+        meta.className = "quiz-question-meta";
+
+        const topicName = document.createElement("span");
+        topicName.className = "quiz-topic-name";
+        topicName.textContent = question.topic;
 
         const difficulty = document.createElement("span");
         difficulty.className = "difficulty-badge";
         difficulty.textContent = question.difficulty;
 
+        const count = document.createElement("span");
+        count.className = "quiz-question-count";
+        count.textContent = `Question ${getAnsweredCount() + 1} of ${totalQuestions}`;
+
+        const questionText = document.createElement("h3");
+        questionText.className = "quiz-question-title";
+        questionText.textContent = question.question;
+
         const options = document.createElement("div");
         options.className = "test-options";
 
         question.options.forEach((option) => {
-          options.appendChild(createQuestionOption(skillKey, questionIndex, option));
+          options.appendChild(createQuestionOption(skillKey, globalQuestionIndex, option));
         });
 
-        legend.appendChild(questionText);
-        legend.appendChild(difficulty);
-        questionBlock.appendChild(legend);
-        questionBlock.appendChild(options);
-        topicSection.appendChild(questionBlock);
+        const error = document.createElement("p");
+        error.className = "quiz-error";
+        error.setAttribute("aria-live", "polite");
 
-        globalQuestionIndex++;
-      });
+        const actions = document.createElement("div");
+        actions.className = "quiz-modal-actions";
 
-      form.appendChild(topicSection);
-    });
+        const nextButton = document.createElement("button");
+        nextButton.className = "btn primary quiz-next-button";
+        nextButton.type = "button";
+        nextButton.textContent = currentQuestionIndex === questions.length - 1 ? "Complete Topic" : "Next";
 
-    const submitButton = document.createElement("button");
-    submitButton.className = "btn primary test-submit-button";
-    submitButton.type = "submit";
-    submitButton.textContent = "Submit Test";
+        nextButton.addEventListener("click", () => {
+          const selected = modal.body.querySelector(`input[name="${skillKey}-question-${globalQuestionIndex}"]:checked`);
 
-    const resultArea = document.createElement("div");
-    resultArea.className = "test-result-area";
-    resultArea.setAttribute("aria-live", "polite");
+          if (!selected) {
+            error.textContent = "Choose an answer before continuing.";
+            return;
+          }
 
-    form.appendChild(submitButton);
+          attempt.answers[globalQuestionIndex] = selected.value;
 
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+          if (currentQuestionIndex === questions.length - 1) {
+            attempt.completedTopics.add(group.topic);
+            showTopicSelection();
+            return;
+          }
 
-      const answers = flatQuestions.map((question, questionIndex) => {
-        const selected = form.querySelector(`input[name="${skillKey}-question-${questionIndex}"]:checked`);
-        return selected ? selected.value : "";
-      });
+          currentQuestionIndex++;
+          showQuestion();
+        });
 
+        meta.appendChild(topicName);
+        meta.appendChild(difficulty);
+        meta.appendChild(count);
+        actions.appendChild(nextButton);
+        modal.body.appendChild(meta);
+        modal.body.appendChild(questionText);
+        modal.body.appendChild(options);
+        modal.body.appendChild(error);
+        modal.body.appendChild(actions);
+      }
+
+      showQuestion();
+    }
+
+    function resetAttempt() {
+      attempt.answers = new Array(totalQuestions).fill("");
+      attempt.completedTopics.clear();
+      showTopicSelection();
+    }
+
+    function showFinalResults() {
       const correct = flatQuestions.reduce((total, question, index) => {
-        return total + (answers[index] === question.correctAnswer ? 1 : 0);
+        return total + (attempt.answers[index] === question.correctAnswer ? 1 : 0);
       }, 0);
-      const total = flatQuestions.length;
-      const percentage = Math.round((correct / total) * 100);
       const score = {
         correct,
-        total,
-        percentage,
+        total: totalQuestions,
+        percentage: Math.round((correct / totalQuestions) * 100),
         updatedAt: new Date().toISOString()
       };
 
       saveSkillScore(countryKey, roleKey, skillKey, score);
       updateSkillScoreCell(countryKey, roleKey, skillKey);
-      renderTestResults(resultArea, flatQuestions, answers, score);
-    });
 
-    panel.appendChild(heading);
-    panel.appendChild(form);
-    panel.appendChild(resultArea);
-    skillTableArea.appendChild(panel);
-    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      modal.title.textContent = `${questionSet.label} Test Results`;
+      modal.body.innerHTML = "";
+      renderTestResults(modal.body, flatQuestions, attempt.answers, score);
+
+      const actions = document.createElement("div");
+      actions.className = "quiz-modal-actions";
+
+      const retakeButton = document.createElement("button");
+      retakeButton.className = "btn primary quiz-retake-button";
+      retakeButton.type = "button";
+      retakeButton.textContent = "Retake Full Test";
+      retakeButton.addEventListener("click", resetAttempt);
+
+      actions.appendChild(retakeButton);
+      modal.body.appendChild(actions);
+    }
+
+    showTopicSelection();
   }
 
   function renderSkillTable(countryKey, roleKey) {
@@ -335,7 +466,7 @@
     const tbody = document.createElement("tbody");
     role.skills.forEach((skill) => {
       const skillKey = getSkillKey(skill.name);
-      const skillQuestions = getSkillQuestions(skillKey);
+      const skillQuestions = getQuestionsForSkill(skillKey);
       const questionCount = skillQuestions ? getFlatQuestions(skillQuestions).length : 0;
       const row = document.createElement("tr");
       row.appendChild(createCell(skill.name, "td"));

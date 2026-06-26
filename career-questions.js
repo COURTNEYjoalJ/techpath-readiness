@@ -34,7 +34,7 @@
               },
               {
                 topic: "Python syntax",
-                difficulty: "Debug/Fill Gap",
+                difficulty: "Debug or Fill Gap",
                 question: "Fill the gap: if score >= 70__ print('Pass')",
                 options: [":", ";", "{", "then"],
                 correctAnswer: ":",
@@ -71,7 +71,7 @@
               },
               {
                 topic: "pandas",
-                difficulty: "Debug/Fill Gap",
+                difficulty: "Debug or Fill Gap",
                 question: "Fill the gap to load a CSV file: df = pd.___('sales.csv')",
                 options: ["read_csv", "open_csv", "load", "csv_read"],
                 correctAnswer: "read_csv",
@@ -108,7 +108,7 @@
               },
               {
                 topic: "NumPy",
-                difficulty: "Debug/Fill Gap",
+                difficulty: "Debug or Fill Gap",
                 question: "Fill the gap: np.___([1, 2, 3]) returns the average value.",
                 options: ["mean", "avg_value", "middle", "average_value"],
                 correctAnswer: "mean",
@@ -145,7 +145,7 @@
               },
               {
                 topic: "Data cleaning",
-                difficulty: "Debug/Fill Gap",
+                difficulty: "Debug or Fill Gap",
                 question: "Fill the gap to remove duplicate rows: df = df.___()",
                 options: ["drop_duplicates", "remove_twins", "unique_rows", "dedupe_all"],
                 correctAnswer: "drop_duplicates",
@@ -182,7 +182,7 @@
               },
               {
                 topic: "notebooks",
-                difficulty: "Debug/Fill Gap",
+                difficulty: "Debug or Fill Gap",
                 question: "Fill the gap: In many notebooks, a Markdown cell is used for ___.",
                 options: ["explanatory text", "installing RAM", "database indexing", "changing Python keywords"],
                 correctAnswer: "explanatory text",

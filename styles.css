@@ -474,6 +474,173 @@ a {
   margin-bottom: 8px;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
+.quiz-modal-overlay {
+  align-items: center;
+  background: rgba(3, 8, 15, 0.78);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 1000;
+}
+
+.quiz-modal {
+  background: rgba(16, 36, 61, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+  color: var(--text);
+  max-height: min(760px, calc(100vh - 48px));
+  max-width: 760px;
+  overflow: hidden;
+  width: min(100%, 760px);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.quiz-modal-header {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 22px 24px;
+}
+
+.quiz-modal-header h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.quiz-modal-close {
+  background: rgba(102, 227, 255, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 800;
+  padding: 10px 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.quiz-modal-close:hover,
+.quiz-modal-close:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.18);
+  outline: none;
+  transform: scale(1.03);
+}
+
+.quiz-modal-body {
+  max-height: calc(min(760px, 100vh - 48px) - 82px);
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.topic-button-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.topic-choice-button {
+  align-items: center;
+  background: rgba(6, 17, 29, 0.46);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  font: inherit;
+  font-weight: 800;
+  padding: 16px;
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.topic-choice-button:hover,
+.topic-choice-button:focus {
+  background: rgba(102, 227, 255, 0.12);
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.14);
+  outline: none;
+  transform: scale(1.02);
+}
+
+.topic-choice-button.completed,
+.topic-choice-button:disabled {
+  border-color: rgba(142, 246, 180, 0.4);
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.82;
+  transform: none;
+}
+
+.topic-choice-button.completed:hover,
+.topic-choice-button:disabled:hover {
+  background: rgba(6, 17, 29, 0.46);
+  border-color: rgba(142, 246, 180, 0.4);
+  box-shadow: none;
+  transform: none;
+}
+
+.topic-status-pill {
+  background: rgba(142, 246, 180, 0.12);
+  border: 1px solid rgba(142, 246, 180, 0.34);
+  border-radius: 999px;
+  color: var(--success);
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 5px 9px;
+  text-transform: uppercase;
+}
+
+.topic-progress {
+  color: var(--muted);
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.quiz-question-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.quiz-topic-name,
+.quiz-question-count {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.quiz-question-title {
+  font-size: clamp(1.25rem, 3.5vw, 1.7rem);
+  margin-bottom: 18px;
+}
+
+.quiz-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.quiz-error {
+  color: var(--gold);
+  font-weight: 800;
+  min-height: 1.5em;
+  margin-top: 12px;
+}
+
 .tag {
   color: var(--accent);
   text-transform: uppercase;
@@ -1005,6 +1172,38 @@ footer {
 
   footer {
     padding: 26px 18px;
+  }
+
+  .quiz-modal-overlay {
+    align-items: stretch;
+    padding: 14px;
+  }
+
+  .quiz-modal {
+    border-radius: 18px;
+    max-height: calc(100vh - 28px);
+  }
+
+  .quiz-modal-header,
+  .quiz-modal-body {
+    padding: 18px;
+  }
+
+  .quiz-modal-body {
+    max-height: calc(100vh - 104px);
+  }
+
+  .topic-button-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-modal-actions {
+    justify-content: stretch;
+  }
+
+  .quiz-next-button,
+  .quiz-retake-button {
+    width: 100%;
   }
 }
 
