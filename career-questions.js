@@ -1141,6 +1141,196 @@
             ]
           }
         ]
+      },
+      excel: {
+        label: "Excel",
+        topics: [
+          {
+            topic: "Formulas and functions",
+            questions: [
+              {
+                topic: "Formulas and functions",
+                difficulty: "Easy",
+                question: "Which symbol starts a formula in Excel?",
+                options: ["=", "+", "#", "@"],
+                correctAnswer: "=",
+                explanation: "Excel formulas normally begin with an equals sign so Excel knows to calculate the expression."
+              },
+              {
+                topic: "Formulas and functions",
+                difficulty: "Medium",
+                question: "Which function adds values in the range A1:A10?",
+                options: ["=SUM(A1:A10)", "=ADD(A1-A10)", "=TOTAL(A1,A10)", "=COUNT(A1:A10)"],
+                correctAnswer: "=SUM(A1:A10)",
+                explanation: "SUM adds numeric values across a range such as A1:A10."
+              },
+              {
+                topic: "Formulas and functions",
+                difficulty: "Hard",
+                question: "Which formula counts only cells in A1:A20 that are greater than 100?",
+                options: ["=COUNTIF(A1:A20,\">100\")", "=COUNT(A1:A20,\">100\")", "=SUMIF(A1:A20,\">100\")", "=IFCOUNT(A1:A20,100)"],
+                correctAnswer: "=COUNTIF(A1:A20,\">100\")",
+                explanation: "COUNTIF counts cells that meet a condition, while SUMIF adds matching values."
+              },
+              {
+                topic: "Formulas and functions",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To calculate the average of B2:B12, use =___(B2:B12).",
+                options: ["AVERAGE", "SUM", "COUNT", "MEDIANIF"],
+                correctAnswer: "AVERAGE",
+                explanation: "AVERAGE returns the mean of the selected numeric range."
+              }
+            ]
+          },
+          {
+            topic: "Lookup functions",
+            questions: [
+              {
+                topic: "Lookup functions",
+                difficulty: "Easy",
+                question: "What is a lookup function used for?",
+                options: ["Finding a matching value and returning related information", "Changing worksheet colors only", "Deleting duplicate worksheets", "Creating a password"],
+                correctAnswer: "Finding a matching value and returning related information",
+                explanation: "Lookup functions search for a value and return related data from another row or column."
+              },
+              {
+                topic: "Lookup functions",
+                difficulty: "Medium",
+                question: "Which function can look up values to the right or left of the lookup column?",
+                options: ["XLOOKUP", "SUM", "TODAY", "ROUND"],
+                correctAnswer: "XLOOKUP",
+                explanation: "XLOOKUP is more flexible than VLOOKUP because it can return values from columns on either side."
+              },
+              {
+                topic: "Lookup functions",
+                difficulty: "Hard",
+                question: "Why can VLOOKUP return the wrong result when the final argument is TRUE or omitted?",
+                options: ["It may use approximate matching and require sorted lookup data", "It always deletes duplicate rows", "It only works with text values", "It changes the lookup range into a chart"],
+                correctAnswer: "It may use approximate matching and require sorted lookup data",
+                explanation: "VLOOKUP with approximate match can return unexpected results if the lookup column is not sorted correctly."
+              },
+              {
+                topic: "Lookup functions",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You need an exact product price by product ID. Which lookup mode should you choose?",
+                options: ["Exact match", "Approximate match", "Random match", "Manual color match"],
+                correctAnswer: "Exact match",
+                explanation: "Product IDs should match exactly so the returned price belongs to the correct product."
+              }
+            ]
+          },
+          {
+            topic: "Pivot tables",
+            questions: [
+              {
+                topic: "Pivot tables",
+                difficulty: "Easy",
+                question: "What is a pivot table mainly used for?",
+                options: ["Summarising and grouping data", "Writing long text documents", "Changing file permissions", "Creating email accounts"],
+                correctAnswer: "Summarising and grouping data",
+                explanation: "Pivot tables quickly summarise data by categories, dates, regions, and other fields."
+              },
+              {
+                topic: "Pivot tables",
+                difficulty: "Medium",
+                question: "In a sales pivot table, where would you usually place Region to compare sales by area?",
+                options: ["Rows", "Values only", "File name", "Workbook theme"],
+                correctAnswer: "Rows",
+                explanation: "Putting Region in Rows groups the summary by each region."
+              },
+              {
+                topic: "Pivot tables",
+                difficulty: "Hard",
+                question: "Why should source data be in a clean tabular format before creating a pivot table?",
+                options: ["Pivot tables need consistent columns and rows to summarise accurately", "Pivot tables only work with merged title cells", "Pivot tables require blank rows between records", "Pivot tables cannot use column headers"],
+                correctAnswer: "Pivot tables need consistent columns and rows to summarise accurately",
+                explanation: "Clean tables with headers and consistent rows help pivot tables detect fields and calculate reliable summaries."
+              },
+              {
+                topic: "Pivot tables",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To calculate total revenue in a pivot table, place Revenue in the ___ area.",
+                options: ["Values", "Rows", "Columns", "Filters only"],
+                correctAnswer: "Values",
+                explanation: "Numeric fields go in the Values area when you want Excel to sum, count, or average them."
+              }
+            ]
+          },
+          {
+            topic: "Charts and dashboards",
+            questions: [
+              {
+                topic: "Charts and dashboards",
+                difficulty: "Easy",
+                question: "Which chart is usually best for showing a trend over time?",
+                options: ["Line chart", "Pie chart", "Radar chart", "Doughnut chart"],
+                correctAnswer: "Line chart",
+                explanation: "Line charts are commonly used to show changes across dates or time periods."
+              },
+              {
+                topic: "Charts and dashboards",
+                difficulty: "Medium",
+                question: "What is the main purpose of a dashboard?",
+                options: ["Show key metrics clearly in one place", "Store hidden formulas only", "Replace all data cleaning", "Make every worksheet read-only"],
+                correctAnswer: "Show key metrics clearly in one place",
+                explanation: "Dashboards combine important metrics and visuals so users can monitor performance quickly."
+              },
+              {
+                topic: "Charts and dashboards",
+                difficulty: "Hard",
+                question: "Which dashboard design choice usually improves readability?",
+                options: ["Use clear titles, consistent formatting, and avoid clutter", "Use every chart type on one page", "Remove labels from all visuals", "Use tiny text to fit more metrics"],
+                correctAnswer: "Use clear titles, consistent formatting, and avoid clutter",
+                explanation: "Readable dashboards make the most important information easy to scan and compare."
+              },
+              {
+                topic: "Charts and dashboards",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You need to compare sales across six product categories. Which chart is usually clearest?",
+                options: ["Bar chart", "Scatter plot", "Line chart without dates", "Pie chart with many slices"],
+                correctAnswer: "Bar chart",
+                explanation: "Bar charts make category comparisons clear, especially when there are several categories."
+              }
+            ]
+          },
+          {
+            topic: "Data cleaning in Excel",
+            questions: [
+              {
+                topic: "Data cleaning in Excel",
+                difficulty: "Easy",
+                question: "Which Excel feature can quickly remove repeated rows?",
+                options: ["Remove Duplicates", "Freeze Panes", "Page Layout", "Protect Sheet"],
+                correctAnswer: "Remove Duplicates",
+                explanation: "Remove Duplicates identifies repeated records and removes extra copies based on selected columns."
+              },
+              {
+                topic: "Data cleaning in Excel",
+                difficulty: "Medium",
+                question: "Which function removes extra spaces from text?",
+                options: ["TRIM", "SPACE", "CLEANROWS", "REMOVE"],
+                correctAnswer: "TRIM",
+                explanation: "TRIM removes extra spaces except single spaces between words."
+              },
+              {
+                topic: "Data cleaning in Excel",
+                difficulty: "Hard",
+                question: "Why should you standardise date formats before analysis?",
+                options: ["Mixed date formats can cause filtering, sorting, and calculations to fail", "Dates cannot be used in Excel", "Date formats only affect cell color", "Excel deletes dates during pivot tables"],
+                correctAnswer: "Mixed date formats can cause filtering, sorting, and calculations to fail",
+                explanation: "Consistent date formats help Excel recognise dates correctly for calculations and summaries."
+              },
+              {
+                topic: "Data cleaning in Excel",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To split full names into first and last name columns, use Text to ___.",
+                options: ["Columns", "Rows", "Charts", "Formulas"],
+                correctAnswer: "Columns",
+                explanation: "Text to Columns can split text into separate columns based on spaces, commas, or other delimiters."
+              }
+            ]
+          }
+        ]
       }
     }
   };
