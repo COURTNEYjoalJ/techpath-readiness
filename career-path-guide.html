@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Path Guide | CodePath Academy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Choose a country and career role to see the skills you need, test yourself, and get a readiness score." />
+</head>
+<body class="guide-page">
+  <header class="site-header guide-header">
+    <nav class="nav">
+      <div class="brand">CodePath<span>Academy</span></div>
+      <a class="guide-home-link" href="index.html">Home</a>
+    </nav>
+
+    <section class="hero guide-hero">
+      <div class="hero-text">
+        <p class="tag">Career planning</p>
+        <h1>Career Path Guide</h1>
+        <p class="subtitle">
+          Choose a country and career role to see the skills you need, test yourself, and get a readiness score.
+        </p>
+
+        <form class="guide-selectors" aria-label="Career path guide filters">
+          <label for="countrySelect">
+            Country
+            <select id="countrySelect" name="country">
+              <option value="">Select country</option>
+              <option value="uk">UK</option>
+              <option value="usa">USA</option>
+              <option value="canada">Canada</option>
+              <option value="germany">Germany</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="australia">Australia</option>
+            </select>
+          </label>
+
+          <label for="roleSelect">
+            Career Role
+            <select id="roleSelect" name="role">
+              <option value="">Select career role</option>
+              <option value="data-scientist">Data Scientist</option>
+              <option value="data-analyst">Data Analyst</option>
+              <option value="cloud-engineer">Cloud Engineer</option>
+              <option value="frontend-developer">Frontend Developer</option>
+              <option value="backend-developer">Backend Developer</option>
+            </select>
+          </label>
+        </form>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="skillTableArea">
+      <div class="guide-placeholder">
+        <p>Select a country and role to view your skill roadmap.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
