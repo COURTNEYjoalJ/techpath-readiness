@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodePath Academy | Learn Programming Free</title>
+  <title>CodePath Academy | Career Path Learning and Readiness</title>
   <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="Learn Python, JavaScript, Java, SQL, HTML, CSS and C++ with beginner-friendly roadmaps, mini lessons, quizzes and practice projects." />
+  <meta name="description" content="Choose a career path, follow a skill roadmap, take skill tests and review your career readiness report with CodePath Academy." />
 </head>
 <body>
   <header class="site-header">
@@ -13,6 +13,7 @@
       <div class="brand">CodePath<span>Academy</span></div>
       <button class="menu-btn" id="menuBtn">☰</button>
       <div class="nav-links" id="navLinks">
+        <a href="#career-paths">Career Paths</a>
         <a href="#languages">Languages</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#projects">Projects</a>
@@ -23,26 +24,45 @@
 
     <section class="hero">
       <div class="hero-text">
-        <p class="tag">Free beginner-friendly programming hub</p>
-        <h1>Learn programming languages with clear paths, simple examples, and practice tasks.</h1>
+        <p class="tag">Career-path learning and readiness</p>
+        <h1>Choose a tech career path and see exactly what to learn next.</h1>
         <p class="subtitle">
-          Start with Python, JavaScript, SQL, HTML/CSS, Java or C++. Pick a language, follow the roadmap,
-          practise daily, and test yourself with quick quizzes.
+          CodePath Academy helps you choose a career path, follow a skill roadmap, take focused skill tests,
+          and get a career readiness report with practical next steps.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#languages">Start Learning</a>
-          <a class="btn secondary" href="#quiz">Take Beginner Quiz</a>
+          <a class="btn primary" href="career-path-guide.html">Start Career Path Guide</a>
+          <a class="btn secondary" href="#roadmap">Explore Learning Roadmap</a>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="terminal-bar">
-          <span></span><span></span><span></span>
+      <div class="hero-card career-preview" aria-label="Career readiness guide preview">
+        <div class="preview-header">
+          <span>Career readiness</span>
+          <strong>5 paths live</strong>
         </div>
-        <pre><code>print("Hello, future developer!")
 
-skills = ["Python", "JavaScript", "SQL"]
-for skill in skills:
-    print("Learning", skill)</code></pre>
+        <div class="preview-score">
+          <div class="preview-score-ring">82%</div>
+          <div>
+            <p>Sample readiness report</p>
+            <strong>Skill tests, weighted score and next-step plan.</strong>
+          </div>
+        </div>
+
+        <div class="preview-steps">
+          <span>Choose path</span>
+          <span>Follow roadmap</span>
+          <span>Take tests</span>
+          <span>Review report</span>
+        </div>
+
+        <div class="preview-role-list">
+          <span>Data Scientist</span>
+          <span>Data Analyst</span>
+          <span>Cloud Engineer</span>
+          <span>Frontend Developer</span>
+          <span>Backend Developer</span>
+        </div>
       </div>
     </section>
   </header>
@@ -50,24 +70,63 @@ for skill in skills:
   <main>
     <section class="stats">
       <div>
-        <h2>6</h2>
-        <p>Core languages</p>
+        <h2>5</h2>
+        <p>Supported career paths</p>
       </div>
       <div>
-        <h2>30+</h2>
-        <p>Practice tasks</p>
+        <h2>Skill</h2>
+        <p>Roadmaps and tests</p>
       </div>
       <div>
-        <h2>Beginner</h2>
-        <p>Friendly content</p>
+        <h2>Ready</h2>
+        <p>Career readiness report</p>
+      </div>
+    </section>
+
+    <section class="section" id="career-paths">
+      <div class="section-heading">
+        <p class="tag">Supported paths</p>
+        <h2>Choose from completed career roadmaps</h2>
+        <p>Each path includes weighted skills, required topics, skill tests and a readiness report.</p>
+      </div>
+
+      <div class="role-grid">
+        <article class="role-card">
+          <h3>Data Scientist</h3>
+          <p>Python, statistics, SQL, machine learning, maths and communication.</p>
+        </article>
+
+        <article class="role-card">
+          <h3>Data Analyst</h3>
+          <p>Excel, SQL, Power BI, statistics, Python and communication.</p>
+        </article>
+
+        <article class="role-card">
+          <h3>Cloud Engineer</h3>
+          <p>Cloud fundamentals, Linux, Git, Python, SQL and communication.</p>
+        </article>
+
+        <article class="role-card">
+          <h3>Frontend Developer</h3>
+          <p>HTML, CSS, JavaScript, Git, API basics and communication.</p>
+        </article>
+
+        <article class="role-card">
+          <h3>Backend Developer</h3>
+          <p>Backend basics, API basics, databases, Git, Python and communication.</p>
+        </article>
+      </div>
+
+      <div class="section-action">
+        <a class="btn primary" href="career-path-guide.html">Open Career Path Guide</a>
       </div>
     </section>
 
     <section class="section" id="languages">
       <div class="section-heading">
-        <p class="tag">Choose your path</p>
+        <p class="tag">Build the skills</p>
         <h2>Programming Languages</h2>
-        <p>Pick one language based on your goal. Do not learn everything at once.</p>
+        <p>Use these mini lessons to strengthen the programming skills that appear in your roadmap.</p>
       </div>
 
       <div class="grid cards">
@@ -146,30 +205,30 @@ for skill in skills:
 
     <section class="section alt" id="roadmap">
       <div class="section-heading">
-        <p class="tag">Simple roadmap</p>
-        <h2>How to Learn Programming</h2>
+        <p class="tag">How it works</p>
+        <h2>From career choice to readiness report</h2>
       </div>
 
       <div class="timeline">
         <div class="step">
           <span>1</span>
-          <h3>Pick one goal</h3>
-          <p>Website development, data science, automation, app development or problem solving.</p>
+          <h3>Choose a path</h3>
+          <p>Select a country and career role, then review the skills required for that path.</p>
         </div>
         <div class="step">
           <span>2</span>
-          <h3>Learn basics</h3>
-          <p>Understand variables, conditions, loops, functions, arrays/lists and errors.</p>
+          <h3>Follow the roadmap</h3>
+          <p>Study the weighted skills and topics that matter most for your selected role.</p>
         </div>
         <div class="step">
           <span>3</span>
-          <h3>Build small projects</h3>
-          <p>Calculator, quiz app, to-do list, expense tracker, portfolio page or data dashboard.</p>
+          <h3>Take skill tests</h3>
+          <p>Answer topic-based questions to measure your current understanding.</p>
         </div>
         <div class="step">
           <span>4</span>
-          <h3>Practise daily</h3>
-          <p>Spend 30–60 minutes every day solving small tasks instead of only watching tutorials.</p>
+          <h3>Review readiness</h3>
+          <p>Use your report to identify strengths, weak areas and your next study steps.</p>
         </div>
       </div>
     </section>
@@ -214,18 +273,16 @@ for skill in skills:
       </div>
     </section>
 
-    <section class="section newsletter">
-      <h2>Learn one concept every day</h2>
-      <p>Use this section later to collect emails, share weekly lessons, or promote your tutoring/course.</p>
-      <form onsubmit="event.preventDefault(); alert('Demo form only. Connect this to a backend later.');">
-        <input type="email" placeholder="Enter your email" required />
-        <button class="btn primary">Join Free</button>
-      </form>
+    <section class="section alt final-cta">
+      <p class="tag">Plan your next move</p>
+      <h2>Start with a role, then build the skills with purpose.</h2>
+      <p>Use the Career Path Guide to compare paths, test your skills and turn your results into a focused learning plan.</p>
+      <a class="btn primary" href="career-path-guide.html">Start Career Path Guide</a>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 CodePath Academy. Built for learning programming languages.</p>
+    <p>© 2026 CodePath Academy. Built for career-path learning and programming practice.</p>
   </footer>
 
   <script src="script.js"></script>

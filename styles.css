@@ -49,6 +49,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 50;
 }
 
 .brand {
@@ -949,8 +951,8 @@ body.modal-open {
 
 h1 {
   font-size: clamp(2.2rem, 5.4vw, 4.7rem);
-  line-height: 1.02;
-  letter-spacing: -0.07em;
+  line-height: 1.05;
+  letter-spacing: 0;
   max-width: 820px;
 }
 
@@ -1029,6 +1031,93 @@ pre {
   font-size: clamp(0.88rem, 1.4vw, 1rem);
 }
 
+.career-preview {
+  display: grid;
+  gap: 20px;
+  padding: 24px;
+}
+
+.preview-header,
+.preview-score {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.preview-header span,
+.preview-score p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.preview-header strong {
+  background: rgba(102, 227, 255, 0.12);
+  border: 1px solid rgba(102, 227, 255, 0.24);
+  border-radius: 999px;
+  color: var(--accent);
+  padding: 7px 11px;
+}
+
+.preview-score {
+  background: rgba(6, 17, 29, 0.42);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  justify-content: flex-start;
+  padding: 18px;
+}
+
+.preview-score-ring {
+  align-items: center;
+  aspect-ratio: 1;
+  background:
+    conic-gradient(var(--accent) 82%, rgba(102, 227, 255, 0.12) 0);
+  border: 1px solid rgba(102, 227, 255, 0.32);
+  border-radius: 50%;
+  color: var(--text);
+  display: flex;
+  flex: 0 0 86px;
+  font-size: 1.45rem;
+  font-weight: 900;
+  justify-content: center;
+  max-width: 86px;
+}
+
+.preview-score strong {
+  color: var(--text);
+  display: block;
+  line-height: 1.35;
+  margin-top: 4px;
+}
+
+.preview-steps,
+.preview-role-list {
+  display: grid;
+  gap: 10px;
+}
+
+.preview-steps,
+.preview-role-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.preview-steps span,
+.preview-role-list span {
+  background: rgba(102, 227, 255, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 800;
+  padding: 9px 12px;
+}
+
+.preview-role-list span:last-child {
+  grid-column: 1 / -1;
+}
+
 .stats {
   width: min(1120px, 92%);
   margin: -58px auto 40px;
@@ -1083,7 +1172,7 @@ pre {
 
 .section-heading h2 {
   font-size: clamp(2rem, 4vw, 3.2rem);
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 .section-heading p {
@@ -1099,7 +1188,14 @@ pre {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.role-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
 .card,
+.role-card,
 .lesson-box,
 .quiz-card,
 .newsletter,
@@ -1118,6 +1214,7 @@ pre {
 .hero-card:hover,
 .stats div:hover,
 .card:hover,
+.role-card:hover,
 .lesson-box:hover,
 .quiz-card:hover,
 .newsletter:hover,
@@ -1132,6 +1229,7 @@ pre {
 }
 
 .card h3,
+.role-card h3,
 .project-list h3,
 .step h3 {
   font-size: 1.35rem;
@@ -1140,6 +1238,7 @@ pre {
 
 .card p,
 .card li,
+.role-card p,
 .project-list p,
 .step p,
 .lesson-box p {
@@ -1155,6 +1254,22 @@ pre {
   background: rgba(102, 227, 255, 0.1);
   color: var(--accent);
   border: 1px solid var(--line);
+}
+
+.role-card {
+  min-height: 178px;
+}
+
+.role-card h3 {
+  color: var(--text);
+}
+
+.role-card p {
+  margin-top: 10px;
+}
+
+.section-action {
+  margin-top: 22px;
 }
 
 .lesson-box {
@@ -1256,6 +1371,27 @@ pre {
   box-shadow: 0 0 20px rgba(255, 214, 102, 0.14);
 }
 
+.final-cta {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  text-align: center;
+}
+
+.final-cta h2,
+.final-cta p {
+  max-width: 760px;
+}
+
+.final-cta h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+}
+
+.final-cta p:not(.tag) {
+  color: var(--muted);
+}
+
 footer {
   padding: 34px;
   text-align: center;
@@ -1328,8 +1464,13 @@ footer {
   .hero,
   .cards,
   .timeline,
-  .project-list {
+  .project-list,
+  .preview-role-list {
     grid-template-columns: 1fr;
+  }
+
+  .preview-role-list span:last-child {
+    grid-column: auto;
   }
 
   .hero {
@@ -1360,6 +1501,7 @@ footer {
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    z-index: 60;
   }
 
   .nav-links:hover {
@@ -1454,7 +1596,9 @@ footer {
   }
 
   .hero-card,
+  .career-preview,
   .card,
+  .role-card,
   .lesson-box,
   .quiz-card,
   .newsletter,
