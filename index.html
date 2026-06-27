@@ -13,7 +13,7 @@
       <div class="brand">TechPath <span>Readiness</span></div>
       <button class="menu-btn" id="menuBtn">☰</button>
       <div class="nav-links" id="navLinks">
-        <a href="#career-paths">Career Paths</a>
+        <a href="#supported-paths">Career Paths</a>
         <a href="#languages">Languages</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#projects">Projects</a>
@@ -32,7 +32,7 @@
         </p>
         <div class="hero-actions">
           <a class="btn primary" href="career-path-guide.html">Start Career Path Guide</a>
-          <a class="btn secondary" href="#roadmap">Explore Learning Roadmap</a>
+          <a class="btn secondary" href="#supported-paths">Explore Learning Roadmap</a>
         </div>
       </div>
       <div class="hero-card career-preview" aria-label="Career readiness guide preview">
@@ -83,7 +83,7 @@
       </div>
     </section>
 
-    <section class="section" id="career-paths">
+    <section class="section" id="supported-paths">
       <div class="section-heading">
         <p class="tag">Supported paths</p>
         <h2>Choose from completed career roadmaps</h2>
@@ -94,26 +94,37 @@
         <article class="role-card">
           <h3>Data Scientist</h3>
           <p>Python, statistics, SQL, machine learning, maths and communication.</p>
+          <a class="role-card-link" href="data-scientist-roadmap.html">View Data Scientist Roadmap</a>
         </article>
 
         <article class="role-card">
           <h3>Data Analyst</h3>
           <p>Excel, SQL, Power BI, statistics, Python and communication.</p>
+          <a class="role-card-link" href="data-analyst-roadmap.html">View Data Analyst Roadmap</a>
         </article>
 
         <article class="role-card">
           <h3>Cloud Engineer</h3>
           <p>Cloud fundamentals, Linux, Git, Python, SQL and communication.</p>
+          <a class="role-card-link" href="cloud-engineer-roadmap.html">View Cloud Engineer Roadmap</a>
         </article>
 
         <article class="role-card">
           <h3>Frontend Developer</h3>
           <p>HTML, CSS, JavaScript, Git, API basics and communication.</p>
+          <a class="role-card-link" href="frontend-developer-roadmap.html">View Frontend Developer Roadmap</a>
         </article>
 
         <article class="role-card">
           <h3>Backend Developer</h3>
           <p>Backend basics, API basics, databases, Git, Python and communication.</p>
+          <a class="role-card-link" href="backend-developer-roadmap.html">View Backend Developer Roadmap</a>
+        </article>
+
+        <article class="role-card future-role-card">
+          <span class="future-status-pill">Coming soon</span>
+          <h3>More paths coming soon</h3>
+          <p>More career paths and deeper role roadmaps are planned for future versions.</p>
         </article>
       </div>
 
@@ -261,15 +272,14 @@
 
     <section class="section alt" id="quiz">
       <div class="section-heading">
-        <p class="tag">Test yourself</p>
-        <h2>Beginner Programming Quiz</h2>
-        <p>Answer 5 quick questions and check your score.</p>
+        <p class="tag">Practice</p>
+        <h2>Practice a skill quiz</h2>
+        <p>Choose a skill and answer practice questions from the existing question banks. Practice quiz results are not saved and do not affect your Career Path Guide readiness score.</p>
       </div>
 
-      <div class="quiz-card">
-        <div id="quizContainer"></div>
-        <button class="btn primary" onclick="submitQuiz()">Submit Quiz</button>
-        <p id="quizResult" class="quiz-result"></p>
+      <div class="quiz-card practice-quiz-card">
+        <div id="practiceSkillGrid" class="practice-skill-grid" aria-live="polite"></div>
+        <p class="practice-note">Use the full Career Path Guide when you want saved scores and a readiness report.</p>
       </div>
     </section>
 
@@ -279,12 +289,26 @@
       <p>Use the Career Path Guide to compare paths, test your skills and turn your results into a focused learning plan.</p>
       <a class="btn primary" href="career-path-guide.html">Start Career Path Guide</a>
     </section>
+
+    <section class="section feedback-section">
+      <div class="feedback-card">
+        <p class="tag">Feedback</p>
+        <h2>Feedback and improvement ideas</h2>
+        <p>
+          TechPath Readiness is still improving. You can suggest new roles, roadmap improvements, quiz improvements or UI feedback through GitHub Issues.
+        </p>
+        <p class="feedback-note">GitHub sign-in may be required to create an issue.</p>
+        <p class="feedback-note">A built-in contact form is planned for a future version.</p>
+        <a class="btn secondary" href="https://github.com/COURTNEYjoalJ/techpath-readiness/issues" target="_blank" rel="noopener noreferrer">Suggest an improvement</a>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>© 2026 TechPath Readiness. Built for career-path learning and programming practice.</p>
   </footer>
 
+  <script src="career-questions.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

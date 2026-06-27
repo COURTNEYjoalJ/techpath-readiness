@@ -117,6 +117,15 @@ a {
   background: transparent;
 }
 
+.guide-page .nav {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.guide-page .brand {
+  margin-right: auto;
+}
+
 .guide-page .guide-header {
   min-height: auto;
   padding-bottom: clamp(48px, 7vw, 78px);
@@ -1257,6 +1266,8 @@ pre {
 }
 
 .role-card {
+  display: flex;
+  flex-direction: column;
   min-height: 178px;
 }
 
@@ -1266,6 +1277,50 @@ pre {
 
 .role-card p {
   margin-top: 10px;
+}
+
+.future-role-card {
+  background: rgba(102, 227, 255, 0.07);
+}
+
+.future-status-pill {
+  align-self: flex-start;
+  background: rgba(255, 209, 102, 0.12);
+  border: 1px solid rgba(255, 209, 102, 0.28);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.74rem;
+  font-weight: 900;
+  margin-bottom: 14px;
+  padding: 6px 9px;
+  text-transform: uppercase;
+}
+
+.role-card-link {
+  align-self: flex-start;
+  align-items: center;
+  background: rgba(102, 227, 255, 0.1);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 1.25;
+  margin-top: auto;
+  padding: 9px 12px;
+  text-align: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.role-card-link:hover,
+.role-card-link:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 18px rgba(255, 214, 102, 0.14);
+  color: var(--text);
+  outline: none;
+  transform: translateY(-1px);
 }
 
 .section-action {
@@ -1312,6 +1367,125 @@ pre {
 
 .quiz-card {
   max-width: 780px;
+}
+
+.practice-quiz-card {
+  max-width: 1000px;
+}
+
+.practice-skill-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.practice-skill-button,
+.practice-answer-option {
+  background: rgba(6, 17, 29, 0.46);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.practice-skill-button {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+}
+
+.practice-skill-button span {
+  font-weight: 900;
+}
+
+.practice-skill-button small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.practice-skill-button:hover,
+.practice-skill-button:focus,
+.practice-answer-option:hover,
+.practice-answer-option:focus {
+  background: rgba(102, 227, 255, 0.12);
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.14);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.practice-note {
+  color: var(--muted);
+  font-weight: 800;
+  margin-top: 18px;
+}
+
+.practice-options {
+  display: grid;
+  gap: 10px;
+}
+
+.practice-answer-option {
+  padding: 13px 14px;
+}
+
+.practice-answer-option:disabled {
+  cursor: default;
+  opacity: 0.9;
+}
+
+.practice-answer-option:disabled:hover,
+.practice-answer-option:disabled:focus {
+  box-shadow: none;
+  outline: none;
+  transform: none;
+}
+
+.practice-answer-option.correct {
+  background: rgba(142, 246, 180, 0.13);
+  border-color: rgba(142, 246, 180, 0.44);
+}
+
+.practice-answer-option.incorrect {
+  background: rgba(255, 209, 102, 0.12);
+  border-color: rgba(255, 209, 102, 0.42);
+}
+
+.practice-answer-feedback {
+  background: rgba(6, 17, 29, 0.42);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--muted);
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+  min-height: 0;
+  padding: 0;
+}
+
+.practice-answer-feedback:not(:empty) {
+  padding: 16px;
+}
+
+.practice-feedback-correct,
+.practice-feedback-incorrect {
+  font-weight: 900;
+}
+
+.practice-feedback-correct {
+  color: var(--success);
+}
+
+.practice-feedback-incorrect {
+  color: var(--gold);
+}
+
+.quiz-next-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
 .question {
@@ -1390,6 +1564,54 @@ pre {
 
 .final-cta p:not(.tag) {
   color: var(--muted);
+}
+
+.feedback-section {
+  display: block;
+  padding: clamp(56px, 7vw, 84px) 0;
+}
+
+.feedback-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 14px;
+  max-width: 780px;
+  margin-inline: auto;
+  padding: 28px;
+  width: min(100%, 780px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.feedback-card:hover {
+  border-color: var(--gold);
+  box-shadow:
+    0 0 0 1px rgba(255, 214, 102, 0.18),
+    0 0 24px rgba(255, 214, 102, 0.16),
+    0 20px 50px rgba(0, 0, 0, 0.32);
+  transform: translateY(-2px);
+}
+
+.feedback-card h2 {
+  color: var(--text);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.12;
+}
+
+.feedback-card p:not(.tag) {
+  color: var(--muted);
+}
+
+.feedback-note {
+  font-weight: 800;
+}
+
+.feedback-card .btn {
+  justify-self: start;
 }
 
 footer {
@@ -1602,6 +1824,7 @@ footer {
   .lesson-box,
   .quiz-card,
   .newsletter,
+  .feedback-card,
   .project-list div,
   .step,
   .guide-page .custom-select-field,
