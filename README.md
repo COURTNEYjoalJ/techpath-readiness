@@ -1,6 +1,6 @@
-# CodePath Academy
+# TechPath Readiness
 
-CodePath Academy is a plain HTML, CSS and JavaScript career-path learning and readiness website. It helps learners choose a tech career path, review the skills required for that role, take topic-based skill tests, and see a dynamic career readiness report.
+TechPath Readiness is a plain HTML, CSS and JavaScript career-path learning and readiness website. It helps learners choose a tech career path, review the skills required for that role, take topic-based skill tests, and see a dynamic career readiness report.
 
 The project is fully frontend-only. It does not use React, a backend, a database, API keys, external libraries, or external services. Quiz scores are saved locally in the browser with `localStorage`.
 
