@@ -135,6 +135,48 @@
             reason: "Communication helps cloud engineers explain incidents, tradeoffs and infrastructure decisions clearly."
           }
         ]
+      },
+      "frontend-developer": {
+        label: "Frontend Developer",
+        totalWeight: 100,
+        skills: [
+          {
+            name: "HTML",
+            weight: 20,
+            requiredTopics: ["HTML document structure", "semantic elements", "forms and inputs", "links and media", "accessibility basics"],
+            reason: "HTML defines the structure and meaning of web pages, forms, links and content."
+          },
+          {
+            name: "CSS",
+            weight: 20,
+            requiredTopics: ["Selectors and specificity", "box model", "Flexbox", "Grid layout", "responsive design"],
+            reason: "CSS controls layout, spacing, visual hierarchy and responsive presentation across screen sizes."
+          },
+          {
+            name: "JavaScript",
+            weight: 30,
+            requiredTopics: ["Variables and data types", "functions", "arrays and objects", "DOM and events", "control flow and debugging"],
+            reason: "JavaScript powers interactivity, browser behavior, dynamic interfaces and frontend application logic."
+          },
+          {
+            name: "Git",
+            weight: 10,
+            requiredTopics: ["Git basics", "branching", "commit workflow", "merge and conflict basics", "remote repositories"],
+            reason: "Git helps frontend developers manage changes, collaborate safely and publish projects."
+          },
+          {
+            name: "API Basics",
+            weight: 10,
+            requiredTopics: ["REST API basics", "HTTP methods", "status codes", "JSON payloads", "API testing and debugging"],
+            reason: "API basics help frontend developers connect interfaces to real data and backend services."
+          },
+          {
+            name: "Communication",
+            weight: 10,
+            requiredTopics: ["Explaining UI decisions", "stakeholder communication", "presentation basics", "clear documentation"],
+            reason: "Communication helps developers explain design choices, requirements and tradeoffs clearly."
+          }
+        ]
       }
     }
   };

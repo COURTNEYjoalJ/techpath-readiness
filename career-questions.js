@@ -2091,6 +2091,766 @@
             ]
           }
         ]
+      },
+      html: {
+        label: "HTML",
+        topics: [
+          {
+            topic: "HTML document structure",
+            questions: [
+              {
+                topic: "HTML document structure",
+                difficulty: "Easy",
+                question: "Which three elements form the basic structure of an HTML page?",
+                options: ["header, main, footer", "html, head, body", "section, article, nav", "div, span, p"],
+                correctAnswer: "html, head, body",
+                explanation: "A basic HTML document uses html as the root, head for metadata and body for visible content."
+              },
+              {
+                topic: "HTML document structure",
+                difficulty: "Medium",
+                question: "Where should the page title shown in the browser tab be placed?",
+                options: ["Inside the body", "Inside a footer", "Inside the head element", "Inside every paragraph"],
+                correctAnswer: "Inside the head element",
+                explanation: "The title element belongs in head and controls the browser tab title."
+              },
+              {
+                topic: "HTML document structure",
+                difficulty: "Hard",
+                question: "Why is the meta viewport tag important for responsive pages?",
+                options: ["It tells mobile browsers how to size and scale the page", "It adds a database connection", "It creates a CSS grid automatically", "It replaces all media queries"],
+                correctAnswer: "It tells mobile browsers how to size and scale the page",
+                explanation: "The viewport meta tag helps mobile browsers render layouts at the intended device width."
+              },
+              {
+                topic: "HTML document structure",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: Visible page content should usually go inside the ___ element.",
+                options: ["head", "meta", "body", "title"],
+                correctAnswer: "body",
+                explanation: "The body element contains the content users see and interact with."
+              }
+            ]
+          },
+          {
+            topic: "Semantic elements",
+            questions: [
+              {
+                topic: "Semantic elements",
+                difficulty: "Easy",
+                question: "Which element is most suitable for the main navigation links?",
+                options: ["nav", "span", "br", "small"],
+                correctAnswer: "nav",
+                explanation: "nav identifies a section of navigation links."
+              },
+              {
+                topic: "Semantic elements",
+                difficulty: "Medium",
+                question: "Why use semantic HTML instead of only div elements?",
+                options: ["It makes all CSS unnecessary", "It gives content clearer meaning for browsers and assistive technology", "It prevents every bug", "It automatically creates forms"],
+                correctAnswer: "It gives content clearer meaning for browsers and assistive technology",
+                explanation: "Semantic elements describe the purpose of content, improving structure and accessibility."
+              },
+              {
+                topic: "Semantic elements",
+                difficulty: "Hard",
+                question: "Which element is best for a self-contained blog post or news item?",
+                options: ["article", "b", "input", "canvas"],
+                correctAnswer: "article",
+                explanation: "article is intended for independent, self-contained content."
+              },
+              {
+                topic: "Semantic elements",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: You are marking up the unique central content of a page. Which element should wrap it?",
+                options: ["aside", "main", "style", "script"],
+                correctAnswer: "main",
+                explanation: "main identifies the primary content area of the page."
+              }
+            ]
+          },
+          {
+            topic: "Forms and inputs",
+            questions: [
+              {
+                topic: "Forms and inputs",
+                difficulty: "Easy",
+                question: "Which element groups form controls for submission?",
+                options: ["form", "section", "img", "link"],
+                correctAnswer: "form",
+                explanation: "The form element wraps inputs, labels and controls that collect user data."
+              },
+              {
+                topic: "Forms and inputs",
+                difficulty: "Medium",
+                question: "Why should a label be connected to an input?",
+                options: ["It improves accessibility and lets users click the label to focus the input", "It hides the input from screen readers", "It submits the form twice", "It replaces the input name"],
+                correctAnswer: "It improves accessibility and lets users click the label to focus the input",
+                explanation: "Labels describe inputs and help assistive technology announce form controls properly."
+              },
+              {
+                topic: "Forms and inputs",
+                difficulty: "Hard",
+                question: "What is the purpose of the name attribute on a form input?",
+                options: ["It identifies the submitted field value", "It changes the font size", "It creates a new form", "It disables validation"],
+                correctAnswer: "It identifies the submitted field value",
+                explanation: "The name attribute is used as the key when form data is submitted."
+              },
+              {
+                topic: "Forms and inputs",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: For an email field, use input type=\"___\".",
+                options: ["text-only", "email", "mailbox", "address"],
+                correctAnswer: "email",
+                explanation: "type=\"email\" gives browsers email-specific validation and input behavior."
+              }
+            ]
+          },
+          {
+            topic: "Links and media",
+            questions: [
+              {
+                topic: "Links and media",
+                difficulty: "Easy",
+                question: "Which element creates a hyperlink?",
+                options: ["a", "img", "p", "ul"],
+                correctAnswer: "a",
+                explanation: "The anchor element creates links using the href attribute."
+              },
+              {
+                topic: "Links and media",
+                difficulty: "Medium",
+                question: "Which attribute gives an image alternative text?",
+                options: ["src", "href", "alt", "target"],
+                correctAnswer: "alt",
+                explanation: "The alt attribute describes an image for screen readers and when the image cannot load."
+              },
+              {
+                topic: "Links and media",
+                difficulty: "Hard",
+                question: "Why should link text be descriptive?",
+                options: ["It helps users understand the destination without extra context", "It makes links invisible", "It disables keyboard navigation", "It prevents images from loading"],
+                correctAnswer: "It helps users understand the destination without extra context",
+                explanation: "Clear link text is easier to scan and more useful for assistive technology."
+              },
+              {
+                topic: "Links and media",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: The image file path belongs in the img ___ attribute.",
+                options: ["alt", "src", "href", "title"],
+                correctAnswer: "src",
+                explanation: "The src attribute tells the browser where to load the image from."
+              }
+            ]
+          },
+          {
+            topic: "Accessibility basics",
+            questions: [
+              {
+                topic: "Accessibility basics",
+                difficulty: "Easy",
+                question: "Why is alt text important for meaningful images?",
+                options: ["It helps screen reader users understand the image", "It makes images load slower", "It replaces all captions", "It turns images into buttons"],
+                correctAnswer: "It helps screen reader users understand the image",
+                explanation: "Alt text provides a text alternative for users who cannot see the image."
+              },
+              {
+                topic: "Accessibility basics",
+                difficulty: "Medium",
+                question: "Which heading practice is usually best?",
+                options: ["Skip from h1 to h6 for decoration", "Use headings in a logical order", "Use headings only inside buttons", "Avoid h1 on every page"],
+                correctAnswer: "Use headings in a logical order",
+                explanation: "Logical heading order helps users and assistive technology understand page structure."
+              },
+              {
+                topic: "Accessibility basics",
+                difficulty: "Hard",
+                question: "Why should interactive elements be keyboard accessible?",
+                options: ["Some users navigate without a mouse", "It disables focus styles", "It removes the need for labels", "It hides buttons from mobile users"],
+                correctAnswer: "Some users navigate without a mouse",
+                explanation: "Keyboard support is essential for users who cannot or do not use a mouse."
+              },
+              {
+                topic: "Accessibility basics",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: A button only says \"Click here\". What is the best improvement?",
+                options: ["Make the text describe the action", "Remove the button", "Use a smaller font", "Put it inside a table"],
+                correctAnswer: "Make the text describe the action",
+                explanation: "Clear button text helps users know what will happen before activating it."
+              }
+            ]
+          }
+        ]
+      },
+      css: {
+        label: "CSS",
+        topics: [
+          {
+            topic: "Selectors and specificity",
+            questions: [
+              {
+                topic: "Selectors and specificity",
+                difficulty: "Easy",
+                question: "Which selector targets elements with class=\"card\"?",
+                options: ["#card", ".card", "card", "*card"],
+                correctAnswer: ".card",
+                explanation: "Class selectors start with a dot."
+              },
+              {
+                topic: "Selectors and specificity",
+                difficulty: "Medium",
+                question: "Which selector is usually more specific?",
+                options: [".button", "button", "#submitButton", "*"],
+                correctAnswer: "#submitButton",
+                explanation: "ID selectors have higher specificity than class and element selectors."
+              },
+              {
+                topic: "Selectors and specificity",
+                difficulty: "Hard",
+                question: "Why can overly specific CSS selectors be a problem?",
+                options: ["They can make styles harder to override and maintain", "They make HTML invalid", "They delete media queries", "They prevent images from loading"],
+                correctAnswer: "They can make styles harder to override and maintain",
+                explanation: "Very specific selectors can make future styling changes brittle."
+              },
+              {
+                topic: "Selectors and specificity",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To apply styles on hover, use the ___ pseudo-class.",
+                options: [":active", ":hover", ":focus-within", ":checked"],
+                correctAnswer: ":hover",
+                explanation: ":hover applies when a pointer is over an element."
+              }
+            ]
+          },
+          {
+            topic: "Box model",
+            questions: [
+              {
+                topic: "Box model",
+                difficulty: "Easy",
+                question: "Which property creates space inside an element's border?",
+                options: ["margin", "padding", "outline", "gap"],
+                correctAnswer: "padding",
+                explanation: "Padding is the space between content and border."
+              },
+              {
+                topic: "Box model",
+                difficulty: "Medium",
+                question: "Which property creates space outside an element?",
+                options: ["border-radius", "padding", "margin", "line-height"],
+                correctAnswer: "margin",
+                explanation: "Margin is the space outside an element's border."
+              },
+              {
+                topic: "Box model",
+                difficulty: "Hard",
+                question: "What does box-sizing: border-box do?",
+                options: ["Includes padding and border inside the declared width and height", "Removes all borders", "Turns every element into a flex item", "Disables margin"],
+                correctAnswer: "Includes padding and border inside the declared width and height",
+                explanation: "border-box makes sizing more predictable because padding and border are included in the element size."
+              },
+              {
+                topic: "Box model",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: Text is touching the edge of a card. Which property should you increase?",
+                options: ["padding", "z-index", "opacity", "position"],
+                correctAnswer: "padding",
+                explanation: "Increasing padding adds internal space between the text and card edge."
+              }
+            ]
+          },
+          {
+            topic: "Flexbox",
+            questions: [
+              {
+                topic: "Flexbox",
+                difficulty: "Easy",
+                question: "Which declaration turns a container into a flex container?",
+                options: ["display: grid", "display: flex", "position: flex", "float: flex"],
+                correctAnswer: "display: flex",
+                explanation: "display: flex enables Flexbox layout for the container's children."
+              },
+              {
+                topic: "Flexbox",
+                difficulty: "Medium",
+                question: "Which property aligns flex items along the main axis?",
+                options: ["align-items", "justify-content", "border-spacing", "object-fit"],
+                correctAnswer: "justify-content",
+                explanation: "justify-content controls distribution along the main axis."
+              },
+              {
+                topic: "Flexbox",
+                difficulty: "Hard",
+                question: "What does flex-wrap: wrap allow?",
+                options: ["Items can move onto new lines when there is not enough space", "Items become hidden by default", "The container becomes fixed width", "Text turns into images"],
+                correctAnswer: "Items can move onto new lines when there is not enough space",
+                explanation: "Wrapping helps flex items avoid overflow in narrow containers."
+              },
+              {
+                topic: "Flexbox",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: To vertically center items in a row flex container, use align-items: ___.",
+                options: ["center", "space-between", "block", "absolute"],
+                correctAnswer: "center",
+                explanation: "align-items: center aligns items in the cross axis."
+              }
+            ]
+          },
+          {
+            topic: "Grid layout",
+            questions: [
+              {
+                topic: "Grid layout",
+                difficulty: "Easy",
+                question: "Which declaration enables CSS Grid?",
+                options: ["display: grid", "display: table-only", "grid: true", "position: grid"],
+                correctAnswer: "display: grid",
+                explanation: "display: grid creates a grid formatting context."
+              },
+              {
+                topic: "Grid layout",
+                difficulty: "Medium",
+                question: "Which property defines grid columns?",
+                options: ["grid-template-columns", "column-color", "justify-columns", "flex-columns"],
+                correctAnswer: "grid-template-columns",
+                explanation: "grid-template-columns defines the number and size of grid columns."
+              },
+              {
+                topic: "Grid layout",
+                difficulty: "Hard",
+                question: "Why is minmax(0, 1fr) useful in grid layouts?",
+                options: ["It can prevent content from forcing a grid column wider than intended", "It deletes empty rows", "It disables responsive layout", "It only works on images"],
+                correctAnswer: "It can prevent content from forcing a grid column wider than intended",
+                explanation: "minmax(0, 1fr) lets grid tracks shrink properly instead of overflowing due to content size."
+              },
+              {
+                topic: "Grid layout",
+                difficulty: "Scenario or Fill Gap",
+                question: "Fill the gap: A common responsive grid uses repeat(auto-fit, minmax(220px, ___)).",
+                options: ["1fr", "fixed", "none", "100vh"],
+                correctAnswer: "1fr",
+                explanation: "1fr lets each responsive column share available space."
+              }
+            ]
+          },
+          {
+            topic: "Responsive design",
+            questions: [
+              {
+                topic: "Responsive design",
+                difficulty: "Easy",
+                question: "What is responsive design?",
+                options: ["A design that adapts to different screen sizes", "A design that only works on desktop", "A design without CSS", "A design that disables images"],
+                correctAnswer: "A design that adapts to different screen sizes",
+                explanation: "Responsive design adjusts layout, spacing and content for different devices."
+              },
+              {
+                topic: "Responsive design",
+                difficulty: "Medium",
+                question: "Which CSS feature applies styles at specific viewport widths?",
+                options: ["media queries", "alt attributes", "script tags", "table rows"],
+                correctAnswer: "media queries",
+                explanation: "Media queries let CSS respond to viewport size and device characteristics."
+              },
+              {
+                topic: "Responsive design",
+                difficulty: "Hard",
+                question: "Why should fixed large widths be used carefully on mobile?",
+                options: ["They can cause horizontal overflow", "They improve every layout", "They remove the need for text", "They make media queries invalid"],
+                correctAnswer: "They can cause horizontal overflow",
+                explanation: "Fixed widths that exceed the viewport can make content spill sideways."
+              },
+              {
+                topic: "Responsive design",
+                difficulty: "Scenario or Fill Gap",
+                question: "Scenario: Three cards overlap on a small screen. What is a good fix?",
+                options: ["Make the grid stack to one column with a media query", "Increase every card width", "Hide all text", "Use only absolute positioning"],
+                correctAnswer: "Make the grid stack to one column with a media query",
+                explanation: "Stacking cards vertically on smaller screens prevents overlap and improves readability."
+              }
+            ]
+          }
+        ]
+      },
+      javascript: {
+        label: "JavaScript",
+        topics: [
+          {
+            topic: "Variables and data types",
+            questions: [
+              {
+                topic: "Variables and data types",
+                difficulty: "Easy",
+                question: "Which keyword declares a variable whose value can be reassigned?",
+                options: ["const", "let", "return", "typeof"],
+                correctAnswer: "let",
+                explanation: "let creates a block-scoped variable that can be reassigned."
+              },
+              {
+                topic: "Variables and data types",
+                difficulty: "Medium",
+                question: "Which value is a boolean?",
+                options: ["\"true\"", "42", "true", "nullish"],
+                correctAnswer: "true",
+                explanation: "true and false are boolean values, while \"true\" is a string."
+              },
+              {
+                topic: "Variables and data types",
+                difficulty: "Hard",
+                question: "Why should const be used for values that are not reassigned?",
+                options: ["It communicates intent and prevents accidental reassignment", "It makes values private automatically", "It turns strings into numbers", "It disables functions"],
+                correctAnswer: "It communicates intent and prevents accidental reassignment",
+                explanation: "const makes code clearer and protects the variable binding from reassignment."
+              },
+              {
+                topic: "Variables and data types",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: typeof \"hello\" returns ___.",
+                options: ["number", "boolean", "string", "object"],
+                correctAnswer: "string",
+                explanation: "The typeof operator reports string values as \"string\"."
+              }
+            ]
+          },
+          {
+            topic: "Functions",
+            questions: [
+              {
+                topic: "Functions",
+                difficulty: "Easy",
+                question: "What is a function used for?",
+                options: ["Grouping reusable code", "Creating only CSS styles", "Deleting arrays", "Renaming HTML tags"],
+                correctAnswer: "Grouping reusable code",
+                explanation: "Functions let you package logic and call it when needed."
+              },
+              {
+                topic: "Functions",
+                difficulty: "Medium",
+                question: "What does return do inside a function?",
+                options: ["Stops the function and sends back a value", "Creates a new browser tab", "Changes all variables to strings", "Adds an event listener"],
+                correctAnswer: "Stops the function and sends back a value",
+                explanation: "return exits the function and provides a result to the caller."
+              },
+              {
+                topic: "Functions",
+                difficulty: "Hard",
+                question: "What is the difference between a parameter and an argument?",
+                options: ["A parameter is the named input in the function definition; an argument is the value passed in", "They are always identical words", "Arguments are only used in CSS", "Parameters are returned values only"],
+                correctAnswer: "A parameter is the named input in the function definition; an argument is the value passed in",
+                explanation: "Parameters define expected inputs; arguments are the actual values supplied when calling the function."
+              },
+              {
+                topic: "Functions",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Debug: function add(a, b) { a + b; } returns undefined. What is missing?",
+                options: ["return", "const", "querySelector", "else"],
+                correctAnswer: "return",
+                explanation: "Without return, the function does not send the calculated value back."
+              }
+            ]
+          },
+          {
+            topic: "Arrays and objects",
+            questions: [
+              {
+                topic: "Arrays and objects",
+                difficulty: "Easy",
+                question: "Which value is an array?",
+                options: ["{ name: \"Ada\" }", "[\"HTML\", \"CSS\"]", "\"HTML,CSS\"", "true"],
+                correctAnswer: "[\"HTML\", \"CSS\"]",
+                explanation: "Arrays use square brackets and store ordered lists of values."
+              },
+              {
+                topic: "Arrays and objects",
+                difficulty: "Medium",
+                question: "How do you access the first item in an array called skills?",
+                options: ["skills[1]", "skills.first", "skills[0]", "skills{0}"],
+                correctAnswer: "skills[0]",
+                explanation: "JavaScript arrays are zero-indexed, so the first item is at index 0."
+              },
+              {
+                topic: "Arrays and objects",
+                difficulty: "Hard",
+                question: "When is an object usually a better fit than an array?",
+                options: ["When storing named properties about one thing", "When order is the only thing that matters", "When storing only duplicate values", "When avoiding all keys"],
+                correctAnswer: "When storing named properties about one thing",
+                explanation: "Objects store key-value pairs such as user.name and user.email."
+              },
+              {
+                topic: "Arrays and objects",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: To add an item to the end of an array, use array.___(item).",
+                options: ["push", "join", "slice", "keys"],
+                correctAnswer: "push",
+                explanation: "push adds one or more items to the end of an array."
+              }
+            ]
+          },
+          {
+            topic: "DOM and events",
+            questions: [
+              {
+                topic: "DOM and events",
+                difficulty: "Easy",
+                question: "What does document.querySelector do?",
+                options: ["Selects the first matching element", "Creates a database", "Uploads a file", "Starts a web server"],
+                correctAnswer: "Selects the first matching element",
+                explanation: "querySelector returns the first DOM element matching a CSS selector."
+              },
+              {
+                topic: "DOM and events",
+                difficulty: "Medium",
+                question: "Which method listens for a button click?",
+                options: ["button.addEventListener(\"click\", handler)", "button.listenClick(handler)", "button.on(\"load\")", "button.querySelector(\"click\")"],
+                correctAnswer: "button.addEventListener(\"click\", handler)",
+                explanation: "addEventListener attaches an event handler for a named event such as click."
+              },
+              {
+                topic: "DOM and events",
+                difficulty: "Hard",
+                question: "Why should DOM code often run after the HTML elements exist?",
+                options: ["Otherwise selectors may return null because the elements have not loaded yet", "It prevents CSS from loading", "It hides every event", "It changes all arrays to objects"],
+                correctAnswer: "Otherwise selectors may return null because the elements have not loaded yet",
+                explanation: "If script runs before elements are parsed, those elements may not be available to select."
+              },
+              {
+                topic: "DOM and events",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Debug: document.querySelector(\".save\") returns null. What is a likely cause?",
+                options: ["No element matches .save at that time", "The browser cannot use classes", "querySelector only works on arrays", "CSS is disabled forever"],
+                correctAnswer: "No element matches .save at that time",
+                explanation: "A null result means no matching element was found when the selector ran."
+              }
+            ]
+          },
+          {
+            topic: "Control flow and debugging",
+            questions: [
+              {
+                topic: "Control flow and debugging",
+                difficulty: "Easy",
+                question: "Which statement runs code only when a condition is true?",
+                options: ["if", "push", "const", "querySelector"],
+                correctAnswer: "if",
+                explanation: "if statements choose whether to run code based on a condition."
+              },
+              {
+                topic: "Control flow and debugging",
+                difficulty: "Medium",
+                question: "Which loop is commonly used to repeat code for each item in an array?",
+                options: ["for...of", "if...else", "try...name", "const...let"],
+                correctAnswer: "for...of",
+                explanation: "for...of loops over iterable values such as arrays."
+              },
+              {
+                topic: "Control flow and debugging",
+                difficulty: "Hard",
+                question: "What does console.log help with during debugging?",
+                options: ["Inspecting values and program flow", "Publishing the website", "Changing HTML semantics", "Creating a Git branch"],
+                correctAnswer: "Inspecting values and program flow",
+                explanation: "console.log prints values so you can understand what the script is doing."
+              },
+              {
+                topic: "Control flow and debugging",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Debug: if (score = 100) always behaves incorrectly. What operator should compare equality?",
+                options: ["===", "=", "+=", "=>"],
+                correctAnswer: "===",
+                explanation: "= assigns a value, while === compares value and type."
+              }
+            ]
+          }
+        ]
+      },
+      "api-basics": {
+        label: "API Basics",
+        topics: [
+          {
+            topic: "REST API basics",
+            questions: [
+              {
+                topic: "REST API basics",
+                difficulty: "Easy",
+                question: "What is an API endpoint?",
+                options: ["A URL where a client can access a specific API resource or action", "A CSS class name", "A Git branch", "A browser font"],
+                correctAnswer: "A URL where a client can access a specific API resource or action",
+                explanation: "Endpoints are API URLs that clients call to read or change data."
+              },
+              {
+                topic: "REST API basics",
+                difficulty: "Medium",
+                question: "In REST, what does a resource usually represent?",
+                options: ["A thing such as users, products or orders", "Only a JavaScript variable", "A CSS media query", "A local keyboard shortcut"],
+                correctAnswer: "A thing such as users, products or orders",
+                explanation: "REST APIs commonly expose resources such as users, posts, products or orders."
+              },
+              {
+                topic: "REST API basics",
+                difficulty: "Hard",
+                question: "Why should API documentation describe endpoints, methods and example responses?",
+                options: ["So clients know how to call the API correctly", "So CSS can compile", "So Git can merge branches automatically", "So HTML labels are optional"],
+                correctAnswer: "So clients know how to call the API correctly",
+                explanation: "Good API docs help developers send valid requests and handle responses."
+              },
+              {
+                topic: "REST API basics",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: A URL value like ?page=2 is commonly called a query ___.",
+                options: ["parameter", "selector", "branch", "viewport"],
+                correctAnswer: "parameter",
+                explanation: "Query parameters pass extra request information in the URL."
+              }
+            ]
+          },
+          {
+            topic: "HTTP methods",
+            questions: [
+              {
+                topic: "HTTP methods",
+                difficulty: "Easy",
+                question: "Which HTTP method is usually used to request data?",
+                options: ["GET", "DELETE", "PATCH", "POST"],
+                correctAnswer: "GET",
+                explanation: "GET requests retrieve data without intending to change it."
+              },
+              {
+                topic: "HTTP methods",
+                difficulty: "Medium",
+                question: "Which HTTP method is usually used to create a new resource?",
+                options: ["GET", "POST", "HEAD", "OPTIONS only"],
+                correctAnswer: "POST",
+                explanation: "POST is commonly used to submit data that creates a new resource."
+              },
+              {
+                topic: "HTTP methods",
+                difficulty: "Hard",
+                question: "Which pair best describes PUT and PATCH?",
+                options: ["PUT often replaces a resource; PATCH applies partial updates", "PUT deletes data; PATCH only reads data", "PUT is only for images; PATCH is only for CSS", "They are never used in APIs"],
+                correctAnswer: "PUT often replaces a resource; PATCH applies partial updates",
+                explanation: "PUT and PATCH both update resources, but PATCH is typically partial."
+              },
+              {
+                topic: "HTTP methods",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Scenario: A user clicks Remove on a saved item. Which method is most likely?",
+                options: ["POST", "GET", "DELETE", "TRACE"],
+                correctAnswer: "DELETE",
+                explanation: "DELETE is commonly used to remove a resource."
+              }
+            ]
+          },
+          {
+            topic: "Status codes",
+            questions: [
+              {
+                topic: "Status codes",
+                difficulty: "Easy",
+                question: "What does a 200 status code usually mean?",
+                options: ["Success", "Not found", "Unauthorized", "Server error"],
+                correctAnswer: "Success",
+                explanation: "200 OK means the request succeeded."
+              },
+              {
+                topic: "Status codes",
+                difficulty: "Medium",
+                question: "Which status code usually means a resource was not found?",
+                options: ["201", "400", "404", "500"],
+                correctAnswer: "404",
+                explanation: "404 Not Found means the requested resource could not be found."
+              },
+              {
+                topic: "Status codes",
+                difficulty: "Hard",
+                question: "What is the difference between 401 and 403?",
+                options: ["401 means unauthenticated; 403 means authenticated but not allowed", "401 means success; 403 means created", "401 only applies to CSS", "They mean exactly the same thing"],
+                correctAnswer: "401 means unauthenticated; 403 means authenticated but not allowed",
+                explanation: "401 indicates missing or invalid authentication; 403 indicates insufficient permission."
+              },
+              {
+                topic: "Status codes",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: A server-side crash or unexpected backend failure often returns status ___.",
+                options: ["201", "301", "400", "500"],
+                correctAnswer: "500",
+                explanation: "500 Internal Server Error indicates a server-side problem."
+              }
+            ]
+          },
+          {
+            topic: "JSON payloads",
+            questions: [
+              {
+                topic: "JSON payloads",
+                difficulty: "Easy",
+                question: "What is JSON commonly used for in APIs?",
+                options: ["Sending structured data between client and server", "Styling HTML elements", "Creating Git commits", "Changing image dimensions only"],
+                correctAnswer: "Sending structured data between client and server",
+                explanation: "JSON is a common data format for API requests and responses."
+              },
+              {
+                topic: "JSON payloads",
+                difficulty: "Medium",
+                question: "Which value is valid JSON?",
+                options: ["{name: 'Ada'}", "{\"name\":\"Ada\"}", "name = Ada", "<name>Ada</name>"],
+                correctAnswer: "{\"name\":\"Ada\"}",
+                explanation: "Valid JSON uses double quotes around object keys and string values."
+              },
+              {
+                topic: "JSON payloads",
+                difficulty: "Hard",
+                question: "Why should a frontend handle missing fields in an API response?",
+                options: ["APIs can change or return incomplete data, so defensive UI code prevents crashes", "Missing fields always mean CSS failed", "Browsers automatically create all fields", "It makes HTTP methods unnecessary"],
+                correctAnswer: "APIs can change or return incomplete data, so defensive UI code prevents crashes",
+                explanation: "Robust frontend code checks data before rendering values."
+              },
+              {
+                topic: "JSON payloads",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: In fetch, response.___() parses a JSON response body.",
+                options: ["json", "textOnly", "status", "headers"],
+                correctAnswer: "json",
+                explanation: "response.json() reads and parses the response body as JSON."
+              }
+            ]
+          },
+          {
+            topic: "API testing and debugging",
+            questions: [
+              {
+                topic: "API testing and debugging",
+                difficulty: "Easy",
+                question: "Which tool type is commonly used to manually test API requests?",
+                options: ["Postman or Thunder Client", "A CSS validator only", "A font picker", "A spreadsheet pivot table"],
+                correctAnswer: "Postman or Thunder Client",
+                explanation: "API clients help send requests, inspect responses and debug endpoints."
+              },
+              {
+                topic: "API testing and debugging",
+                difficulty: "Medium",
+                question: "What should you check first when an API call returns 400?",
+                options: ["Whether the request data or parameters are invalid", "Whether CSS grid is enabled", "Whether Git has a remote", "Whether the image alt text is empty"],
+                correctAnswer: "Whether the request data or parameters are invalid",
+                explanation: "400 Bad Request usually points to a malformed or invalid client request."
+              },
+              {
+                topic: "API testing and debugging",
+                difficulty: "Hard",
+                question: "What does idempotency mean for API methods?",
+                options: ["Repeating the same request has the same effect as making it once", "Every request must create a new item", "The API only returns images", "The frontend cannot read the response"],
+                correctAnswer: "Repeating the same request has the same effect as making it once",
+                explanation: "Idempotent methods can be repeated without changing the result beyond the first request."
+              },
+              {
+                topic: "API testing and debugging",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Scenario: fetch fails because the server rejects requests from your site origin. What issue might this be?",
+                options: ["CORS configuration", "CSS specificity", "HTML nesting", "Git branching"],
+                correctAnswer: "CORS configuration",
+                explanation: "CORS controls whether browsers allow frontend code to read responses from another origin."
+              }
+            ]
+          }
+        ]
       }
     }
   };

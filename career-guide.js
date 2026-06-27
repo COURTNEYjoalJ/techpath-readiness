@@ -103,6 +103,42 @@
         "Push a project to GitHub and pull updates back locally"
       ],
       miniProject: "Publish an infrastructure scripts repository with clear commits and branches"
+    },
+    html: {
+      study: "HTML document structure, semantic elements, forms, links, media and accessibility basics",
+      actions: [
+        "Build pages using html, head, body, headings, paragraphs and sections",
+        "Practise forms with labels, inputs and accessible text",
+        "Review semantic tags such as nav, main, section, article and footer"
+      ],
+      miniProject: "Build a semantic portfolio homepage with an accessible contact form"
+    },
+    css: {
+      study: "selectors, specificity, box model, Flexbox, Grid and responsive design",
+      actions: [
+        "Practise class selectors, spacing, borders and hover states",
+        "Build layouts using Flexbox and CSS Grid",
+        "Use media queries to make cards stack cleanly on mobile"
+      ],
+      miniProject: "Build a responsive landing page with cards, navigation and a mobile layout"
+    },
+    javascript: {
+      study: "variables, data types, functions, arrays, objects, DOM events and debugging",
+      actions: [
+        "Practise let, const, functions, arrays and objects",
+        "Build click and form interactions with addEventListener",
+        "Debug common syntax and logic errors in small scripts"
+      ],
+      miniProject: "Build an interactive task tracker using DOM events and localStorage"
+    },
+    "api-basics": {
+      study: "REST API basics, HTTP methods, status codes, JSON payloads and API debugging",
+      actions: [
+        "Practise GET, POST, PUT, PATCH and DELETE request concepts",
+        "Read JSON responses and handle common status codes",
+        "Test API endpoints with a tool such as Postman or Thunder Client"
+      ],
+      miniProject: "Build a frontend page that fetches and displays public API data"
     }
   };
   const strongPortfolioSuggestions = {
@@ -116,7 +152,11 @@
     "power-bi": "Use Power BI in an interactive dashboard with cleaned data, relationships, DAX measures, KPIs, and filters.",
     "cloud-fundamentals": "Use Cloud Fundamentals in a portfolio architecture diagram with compute, storage, networking and IAM choices.",
     linux: "Use Linux in a server automation project that includes commands, logs, permissions and a shell script.",
-    git: "Use Git in a portfolio repository that shows clean commits, branches, merges and a documented workflow."
+    git: "Use Git in a portfolio repository that shows clean commits, branches, merges and a documented workflow.",
+    html: "Use HTML in a semantic portfolio page with accessible structure, forms, links and media.",
+    css: "Use CSS in a responsive layout project that demonstrates Flexbox, Grid, spacing and polished hover states.",
+    javascript: "Use JavaScript in an interactive browser project with DOM events, data structures and clear state changes.",
+    "api-basics": "Use API Basics in a frontend project that fetches JSON data, handles loading states and displays errors clearly."
   };
 
   if (!data || !countrySelect || !roleSelect || !skillTableArea) {
