@@ -33,6 +33,29 @@ a {
   text-decoration: none;
 }
 
+.reveal-ready .reveal-on-scroll {
+  opacity: 0;
+  translate: 0 26px;
+  transition:
+    opacity 780ms cubic-bezier(0.22, 1, 0.36, 1),
+    translate 780ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, translate;
+}
+
+.reveal-ready .reveal-on-scroll.reveal-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .reveal-on-scroll {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}
+
 .site-header {
   min-height: 92vh;
   padding-bottom: 72px;
