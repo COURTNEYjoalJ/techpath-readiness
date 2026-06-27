@@ -47,7 +47,7 @@
           {
             name: "Communication",
             weight: 10,
-            requiredTopics: ["Storytelling", "visual explanation", "stakeholder updates", "clear recommendations"],
+            requiredTopics: ["Explaining insights", "Business understanding", "Data storytelling", "Stakeholder communication", "Presentation basics"],
             reason: "Communication helps turn complex analysis into decisions that teams can understand and use."
           }
         ]
@@ -89,7 +89,7 @@
           {
             name: "Communication",
             weight: 10,
-            requiredTopics: ["Business writing", "presentation", "dashboard notes", "clear recommendations"],
+            requiredTopics: ["Explaining insights", "Business understanding", "Data storytelling", "Stakeholder communication", "Presentation basics"],
             reason: "Communication turns findings into practical next steps for managers, clients and teams."
           }
         ]
@@ -131,7 +131,7 @@
           {
             name: "Communication",
             weight: 10,
-            requiredTopics: ["Incident updates", "technical explanations", "documentation", "stakeholder communication"],
+            requiredTopics: ["Explaining insights", "Business understanding", "Data storytelling", "Stakeholder communication", "Presentation basics"],
             reason: "Communication helps cloud engineers explain incidents, tradeoffs and infrastructure decisions clearly."
           }
         ]
@@ -173,7 +173,7 @@
           {
             name: "Communication",
             weight: 10,
-            requiredTopics: ["Explaining UI decisions", "stakeholder communication", "presentation basics", "clear documentation"],
+            requiredTopics: ["Explaining insights", "Business understanding", "Data storytelling", "Stakeholder communication", "Presentation basics"],
             reason: "Communication helps developers explain design choices, requirements and tradeoffs clearly."
           }
         ]
@@ -215,7 +215,7 @@
           {
             name: "Communication",
             weight: 10,
-            requiredTopics: ["Technical explanations", "documentation", "stakeholder updates", "clear requirements"],
+            requiredTopics: ["Explaining insights", "Business understanding", "Data storytelling", "Stakeholder communication", "Presentation basics"],
             reason: "Communication helps backend developers explain APIs, tradeoffs, bugs and implementation decisions clearly."
           }
         ]
