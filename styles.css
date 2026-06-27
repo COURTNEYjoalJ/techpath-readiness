@@ -1621,6 +1621,26 @@ footer {
   border-top: 1px solid var(--line);
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-weight: 800;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--accent);
+  outline: none;
+}
+
 @media (max-width: 1100px) {
   .site-header {
     min-height: auto;
