@@ -177,6 +177,48 @@
             reason: "Communication helps developers explain design choices, requirements and tradeoffs clearly."
           }
         ]
+      },
+      "backend-developer": {
+        label: "Backend Developer",
+        totalWeight: 100,
+        skills: [
+          {
+            name: "Backend Basics",
+            weight: 25,
+            requiredTopics: ["Server-side programming", "Request and response", "Authentication basics", "CRUD operations", "Error handling and validation"],
+            reason: "Backend basics help developers build server logic, process requests and protect application workflows."
+          },
+          {
+            name: "API Basics",
+            weight: 20,
+            requiredTopics: ["REST API basics", "HTTP methods", "status codes", "JSON payloads", "API testing and debugging"],
+            reason: "API basics help backend developers design endpoints that clients can call reliably."
+          },
+          {
+            name: "Databases",
+            weight: 20,
+            requiredTopics: ["Relational database basics", "Tables and keys", "SQL CRUD operations", "Indexes and performance basics", "Database design basics"],
+            reason: "Databases store application data and support reliable reads, writes and relationships."
+          },
+          {
+            name: "Git",
+            weight: 10,
+            requiredTopics: ["Git basics", "branching", "commit workflow", "merge and conflict basics", "remote repositories"],
+            reason: "Git helps backend developers manage code changes, collaborate safely and review server-side work."
+          },
+          {
+            name: "Python",
+            weight: 15,
+            requiredTopics: ["Python syntax", "automation scripts", "files", "APIs", "basic debugging"],
+            reason: "Python is useful for backend scripting, web services, automation and debugging."
+          },
+          {
+            name: "Communication",
+            weight: 10,
+            requiredTopics: ["Technical explanations", "documentation", "stakeholder updates", "clear requirements"],
+            reason: "Communication helps backend developers explain APIs, tradeoffs, bugs and implementation decisions clearly."
+          }
+        ]
       }
     }
   };

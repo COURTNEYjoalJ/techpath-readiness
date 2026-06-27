@@ -2851,6 +2851,386 @@
             ]
           }
         ]
+      },
+      "backend-basics": {
+        label: "Backend Basics",
+        topics: [
+          {
+            topic: "Server-side programming",
+            questions: [
+              {
+                topic: "Server-side programming",
+                difficulty: "Easy",
+                question: "What does server-side code usually do in a web application?",
+                options: ["Runs application logic on a server before sending a response", "Changes the user's monitor brightness", "Stores CSS hover colors only", "Runs only inside the browser address bar"],
+                correctAnswer: "Runs application logic on a server before sending a response",
+                explanation: "Server-side code handles business logic, data access and response creation outside the browser."
+              },
+              {
+                topic: "Server-side programming",
+                difficulty: "Medium",
+                question: "Why might a backend use environment variables for settings?",
+                options: ["To keep configuration such as ports and secrets separate from code", "To make every request public", "To replace all validation", "To style HTML elements"],
+                correctAnswer: "To keep configuration such as ports and secrets separate from code",
+                explanation: "Environment variables let different deployments use different configuration without changing source code."
+              },
+              {
+                topic: "Server-side programming",
+                difficulty: "Hard",
+                question: "Which task is usually a backend responsibility rather than a frontend responsibility?",
+                options: ["Checking permissions before changing protected data", "Choosing a button hover color", "Setting the page font size", "Cropping a hero image"],
+                correctAnswer: "Checking permissions before changing protected data",
+                explanation: "Sensitive permission checks must happen on the server because frontend checks can be bypassed."
+              },
+              {
+                topic: "Server-side programming",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Scenario: A route works locally but fails in production because a required setting is missing. What should you check first?",
+                options: ["The server environment configuration", "The CSS border radius", "The browser zoom level", "The image file dimensions"],
+                correctAnswer: "The server environment configuration",
+                explanation: "Production-only failures often come from missing environment variables or deployment configuration."
+              }
+            ]
+          },
+          {
+            topic: "Request and response",
+            questions: [
+              {
+                topic: "Request and response",
+                difficulty: "Easy",
+                question: "In a web request, what does the client send to the server?",
+                options: ["A request asking for data or an action", "Only a database table", "Only a CSS selector", "A Git commit hash every time"],
+                correctAnswer: "A request asking for data or an action",
+                explanation: "Clients send requests containing details such as method, URL, headers and sometimes a body."
+              },
+              {
+                topic: "Request and response",
+                difficulty: "Medium",
+                question: "What part of an HTTP response tells the client whether the request succeeded or failed?",
+                options: ["Status code", "CSS class", "Git branch name", "Font family"],
+                correctAnswer: "Status code",
+                explanation: "Status codes such as 200, 404 and 500 communicate the outcome of a request."
+              },
+              {
+                topic: "Request and response",
+                difficulty: "Hard",
+                question: "Why should a backend return a clear error response instead of a vague failure?",
+                options: ["It helps clients handle the problem and users understand what went wrong", "It makes passwords public", "It removes the need for tests", "It forces every request to succeed"],
+                correctAnswer: "It helps clients handle the problem and users understand what went wrong",
+                explanation: "Clear status codes and messages make client behavior, debugging and user feedback more reliable."
+              },
+              {
+                topic: "Request and response",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: Request headers often carry metadata such as content type and ___.",
+                options: ["authorization", "font weight", "table border", "commit message"],
+                correctAnswer: "authorization",
+                explanation: "Headers can include authorization tokens, content type, accepted formats and other request metadata."
+              }
+            ]
+          },
+          {
+            topic: "Authentication basics",
+            questions: [
+              {
+                topic: "Authentication basics",
+                difficulty: "Easy",
+                question: "What does authentication confirm?",
+                options: ["Who the user or client is", "How wide a page should be", "Which CSS color is brightest", "How many Git branches exist"],
+                correctAnswer: "Who the user or client is",
+                explanation: "Authentication verifies identity, such as proving a user is who they claim to be."
+              },
+              {
+                topic: "Authentication basics",
+                difficulty: "Medium",
+                question: "Why should passwords be hashed before storing them?",
+                options: ["So the original password is not stored directly", "So users never need accounts", "So the database needs no backups", "So CSS loads faster"],
+                correctAnswer: "So the original password is not stored directly",
+                explanation: "Password hashing protects users by avoiding storage of plain-text passwords."
+              },
+              {
+                topic: "Authentication basics",
+                difficulty: "Hard",
+                question: "What is the difference between authentication and authorization?",
+                options: ["Authentication verifies identity; authorization checks allowed actions", "Authentication styles pages; authorization creates images", "Authentication only deletes users; authorization only reads CSS", "They always mean exactly the same thing"],
+                correctAnswer: "Authentication verifies identity; authorization checks allowed actions",
+                explanation: "A user can be authenticated but still not authorized to perform a specific protected action."
+              },
+              {
+                topic: "Authentication basics",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Scenario: A user is logged in but cannot access an admin page. What is the likely issue?",
+                options: ["Authorization denies that role", "The user is not authenticated at all", "The HTML title is missing", "The database has no indexes"],
+                correctAnswer: "Authorization denies that role",
+                explanation: "A logged-in user may still lack the role or permission required for an admin-only page."
+              }
+            ]
+          },
+          {
+            topic: "CRUD operations",
+            questions: [
+              {
+                topic: "CRUD operations",
+                difficulty: "Easy",
+                question: "What does CRUD stand for?",
+                options: ["Create, Read, Update, Delete", "Copy, Render, Upload, Deploy", "Cache, Route, Use, Debug", "Compile, Restart, Unpack, Design"],
+                correctAnswer: "Create, Read, Update, Delete",
+                explanation: "CRUD describes the four basic operations most applications perform on stored data."
+              },
+              {
+                topic: "CRUD operations",
+                difficulty: "Medium",
+                question: "Which CRUD operation changes an existing record?",
+                options: ["Update", "Create", "Read", "Delete only"],
+                correctAnswer: "Update",
+                explanation: "Update modifies an existing record, such as changing a user's email address."
+              },
+              {
+                topic: "CRUD operations",
+                difficulty: "Hard",
+                question: "Why should a delete operation usually check authorization first?",
+                options: ["To prevent users from deleting data they do not own or manage", "To make the response body empty", "To avoid using route names", "To disable all database keys"],
+                correctAnswer: "To prevent users from deleting data they do not own or manage",
+                explanation: "Protected write actions must verify permission before changing or removing data."
+              },
+              {
+                topic: "CRUD operations",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: In a todo app, marking a task complete is usually an ___ operation.",
+                options: ["update", "insert-only", "read-only", "authentication"],
+                correctAnswer: "update",
+                explanation: "Marking an existing task complete changes a field on that record, so it is an update."
+              }
+            ]
+          },
+          {
+            topic: "Error handling and validation",
+            questions: [
+              {
+                topic: "Error handling and validation",
+                difficulty: "Easy",
+                question: "What does input validation check?",
+                options: ["Whether submitted data has the expected format and rules", "Whether the page has enough animations", "Whether every file is an image", "Whether a Git branch is public"],
+                correctAnswer: "Whether submitted data has the expected format and rules",
+                explanation: "Validation confirms that data is complete, correctly formatted and acceptable before processing."
+              },
+              {
+                topic: "Error handling and validation",
+                difficulty: "Medium",
+                question: "Why should backend validation still happen if the frontend already validates a form?",
+                options: ["Frontend checks can be bypassed, so the server must enforce rules", "Frontend validation deletes the database", "Backend validation only changes colors", "Browsers reject all invalid data automatically"],
+                correctAnswer: "Frontend checks can be bypassed, so the server must enforce rules",
+                explanation: "Server-side validation protects data integrity because clients cannot be fully trusted."
+              },
+              {
+                topic: "Error handling and validation",
+                difficulty: "Hard",
+                question: "What is a good backend response when required input is missing?",
+                options: ["Return a client error with a clear validation message", "Save the broken data anyway", "Crash without a response", "Return unrelated records"],
+                correctAnswer: "Return a client error with a clear validation message",
+                explanation: "A clear 4xx response helps the client correct invalid or incomplete input."
+              },
+              {
+                topic: "Error handling and validation",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Debug: A route crashes when req.body.email is missing. What should be added?",
+                options: ["A validation check before using email", "A larger logo image", "A new CSS media query", "A Git tag"],
+                correctAnswer: "A validation check before using email",
+                explanation: "Checking required fields before using them prevents avoidable runtime errors."
+              }
+            ]
+          }
+        ]
+      },
+      databases: {
+        label: "Databases",
+        topics: [
+          {
+            topic: "Relational database basics",
+            questions: [
+              {
+                topic: "Relational database basics",
+                difficulty: "Easy",
+                question: "What does a relational database store data in?",
+                options: ["Tables with rows and columns", "Only image files", "CSS selectors", "Git branches"],
+                correctAnswer: "Tables with rows and columns",
+                explanation: "Relational databases organise structured data into tables made of rows and columns."
+              },
+              {
+                topic: "Relational database basics",
+                difficulty: "Medium",
+                question: "Why are relational databases useful for application data?",
+                options: ["They can model relationships between different types of records", "They only store one text file", "They replace all server code", "They make validation unnecessary"],
+                correctAnswer: "They can model relationships between different types of records",
+                explanation: "Relational databases can connect records such as customers, orders and products through keys."
+              },
+              {
+                topic: "Relational database basics",
+                difficulty: "Hard",
+                question: "What does data integrity mean in a relational database?",
+                options: ["Keeping data accurate, consistent and valid according to rules", "Making every column optional", "Using only one table for every app", "Sorting rows by color"],
+                correctAnswer: "Keeping data accurate, consistent and valid according to rules",
+                explanation: "Integrity rules help prevent invalid, duplicate or inconsistent data from entering the database."
+              },
+              {
+                topic: "Relational database basics",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: A single stored record in a relational table is called a ___.",
+                options: ["row", "stylesheet", "branch", "route"],
+                correctAnswer: "row",
+                explanation: "Each row represents one record in a relational table."
+              }
+            ]
+          },
+          {
+            topic: "Tables and keys",
+            questions: [
+              {
+                topic: "Tables and keys",
+                difficulty: "Easy",
+                question: "What is a primary key used for?",
+                options: ["Uniquely identifying each row in a table", "Changing the database font", "Deleting every duplicate automatically", "Starting a web server"],
+                correctAnswer: "Uniquely identifying each row in a table",
+                explanation: "A primary key gives each table row a stable unique identifier."
+              },
+              {
+                topic: "Tables and keys",
+                difficulty: "Medium",
+                question: "What does a foreign key usually reference?",
+                options: ["A primary key in another related table", "A CSS variable", "A browser tab", "A Git commit message only"],
+                correctAnswer: "A primary key in another related table",
+                explanation: "Foreign keys connect rows between tables by referencing another table's primary key."
+              },
+              {
+                topic: "Tables and keys",
+                difficulty: "Hard",
+                question: "Why should an orders table usually store customer_id instead of repeating all customer details?",
+                options: ["It links to the customer table and reduces duplicated customer data", "It prevents any customer from placing orders", "It makes every query impossible", "It removes the need for primary keys"],
+                correctAnswer: "It links to the customer table and reduces duplicated customer data",
+                explanation: "Using a foreign key keeps customer data in one place and relates orders to the right customer."
+              },
+              {
+                topic: "Tables and keys",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Scenario: You cannot insert an order because customer_id does not exist in customers. What rule is likely blocking it?",
+                options: ["Foreign key constraint", "CSS specificity", "HTTP redirect", "Git merge conflict"],
+                correctAnswer: "Foreign key constraint",
+                explanation: "A foreign key constraint prevents references to rows that do not exist in the related table."
+              }
+            ]
+          },
+          {
+            topic: "SQL CRUD operations",
+            questions: [
+              {
+                topic: "SQL CRUD operations",
+                difficulty: "Easy",
+                question: "Which SQL statement is commonly used to read rows from a table?",
+                options: ["SELECT", "INSERT", "UPDATE", "DELETE"],
+                correctAnswer: "SELECT",
+                explanation: "SELECT queries retrieve data from one or more database tables."
+              },
+              {
+                topic: "SQL CRUD operations",
+                difficulty: "Medium",
+                question: "Which SQL statement adds a new row to a table?",
+                options: ["INSERT", "SELECT", "ALTER", "DROP"],
+                correctAnswer: "INSERT",
+                explanation: "INSERT adds new records to a table."
+              },
+              {
+                topic: "SQL CRUD operations",
+                difficulty: "Hard",
+                question: "Why is a WHERE clause important in many UPDATE or DELETE statements?",
+                options: ["It limits which rows are changed or removed", "It always creates a backup", "It turns SQL into HTML", "It prevents SELECT queries"],
+                correctAnswer: "It limits which rows are changed or removed",
+                explanation: "Without a WHERE clause, an UPDATE or DELETE can affect every row in the table."
+              },
+              {
+                topic: "SQL CRUD operations",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Fill the gap: UPDATE users SET name = 'Ada' ___ id = 5;",
+                options: ["WHERE", "FROM", "INTO", "JOIN"],
+                correctAnswer: "WHERE",
+                explanation: "WHERE filters the UPDATE so only the row with id 5 is changed."
+              }
+            ]
+          },
+          {
+            topic: "Indexes and performance basics",
+            questions: [
+              {
+                topic: "Indexes and performance basics",
+                difficulty: "Easy",
+                question: "What is a database index mainly used for?",
+                options: ["Helping the database find rows faster", "Changing table colors", "Encrypting every response", "Creating frontend buttons"],
+                correctAnswer: "Helping the database find rows faster",
+                explanation: "Indexes can speed up lookups by giving the database a faster way to locate matching rows."
+              },
+              {
+                topic: "Indexes and performance basics",
+                difficulty: "Medium",
+                question: "Which column is often a good candidate for an index?",
+                options: ["A column frequently used in WHERE filters or joins", "A column that is never queried", "A column containing only one repeated value", "A column used only for CSS"],
+                correctAnswer: "A column frequently used in WHERE filters or joins",
+                explanation: "Indexes are most useful on columns that queries search, filter, sort or join on often."
+              },
+              {
+                topic: "Indexes and performance basics",
+                difficulty: "Hard",
+                question: "What is one tradeoff of adding many indexes?",
+                options: ["Writes can become slower because indexes must also be updated", "SELECT queries become illegal", "Tables can no longer have rows", "Primary keys stop being unique"],
+                correctAnswer: "Writes can become slower because indexes must also be updated",
+                explanation: "Indexes improve some reads but add overhead when inserting, updating or deleting data."
+              },
+              {
+                topic: "Indexes and performance basics",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Scenario: A query filtering by email is slow on a large users table. What might help?",
+                options: ["Adding an index on email", "Removing all WHERE clauses", "Changing the HTML title", "Renaming the Git branch"],
+                correctAnswer: "Adding an index on email",
+                explanation: "An index on a frequently filtered column such as email can make lookups faster."
+              }
+            ]
+          },
+          {
+            topic: "Database design basics",
+            questions: [
+              {
+                topic: "Database design basics",
+                difficulty: "Easy",
+                question: "What is a database schema?",
+                options: ["The planned structure of tables, columns and relationships", "A website color palette", "A browser bookmark", "A Git hosting account"],
+                correctAnswer: "The planned structure of tables, columns and relationships",
+                explanation: "A schema describes how database data is organised and related."
+              },
+              {
+                topic: "Database design basics",
+                difficulty: "Medium",
+                question: "Why should each table usually represent one main type of thing?",
+                options: ["It keeps data organised and easier to query correctly", "It forces every column to be text", "It prevents applications from using APIs", "It makes all records anonymous"],
+                correctAnswer: "It keeps data organised and easier to query correctly",
+                explanation: "Clear table boundaries make relationships, constraints and queries easier to reason about."
+              },
+              {
+                topic: "Database design basics",
+                difficulty: "Hard",
+                question: "What problem can happen when the same fact is stored in many places?",
+                options: ["Updates can become inconsistent across duplicate copies", "All queries automatically speed up", "Primary keys disappear", "SQL stops accepting WHERE clauses"],
+                correctAnswer: "Updates can become inconsistent across duplicate copies",
+                explanation: "Duplicated facts can drift apart when one copy is updated and another is missed."
+              },
+              {
+                topic: "Database design basics",
+                difficulty: "Scenario or Debug or Fill Gap",
+                question: "Scenario: A blog has authors and posts, where one author can write many posts. What relationship is this?",
+                options: ["One-to-many", "Many-to-zero only", "CSS-to-HTML", "Branch-to-commit only"],
+                correctAnswer: "One-to-many",
+                explanation: "One author can relate to many post records, so this is a one-to-many relationship."
+              }
+            ]
+          }
+        ]
       }
     }
   };

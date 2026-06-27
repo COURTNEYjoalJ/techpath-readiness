@@ -139,6 +139,24 @@
         "Test API endpoints with a tool such as Postman or Thunder Client"
       ],
       miniProject: "Build a frontend page that fetches and displays public API data"
+    },
+    "backend-basics": {
+      study: "server-side programming, request and response flow, authentication basics, CRUD operations and validation",
+      actions: [
+        "Trace how a request reaches server code and returns a response",
+        "Practise create, read, update and delete route logic",
+        "Review authentication, validation and error-handling scenarios"
+      ],
+      miniProject: "Design a small backend service plan for users, products and orders"
+    },
+    databases: {
+      study: "relational database basics, tables, keys, SQL CRUD, indexes and simple schema design",
+      actions: [
+        "Practise SELECT, INSERT, UPDATE and DELETE statements",
+        "Map one-to-many relationships using primary and foreign keys",
+        "Review when indexes help queries and when they add write overhead"
+      ],
+      miniProject: "Design a small application database with tables, keys and sample CRUD queries"
     }
   };
   const strongPortfolioSuggestions = {
@@ -156,7 +174,9 @@
     html: "Use HTML in a semantic portfolio page with accessible structure, forms, links and media.",
     css: "Use CSS in a responsive layout project that demonstrates Flexbox, Grid, spacing and polished hover states.",
     javascript: "Use JavaScript in an interactive browser project with DOM events, data structures and clear state changes.",
-    "api-basics": "Use API Basics in a frontend project that fetches JSON data, handles loading states and displays errors clearly."
+    "api-basics": "Use API Basics in a frontend project that fetches JSON data, handles loading states and displays errors clearly.",
+    "backend-basics": "Use Backend Basics in a service design that shows routes, request handling, validation, authentication and errors.",
+    databases: "Use Databases in a schema project with related tables, keys, sample SQL CRUD queries and indexing notes."
   };
 
   if (!data || !countrySelect || !roleSelect || !skillTableArea) {

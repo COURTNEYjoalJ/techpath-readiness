@@ -287,6 +287,25 @@ a {
   padding: 28px;
 }
 
+#skillTableArea {
+  align-items: start;
+  display: grid;
+  gap: clamp(38px, 5vw, 64px);
+}
+
+.skill-table-panel,
+.readiness-panel {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  position: relative;
+}
+
+.guide-page .skill-table-panel:hover,
+.guide-page .readiness-panel:hover {
+  transform: translateY(-2px);
+}
+
 .skill-table-heading {
   margin-bottom: 20px;
 }
@@ -298,7 +317,9 @@ a {
 }
 
 .skill-table-wrap {
+  max-width: 100%;
   overflow-x: auto;
+  padding-bottom: 4px;
 }
 
 .skill-table {
@@ -357,7 +378,8 @@ a {
 .readiness-panel {
   display: grid;
   gap: 30px;
-  margin-top: 22px;
+  margin-top: 0;
+  scroll-margin-top: 24px;
 }
 
 .readiness-heading {
@@ -474,6 +496,7 @@ a {
   color: var(--muted);
   font-size: 1.02rem;
   max-width: 760px;
+  overflow-wrap: anywhere;
 }
 
 .readiness-report-section {
