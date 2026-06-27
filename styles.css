@@ -261,7 +261,7 @@ a {
 .guide-page .guide-home-link:hover,
 .guide-page .custom-select-field:hover,
 .guide-page .custom-select-field:focus-within,
-.guide-page .guide-placeholder:hover {
+.guide-page .guide-placeholder:not(.skill-table-panel):not(.readiness-panel):hover {
   border-color: var(--gold);
   box-shadow:
     0 0 0 1px rgba(255, 214, 102, 0.18),
@@ -299,11 +299,6 @@ a {
   min-width: 0;
   overflow-wrap: anywhere;
   position: relative;
-}
-
-.guide-page .skill-table-panel:hover,
-.guide-page .readiness-panel:hover {
-  transform: translateY(-2px);
 }
 
 .skill-table-heading {
