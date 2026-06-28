@@ -13,10 +13,115 @@
   translate: 0 0;
 }
 
+@keyframes mochaSapphirePulse {
+  0%,
+  100% {
+    opacity: var(--wave-opacity, 0.45);
+  }
+
+  50% {
+    opacity: calc(var(--wave-opacity, 0.45) + 0.18);
+  }
+}
+
+@keyframes mochaGlobalWaveFlow {
+  0% {
+    opacity: var(--strand-opacity, 0.48);
+    translate: -1.4% 0;
+  }
+
+  50% {
+    opacity: calc(var(--strand-opacity, 0.48) + 0.06);
+    translate: 1.6% -8px;
+  }
+
+  100% {
+    opacity: var(--strand-opacity, 0.48);
+    translate: -1.4% 0;
+  }
+}
+
+@keyframes mochaGlobalCopperDrift {
+  0% {
+    opacity: var(--strand-opacity, 0.26);
+    translate: 1.4% 0;
+  }
+
+  50% {
+    opacity: calc(var(--strand-opacity, 0.26) + 0.035);
+    translate: -0.8% 6px;
+  }
+
+  100% {
+    opacity: var(--strand-opacity, 0.26);
+    translate: 1.4% 0;
+  }
+}
+
+@keyframes mochaRibbonFlow {
+  0%,
+  100% {
+    opacity: var(--ribbon-opacity, 0.2);
+    translate: -1% 0;
+  }
+
+  50% {
+    opacity: calc(var(--ribbon-opacity, 0.2) + 0.05);
+    translate: 1.2% -6px;
+  }
+}
+
+@keyframes mochaAtmosphereBreath {
+  0%,
+  100% {
+    opacity: var(--bg-glow-opacity, 0.76);
+  }
+
+  50% {
+    opacity: calc(var(--bg-glow-opacity, 0.76) + 0.04);
+  }
+}
+
+@keyframes mochaGrainShift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 64px 42px, -46px 58px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-ready .reveal-on-scroll {
     opacity: 1;
     translate: none;
-    transition: none;
+    transition: none !important;
+  }
+
+  .mocha-sapphire-bg *,
+  .mocha-sapphire-bg *::before,
+  .mocha-sapphire-bg *::after,
+  .mocha-sapphire-bg::before,
+  .mocha-sapphire-bg::after {
+    animation: none !important;
+  }
+
+  .nav-links a,
+  .guide-page .guide-home-link,
+  .nav-links a::before,
+  .nav-links a::after,
+  .guide-page .guide-home-link::before,
+  .guide-page .guide-home-link::after {
+    transition: none !important;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus,
+  .nav-links a:focus-visible,
+  .guide-page .guide-home-link:hover,
+  .guide-page .guide-home-link:focus,
+  .guide-page .guide-home-link:focus-visible {
+    transform: none !important;
   }
 }

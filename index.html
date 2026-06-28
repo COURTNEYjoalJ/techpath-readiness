@@ -30,7 +30,7 @@
 <body>
   <header class="site-header">
     <nav class="nav">
-      <div class="brand">TechPath <span>Readiness</span></div>
+      <a class="brand" href="index.html" aria-label="TechPath Readiness home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPath Readiness logo" /><span class="brand-text">TechPath <span>Readiness</span></span></a>
       <button class="menu-btn" id="menuBtn">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="#supported-paths">Career Paths</a>
@@ -45,27 +45,58 @@
     <section class="hero">
       <div class="hero-text">
         <p class="tag">Career-path learning and readiness</p>
-        <h1>Choose a tech career path and see exactly what to learn next.</h1>
+        <h1>Your Path. Your Future.</h1>
         <p class="subtitle">
-          TechPath Readiness helps you choose a career path, follow a skill roadmap, take focused skill tests,
-          and get a career readiness report with practical next steps.
+          Discover your readiness, explore career paths, and build the skills that drive real impact.
+          TechPath Readiness brings roadmaps, skill tests and next-step reports into one focused experience.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="career-path-guide.html">Start Career Path Guide</a>
-          <a class="btn secondary" href="#supported-paths">Explore Learning Roadmap</a>
+          <a class="btn primary" href="career-path-guide.html">Take Readiness Assessment</a>
+          <a class="btn secondary" href="#supported-paths">Explore Paths</a>
         </div>
       </div>
-      <div class="hero-card career-preview" aria-label="Career readiness guide preview">
-        <div class="preview-header">
-          <span>Career readiness</span>
-          <strong>6 paths live</strong>
-        </div>
+      <div class="career-preview" aria-label="Career readiness guide preview">
+        <div class="preview-panel preview-score-panel">
+          <div class="preview-header">
+            <span>Career readiness</span>
+            <strong>6 paths live</strong>
+          </div>
 
-        <div class="preview-score">
-          <div class="preview-score-ring">82%</div>
-          <div>
-            <p>Sample readiness report</p>
-            <strong>Skill tests, weighted score and next-step plan.</strong>
+          <div class="readiness-preview-result" data-readiness-preview-result aria-live="polite">
+            <div class="preview-empty-state">
+              <h2>Select a completed path to preview your readiness breakdown.</h2>
+              <p>Complete a Career Path Guide assessment to unlock skill-level progress here.</p>
+            </div>
+          </div>
+
+          <div class="preview-path-selector">
+            <p class="preview-path-selector-label">Preview by path</p>
+            <div class="preview-role-list" data-readiness-path-list>
+              <button type="button" data-preview-path="data-scientist">
+                <span>Data Scientist</span>
+                <small>Checking...</small>
+              </button>
+              <button type="button" data-preview-path="data-analyst">
+                <span>Data Analyst</span>
+                <small>Checking...</small>
+              </button>
+              <button type="button" data-preview-path="cloud-engineer">
+                <span>Cloud Engineer</span>
+                <small>Checking...</small>
+              </button>
+              <button type="button" data-preview-path="frontend-developer">
+                <span>Frontend Developer</span>
+                <small>Checking...</small>
+              </button>
+              <button type="button" data-preview-path="backend-developer">
+                <span>Backend Developer</span>
+                <small>Checking...</small>
+              </button>
+              <button type="button" data-preview-path="gcse-maths-python">
+                <span>GCSE Maths + Python Basics</span>
+                <small>Checking...</small>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -75,15 +106,6 @@
           <a href="career-path-guide.html#career-tests">Take tests</a>
           <a href="career-path-guide.html#readiness-report">Review report</a>
         </div>
-
-        <div class="preview-role-list">
-          <a href="data-scientist-roadmap.html">Data Scientist</a>
-          <a href="data-analyst-roadmap.html">Data Analyst</a>
-          <a href="cloud-engineer-roadmap.html">Cloud Engineer</a>
-          <a href="frontend-developer-roadmap.html">Frontend Developer</a>
-          <a href="backend-developer-roadmap.html">Backend Developer</a>
-          <a href="gcse-maths-python-roadmap.html">GCSE Maths + Python Basics</a>
-        </div>
       </div>
     </section>
   </header>
@@ -91,8 +113,8 @@
   <main>
     <section class="stats">
       <div>
-        <h2>5</h2>
-        <p>Supported career paths</p>
+        <h2>6</h2>
+        <p>Learning paths live</p>
       </div>
       <div>
         <h2>Skill</h2>
@@ -348,8 +370,11 @@
     <p>&copy; 2026 TechPath Readiness. Built for career-path learning and programming practice.</p>
   </footer>
 
+  <script src="career-data.js"></script>
   <script src="career-questions.js"></script>
   <script src="script.js"></script>
+  <script src="homepage-readiness-preview.js"></script>
   <script src="scroll-reveal.js"></script>
+  <script src="mocha-background.js"></script>
 </body>
 </html>

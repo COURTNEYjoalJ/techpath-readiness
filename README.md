@@ -33,7 +33,11 @@ Repository: https://github.com/COURTNEYjoalJ/techpath-readiness
 - `sitemap.xml`, `robots.txt`, and Google Search Console verification file
 - Canonical URLs, Open Graph metadata, Twitter/X card metadata, and JSON-LD structured data
 - Repeatable scroll reveal animations across HTML pages
-- Responsive navy/cyan glassmorphism design
+- Responsive Mocha Sapphire glassmorphism design
+- Global live Mocha Sapphire animated background across all pages
+- Procedural sapphire and copper wave trails that are not a static image or video
+- Subtle scroll-responsive background movement with reduced-motion support
+- Supplied logo image expected at `assets/techpath-logo.png`
 - Central theme tokens in `theme.css` for easier future colour and design updates
 - Reusable reveal animation styles in `animations.css`
 
@@ -86,10 +90,13 @@ This project does not use React, a backend, a database, API keys, external libra
 
 ## Theme And Animation Structure
 
-- `theme.css` stores the central navy/cyan glassmorphism design tokens, including colours, gradients, borders, shadows, radii, spacing and motion variables.
+- `theme.css` stores the central Mocha Sapphire design tokens, including colours, gradients, borders, shadows, radii, spacing and motion variables.
 - `animations.css` stores reusable scroll reveal styles and reduced-motion handling.
 - `styles.css` keeps component layout and page-specific styling while using the shared tokens where practical.
-- The current theme remains navy/cyan glassmorphism; this structure only makes future theme changes easier.
+- The current theme is Mocha Sapphire: deep mocha backgrounds, sapphire motion accents, champagne/copper borders and dark glass panels.
+- The global animated background is injected by `mocha-background.js`, uses CSS layers and keyframes, and does not use external videos or animation libraries.
+- The background appears behind every page, responds subtly to scrolling through CSS variables, and respects `prefers-reduced-motion`.
+- The header uses `assets/techpath-logo.png` when available, with TechPath Readiness text beside it as a readable fallback.
 
 ## File Structure
 
@@ -107,11 +114,13 @@ This project does not use React, a backend, a database, API keys, external libra
 |-- about.html                     # About and founder page
 |-- privacy-policy.html            # Static website privacy policy
 |-- contact.html                   # Feedback and LinkedIn contact route
+|-- assets/techpath-logo.png       # Supplied TechPath Readiness logo mark
 |-- theme.css                      # Central colour, gradient, shadow, spacing and motion tokens
 |-- animations.css                 # Reusable scroll reveal animation styles
 |-- styles.css                     # Shared component design, layout and responsive styles
 |-- script.js                      # Homepage menu, lessons and practice quiz behavior
 |-- scroll-reveal.js               # Repeatable scroll reveal animations
+|-- mocha-background.js            # Global procedural Mocha Sapphire animated background
 |-- gcse-starter-quiz.js           # Separate GCSE Maths + Python Basics starter quiz and result modal
 |-- career-data.js                 # Career roles, skill weights and required topics
 |-- career-guide.js                # Career guide rendering, quiz flow, scoring and readiness report logic
