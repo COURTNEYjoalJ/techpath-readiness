@@ -1,0 +1,95 @@
+/* Central theme tokens for TechPath Readiness. Change values here to update the website colour system. */
+:root {
+  --color-bg: #08111f;
+  --color-bg-soft: #0d1b30;
+  --color-bg-deep: #06111d;
+  --color-bg-hero-end: #0c1d33;
+
+  --color-surface: rgba(16, 36, 61, 0.5);
+  --color-surface-strong: rgba(16, 36, 61, 0.72);
+  --color-surface-solid: rgba(16, 36, 61, 0.92);
+  --color-card: rgba(6, 17, 29, 0.42);
+  --color-card-mid: rgba(6, 17, 29, 0.46);
+  --color-card-hover: rgba(6, 17, 29, 0.48);
+  --color-card-strong: rgba(6, 17, 29, 0.5);
+  --color-modal-overlay: rgba(3, 8, 15, 0.78);
+
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-strong: rgba(102, 227, 255, 0.32);
+  --color-primary-border: rgba(102, 227, 255, 0.24);
+  --color-success-border: rgba(142, 246, 180, 0.36);
+  --color-warning-border: rgba(255, 209, 102, 0.34);
+  --color-accent-border: rgba(167, 139, 250, 0.34);
+
+  --color-text: #eef6ff;
+  --color-text-muted: #a9bdd2;
+  --color-heading: #eef6ff;
+  --color-button-text-dark: #06111d;
+
+  --color-primary: #66e3ff;
+  --color-primary-strong: #d9fbff;
+  --color-primary-soft: rgba(102, 227, 255, 0.12);
+  --color-primary-tint: rgba(102, 227, 255, 0.1);
+  --color-primary-softer: rgba(102, 227, 255, 0.08);
+  --color-primary-hover: rgba(102, 227, 255, 0.18);
+  --color-primary-glow: rgba(102, 227, 255, 0.18);
+
+  --color-accent: #a78bfa;
+  --color-accent-strong: #d8ccff;
+  --color-accent-soft: rgba(167, 139, 250, 0.14);
+
+  --color-warning: #ffd166;
+  --color-warning-soft: rgba(255, 209, 102, 0.13);
+  --color-warning-glow: rgba(255, 214, 102, 0.14);
+  --color-success: #8ef6b4;
+  --color-success-soft: rgba(142, 246, 180, 0.12);
+
+  --gradient-bg:
+    radial-gradient(circle at 14% 8%, var(--color-primary-glow), transparent 34%),
+    radial-gradient(circle at 84% 18%, var(--color-accent-soft), transparent 30%),
+    var(--color-bg);
+  --gradient-hero:
+    radial-gradient(circle at top left, rgba(102, 227, 255, 0.25), transparent 35%),
+    radial-gradient(circle at top right, rgba(167, 139, 250, 0.18), transparent 32%),
+    linear-gradient(135deg, var(--color-bg), var(--color-bg-hero-end));
+  --gradient-card: linear-gradient(180deg, rgba(16, 36, 61, 0.56), rgba(6, 17, 29, 0.42));
+  --gradient-button-primary: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  --gradient-button-secondary: linear-gradient(135deg, rgba(102, 227, 255, 0.12), rgba(102, 227, 255, 0.06));
+
+  --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.25);
+  --shadow-card: 0 14px 36px rgba(0, 0, 0, 0.18);
+  --shadow-modal: 0 28px 80px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 20px var(--color-warning-glow);
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.78s var(--ease-premium);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-reveal-distance: 26px;
+  --motion-reveal-duration: 780ms;
+  --motion-stagger-step: 70ms;
+
+  --bg: var(--color-bg);
+  --bg-2: var(--color-bg-soft);
+  --card: var(--color-surface);
+  --text: var(--color-text);
+  --muted: var(--color-text-muted);
+  --line: var(--color-border);
+  --accent: var(--color-primary);
+  --accent-2: var(--color-accent);
+  --success: var(--color-success);
+  --gold: var(--color-warning);
+  --shadow: var(--shadow-soft);
+}

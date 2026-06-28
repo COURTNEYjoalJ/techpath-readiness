@@ -46,6 +46,10 @@
   ].join(", ");
 
   const revealSelector = targetSelectors.join(", ");
+  const staggerStep = Number.parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue("--motion-stagger-step"),
+    10
+  ) || 70;
   let revealObserver;
 
   function shouldSkip(element) {
@@ -62,7 +66,7 @@
     });
 
     const index = Math.max(0, siblings.indexOf(element));
-    return Math.min(index, 5) * 70;
+    return Math.min(index, 5) * staggerStep;
   }
 
   function showElement(element) {
