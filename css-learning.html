@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Learning Path for Beginners | TechPath Readiness</title>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Learn CSS from scratch with beginner-friendly styling lessons, diagrams, examples, exercises, mini-project tasks and a responsive career card project." />
+  <link rel="canonical" href="https://courtneyjoalj.github.io/techpath-readiness/css-learning.html" />
+  <meta property="og:title" content="CSS Learning Path for Beginners | TechPath Readiness" />
+  <meta property="og:description" content="Learn CSS from scratch with beginner-friendly styling lessons, diagrams, examples, exercises, mini-project tasks and a responsive career card project." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://courtneyjoalj.github.io/techpath-readiness/css-learning.html" />
+  <meta property="og:site_name" content="TechPath Readiness" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CSS Learning Path for Beginners | TechPath Readiness" />
+  <meta name="twitter:description" content="Learn CSS from scratch with beginner-friendly styling lessons, diagrams, examples, exercises, mini-project tasks and a responsive career card project." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "CSS Learning Path for Beginners | TechPath Readiness",
+      "description": "Learn CSS from scratch with beginner-friendly styling lessons, diagrams, examples, exercises, mini-project tasks and a responsive career card project.",
+      "url": "https://courtneyjoalj.github.io/techpath-readiness/css-learning.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechPath Readiness"
+      }
+    }
+  </script>
+</head>
+<body id="top" class="guide-page learning-page">
+  <header class="site-header guide-header lesson-hero">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TechPath Readiness home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPath Readiness logo" /><span class="brand-text">TechPath <span>Readiness</span></span></a>
+      <div class="learning-nav-links" aria-label="CSS learning navigation">
+        <a class="guide-home-link" href="index.html">Home</a>
+        <a class="guide-home-link" href="html-learning.html">HTML</a>
+        <a class="guide-home-link" href="javascript-learning.html">JavaScript</a>
+        <a class="guide-home-link" href="career-path-guide.html">Career Guide</a>
+      </div>
+    </nav>
+
+    <section class="hero guide-hero">
+      <div class="hero-text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html#languages">Build the Skills</a>
+          <span aria-hidden="true">/</span>
+          <span>CSS Basics</span>
+        </nav>
+        <p class="tag">CSS learning roadmap</p>
+        <h1>Learn CSS from Scratch</h1>
+        <p class="subtitle">
+          CSS is the visual design layer of web pages. It controls colours, typography, spacing, borders, layout, hover states, responsiveness and simple motion.
+        </p>
+        <p class="lesson-note">
+          Each topic includes a quick exercise and a mini-project task. Complete them in order to build a Responsive Career Card Design.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#css-lessons">Start Learning</a>
+          <a class="btn secondary" href="#css-final-project">Final Project</a>
+          <a class="btn secondary" href="index.html#languages">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <nav class="lesson-dock" aria-label="CSS lesson index">
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#top"><span class="dock-number">0</span><span class="dock-label">Top</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#what-is-css"><span class="dock-number">1</span><span class="dock-label">What is CSS?</span></a><div class="dock-popover"><a href="#css-style-layer">Style layer</a><a href="#css-rules">Rules</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-syntax-selectors"><span class="dock-number">2</span><span class="dock-label">Syntax and selectors</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-colours-backgrounds"><span class="dock-number">3</span><span class="dock-label">Colours and backgrounds</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-typography"><span class="dock-number">4</span><span class="dock-label">Typography</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-box-model"><span class="dock-number">5</span><span class="dock-label">Box model</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-display-flex"><span class="dock-number">6</span><span class="dock-label">Display and flexbox</span></a><div class="dock-popover"><a href="#css-display-basics">Display basics</a><a href="#css-flexbox">Flexbox</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-grid"><span class="dock-number">7</span><span class="dock-label">CSS Grid</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-hover-responsive"><span class="dock-number">8</span><span class="dock-label">Hover and responsive design</span></a><div class="dock-popover"><a href="#css-hover-focus">Hover and focus</a><a href="#css-responsive">Responsive design</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-animations"><span class="dock-number">9</span><span class="dock-label">Simple animations</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#css-final-project"><span class="dock-number">10</span><span class="dock-label">Final mini project</span></a></div>
+  </nav>
+
+  <main id="css-lessons">
+    <section class="section">
+      <div class="section-heading"><p class="tag">Lesson overview</p><h2>Design a responsive card step by step</h2><p>Each module adds one visual layer to the final Responsive Career Card Design.</p></div>
+      <div class="lesson-overview-grid">
+        <a href="#what-is-css">What is CSS?</a>
+        <a href="#css-syntax-selectors">Syntax and selectors</a>
+        <a href="#css-colours-backgrounds">Colours and backgrounds</a>
+        <a href="#css-typography">Typography</a>
+        <a href="#css-box-model">Box model</a>
+        <a href="#css-display-flex">Display and flexbox</a>
+        <a href="#css-grid">CSS Grid</a>
+        <a href="#css-hover-responsive">Hover and responsive design</a>
+        <a href="#css-animations">Simple animations</a>
+        <a href="#css-final-project">Final mini project</a>
+      </div>
+    </section>
+
+    <section class="section lesson-module" id="what-is-css">
+      <div class="section-heading"><p class="tag">Topic 1</p><h2>What is CSS?</h2><p>CSS controls presentation while HTML provides structure.</p></div>
+      <div class="concept-diagram"><span class="flow-step">HTML content</span><span class="flow-arrow">-&gt;</span><span class="flow-step">CSS rules</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Designed page</span></div>
+      <article class="lesson-subtopic" id="css-style-layer">
+        <h3>CSS as the style layer</h3>
+        <p>CSS changes colour, spacing, typography, card shape, button states and layout.</p>
+        <pre class="code-example"><code>.career-card {
+  background: #07101d;
+  color: #f7efe3;
+}</code></pre>
+        <p><strong>Real-life example:</strong> A plain career card becomes easier to read with spacing, contrast and a clear button.</p>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>CSS as the style layer</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>.career-card { background: #07101d; color: #f7efe3; }</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>.career-card { background: #07101d; color: #f7efe3; }</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Name three visual things CSS can control.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Write what your career card should communicate.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="css-rules">
+        <h3>Rules, properties and values</h3>
+        <p>A CSS rule chooses an element and applies property-value pairs.</p>
+        <pre class="code-example"><code>selector {
+  property: value;
+}</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not forget semicolons after declarations inside a rule.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Rules, properties and values</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>selector { property: value; }</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>selector { property: value; }</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Identify the property and value in <code>color: blue;</code></p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create a class name for your career card.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can explain CSS as the layer that turns structure into design.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="css-syntax-selectors">
+      <div class="section-heading"><p class="tag">Topic 2</p><h2>CSS syntax and selectors</h2><p>Selectors choose what to style.</p></div>
+      <article class="lesson-subtopic" id="css-selector-types">
+        <h3>Element, class, id and descendant selectors</h3>
+        <p>Use class selectors for reusable components. Use ids sparingly for unique items.</p>
+        <pre class="code-example"><code>h2 {
+  font-size: 2rem;
+}
+
+.career-card {
+  padding: 1rem;
+}
+
+.career-card a {
+  font-weight: bold;
+}</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Element, class, id and descendant selectors</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>h2 { font-size: 2rem; } .career-card { padding: 1re...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>h2 { font-size: 2rem; } .career-card { padding: 1re...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which selector targets every paragraph: <code>p</code> or <code>.p</code>?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Style a career card title and text with class selectors.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your card has a reusable selector foundation.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="css-colours-backgrounds">
+      <div class="section-heading"><p class="tag">Topic 3</p><h2>Colours and backgrounds</h2><p>Colour choices affect readability and mood.</p></div>
+      <article class="lesson-subtopic" id="css-colour-values">
+        <h3>Named colours, hex, rgb/rgba and gradients</h3>
+        <p>Use strong contrast between text and background. Gradients can add depth when used carefully.</p>
+        <pre class="code-example"><code>.career-card {
+  background: linear-gradient(145deg, #07101d, #120b07);
+  border: 1px solid rgba(240, 197, 141, 0.35);
+  color: #f7efe3;
+}</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not put low-contrast grey text on a dark background.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Named colours, hex, rgb/rgba and gradients</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>.career-card { background: linear-gradient(145deg, ...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>.career-card { background: linear-gradient(145deg, ...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which is easier to read: ivory text on dark navy, or pale grey on white?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add a card background and accent colour.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your card has a readable visual mood.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="css-typography">
+      <div class="section-heading"><p class="tag">Topic 4</p><h2>Typography</h2><p>Typography controls how text feels and scans.</p></div>
+      <article class="lesson-subtopic" id="css-text-style">
+        <h3>font-family, font-size, line-height, font-weight and letter-spacing</h3>
+        <p>Readable text needs enough line height and a sensible size.</p>
+        <pre class="code-example"><code>.career-card h3 {
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.career-card p {
+  line-height: 1.6;
+  font-weight: 600;
+}</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>font-family, font-size, line-height, font-weight and letter-s...</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>.career-card h3 { font-size: 1.35rem; line-height: ...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>.career-card h3 { font-size: 1.35rem; line-height: ...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Why can line-height make paragraphs easier to read?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Improve the card title and paragraph readability.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your card text is easier to scan.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="css-box-model">
+      <div class="section-heading"><p class="tag">Topic 5</p><h2>Box model</h2><p>Every element has content, padding, border and margin.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Content</span><span class="flow-arrow">+</span><span class="flow-step">Padding</span><span class="flow-arrow">+</span><span class="flow-step">Border</span><span class="flow-arrow">+</span><span class="flow-step">Margin</span></div>
+      <article class="lesson-subtopic" id="css-box-spacing">
+        <h3>Spacing and borders</h3>
+        <p>The content is the item, padding is space inside the box, border is the box edge, and margin is space outside the box.</p>
+        <p>Padding creates space inside the card. Margin creates space outside it. Border outlines the card.</p>
+        <pre class="code-example"><code>* {
+  box-sizing: border-box;
+}
+
+.career-card {
+  padding: 1.25rem;
+  border: 1px solid rgba(240, 197, 141, 0.35);
+  margin-bottom: 1rem;
+}</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not use many random margins to fix layout. Start with a clear spacing system.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Spacing and borders</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>* { box-sizing: border-box; } .career-card { paddin...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>* { box-sizing: border-box; } .career-card { paddin...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which property creates space inside a card?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add spacing and a border to the card.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your card has cleaner spacing and structure.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="css-display-flex">
+      <div class="section-heading"><p class="tag">Topic 6</p><h2>Display basics and Flexbox</h2><p>Display controls how elements sit on the page.</p></div>
+      <article class="lesson-subtopic" id="css-display-basics">
+        <h3>block, inline, inline-block and none</h3>
+        <p>Block elements take a full row. Inline elements sit in text flow. <code>display: none</code> hides an element from layout.</p>
+        <pre class="code-example"><code>.tag {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+}</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>block, inline, inline-block and none</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>display: none</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>display: none</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Why might a tag use <code>inline-block</code>?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Style card tags for role type and skill level.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="css-flexbox">
+        <h3>Flexbox alignment</h3>
+        <p>Flexbox helps arrange items in one row or one column. It is useful for aligning buttons, tags and small groups of content.</p>
+        <div class="concept-diagram"><span class="flow-step">Item</span><span class="flow-arrow">gap</span><span class="flow-step">Item</span><span class="flow-arrow">gap</span><span class="flow-step">Item</span></div>
+        <pre class="code-example"><code>.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Flexbox alignment</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>.card-actions { display: flex; align-items: center;...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>.card-actions { display: flex; align-items: center;...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which property adds space between flex items?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Align card content and buttons with Flexbox.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your card can align tags, text and actions neatly.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="css-grid">
+      <div class="section-heading"><p class="tag">Topic 7</p><h2>CSS Grid</h2><p>Grid is useful for card layouts.</p></div>
+      <article class="lesson-subtopic" id="css-grid-cards">
+        <h3>display grid, repeat, minmax and gap</h3>
+        <p>Grid helps arrange items in rows and columns. It is useful when you want a clean group of cards that adapts to screen size.</p>
+        <pre class="code-example"><code>.career-card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>display grid, repeat, minmax and gap</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>.career-card-grid { display: grid; gap: 1rem; grid-...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>.career-card-grid { display: grid; gap: 1rem; grid-...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What does <code>gap</code> control in a grid?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Build a small card grid for several career cards.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your card can sit inside a responsive grid.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="css-hover-responsive">
+      <div class="section-heading"><p class="tag">Topic 8</p><h2>Hover, focus and responsive design</h2><p>Interactive states and mobile layout make designs feel complete.</p></div>
+      <article class="lesson-subtopic" id="css-hover-focus">
+        <h3>Hover, focus and transitions</h3>
+        <p>Hover is for pointer users. Focus-visible helps keyboard users see where they are.</p>
+        <pre class="code-example"><code>.career-card a:hover,
+.career-card a:focus-visible {
+  border-color: #f0c58d;
+  outline: 2px solid rgba(240, 197, 141, 0.45);
+}</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not remove outlines without replacing them with a clear focus style.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Hover, focus and transitions</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>.career-card a:hover, .career-card a:focus-visible ...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>.career-card a:hover, .career-card a:focus-visible ...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Why is focus-visible important?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add button hover and focus states.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="css-responsive">
+        <h3>Media queries and mobile-first thinking</h3>
+        <p>Responsive design adapts layout for smaller screens. Flexible widths avoid horizontal overflow.</p>
+        <div class="concept-diagram"><span class="flow-step">Desktop grid</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Tablet wrap</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Mobile stack</span></div>
+        <pre class="code-example"><code>@media (max-width: 640px) {
+  .career-card {
+    padding: 1rem;
+  }
+}</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Media queries and mobile-first thinking</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>@media (max-width: 640px) { .career-card { padding:...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>@media (max-width: 640px) { .career-card { padding:...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What problem does a media query solve?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Make the card responsive on mobile.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your card works better with pointer, keyboard and mobile users.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="css-animations">
+      <div class="section-heading"><p class="tag">Topic 9</p><h2>Simple animations</h2><p>Small motion can make a design feel polished when used carefully.</p></div>
+      <article class="lesson-subtopic" id="css-simple-motion">
+        <h3>transition, transform and keyframes</h3>
+        <p>Use subtle motion for hover feedback. Avoid excessive movement and respect reduced-motion users in real projects.</p>
+        <pre class="code-example"><code>.career-card {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.career-card:hover {
+  transform: translateY(-3px);
+}</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not animate layout properties like margin or top when transform can do the job more smoothly.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you style the Responsive Career Card Design in a controlled way.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>transition, transform and keyframes</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>.career-card { transition: transform 220ms ease, bo...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>.career-card { transition: transform 220ms ease, bo...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Responsive Career Card Design</td><td>Responsive Career Card Design</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which property is better for a small lift effect: transform or margin?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add a subtle card hover animation.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your card has a restrained, professional interaction.</p></div>
+    </section>
+
+    <section class="section lesson-module project-card" id="css-final-project">
+      <div class="section-heading"><p class="tag">Final mini project</p><h2>Responsive Career Card Design</h2><p>This project combines selectors, colours, typography, box model, spacing, borders, Flexbox, Grid, hover states, responsive design and simple animation.</p></div>
+      <pre class="code-example final-code"><code>&lt;section class="career-card-grid"&gt;
+  &lt;article class="career-card"&gt;
+    &lt;span class="career-tag"&gt;Beginner path&lt;/span&gt;
+    &lt;h3&gt;Data Analyst&lt;/h3&gt;
+    &lt;p&gt;Learn Excel, SQL, Power BI, statistics and communication.&lt;/p&gt;
+    &lt;div class="card-actions"&gt;
+      &lt;a href="#"&gt;View roadmap&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/section&gt;</code></pre>
+      <pre class="code-example final-code"><code>.career-card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.career-card {
+  background: linear-gradient(145deg, #07101d, #120b07);
+  border: 1px solid rgba(240, 197, 141, 0.35);
+  border-radius: 18px;
+  color: #f7efe3;
+  padding: 1.25rem;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.career-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.career-card p {
+  line-height: 1.6;
+}
+
+.career-tag {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: #f0c58d;
+  font-weight: 700;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .career-card {
+    padding: 1rem;
+  }
+}</code></pre>
+      <div class="grid cards">
+        <article class="practice-card"><h3>Explain each CSS section</h3><p>The grid controls layout, the card controls surface and spacing, text rules improve readability, and hover/focus states support interaction.</p></article>
+        <article class="practice-card"><h3>Upgrade ideas</h3><ul><li>Add more cards</li><li>Use CSS variables</li><li>Create a dark/light theme</li><li>Add badges</li><li>Connect cards to learning pages</li></ul></article>
+      </div>
+      <div class="final-cta">
+        <p class="tag">Next step</p>
+        <h2>Add interaction with JavaScript</h2>
+        <p>After styling cards with CSS, JavaScript can filter, expand or update them.</p>
+        <div class="hero-actions"><a class="btn primary" href="javascript-learning.html">Continue to JavaScript</a><a class="btn secondary" href="html-learning.html">Review HTML</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links" aria-label="Footer links"><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="business.html">Business</a></div>
+    <p>&copy; 2026 TechPath Readiness. Built for career-path learning and programming practice.</p>
+  </footer>
+  <script src="scroll-reveal.js"></script>
+  <script src="mocha-background.js"></script>
+</body>
+</html>

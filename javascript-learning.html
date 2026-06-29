@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Learning Path for Beginners | TechPath Readiness</title>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Learn JavaScript from scratch with beginner-friendly explanations, diagrams, code examples, exercises, mini-project tasks and a final interactive quiz card." />
+  <link rel="canonical" href="https://courtneyjoalj.github.io/techpath-readiness/javascript-learning.html" />
+  <meta property="og:title" content="JavaScript Learning Path for Beginners | TechPath Readiness" />
+  <meta property="og:description" content="Learn JavaScript from scratch with beginner-friendly explanations, diagrams, code examples, exercises, mini-project tasks and a final interactive quiz card." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://courtneyjoalj.github.io/techpath-readiness/javascript-learning.html" />
+  <meta property="og:site_name" content="TechPath Readiness" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="JavaScript Learning Path for Beginners | TechPath Readiness" />
+  <meta name="twitter:description" content="Learn JavaScript from scratch with beginner-friendly explanations, diagrams, code examples, exercises, mini-project tasks and a final interactive quiz card." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "JavaScript Learning Path for Beginners | TechPath Readiness",
+      "description": "Learn JavaScript from scratch with beginner-friendly explanations, diagrams, code examples, exercises, mini-project tasks and a final interactive quiz card.",
+      "url": "https://courtneyjoalj.github.io/techpath-readiness/javascript-learning.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechPath Readiness"
+      }
+    }
+  </script>
+</head>
+<body id="top" class="guide-page learning-page">
+  <header class="site-header guide-header lesson-hero">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TechPath Readiness home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPath Readiness logo" /><span class="brand-text">TechPath <span>Readiness</span></span></a>
+      <div class="learning-nav-links" aria-label="JavaScript learning navigation">
+        <a class="guide-home-link" href="index.html">Home</a>
+        <a class="guide-home-link" href="python-learning.html">Python</a>
+        <a class="guide-home-link" href="career-path-guide.html">Career Guide</a>
+        <a class="guide-home-link" href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero guide-hero">
+      <div class="hero-text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html#languages">Build the Skills</a>
+          <span aria-hidden="true">/</span>
+          <span>JavaScript Basics</span>
+        </nav>
+        <p class="tag">JavaScript learning roadmap</p>
+        <h1>Learn JavaScript from Scratch</h1>
+        <p class="subtitle">
+          JavaScript is the behaviour layer of the web. It makes buttons respond, menus open, quiz results appear and browser pages feel interactive.
+        </p>
+        <p class="lesson-note">
+          Each topic includes a quick exercise and a mini-project task. Complete them in order to build an Interactive Readiness Quiz Card.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#javascript-lessons">Start Learning</a>
+          <a class="btn secondary" href="#javascript-final-project">Final Project</a>
+          <a class="btn secondary" href="index.html#languages">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <nav class="lesson-dock" aria-label="JavaScript lesson index">
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#top"><span class="dock-number">0</span><span class="dock-label">Top</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#what-is-javascript"><span class="dock-number">1</span><span class="dock-label">What is JavaScript?</span></a><div class="dock-popover"><a href="#js-web-layers">Web layers</a><a href="#js-real-interactions">Real interactions</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#js-variables-data-types"><span class="dock-number">2</span><span class="dock-label">Variables and data types</span></a><div class="dock-popover"><a href="#js-let-const">let and const</a><a href="#js-data-values">Data values</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#js-operators-expressions"><span class="dock-number">3</span><span class="dock-label">Operators and expressions</span></a><div class="dock-popover"><a href="#js-score-calculation">Score calculation</a><a href="#js-template-literals">Template literals</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#js-conditions"><span class="dock-number">4</span><span class="dock-label">Conditions</span></a><div class="dock-popover"><a href="#js-readiness-bands">Readiness bands</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#js-loops"><span class="dock-number">5</span><span class="dock-label">Loops</span></a><div class="dock-popover"><a href="#js-checking-answers">Checking answers</a><a href="#js-loop-warning">while warning</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#js-arrays"><span class="dock-number">6</span><span class="dock-label">Arrays</span></a><div class="dock-popover"><a href="#js-array-questions">Question lists</a><a href="#js-array-methods">Array methods</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#js-functions"><span class="dock-number">7</span><span class="dock-label">Functions</span></a><div class="dock-popover"><a href="#js-function-feedback">Feedback function</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#js-objects"><span class="dock-number">8</span><span class="dock-label">Objects</span></a><div class="dock-popover"><a href="#js-result-object">Result object</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#js-dom-events-storage"><span class="dock-number">9</span><span class="dock-label">DOM, events and storage</span></a><div class="dock-popover"><a href="#js-dom-basics">DOM basics</a><a href="#js-events">Events</a><a href="#js-localstorage">localStorage</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#javascript-final-project"><span class="dock-number">10</span><span class="dock-label">Final mini project</span></a></div>
+  </nav>
+
+  <main id="javascript-lessons">
+    <section class="section">
+      <div class="section-heading">
+        <p class="tag">Lesson overview</p>
+        <h2>Build browser interaction step by step</h2>
+        <p>Follow the modules in order. Each task adds a piece to the final Interactive Readiness Quiz Card.</p>
+      </div>
+      <div class="lesson-overview-grid">
+        <a href="#what-is-javascript">What is JavaScript?</a>
+        <a href="#js-variables-data-types">Variables and data types</a>
+        <a href="#js-operators-expressions">Operators and expressions</a>
+        <a href="#js-conditions">Conditions</a>
+        <a href="#js-loops">Loops</a>
+        <a href="#js-arrays">Arrays</a>
+        <a href="#js-functions">Functions</a>
+        <a href="#js-objects">Objects</a>
+        <a href="#js-dom-events-storage">DOM, events and storage</a>
+        <a href="#javascript-final-project">Final mini project</a>
+      </div>
+    </section>
+
+    <section class="section lesson-module" id="what-is-javascript">
+      <div class="section-heading">
+        <p class="tag">Topic 1</p>
+        <h2>What is JavaScript?</h2>
+        <p>JavaScript adds behaviour to web pages. HTML gives structure, CSS gives style and JavaScript makes the page respond.</p>
+      </div>
+      <div class="concept-diagram"><span class="flow-step">HTML structure</span><span class="flow-arrow">+</span><span class="flow-step">CSS style</span><span class="flow-arrow">+</span><span class="flow-step">JavaScript behaviour</span></div>
+      <article class="lesson-subtopic" id="js-web-layers">
+        <h3>HTML, CSS and JavaScript roles</h3>
+        <p>Think of a quiz card: HTML creates the card, CSS makes it look polished and JavaScript calculates the result.</p>
+        <pre class="code-example"><code>&lt;button id="checkBtn"&gt;Check readiness&lt;/button&gt;</code></pre>
+        <p><strong>Real-life example:</strong> A button shows a score message only after a learner clicks it.</p>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>HTML, CSS and JavaScript roles</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;button id=&quot;checkBtn&quot;&gt;Check readiness&lt;/button&gt;</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;button id=&quot;checkBtn&quot;&gt;Check readiness&lt;/button&gt;</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Name one action on a website that needs JavaScript.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Write the purpose of your readiness quiz card in one sentence.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="js-real-interactions">
+        <h3>Real browser interactions</h3>
+        <p>JavaScript can change text, add classes, read input values, open menus and save simple browser-side data.</p>
+        <pre class="code-example"><code>console.log("Readiness quiz loaded");</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not expect JavaScript alone to create accounts or secure databases. This page teaches browser-side interaction only.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Real browser interactions</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>console.log(&quot;Readiness quiz loaded&quot;);</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>console.log(&quot;Readiness quiz loaded&quot;);</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>List two things your quiz card should update on screen.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Plan the text areas your quiz card will show: title, score and feedback.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can explain JavaScript as the behaviour layer that makes a static page interactive.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="js-variables-data-types">
+      <div class="section-heading"><p class="tag">Topic 2</p><h2>Variables and data types</h2><p>Variables store values your program needs later.</p></div>
+      <article class="lesson-subtopic" id="js-let-const">
+        <h3>let and const</h3>
+        <p>Use <code>const</code> for values that should not be reassigned and <code>let</code> for values that can change. Beginners should avoid <code>var</code> while learning modern JavaScript.</p>
+        <pre class="code-example"><code>const quizTitle = "Career readiness quick check";
+let score = 0;</code></pre>
+        <p><strong>Real-life example:</strong> A quiz title stays the same, but the score changes as answers are checked.</p>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>let and const</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>const</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>const</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which value should use <code>let</code>: quiz title or current score?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create variables for quiz title, learner name and starting score.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="js-data-values">
+        <h3>Strings, numbers, booleans, null and undefined</h3>
+        <p>JavaScript values can be text, numbers, true/false values or empty placeholders.</p>
+        <pre class="code-example"><code>const learnerName = "Aisha";
+const totalQuestions = 5;
+const hasFinished = false;
+let savedResult = null;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not put numbers in quotes if you need to calculate with them.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Strings, numbers, booleans, null and undefined</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>const learnerName = &quot;Aisha&quot;; const totalQuestions =...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>const learnerName = &quot;Aisha&quot;; const totalQuestions =...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write one string, one number and one boolean for a quiz result.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add total questions and finished status variables to your quiz card plan.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You now have the starter values for an interactive quiz result.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="js-operators-expressions">
+      <div class="section-heading"><p class="tag">Topic 3</p><h2>Operators and expressions</h2><p>Expressions combine values to produce a result.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Correct answers</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Calculation</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Percentage</span></div>
+      <article class="lesson-subtopic" id="js-score-calculation">
+        <h3>Arithmetic, comparison and logical operators</h3>
+        <p>Use arithmetic for scores, comparisons for checks and logical operators when more than one condition matters.</p>
+        <pre class="code-example"><code>const correctAnswers = 4;
+const totalQuestions = 5;
+const percentage = (correctAnswers / totalQuestions) * 100;
+const passedPractice = percentage &gt;= 60;</code></pre>
+        <p><strong>Real-life example:</strong> A readiness card calculates a percentage and checks whether it meets a practice threshold.</p>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Arithmetic, comparison and logical operators</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>const correctAnswers = 4; const totalQuestions = 5;...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>const correctAnswers = 4; const totalQuestions = 5;...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Calculate the percentage for 3 correct answers out of 5.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create a percentage calculation for your quiz card.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="js-template-literals">
+        <h3>Template literals</h3>
+        <p>Template literals help place variables inside readable messages.</p>
+        <pre class="code-example"><code>const message = `${learnerName}, your readiness score is ${percentage}%`;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Template literals use backticks, not normal quote marks.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Template literals</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>const message = `${learnerName}, your readiness sco...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>const message = `${learnerName}, your readiness sco...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write a message that includes a learner name and score.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create the result sentence your quiz card will display.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can calculate a readiness percentage and turn it into a readable message.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="js-conditions">
+      <div class="section-heading"><p class="tag">Topic 4</p><h2>Conditions</h2><p>Conditions let your program choose different messages based on a score.</p></div>
+      <div class="concept-diagram flowchart"><span class="flow-step">Score</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Decision</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Feedback</span></div>
+      <article class="lesson-subtopic" id="js-readiness-bands">
+        <h3>if, else if and else</h3>
+        <p>Use bands to convert a number into a clear readiness message.</p>
+        <pre class="code-example"><code>let status = "";
+
+if (percentage &gt;= 80) {
+  status = "Ready to practise";
+} else if (percentage &gt;= 50) {
+  status = "Building";
+} else {
+  status = "Beginner";
+}</code></pre>
+        <p><strong>Real-life example:</strong> A learner sees "Beginner", "Building" or "Ready to practise" after checking answers.</p>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Use <code>===</code> for exact comparison, and avoid writing assignment <code>=</code> inside a condition by accident.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>if, else if and else</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>let status = &quot;&quot;; if (percentage &gt;= 80) { status = &quot;...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>let status = &quot;&quot;; if (percentage &gt;= 80) { status = &quot;...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What status should 65% show?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add readiness feedback bands to your quiz card.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your project can now choose useful feedback based on a calculated score.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="js-loops">
+      <div class="section-heading"><p class="tag">Topic 5</p><h2>Loops</h2><p>Loops repeat a task without copying the same code many times.</p></div>
+      <div class="concept-diagram flowchart"><span class="flow-step">Start</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Check answer</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Update score</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Repeat</span></div>
+      <article class="lesson-subtopic" id="js-checking-answers">
+        <h3>for and for...of loops</h3>
+        <p>A <code>for</code> loop can use an index. A <code>for...of</code> loop reads each item directly.</p>
+        <pre class="code-example"><code>const answerScores = [1, 0, 1, 1, 0];
+let correct = 0;
+
+for (const answerScore of answerScores) {
+  correct += answerScore;
+}</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>for and for...of loops</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>for</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>for</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>How many correct answers are in <code>[1, 1, 0, 1]</code>?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create an array of answer scores and loop through it to calculate correct answers.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="js-loop-warning">
+        <h3>while loops and infinite-loop warning</h3>
+        <p>A <code>while</code> loop repeats while a condition is true. Make sure something changes inside the loop so it can stop.</p>
+        <pre class="code-example"><code>let attempts = 0;
+
+while (attempts &lt; 3) {
+  attempts += 1;
+}</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>A loop that never changes its condition can freeze the browser tab.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>while loops and infinite-loop warning</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>while</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>while</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What line makes the example loop stop?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Write one rule for limiting quiz attempts later.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can process multiple answers without writing a separate line for each one.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="js-arrays">
+      <div class="section-heading"><p class="tag">Topic 6</p><h2>Arrays</h2><p>Arrays store ordered lists of values.</p></div>
+      <div class="list-diagram"><span><strong>0</strong> HTML</span><span><strong>1</strong> CSS</span><span><strong>2</strong> JavaScript</span></div>
+      <article class="lesson-subtopic" id="js-array-questions">
+        <h3>Question lists and index positions</h3>
+        <p>Arrays start at index 0. Use arrays for quiz questions, answer scores and selected skills.</p>
+        <pre class="code-example"><code>const questions = [
+  "What does JavaScript add to a page?",
+  "Which keyword creates a value that should not change?"
+];</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Question lists and index positions</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>const questions = [ &quot;What does JavaScript add to a ...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>const questions = [ &quot;What does JavaScript add to a ...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What is the first index in a JavaScript array?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Store three readiness quiz questions in an array.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="js-array-methods">
+        <h3>push, length, includes, forEach and map</h3>
+        <p>Array methods help add items, count items and process values.</p>
+        <pre class="code-example"><code>questions.push("What does querySelector do?");
+console.log(questions.length);
+questions.forEach((question) =&gt; console.log(question));</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not confuse the item value with its index position.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>push, length, includes, forEach and map</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>questions.push(&quot;What does querySelector do?&quot;); cons...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>questions.push(&quot;What does querySelector do?&quot;); cons...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Add one more question to a questions array.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Use <code>forEach</code> to preview your quiz questions in the console.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your quiz card now has a question list and answer data.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="js-functions">
+      <div class="section-heading"><p class="tag">Topic 7</p><h2>Functions</h2><p>Functions package reusable actions.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Input score</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Function</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Feedback</span></div>
+      <article class="lesson-subtopic" id="js-function-feedback">
+        <h3>Function declarations, parameters and return values</h3>
+        <p>A parameter receives input. A return value sends the result back.</p>
+        <pre class="code-example"><code>function getReadinessFeedback(percentage) {
+  if (percentage &gt;= 80) return "Ready to practise";
+  if (percentage &gt;= 50) return "Building";
+  return "Beginner";
+}</code></pre>
+        <p><strong>Real-life example:</strong> The same function can be reused whenever a quiz result changes.</p>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Function declarations, parameters and return values</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>function getReadinessFeedback(percentage) { if (per...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>function getReadinessFeedback(percentage) { if (per...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What value does this function return for 45?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create a function that returns readiness feedback from a percentage.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your project has reusable logic instead of repeated condition blocks.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="js-objects">
+      <div class="section-heading"><p class="tag">Topic 8</p><h2>Objects</h2><p>Objects store labelled values as key-value pairs.</p></div>
+      <div class="record-diagram"><p><strong>learner</strong><span>Aisha</span></p><p><strong>score</strong><span>80</span></p><p><strong>status</strong><span>Ready</span></p></div>
+      <article class="lesson-subtopic" id="js-result-object">
+        <h3>Learner profiles and quiz result objects</h3>
+        <p>An object groups related values so the result is easier to pass around.</p>
+        <pre class="code-example"><code>const quizResult = {
+  learner: "Aisha",
+  percentage: 80,
+  status: "Ready to practise"
+};</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Use commas between object properties, but not after the final property if your team prefers cleaner style.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Learner profiles and quiz result objects</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>const quizResult = { learner: &quot;Aisha&quot;, percentage: ...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>const quizResult = { learner: &quot;Aisha&quot;, percentage: ...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Add a <code>date</code> property to the object.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create a <code>quizResult</code> object for your readiness card.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your project can store a complete result in one structured object.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="js-dom-events-storage">
+      <div class="section-heading"><p class="tag">Topic 9</p><h2>DOM, events and localStorage</h2><p>These browser features connect your data to the page.</p></div>
+      <article class="lesson-subtopic" id="js-dom-basics">
+        <h3>DOM basics</h3>
+        <p>The DOM means the browser's live map of the HTML page. JavaScript uses that map to find elements, read values and update what the learner sees.</p>
+        <p>Use <code>querySelector</code>, <code>textContent</code>, <code>classList</code> and input values to update the page.</p>
+        <div class="concept-diagram"><span class="flow-step">HTML element</span><span class="flow-arrow">-&gt;</span><span class="flow-step">JavaScript selects it</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Content changes</span></div>
+        <pre class="code-example"><code>const resultText = document.querySelector("#resultText");
+resultText.textContent = "Ready to practise";</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>DOM basics</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>querySelector</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>querySelector</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which selector would target an element with <code>id="score"</code>?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Plan the HTML ids for your score and feedback text.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="js-events">
+        <h3>Events</h3>
+        <p>An event means something the user or browser does, such as a click, key press or input change. Events let JavaScript respond at the right time.</p>
+        <div class="concept-diagram flowchart"><span class="flow-step">User clicks</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Event runs</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Result appears</span></div>
+        <pre class="code-example"><code>const checkButton = document.querySelector("#checkButton");
+
+checkButton.addEventListener("click", function () {
+  resultText.textContent = "Result calculated";
+});</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Events</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>const checkButton = document.querySelector(&quot;#checkB...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>const checkButton = document.querySelector(&quot;#checkB...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What event should run when a learner presses the quiz button?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Make a button trigger your readiness feedback function.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="js-localstorage">
+        <h3>localStorage basics</h3>
+        <p><code>localStorage</code> saves small browser-side values. It is not an account, backend or database.</p>
+        <pre class="code-example"><code>localStorage.setItem("latestQuizResult", JSON.stringify(quizResult));
+
+const saved = localStorage.getItem("latestQuizResult");
+const parsedResult = JSON.parse(saved);</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Save objects with <code>JSON.stringify</code> and read them with <code>JSON.parse</code>.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you make the Interactive Readiness Quiz Card respond to the user.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>localStorage basics</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>localStorage</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>localStorage</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Interactive Readiness Quiz Card</td><td>Interactive Readiness Quiz Card</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Why is localStorage not the same as a database?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Save the latest readiness result locally in the browser.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your quiz card can now update the page from a click and save a simple local result.</p></div>
+    </section>
+
+    <section class="section lesson-module project-card" id="javascript-final-project">
+      <div class="section-heading">
+        <p class="tag">Final mini project</p>
+        <h2>Interactive Readiness Quiz Card</h2>
+        <p>This project combines variables, data types, operators, conditions, loops, arrays, functions, objects, DOM selection, events and simple localStorage.</p>
+      </div>
+      <pre class="code-example final-code"><code>&lt;section class="quiz-card"&gt;
+  &lt;h2 id="quizTitle"&gt;Readiness quick check&lt;/h2&gt;
+  &lt;p id="scoreText"&gt;Score waiting...&lt;/p&gt;
+  &lt;p id="feedbackText"&gt;Click the button to calculate your result.&lt;/p&gt;
+  &lt;button id="checkButton"&gt;Check result&lt;/button&gt;
+&lt;/section&gt;</code></pre>
+      <pre class="code-example final-code"><code>const learnerName = "Aisha";
+const answerScores = [1, 0, 1, 1, 0];
+const scoreText = document.querySelector("#scoreText");
+const feedbackText = document.querySelector("#feedbackText");
+const checkButton = document.querySelector("#checkButton");
+
+function calculatePercentage(scores) {
+  let correct = 0;
+
+  for (const score of scores) {
+    correct += score;
+  }
+
+  return (correct / scores.length) * 100;
+}
+
+function getReadinessFeedback(percentage) {
+  if (percentage &gt;= 80) return "Ready to practise";
+  if (percentage &gt;= 50) return "Building";
+  return "Beginner";
+}
+
+checkButton.addEventListener("click", function () {
+  const percentage = calculatePercentage(answerScores);
+  const status = getReadinessFeedback(percentage);
+
+  const quizResult = {
+    learner: learnerName,
+    percentage,
+    status
+  };
+
+  scoreText.textContent = `${learnerName}, your score is ${percentage}%`;
+  feedbackText.textContent = status;
+  localStorage.setItem("latestQuizResult", JSON.stringify(quizResult));
+});</code></pre>
+      <div class="grid cards">
+        <article class="practice-card"><h3>How it works</h3><p>The button click runs a function, calculates the score, chooses feedback, updates text on the page and saves the latest result in the browser.</p></article>
+        <article class="practice-card"><h3>Upgrade ideas</h3><ul><li>Add more questions</li><li>Add skill categories</li><li>Save progress</li><li>Show previous attempts</li><li>Add a reset button</li></ul></article>
+      </div>
+      <div class="final-cta">
+        <p class="tag">Next step</p>
+        <h2>Use JavaScript in your roadmap</h2>
+        <p>Continue with HTML and CSS foundations, then use the Career Path Guide to connect JavaScript practice to real roles.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="career-path-guide.html">Continue to Career Path Guide</a>
+          <a class="btn secondary" href="html-learning.html">Learn HTML</a>
+          <a class="btn secondary" href="css-learning.html">Learn CSS</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links" aria-label="Footer links"><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="business.html">Business</a></div>
+    <p>&copy; 2026 TechPath Readiness. Built for career-path learning and programming practice.</p>
+  </footer>
+  <script src="scroll-reveal.js"></script>
+  <script src="mocha-background.js"></script>
+</body>
+</html>

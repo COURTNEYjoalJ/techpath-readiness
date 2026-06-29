@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL Learning Path for Beginners | TechPath Readiness</title>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Learn SQL from scratch with tables, query examples, diagrams, exercises, mini-project tasks and a final student progress database report." />
+  <link rel="canonical" href="https://courtneyjoalj.github.io/techpath-readiness/sql-learning.html" />
+  <meta property="og:title" content="SQL Learning Path for Beginners | TechPath Readiness" />
+  <meta property="og:description" content="Learn SQL from scratch with tables, query examples, diagrams, exercises, mini-project tasks and a final student progress database report." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://courtneyjoalj.github.io/techpath-readiness/sql-learning.html" />
+  <meta property="og:site_name" content="TechPath Readiness" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SQL Learning Path for Beginners | TechPath Readiness" />
+  <meta name="twitter:description" content="Learn SQL from scratch with tables, query examples, diagrams, exercises, mini-project tasks and a final student progress database report." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "SQL Learning Path for Beginners | TechPath Readiness",
+      "description": "Learn SQL from scratch with tables, query examples, diagrams, exercises, mini-project tasks and a final student progress database report.",
+      "url": "https://courtneyjoalj.github.io/techpath-readiness/sql-learning.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechPath Readiness"
+      }
+    }
+  </script>
+</head>
+<body id="top" class="guide-page learning-page">
+  <header class="site-header guide-header lesson-hero">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TechPath Readiness home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPath Readiness logo" /><span class="brand-text">TechPath <span>Readiness</span></span></a>
+      <div class="learning-nav-links" aria-label="SQL learning navigation">
+        <a class="guide-home-link" href="index.html">Home</a>
+        <a class="guide-home-link" href="python-learning.html">Python</a>
+        <a class="guide-home-link" href="career-path-guide.html">Career Guide</a>
+        <a class="guide-home-link" href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero guide-hero">
+      <div class="hero-text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html#languages">Build the Skills</a>
+          <span aria-hidden="true">/</span>
+          <span>SQL Basics</span>
+        </nav>
+        <p class="tag">SQL learning roadmap</p>
+        <h1>Learn SQL from Scratch</h1>
+        <p class="subtitle">
+          SQL is the language used to read, filter, join, group and analyse data stored in tables. This page uses educational snippets only and does not require a database connection.
+        </p>
+        <p class="lesson-note">
+          Each topic includes a quick exercise and a mini-project task. Complete them in order to build a Student Progress Database Report.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#sql-lessons">Start Learning</a>
+          <a class="btn secondary" href="#sql-final-project">Final Project</a>
+          <a class="btn secondary" href="index.html#languages">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <nav class="lesson-dock" aria-label="SQL lesson index">
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#top"><span class="dock-number">0</span><span class="dock-label">Top</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#what-is-sql"><span class="dock-number">1</span><span class="dock-label">What is SQL?</span></a><div class="dock-popover"><a href="#sql-database-basics">Database basics</a><a href="#sql-spreadsheet-thinking">Spreadsheet vs database</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-tables"><span class="dock-number">2</span><span class="dock-label">Tables, rows and columns</span></a><div class="dock-popover"><a href="#sql-table-structure">Table structure</a><a href="#sql-primary-key">Primary key</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-select"><span class="dock-number">3</span><span class="dock-label">SELECT basics</span></a><div class="dock-popover"><a href="#sql-select-columns">Selecting columns</a><a href="#sql-aliases">Aliases</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-where"><span class="dock-number">4</span><span class="dock-label">WHERE filtering</span></a><div class="dock-popover"><a href="#sql-filter-rules">Filter rules</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-order-limit"><span class="dock-number">5</span><span class="dock-label">ORDER BY and LIMIT</span></a><div class="dock-popover"><a href="#sql-sorting">Sorting</a><a href="#sql-limits">Limits</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-aggregates"><span class="dock-number">6</span><span class="dock-label">Aggregates</span></a><div class="dock-popover"><a href="#sql-summary-functions">Summary functions</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-group-having"><span class="dock-number">7</span><span class="dock-label">GROUP BY and HAVING</span></a><div class="dock-popover"><a href="#sql-group-by">GROUP BY</a><a href="#sql-having">HAVING</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-join-case"><span class="dock-number">8</span><span class="dock-label">JOIN and CASE</span></a><div class="dock-popover"><a href="#sql-joins">JOIN basics</a><a href="#sql-case">CASE labels</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-reporting-query"><span class="dock-number">9</span><span class="dock-label">Reporting query</span></a><div class="dock-popover"><a href="#sql-clean-report">Clean report</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#sql-final-project"><span class="dock-number">10</span><span class="dock-label">Final mini project</span></a></div>
+  </nav>
+
+  <main id="sql-lessons">
+    <section class="section">
+      <div class="section-heading">
+        <p class="tag">Lesson overview</p>
+        <h2>Turn table data into useful reports</h2>
+        <p>Each module adds a query skill to the final Student Progress Database Report.</p>
+      </div>
+      <div class="lesson-overview-grid">
+        <a href="#what-is-sql">What is SQL?</a>
+        <a href="#sql-tables">Tables, rows and columns</a>
+        <a href="#sql-select">SELECT basics</a>
+        <a href="#sql-where">WHERE filtering</a>
+        <a href="#sql-order-limit">ORDER BY and LIMIT</a>
+        <a href="#sql-aggregates">Aggregate functions</a>
+        <a href="#sql-group-having">GROUP BY and HAVING</a>
+        <a href="#sql-join-case">JOIN and CASE</a>
+        <a href="#sql-reporting-query">Clean reporting query</a>
+        <a href="#sql-final-project">Final mini project</a>
+      </div>
+    </section>
+
+    <section class="section lesson-module" id="what-is-sql">
+      <div class="section-heading"><p class="tag">Topic 1</p><h2>What is SQL?</h2><p>SQL helps you ask questions of data stored in tables.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Database</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Tables</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Rows and columns</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Query result</span></div>
+      <article class="lesson-subtopic" id="sql-database-basics">
+        <h3>Databases, tables, rows and columns</h3>
+        <p>A database stores related tables. A table stores rows of records and columns of fields.</p>
+        <pre class="code-example"><code>-- Example table idea:
+learners(id, learner_name, course, readiness_score)</code></pre>
+        <p><strong>Real-life example:</strong> Student scores, course progress and customer records can all be stored as rows.</p>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Databases, tables, rows and columns</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>-- Example table idea: learners(id, learner_name, c...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>-- Example table idea: learners(id, learner_name, c...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Name three columns a learner progress table should have.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Write the purpose of your Student Progress Database Report.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="sql-spreadsheet-thinking">
+        <h3>Spreadsheet thinking vs database thinking</h3>
+        <p>A spreadsheet is often one visible sheet. A database can connect several tables and query only the rows you need.</p>
+        <pre class="code-example"><code>-- Spreadsheet question:
+-- Which learners are below 60?
+
+-- SQL question:
+SELECT learner_name, readiness_score
+FROM learners
+WHERE readiness_score &lt; 60;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not use SQL tables as page layout tools. Tables are for structured data.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Spreadsheet thinking vs database thinking</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>-- Spreadsheet question: -- Which learners are belo...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>-- Spreadsheet question: -- Which learners are belo...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What is one benefit of filtering data with SQL?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>List the report questions your final project should answer.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can explain SQL as a way to ask structured questions about table data.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="sql-tables">
+      <div class="section-heading"><p class="tag">Topic 2</p><h2>Tables, rows and columns</h2><p>Good SQL starts with clear table structure.</p></div>
+      <article class="lesson-subtopic" id="sql-table-structure">
+        <h3>Table structure</h3>
+        <p>Each row should describe one record. Each column should describe one value about that record.</p>
+        <pre class="code-example"><code>CREATE TABLE learners (
+  learner_id INT,
+  learner_name TEXT,
+  course TEXT,
+  readiness_score INT
+);</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Table structure</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>CREATE TABLE learners ( learner_id INT, learner_nam...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>CREATE TABLE learners ( learner_id INT, learner_nam...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which column would store the learner's course name?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Design a <code>learners</code> table for your report.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="sql-primary-key">
+        <h3>Primary key concept</h3>
+        <p>A primary key is a unique identifier for each row. It helps connect tables safely.</p>
+        <pre class="code-example"><code>-- learner_id can identify each learner uniquely
+learner_id | learner_name
+1          | Aisha
+2          | Daniel</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not rely on names alone as unique identifiers because two people may share the same name.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Primary key concept</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>-- learner_id can identify each learner uniquely le...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>-- learner_id can identify each learner uniquely le...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Why is <code>learner_id</code> safer than learner name?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add a unique id column to your learner table design.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You now have the base table structure for the mini project.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="sql-select">
+      <div class="section-heading"><p class="tag">Topic 3</p><h2>SELECT basics</h2><p><code>SELECT</code> chooses the columns to show.</p></div>
+      <article class="lesson-subtopic" id="sql-select-columns">
+        <h3>SELECT specific columns and SELECT *</h3>
+        <p>Select only the columns you need. <code>SELECT *</code> is useful for quick checking, but reports should usually be specific.</p>
+        <pre class="code-example"><code>SELECT learner_name, readiness_score
+FROM learners;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>SELECT specific columns and SELECT *</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>SELECT *</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>SELECT *</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write a query that shows learner names and courses.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Write a query to display learner progress.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="sql-aliases">
+        <h3>Aliases with AS</h3>
+        <p>Aliases rename output columns so reports are easier to read.</p>
+        <pre class="code-example"><code>SELECT
+  learner_name AS learner,
+  readiness_score AS score
+FROM learners;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Aliases with AS</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>SELECT learner_name AS learner, readiness_score AS ...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>SELECT learner_name AS learner, readiness_score AS ...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Create an alias for <code>readiness_score</code>.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add readable aliases to your learner progress query.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can display the fields needed for a clear progress report.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="sql-where">
+      <div class="section-heading"><p class="tag">Topic 4</p><h2>WHERE filtering</h2><p><code>WHERE</code> keeps only rows that match a condition.</p></div>
+      <article class="lesson-subtopic" id="sql-filter-rules">
+        <h3>Equality, comparisons, AND, OR, IN, BETWEEN and LIKE</h3>
+        <p>Filters help find learners below a threshold, in a course, or matching a text pattern.</p>
+        <pre class="code-example"><code>SELECT learner_name, readiness_score
+FROM learners
+WHERE readiness_score &lt; 60
+  AND course IN ('Python', 'SQL');</code></pre>
+        <pre class="code-example"><code>SELECT learner_name
+FROM learners
+WHERE learner_name LIKE 'A%';</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Text values usually need quote marks. Numbers usually do not.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Equality, comparisons, AND, OR, IN, BETWEEN and LIKE</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>SELECT learner_name, readiness_score FROM learners ...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>SELECT learner_name, readiness_score FROM learners ...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write a filter for scores between 50 and 80.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Find learners below a readiness threshold.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can identify learners who may need support.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="sql-order-limit">
+      <div class="section-heading"><p class="tag">Topic 5</p><h2>ORDER BY and LIMIT</h2><p>Sorting and limiting help make reports easier to scan.</p></div>
+      <article class="lesson-subtopic" id="sql-sorting">
+        <h3>Sort ascending or descending</h3>
+        <p><code>ORDER BY</code> sorts rows. Use <code>DESC</code> for highest first.</p>
+        <pre class="code-example"><code>SELECT learner_name, readiness_score
+FROM learners
+ORDER BY readiness_score DESC;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Sort ascending or descending</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>ORDER BY</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>ORDER BY</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>How would you show lowest scores first?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Show top learners by score.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="sql-limits">
+        <h3>LIMIT / TOP concept</h3>
+        <p><code>LIMIT</code> previews a few rows. Some SQL systems use <code>TOP</code> instead.</p>
+        <pre class="code-example"><code>SELECT learner_name, readiness_score
+FROM learners
+ORDER BY readiness_score DESC
+LIMIT 5;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>LIMIT / TOP concept</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>LIMIT</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>LIMIT</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write a query that previews the first 10 learners.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create a short leaderboard query for the report.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your report can now rank or preview learner records.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="sql-aggregates">
+      <div class="section-heading"><p class="tag">Topic 6</p><h2>Aggregate functions</h2><p>Aggregates summarise many rows into useful numbers.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Many rows</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Aggregate function</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Summary number</span></div>
+      <article class="lesson-subtopic" id="sql-summary-functions">
+        <h3>COUNT, SUM, AVG, MIN and MAX</h3>
+        <p>Use aggregates to count learners, calculate averages and find highest or lowest scores.</p>
+        <pre class="code-example"><code>SELECT
+  COUNT(*) AS learner_count,
+  AVG(readiness_score) AS average_score,
+  MIN(readiness_score) AS lowest_score,
+  MAX(readiness_score) AS highest_score
+FROM learners;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>COUNT, SUM, AVG, MIN and MAX</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>SELECT COUNT(*) AS learner_count, AVG(readiness_sco...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>SELECT COUNT(*) AS learner_count, AVG(readiness_sco...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which function calculates average class score?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Calculate the average readiness score.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can summarise learner progress with one report row.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="sql-group-having">
+      <div class="section-heading"><p class="tag">Topic 7</p><h2>GROUP BY and HAVING</h2><p>Groups let you summarise categories such as course or topic.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Rows</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Groups</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Summary table</span></div>
+      <article class="lesson-subtopic" id="sql-group-by">
+        <h3>GROUP BY categories</h3>
+        <p><code>GROUP BY</code> creates summaries for each category.</p>
+        <pre class="code-example"><code>SELECT course, AVG(readiness_score) AS average_score
+FROM learners
+GROUP BY course;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>GROUP BY categories</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>GROUP BY</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>GROUP BY</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which column would you group by for skill area summaries?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Summarise scores by course or topic.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="sql-having">
+        <h3>HAVING vs WHERE</h3>
+        <p><code>WHERE</code> filters rows before grouping. <code>HAVING</code> filters groups after grouping and aggregation.</p>
+        <pre class="code-example"><code>SELECT course, AVG(readiness_score) AS average_score
+FROM learners
+GROUP BY course
+HAVING AVG(readiness_score) &lt; 60;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>HAVING vs WHERE</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>WHERE</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>WHERE</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which clause filters groups after aggregation?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Identify weak topic groups with an average score below 60.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your report can now find weak categories, not just weak learners.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="sql-join-case">
+      <div class="section-heading"><p class="tag">Topic 8</p><h2>JOIN and CASE</h2><p>Joins combine tables. CASE creates readable labels.</p></div>
+      <div class="concept-diagram"><span class="flow-step">learners table</span><span class="flow-arrow">&lt;-&gt;</span><span class="flow-step">quiz_results table</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Combined report</span></div>
+      <article class="lesson-subtopic" id="sql-joins">
+        <h3>INNER JOIN and LEFT JOIN</h3>
+        <p>A <code>JOIN</code> connects two tables by matching a shared value, usually an ID. An <code>INNER JOIN</code> returns matching records. A <code>LEFT JOIN</code> keeps all rows from the left table and matches what it can.</p>
+        <pre class="code-example"><code>SELECT learners.learner_name, quiz_results.score
+FROM learners
+INNER JOIN quiz_results
+  ON learners.learner_id = quiz_results.learner_id;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Always join on matching key columns, not on display names.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>INNER JOIN and LEFT JOIN</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>INNER JOIN</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>INNER JOIN</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What column connects learners to quiz results?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Join learner names to their quiz scores.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="sql-case">
+        <h3>CASE expressions</h3>
+        <p><code>CASE</code> turns numeric scores into readable labels such as Beginner, Building and Ready.</p>
+        <pre class="code-example"><code>CASE
+  WHEN score &gt;= 80 THEN 'Ready'
+  WHEN score &gt;= 50 THEN 'Building'
+  ELSE 'Beginner'
+END AS readiness_label</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>CASE expressions</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>CASE</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>CASE</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What label should 45 receive?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add readiness labels to your report query.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your report can combine tables and label readiness in plain language.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="sql-reporting-query">
+      <div class="section-heading"><p class="tag">Topic 9</p><h2>Clean reporting query</h2><p>Analysts combine SQL clauses to answer practical questions.</p></div>
+      <article class="lesson-subtopic" id="sql-clean-report">
+        <h3>Combine SELECT, JOIN, GROUP BY, CASE and ORDER BY</h3>
+        <p>A reporting query should show clear fields, readable labels and useful ordering.</p>
+        <pre class="code-example"><code>SELECT
+  learners.course,
+  COUNT(*) AS attempts,
+  AVG(quiz_results.score) AS average_score
+FROM learners
+JOIN quiz_results
+  ON learners.learner_id = quiz_results.learner_id
+GROUP BY learners.course
+ORDER BY average_score ASC;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Combine SELECT, JOIN, GROUP BY, CASE and ORDER BY</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>SELECT learners.course, COUNT(*) AS attempts, AVG(q...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>SELECT learners.course, COUNT(*) AS attempts, AVG(q...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which clause controls the final order of report rows?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Build a final readiness report query outline.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can now combine SQL skills into a beginner reporting workflow.</p></div>
+    </section>
+
+    <section class="section lesson-module project-card" id="sql-final-project">
+      <div class="section-heading"><p class="tag">Final mini project</p><h2>Student Progress Database Report</h2><p>This final project combines tables, SELECT, WHERE, ORDER BY, LIMIT, aggregates, GROUP BY, HAVING, JOIN, CASE and reporting queries.</p></div>
+      <div class="grid cards">
+        <article class="card"><h3>Sample schemas</h3><pre class="code-example"><code>learners(learner_id, learner_name, course)
+quiz_results(result_id, learner_id, topic, score, attempt_date)</code></pre></article>
+        <article class="card"><h3>Sample rows</h3><pre class="code-example"><code>1 | Aisha  | Python
+2 | Daniel | SQL
+
+1 | 1 | Loops | 72 | 2026-06-01
+2 | 2 | Joins | 48 | 2026-06-02</code></pre></article>
+      </div>
+      <pre class="code-example final-code"><code>SELECT
+  learners.learner_name,
+  learners.course,
+  AVG(quiz_results.score) AS average_score,
+  CASE
+    WHEN AVG(quiz_results.score) &gt;= 80 THEN 'Ready'
+    WHEN AVG(quiz_results.score) &gt;= 50 THEN 'Building'
+    ELSE 'Beginner'
+  END AS readiness_label
+FROM learners
+LEFT JOIN quiz_results
+  ON learners.learner_id = quiz_results.learner_id
+GROUP BY learners.learner_name, learners.course
+HAVING AVG(quiz_results.score) IS NOT NULL
+ORDER BY average_score ASC;</code></pre>
+      <div class="grid cards">
+        <article class="practice-card"><h3>How it works</h3><p>The query joins learners to results, groups attempts by learner, calculates average score, adds a readable CASE label and sorts weaker areas first.</p></article>
+        <article class="practice-card"><h3>Upgrade ideas</h3><ul><li>Add more learners</li><li>Track attempts</li><li>Add dates</li><li>Add course categories</li><li>Create monthly progress reports</li></ul></article>
+      </div>
+      <div class="final-cta">
+        <p class="tag">Next step</p>
+        <h2>Use SQL in your career roadmap</h2>
+        <p>SQL supports data analyst, data scientist, backend developer, cloud and finance-data routes.</p>
+        <div class="hero-actions"><a class="btn primary" href="career-path-guide.html">Continue to Career Path Guide</a><a class="btn secondary" href="python-learning.html">Learn Python</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links" aria-label="Footer links"><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="business.html">Business</a></div>
+    <p>&copy; 2026 TechPath Readiness. Built for career-path learning and programming practice.</p>
+  </footer>
+  <script src="scroll-reveal.js"></script>
+  <script src="mocha-background.js"></script>
+</body>
+</html>

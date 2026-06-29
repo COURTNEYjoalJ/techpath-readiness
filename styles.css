@@ -3002,6 +3002,57 @@ pre {
   border-color: rgba(240, 197, 141, 0.3);
 }
 
+.keyword-table-wrap {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.06), transparent 26%),
+    rgba(6, 17, 29, 0.58);
+  border: 1px solid rgba(255, 225, 179, 0.18);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    var(--glass-border-shadow),
+    var(--glass-panel-highlight),
+    var(--panel-inner-depth-soft);
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.keyword-table {
+  border-collapse: collapse;
+  min-width: 680px;
+  width: 100%;
+}
+
+.keyword-table caption {
+  color: var(--color-champagne-light);
+  font-weight: 900;
+  padding: 0 0 10px;
+  text-align: left;
+}
+
+.keyword-table th,
+.keyword-table td {
+  border-bottom: 1px solid rgba(255, 225, 179, 0.12);
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.keyword-table th {
+  color: var(--color-heading);
+  font-weight: 900;
+}
+
+.keyword-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.keyword-table code {
+  color: var(--color-primary-strong);
+}
+
 .checkpoint-card {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.07), transparent 24%),
@@ -3216,6 +3267,103 @@ footer {
 .footer-links a:focus {
   color: var(--accent);
   outline: none;
+}
+
+.business-page .guide-hero {
+  max-width: 1120px;
+}
+
+.business-insight-grid,
+.business-package-grid,
+.business-proof-grid,
+.business-faq-list {
+  display: grid;
+  gap: 18px;
+}
+
+.business-insight-grid,
+.business-proof-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.business-package-grid {
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+}
+
+.business-faq-list {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.business-mini-card,
+.business-package-card,
+.business-faq-item {
+  background: var(--gradient-card);
+  border: 1px solid var(--glass-border-copper-mix);
+  border-radius: var(--panel-radius-large);
+  box-shadow:
+    var(--shadow-card),
+    var(--shadow-copper-ring),
+    var(--glass-border-shadow),
+    var(--glass-shadow-soft),
+    var(--glass-panel-highlight),
+    var(--panel-inner-depth-soft);
+  display: grid;
+  gap: 12px;
+  padding: clamp(20px, 3vw, 28px);
+  backdrop-filter: var(--glass-blur-strong);
+  -webkit-backdrop-filter: var(--glass-blur-strong);
+}
+
+.business-mini-card h3,
+.business-package-card h3,
+.business-faq-item h3 {
+  color: var(--color-heading);
+  margin: 0;
+}
+
+.business-mini-card p,
+.business-package-card p,
+.business-faq-item p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.business-package-card {
+  align-content: start;
+  min-height: 280px;
+}
+
+.business-package-card.featured-package {
+  border-color: var(--color-border-strong);
+  box-shadow:
+    var(--shadow-card),
+    var(--shadow-copper-ring),
+    var(--glass-border-shadow),
+    var(--glass-shadow-strong),
+    var(--glass-panel-highlight),
+    var(--panel-inner-depth-soft);
+}
+
+.package-price {
+  align-self: end;
+  color: var(--color-champagne-light);
+  display: inline-flex;
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  line-height: 1.1;
+  margin-top: 8px;
+}
+
+.business-pricing-note {
+  background: rgba(6, 17, 29, 0.58);
+  border: 1px solid rgba(255, 225, 179, 0.18);
+  border-radius: var(--radius-lg);
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.55;
+  margin: 20px auto 0;
+  max-width: 920px;
+  padding: 16px 18px;
 }
 
 @media (max-width: 1179px) {

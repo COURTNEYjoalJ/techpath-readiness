@@ -25,7 +25,9 @@ Repository: https://github.com/COURTNEYjoalJ/techpath-readiness
 - Saved Career Path Guide scores using browser `localStorage`
 - Dedicated SEO roadmap pages for completed roles
 - GCSE Maths, Python Basics and Data Science starter roadmap page
-- Python Basics learning page with explanations, diagrams, exercises, mini-project tasks and a final beginner project
+- Beginner learning pages for Python, JavaScript, Java, SQL, HTML and CSS
+- Learning pages include structured beginner lessons, diagrams, real-life examples, code examples, key-words tables, quick exercises, mini-project tasks, checkpoints and final mini projects
+- Business/Beta Services landing page for GCSE Maths support, Python beginner coaching, readiness reports and career starter packages
 - GCSE Maths + Python Basics starter quiz with quick/full modes and result modal
 - Career Guidance page for 1-to-1 teaching, project discussion and learning direction
 - About, Privacy Policy, and Contact pages
@@ -76,6 +78,12 @@ The GCSE starter quiz has two modes:
 - `backend-developer-roadmap.html`
 - `gcse-maths-python-roadmap.html`
 - `python-learning.html`
+- `javascript-learning.html`
+- `java-learning.html`
+- `sql-learning.html`
+- `html-learning.html`
+- `css-learning.html`
+- `business.html`
 - `career-guidance.html`
 - `about.html`
 - `privacy-policy.html`
@@ -113,6 +121,12 @@ This project does not use React, a backend, a database, API keys, external libra
 |-- backend-developer-roadmap.html # Backend Developer SEO roadmap page
 |-- gcse-maths-python-roadmap.html # GCSE Maths, Python and Data Science starter roadmap
 |-- python-learning.html           # Python basics lessons, diagrams, exercises and final mini project
+|-- javascript-learning.html       # JavaScript basics lessons and interactive readiness quiz mini project
+|-- java-learning.html             # Java basics lessons and student grade calculator mini project
+|-- sql-learning.html              # SQL basics lessons and student progress report mini project
+|-- html-learning.html             # HTML basics lessons and personal learning profile mini project
+|-- css-learning.html              # CSS basics lessons and responsive career card mini project
+|-- business.html                  # V1.5 Business Landing Page / Beta Services page
 |-- career-guidance.html           # 1-to-1 guidance, teaching and project support page
 |-- about.html                     # About and founder page
 |-- privacy-policy.html            # Static website privacy policy
@@ -121,7 +135,7 @@ This project does not use React, a backend, a database, API keys, external libra
 |-- theme.css                      # Central colour, gradient, shadow, spacing and motion tokens
 |-- animations.css                 # Reusable scroll reveal animation styles
 |-- styles.css                     # Shared component design, layout and responsive styles
-|-- script.js                      # Homepage menu, lessons and practice quiz behavior
+|-- script.js                      # Homepage menu and practice quiz behavior
 |-- scroll-reveal.js               # Repeatable scroll reveal animations
 |-- mocha-background.js            # Global procedural Mocha Sapphire animated background
 |-- gcse-starter-quiz.js           # Separate GCSE Maths + Python Basics starter quiz and result modal
@@ -211,10 +225,23 @@ Courtney is based in Liverpool, United Kingdom, and is an MSc Data Science & AI 
 - Added the final Student Marks and Study Tracker beginner project.
 - Kept the page static with plain HTML/CSS and no external libraries.
 
+### v1.5-language-learning-pages
+
+- Added beginner learning pages for JavaScript, Java, SQL, HTML and CSS.
+- Matched the Python learning page structure with lesson docks, diagrams, code examples, key-words tables, quick exercises, mini-project tasks, checkpoints and final mini projects.
+- Updated the homepage Build the Skills cards and sitemap links for the new pages.
+
+### v1.5-business-landing-page
+
+- Added the V1.5 Business Landing Page / Beta Services page.
+- Added beta package information for GCSE Maths support, Python beginner coaching, readiness reports, data career starter support and international graduate job-search structure.
+- Added homepage navigation and CTA links to the Business page.
+- Kept support requests routed through the Contact page and LinkedIn, with no fake form, booking, payment or backend system.
+
 ## Future Improvements
 
 - Add more career paths.
-- Add JavaScript and SQL learning pages next.
+- Add more advanced learning modules for existing language pages.
 - Add deeper quiz feedback.
 - Add more questions and topic coverage.
 - Add a built-in contact form in a future version.

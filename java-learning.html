@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Learning Path for Beginners | TechPath Readiness</title>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Learn Java from scratch with beginner-friendly explanations, diagrams, code examples, key-words tables, exercises and a final Student Grade Calculator project." />
+  <link rel="canonical" href="https://courtneyjoalj.github.io/techpath-readiness/java-learning.html" />
+  <meta property="og:title" content="Java Learning Path for Beginners | TechPath Readiness" />
+  <meta property="og:description" content="Learn Java from scratch with beginner-friendly explanations, diagrams, code examples, key-words tables, exercises and a final Student Grade Calculator project." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://courtneyjoalj.github.io/techpath-readiness/java-learning.html" />
+  <meta property="og:site_name" content="TechPath Readiness" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Java Learning Path for Beginners | TechPath Readiness" />
+  <meta name="twitter:description" content="Learn Java from scratch with beginner-friendly explanations, diagrams, code examples, key-words tables, exercises and a final Student Grade Calculator project." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Java Learning Path for Beginners | TechPath Readiness",
+      "description": "Learn Java from scratch with beginner-friendly explanations, diagrams, code examples, key-words tables, exercises and a final Student Grade Calculator project.",
+      "url": "https://courtneyjoalj.github.io/techpath-readiness/java-learning.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechPath Readiness"
+      }
+    }
+  </script>
+</head>
+<body id="top" class="guide-page learning-page">
+  <header class="site-header guide-header lesson-hero">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TechPath Readiness home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPath Readiness logo" /><span class="brand-text">TechPath <span>Readiness</span></span></a>
+      <div class="learning-nav-links" aria-label="Java learning navigation">
+        <a class="guide-home-link" href="index.html">Home</a>
+        <a class="guide-home-link" href="javascript-learning.html">JavaScript</a>
+        <a class="guide-home-link" href="python-learning.html">Python</a>
+        <a class="guide-home-link" href="career-path-guide.html">Career Guide</a>
+      </div>
+    </nav>
+
+    <section class="hero guide-hero">
+      <div class="hero-text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html#languages">Build the Skills</a>
+          <span aria-hidden="true">/</span>
+          <span>Java Basics</span>
+        </nav>
+        <p class="tag">Java learning roadmap</p>
+        <h1>Learn Java from Scratch</h1>
+        <p class="subtitle">
+          Java is a strongly typed programming language used for apps, backend systems, Android development, enterprise systems and object-oriented programming. Java and JavaScript are different languages.
+        </p>
+        <p class="lesson-note">
+          Each subtopic includes a key-words table, quick exercise and mini-project task. Complete them in order to build a Student Grade Calculator in Java.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#java-lessons">Start Learning</a>
+          <a class="btn secondary" href="#java-final-project">Final Project</a>
+          <a class="btn secondary" href="index.html#languages">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <nav class="lesson-dock" aria-label="Java lesson index">
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#top"><span class="dock-number">0</span><span class="dock-label">Top</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#what-is-java"><span class="dock-number">1</span><span class="dock-label">What is Java?</span></a><div class="dock-popover"><a href="#java-language">Java language</a><a href="#java-jvm">JVM idea</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-program-structure"><span class="dock-number">2</span><span class="dock-label">Program structure</span></a><div class="dock-popover"><a href="#java-class-main">class and main</a><a href="#java-printing">Printing output</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-variables-data-types"><span class="dock-number">3</span><span class="dock-label">Variables and data types</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-operators"><span class="dock-number">4</span><span class="dock-label">Operators</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-conditions"><span class="dock-number">5</span><span class="dock-label">Conditions</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-loops"><span class="dock-number">6</span><span class="dock-label">Loops</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-arrays"><span class="dock-number">7</span><span class="dock-label">Arrays</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-methods"><span class="dock-number">8</span><span class="dock-label">Methods</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-objects-input"><span class="dock-number">9</span><span class="dock-label">Objects and input</span></a><div class="dock-popover"><a href="#java-classes-objects">Classes and objects</a><a href="#java-input-output">Input and output</a><a href="#java-common-mistakes">Common mistakes</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#java-final-project"><span class="dock-number">10</span><span class="dock-label">Final mini project</span></a></div>
+  </nav>
+
+  <main id="java-lessons">
+    <section class="section">
+      <div class="section-heading">
+        <p class="tag">Lesson overview</p>
+        <h2>Build Java foundations through one grade calculator</h2>
+        <p>Follow the modules in order. Each task adds a practical piece to the final Student Grade Calculator in Java.</p>
+      </div>
+      <div class="lesson-overview-grid">
+        <a href="#what-is-java">What is Java?</a>
+        <a href="#java-program-structure">Program structure</a>
+        <a href="#java-variables-data-types">Variables and data types</a>
+        <a href="#java-operators">Operators</a>
+        <a href="#java-conditions">Conditions</a>
+        <a href="#java-loops">Loops</a>
+        <a href="#java-arrays">Arrays</a>
+        <a href="#java-methods">Methods</a>
+        <a href="#java-objects-input">Objects and input</a>
+        <a href="#java-final-project">Final mini project</a>
+      </div>
+    </section>
+
+    <section class="section lesson-module" id="what-is-java">
+      <div class="section-heading">
+        <p class="tag">Topic 1</p>
+        <h2>What is Java?</h2>
+        <p>Java is a programming language. You write instructions, Java prepares them, and the program can run on machines that have the Java Virtual Machine.</p>
+      </div>
+      <div class="concept-diagram"><span class="flow-step">Java code</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Compiler</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Bytecode</span><span class="flow-arrow">-&gt;</span><span class="flow-step">JVM</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Program runs</span></div>
+
+      <article class="lesson-subtopic" id="java-language">
+        <h3>Java as an application language</h3>
+        <p>Java is used to build school result systems, banking apps, Android apps, backend services and enterprise tools. It is not the same as JavaScript. JavaScript mainly runs in browsers; Java is commonly used for larger application systems.</p>
+        <pre class="code-example"><code>System.out.println("Java is ready");</code></pre>
+        <p><strong>How to read this code:</strong> <code>System.out.println</code> tells Java to print a message. The text inside quotes is the message.</p>
+        <p><strong>Why this matters:</strong> The first step in programming is learning how to make the computer show a clear result.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Java</td><td>A programming language</td><td>Used to build applications</td><td><code>class Main</code></td></tr><tr><td>JavaScript</td><td>A different web language</td><td>Used mostly for browser interaction</td><td><code>document.querySelector()</code></td></tr><tr><td>print</td><td>Show text on screen</td><td>Helps see program output</td><td><code>System.out.println(&quot;Hi&quot;);</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Name one real-life system that could be built with Java.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Write one sentence explaining what your Student Grade Calculator should do.</p></div>
+      </article>
+
+      <article class="lesson-subtopic" id="java-jvm">
+        <h3>Compiler, bytecode and JVM in simple terms</h3>
+        <p>Java code is prepared by a compiler. The compiler creates bytecode. The JVM reads that bytecode and runs the program. "Write once, run anywhere" means Java code can run on different systems when the right Java setup is available.</p>
+        <pre class="code-example"><code>// You write Java code
+// Java compiles it
+// The JVM runs it</code></pre>
+        <p><strong>How to understand this example:</strong> The lines begin with <code>//</code>, so they are comments. Comments explain code but do not run.</p>
+        <p><strong>Why this matters:</strong> Java has a clear preparation step before the program runs, which is different from writing quick browser scripts.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>compiler</td><td>A tool that prepares code</td><td>Turns Java code into bytecode</td><td><code>javac Main.java</code></td></tr><tr><td>bytecode</td><td>Prepared Java instructions</td><td>Can be run by the JVM</td><td><code>Main.class</code></td></tr><tr><td>JVM</td><td>Java Virtual Machine</td><td>Runs Java bytecode</td><td><code>java Main</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>What reads Java bytecode to run a program?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add a short comment at the top of your project saying what the calculator will do.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can explain Java, JavaScript, compiler, bytecode and JVM in beginner-friendly words.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="java-program-structure">
+      <div class="section-heading"><p class="tag">Topic 2</p><h2>Java program structure</h2><p>A Java program has a class and a main method where the program starts.</p></div>
+      <article class="lesson-subtopic" id="java-class-main">
+        <h3>class, main method, braces and semicolons</h3>
+        <p>A class is a container for Java code. The main method is the starting point. Braces group code together. Semicolons end many Java instructions.</p>
+        <pre class="code-example"><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("Welcome to TechPath Readiness");
+  }
+}</code></pre>
+        <p><strong>How to read this code:</strong> <code>public class Main</code> starts the class. <code>main</code> is where Java begins. The print line shows the welcome message. The braces show what belongs inside the class and method.</p>
+        <p><strong>Why this matters:</strong> If the structure is wrong, Java will not know where the program begins.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>class</td><td>A container for code</td><td>Java programs are organised in classes</td><td><code>class Main</code></td></tr><tr><td>main method</td><td>The starting point</td><td>Java starts running here</td><td><code>main(String[] args)</code></td></tr><tr><td>braces</td><td>Code group markers</td><td>Show what belongs together</td><td><code>{ }</code></td></tr><tr><td>semicolon</td><td>Instruction ending</td><td>Ends many Java statements</td><td><code>int score = 80;</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Which method is the starting point of a Java program?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create the starting <code>Main</code> program for the grade calculator.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="java-printing">
+        <h3>System.out.println()</h3>
+        <p><code>System.out.println()</code> prints a line of text. It is useful when learning because it shows what your program is doing.</p>
+        <pre class="code-example"><code>System.out.println("Student Grade Calculator");</code></pre>
+        <p><strong>How to read this code:</strong> Java prints the exact words inside the quote marks and then moves to the next line.</p>
+        <p><strong>Why this matters:</strong> Clear output helps users understand the result of your calculator.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>output</td><td>What the program shows</td><td>Helps users see results</td><td><code>System.out.println(score);</code></td></tr><tr><td>String</td><td>Text</td><td>Used for messages</td><td><code>&quot;Hello&quot;</code></td></tr><tr><td>println</td><td>Print line</td><td>Shows text and starts a new line</td><td><code>println(&quot;Done&quot;)</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Write a print line that says "Calculator ready".</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Print a title at the start of your grade calculator.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can create a starter Java program and print a clear message.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="java-variables-data-types">
+      <div class="section-heading"><p class="tag">Topic 3</p><h2>Variables and data types</h2><p>Java variables are labelled boxes. Java is strongly typed, so each box must have a type.</p></div>
+      <article class="lesson-subtopic" id="java-variable-types">
+        <h3>int, double, boolean, char and String</h3>
+        <p>An <code>int</code> stores a whole number. A <code>double</code> stores a decimal. A <code>boolean</code> stores true or false. A <code>char</code> stores one character. A <code>String</code> stores text.</p>
+        <pre class="code-example"><code>String studentName = "Aisha";
+int mathsMark = 78;
+int scienceMark = 84;
+double average = 81.0;
+boolean passed = true;
+char grade = 'A';</code></pre>
+        <p><strong>How to read this code:</strong> Each line creates a labelled box. The type comes first, then the variable name, then the value.</p>
+        <p><strong>Why this matters:</strong> The calculator needs to remember names, marks, averages, pass status and grade labels.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>variable</td><td>A labelled box that stores information</td><td>So the program can remember a value</td><td><code>int score = 80;</code></td></tr><tr><td>int</td><td>A whole number type</td><td>Used for marks and counts</td><td><code>int age = 15;</code></td></tr><tr><td>double</td><td>A decimal number type</td><td>Used when answers may include decimals</td><td><code>double average = 72.5;</code></td></tr><tr><td>String</td><td>Text value</td><td>Used for names and messages</td><td><code>String name = &quot;Courtney&quot;;</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Which type would you use for a student name?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Store the student name and three subject marks.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your grade calculator can now store the first values it needs.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="java-operators">
+      <div class="section-heading"><p class="tag">Topic 4</p><h2>Operators and expressions</h2><p>Operators combine values to create new results.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Marks</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Total</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Average</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Result</span></div>
+      <article class="lesson-subtopic" id="java-operator-types">
+        <h3>Arithmetic, comparison, logical and assignment operators</h3>
+        <p>Arithmetic operators calculate values. Comparison operators check values. Logical operators combine checks. The assignment operator stores a value.</p>
+        <pre class="code-example"><code>int total = mathsMark + scienceMark;
+double average = total / 2.0;
+boolean strongAverage = average &gt;= 80;
+boolean ready = average &gt;= 60 &amp;&amp; passed;</code></pre>
+        <p><strong>How to read this code:</strong> Java adds marks, divides by 2.0 to keep decimals, checks whether the average is strong, then combines two true/false checks.</p>
+        <p><strong>Why this matters:</strong> Grades depend on calculations and comparisons.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>operator</td><td>A symbol that does work</td><td>Calculates or compares values</td><td><code>+</code>, <code>&gt;=</code></td></tr><tr><td>assignment</td><td>Store a value</td><td>Puts data into a variable</td><td><code>total = 90;</code></td></tr><tr><td>comparison</td><td>A true/false check</td><td>Used for decisions</td><td><code>average &gt;= 60</code></td></tr><tr><td>logical operator</td><td>Combines checks</td><td>Used when two rules matter</td><td><code>&amp;&amp;</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Why does the example divide by <code>2.0</code> instead of <code>2</code>?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Calculate total and average mark for your grade calculator.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your calculator can now calculate a total and average.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="java-conditions">
+      <div class="section-heading"><p class="tag">Topic 5</p><h2>Conditions</h2><p>Conditions let Java choose a path based on data.</p></div>
+      <div class="concept-diagram flowchart"><span class="flow-step">Average mark</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Check grade</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Print feedback</span></div>
+      <article class="lesson-subtopic" id="java-grade-conditions">
+        <h3>if, else if and else</h3>
+        <p>Use <code>if</code> for the first check, <code>else if</code> for extra checks and <code>else</code> when no earlier check matched.</p>
+        <pre class="code-example"><code>String gradeMessage;
+
+if (average &gt;= 80) {
+  gradeMessage = "A - Strong";
+} else if (average &gt;= 60) {
+  gradeMessage = "B - Building";
+} else if (average &gt;= 40) {
+  gradeMessage = "C - Needs practice";
+} else {
+  gradeMessage = "Needs focused revision";
+}</code></pre>
+        <p><strong>How to read this code:</strong> Java checks the top condition first. If it is false, Java moves down until it finds a match.</p>
+        <p><strong>Why this matters:</strong> A grade calculator needs different feedback for different average marks.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>if</td><td>First decision check</td><td>Starts a choice</td><td><code>if (score &gt;= 60)</code></td></tr><tr><td>else if</td><td>Another decision check</td><td>Adds more bands</td><td><code>else if (score &gt;= 40)</code></td></tr><tr><td>else</td><td>Fallback path</td><td>Runs if nothing matched</td><td><code>else { ... }</code></td></tr><tr><td>grade band</td><td>A mark range</td><td>Turns numbers into feedback</td><td><code>A - Strong</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>What message should an average of 55 print?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Print a grade message based on the student's average.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your calculator can now turn a number into feedback.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="java-loops">
+      <div class="section-heading"><p class="tag">Topic 6</p><h2>Loops</h2><p>Loops repeat work without copying the same line again and again.</p></div>
+      <div class="concept-diagram flowchart"><span class="flow-step">Start</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Check mark</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Add to total</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Repeat</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Finish</span></div>
+      <article class="lesson-subtopic" id="java-loop-types">
+        <h3>for loop, while loop and enhanced for loop</h3>
+        <p>A <code>for</code> loop is useful when you know how many times to repeat. A <code>while</code> loop repeats while a condition is true. An enhanced <code>for</code> loop reads each item in a list or array.</p>
+        <pre class="code-example"><code>int[] marks = {78, 84, 69};
+int total = 0;
+
+for (int mark : marks) {
+  total += mark;
+}</code></pre>
+        <p><strong>How to read this code:</strong> <code>int mark : marks</code> means "take each mark from the marks array one at a time".</p>
+        <p><strong>Why this matters:</strong> A grade calculator should handle several marks without manually adding every subject line.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>loop</td><td>Repeat a task</td><td>Avoids copied code</td><td><code>for (...)</code></td></tr><tr><td>for loop</td><td>Repeat a set number of times</td><td>Useful for arrays</td><td><code>for (int mark : marks)</code></td></tr><tr><td>while loop</td><td>Repeat while true</td><td>Useful when stopping depends on a condition</td><td><code>while (count &lt; 3)</code></td></tr><tr><td>infinite loop</td><td>A loop that never stops</td><td>Can freeze a program</td><td><code>while (true)</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Which loop reads each mark in the example?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Loop through marks to calculate the total.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your calculator can process several marks in a clean repeatable way.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="java-arrays">
+      <div class="section-heading"><p class="tag">Topic 7</p><h2>Arrays</h2><p>An array stores several values of the same type in one variable.</p></div>
+      <div class="list-diagram"><span><strong>0</strong> 78</span><span><strong>1</strong> 84</span><span><strong>2</strong> 69</span></div>
+      <article class="lesson-subtopic" id="java-array-marks">
+        <h3>Index positions, length and marks</h3>
+        <p>Arrays start at index 0. The <code>length</code> property tells you how many items are in the array.</p>
+        <pre class="code-example"><code>int[] marks = {78, 84, 69};
+System.out.println(marks[0]);
+System.out.println(marks.length);</code></pre>
+        <p><strong>How to read this code:</strong> <code>marks[0]</code> gets the first mark. <code>marks.length</code> counts how many marks exist.</p>
+        <p><strong>Why this matters:</strong> The grade calculator can store all subject marks together.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>array</td><td>A list of same-type values</td><td>Stores several marks together</td><td><code>int[] marks</code></td></tr><tr><td>index</td><td>Item position</td><td>Finds one value</td><td><code>marks[0]</code></td></tr><tr><td>length</td><td>Number of items</td><td>Helps calculate average</td><td><code>marks.length</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>What index gets the first value in a Java array?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Store subject marks in an array.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your calculator can store multiple marks in one organised structure.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="java-methods">
+      <div class="section-heading"><p class="tag">Topic 8</p><h2>Methods</h2><p>Methods are named blocks of reusable code.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Input marks</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Method</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Average or grade</span></div>
+      <article class="lesson-subtopic" id="java-method-basics">
+        <h3>Method declaration, parameters, return values and void</h3>
+        <p>A parameter is information a method receives. A return value is what the method gives back. A <code>void</code> method does work but does not give back a value.</p>
+        <pre class="code-example"><code>public static double calculateAverage(int[] marks) {
+  int total = 0;
+
+  for (int mark : marks) {
+    total += mark;
+  }
+
+  return total / (double) marks.length;
+}</code></pre>
+        <p><strong>How to read this code:</strong> The method receives an array of marks, adds them, then returns the average as a decimal.</p>
+        <p><strong>Why this matters:</strong> Methods keep the final project easier to read and reuse.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>method</td><td>A reusable code block</td><td>Keeps logic organised</td><td><code>calculateAverage()</code></td></tr><tr><td>parameter</td><td>Input to a method</td><td>Lets method use outside data</td><td><code>int[] marks</code></td></tr><tr><td>return</td><td>Give a value back</td><td>Produces a result</td><td><code>return average;</code></td></tr><tr><td>void</td><td>No return value</td><td>Used for actions like printing</td><td><code>void printReport()</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>What does this method return?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create a method that returns the average or grade.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your calculator can separate calculation logic into reusable methods.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="java-objects-input">
+      <div class="section-heading"><p class="tag">Topic 9</p><h2>Classes, objects and input</h2><p>Classes model real things. Input lets the user type values.</p></div>
+      <article class="lesson-subtopic" id="java-classes-objects">
+        <h3>Class as blueprint, object as real item</h3>
+        <p>A class is like a blueprint. An object is one real item made from that blueprint. Fields store data inside the object. A constructor sets starting values.</p>
+        <div class="concept-diagram"><span class="flow-step">Student class blueprint</span><span class="flow-arrow">-&gt;</span><span class="flow-step">student object card</span></div>
+        <pre class="code-example"><code>class Student {
+  String name;
+  int[] marks;
+
+  Student(String name, int[] marks) {
+    this.name = name;
+    this.marks = marks;
+  }
+}</code></pre>
+        <p><strong>How to read this code:</strong> The <code>Student</code> class stores a name and marks. The constructor fills those fields when a new student is created.</p>
+        <p><strong>Why this matters:</strong> A real grade system needs to keep each student's information together.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>class</td><td>Blueprint</td><td>Defines what an object has</td><td><code>class Student</code></td></tr><tr><td>object</td><td>Real item from a class</td><td>Stores one student's data</td><td><code>new Student(...)</code></td></tr><tr><td>field</td><td>Variable inside a class</td><td>Stores object data</td><td><code>String name;</code></td></tr><tr><td>constructor</td><td>Setup method</td><td>Gives object starting values</td><td><code>Student(...)</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Is <code>Student</code> the blueprint or the object?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create a simple Student object.</p></div>
+      </article>
+
+      <article class="lesson-subtopic" id="java-input-output">
+        <h3>Basic input and output with Scanner</h3>
+        <p>Input is information typed by the user. <code>Scanner</code> can read typed text and numbers. Output is what the program prints back.</p>
+        <pre class="code-example"><code>import java.util.Scanner;
+
+Scanner scanner = new Scanner(System.in);
+
+System.out.print("Enter student name: ");
+String name = scanner.nextLine();
+
+System.out.print("Enter maths mark: ");
+int mathsMark = scanner.nextInt();</code></pre>
+        <p><strong>How to read this code:</strong> Java imports Scanner, creates a scanner connected to keyboard input, asks questions, then stores the user's answers.</p>
+        <p><strong>Why this matters:</strong> The grade calculator becomes more useful when the user can type their own marks.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Scanner</td><td>Java input helper</td><td>Reads keyboard input</td><td><code>new Scanner(System.in)</code></td></tr><tr><td>nextLine</td><td>Read a line of text</td><td>Used for names</td><td><code>scanner.nextLine()</code></td></tr><tr><td>nextInt</td><td>Read a whole number</td><td>Used for marks</td><td><code>scanner.nextInt()</code></td></tr><tr><td>input</td><td>Typed information</td><td>Makes program interactive</td><td><code>80</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Which Scanner method reads a whole number?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Allow the user to type name and marks.</p></div>
+      </article>
+
+      <article class="lesson-subtopic" id="java-common-mistakes">
+        <h3>Common beginner Java mistakes</h3>
+        <p>Java is strict. Small typing differences can stop a program from compiling. This is normal while learning.</p>
+        <pre class="code-example"><code>// Broken ideas to spot:
+int score = 80
+if (score = 80) {
+  System.out.println("Check");
+}</code></pre>
+        <p><strong>How to read this code:</strong> The first line is missing a semicolon. The condition uses <code>=</code> instead of <code>==</code>.</p>
+        <p><strong>Why this matters:</strong> Debugging is part of programming. Learning common mistakes makes errors less frustrating.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>semicolon</td><td>Statement ending</td><td>Java expects it often</td><td><code>int score = 80;</code></td></tr><tr><td>case-sensitive</td><td>Capitals matter</td><td><code>String</code> and <code>string</code> differ</td><td><code>String name</code></td></tr><tr><td>==</td><td>Compare equality</td><td>Checks if values match</td><td><code>score == 80</code></td></tr><tr><td>integer division</td><td>Whole-number division</td><td>Can remove decimals</td><td><code>5 / 2</code></td></tr></tbody></table></div>
+        <div class="exercise-card"><h4>Quick exercise</h4><p>Find two mistakes in the broken snippet.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Debug a broken grade calculator snippet before writing the final version.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can model a student, read input and spot common Java mistakes.</p></div>
+    </section>
+
+    <section class="section lesson-module project-card" id="java-final-project">
+      <div class="section-heading">
+        <p class="tag">Final mini project</p>
+        <h2>Student Grade Calculator in Java</h2>
+        <p>This project combines class structure, main method, variables, data types, operators, conditions, loops, arrays, methods, objects/classes and simple input/output.</p>
+      </div>
+
+      <pre class="code-example final-code"><code>import java.util.Scanner;
+
+class Student {
+  String name;
+  int[] marks;
+
+  Student(String name, int[] marks) {
+    this.name = name;
+    this.marks = marks;
+  }
+}
+
+public class Main {
+  public static double calculateAverage(int[] marks) {
+    int total = 0;
+
+    for (int mark : marks) {
+      total += mark;
+    }
+
+    return total / (double) marks.length;
+  }
+
+  public static String getGrade(double average) {
+    if (average &gt;= 80) {
+      return "A - Strong";
+    } else if (average &gt;= 60) {
+      return "B - Building";
+    } else if (average &gt;= 40) {
+      return "C - Needs practice";
+    } else {
+      return "Needs focused revision";
+    }
+  }
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Student Grade Calculator");
+    System.out.print("Enter student name: ");
+    String name = scanner.nextLine();
+
+    int[] marks = new int[3];
+
+    System.out.print("Enter maths mark: ");
+    marks[0] = scanner.nextInt();
+
+    System.out.print("Enter science mark: ");
+    marks[1] = scanner.nextInt();
+
+    System.out.print("Enter computing mark: ");
+    marks[2] = scanner.nextInt();
+
+    Student student = new Student(name, marks);
+    double average = calculateAverage(student.marks);
+    String grade = getGrade(average);
+
+    System.out.println();
+    System.out.println("Student: " + student.name);
+    System.out.println("Average mark: " + average);
+    System.out.println("Grade: " + grade);
+  }
+}</code></pre>
+
+      <div class="grid cards">
+        <article class="practice-card">
+          <h3>How it works step by step</h3>
+          <p>The program imports Scanner, defines a Student blueprint, asks for a name and marks, stores marks in an array, calculates the average with a method, chooses a grade with conditions and prints a report.</p>
+        </article>
+        <article class="practice-card">
+          <h3>Example output</h3>
+          <pre class="code-example"><code>Student: Aisha
+Average mark: 77.0
+Grade: B - Building</code></pre>
+        </article>
+        <article class="practice-card">
+          <h3>Upgrade ideas</h3>
+          <ul>
+            <li>Add more subjects</li>
+            <li>Store multiple students</li>
+            <li>Use arrays of objects</li>
+            <li>Add attendance score</li>
+            <li>Add a menu</li>
+            <li>Save results later in a future advanced version</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="final-cta">
+        <p class="tag">Next step</p>
+        <h2>Connect Java to your career roadmap</h2>
+        <p>Java is useful for object-oriented programming, backend systems and enterprise-style software. Continue into the Career Path Guide when you want role-based readiness practice.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="career-path-guide.html">Continue to Career Path Guide</a>
+          <a class="btn secondary" href="javascript-learning.html">Compare with JavaScript</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links" aria-label="Footer links"><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="business.html">Business</a></div>
+    <p>&copy; 2026 TechPath Readiness. Built for career-path learning and programming practice.</p>
+  </footer>
+  <script src="scroll-reveal.js"></script>
+  <script src="mocha-background.js"></script>
+</body>
+</html>

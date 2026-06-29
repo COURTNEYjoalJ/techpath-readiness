@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Learning Path for Beginners | TechPath Readiness</title>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Learn HTML from scratch with beginner-friendly structure lessons, diagrams, code examples, exercises, mini-project tasks and a final profile page." />
+  <link rel="canonical" href="https://courtneyjoalj.github.io/techpath-readiness/html-learning.html" />
+  <meta property="og:title" content="HTML Learning Path for Beginners | TechPath Readiness" />
+  <meta property="og:description" content="Learn HTML from scratch with beginner-friendly structure lessons, diagrams, code examples, exercises, mini-project tasks and a final profile page." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://courtneyjoalj.github.io/techpath-readiness/html-learning.html" />
+  <meta property="og:site_name" content="TechPath Readiness" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="HTML Learning Path for Beginners | TechPath Readiness" />
+  <meta name="twitter:description" content="Learn HTML from scratch with beginner-friendly structure lessons, diagrams, code examples, exercises, mini-project tasks and a final profile page." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "HTML Learning Path for Beginners | TechPath Readiness",
+      "description": "Learn HTML from scratch with beginner-friendly structure lessons, diagrams, code examples, exercises, mini-project tasks and a final profile page.",
+      "url": "https://courtneyjoalj.github.io/techpath-readiness/html-learning.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechPath Readiness"
+      }
+    }
+  </script>
+</head>
+<body id="top" class="guide-page learning-page">
+  <header class="site-header guide-header lesson-hero">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TechPath Readiness home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPath Readiness logo" /><span class="brand-text">TechPath <span>Readiness</span></span></a>
+      <div class="learning-nav-links" aria-label="HTML learning navigation">
+        <a class="guide-home-link" href="index.html">Home</a>
+        <a class="guide-home-link" href="css-learning.html">CSS</a>
+        <a class="guide-home-link" href="javascript-learning.html">JavaScript</a>
+        <a class="guide-home-link" href="career-path-guide.html">Career Guide</a>
+      </div>
+    </nav>
+
+    <section class="hero guide-hero">
+      <div class="hero-text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html#languages">Build the Skills</a>
+          <span aria-hidden="true">/</span>
+          <span>HTML Basics</span>
+        </nav>
+        <p class="tag">HTML learning roadmap</p>
+        <h1>Learn HTML from Scratch</h1>
+        <p class="subtitle">
+          HTML is the structure and meaning layer of web pages. It gives content a clear shape through headings, sections, links, lists, images, tables and accessible forms.
+        </p>
+        <p class="lesson-note">
+          Each topic includes a quick exercise and a mini-project task. Complete them in order to build a Personal Learning Profile Page.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#html-lessons">Start Learning</a>
+          <a class="btn secondary" href="#html-final-project">Final Project</a>
+          <a class="btn secondary" href="index.html#languages">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <nav class="lesson-dock" aria-label="HTML lesson index">
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#top"><span class="dock-number">0</span><span class="dock-label">Top</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#what-is-html"><span class="dock-number">1</span><span class="dock-label">What is HTML?</span></a><div class="dock-popover"><a href="#html-structure-layer">Structure layer</a><a href="#html-page-parts">Page parts</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-document-structure"><span class="dock-number">2</span><span class="dock-label">Document structure</span></a><div class="dock-popover"><a href="#html-base-file">Base file</a><a href="#html-head-body">Head and body</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-headings-paragraphs"><span class="dock-number">3</span><span class="dock-label">Headings and paragraphs</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-links-images"><span class="dock-number">4</span><span class="dock-label">Links and images</span></a><div class="dock-popover"><a href="#html-links">Links</a><a href="#html-images">Images and alt text</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-lists"><span class="dock-number">5</span><span class="dock-label">Lists</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-semantic"><span class="dock-number">6</span><span class="dock-label">Semantic HTML</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-tables"><span class="dock-number">7</span><span class="dock-label">Tables</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-forms-accessibility"><span class="dock-number">8</span><span class="dock-label">Forms and accessibility</span></a><div class="dock-popover"><a href="#html-forms">Forms basics</a><a href="#html-accessibility">Accessibility basics</a></div></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-seo"><span class="dock-number">9</span><span class="dock-label">SEO basics</span></a></div>
+    <div class="lesson-dock-group"><a class="lesson-dock-item" href="#html-final-project"><span class="dock-number">10</span><span class="dock-label">Final mini project</span></a></div>
+  </nav>
+
+  <main id="html-lessons">
+    <section class="section">
+      <div class="section-heading"><p class="tag">Lesson overview</p><h2>Build a meaningful web page from the structure up</h2><p>Each topic adds part of the final Personal Learning Profile Page.</p></div>
+      <div class="lesson-overview-grid">
+        <a href="#what-is-html">What is HTML?</a>
+        <a href="#html-document-structure">Document structure</a>
+        <a href="#html-headings-paragraphs">Headings and paragraphs</a>
+        <a href="#html-links-images">Links and images</a>
+        <a href="#html-lists">Lists</a>
+        <a href="#html-semantic">Semantic HTML</a>
+        <a href="#html-tables">Tables</a>
+        <a href="#html-forms-accessibility">Forms and accessibility</a>
+        <a href="#html-seo">SEO basics</a>
+        <a href="#html-final-project">Final mini project</a>
+      </div>
+    </section>
+
+    <section class="section lesson-module" id="what-is-html">
+      <div class="section-heading"><p class="tag">Topic 1</p><h2>What is HTML?</h2><p>HTML describes the structure and meaning of webpage content.</p></div>
+      <div class="concept-diagram"><span class="flow-step">Webpage</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Sections</span><span class="flow-arrow">-&gt;</span><span class="flow-step">Elements</span></div>
+      <article class="lesson-subtopic" id="html-structure-layer">
+        <h3>HTML as the structure layer</h3>
+        <p>HTML tells the browser what each piece of content means: heading, paragraph, link, list, image, table or form field.</p>
+        <pre class="code-example"><code>&lt;h1&gt;My Learning Profile&lt;/h1&gt;
+&lt;p&gt;I am learning web development step by step.&lt;/p&gt;</code></pre>
+        <p><strong>Real-life example:</strong> A profile page uses headings for sections, lists for skills and links for projects.</p>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>HTML as the structure layer</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;h1&gt;My Learning Profile&lt;/h1&gt; &lt;p&gt;I am learning web d...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;h1&gt;My Learning Profile&lt;/h1&gt; &lt;p&gt;I am learning web d...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Name three types of content you would put on a personal learning page.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Write the goal of your Personal Learning Profile Page.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="html-page-parts">
+        <h3>HTML, CSS and JavaScript comparison</h3>
+        <p>HTML gives structure, CSS controls visual style and JavaScript adds behaviour.</p>
+        <pre class="code-example"><code>&lt;button&gt;View progress&lt;/button&gt;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not use HTML tags only because they look a certain size. Use them for meaning first.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>HTML, CSS and JavaScript comparison</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;button&gt;View progress&lt;/button&gt;</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;button&gt;View progress&lt;/button&gt;</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which language controls page structure?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>List the main sections your profile page will need.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>You can explain HTML as the meaning and structure layer of a webpage.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="html-document-structure">
+      <div class="section-heading"><p class="tag">Topic 2</p><h2>HTML document structure</h2><p>Every page needs a reliable base structure.</p></div>
+      <article class="lesson-subtopic" id="html-base-file">
+        <h3>html, head, title, body and meta tags</h3>
+        <p>The <code>head</code> is information about the page, mostly for the browser and search engines. The <code>body</code> is the visible content people see on the page.</p>
+        <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Learning Profile&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;My Learning Profile&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>html, head, title, body and meta tags</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>head</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>head</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which part contains visible page content?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create the base profile page file structure.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="html-head-body">
+        <h3>Why viewport matters</h3>
+        <p>The viewport meta tag helps mobile browsers scale the page correctly.</p>
+        <pre class="code-example"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Skipping the viewport tag can make mobile pages appear zoomed out or awkward.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Why viewport matters</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, ...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, ...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Find the viewport line in the example structure.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add charset, viewport and title to your profile page.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your final page now has a correct HTML foundation.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="html-headings-paragraphs">
+      <div class="section-heading"><p class="tag">Topic 3</p><h2>Headings and paragraphs</h2><p>Headings create hierarchy and paragraphs explain content.</p></div>
+      <article class="lesson-subtopic" id="html-heading-hierarchy">
+        <h3>h1 to h6 and p</h3>
+        <p>Use one clear <code>h1</code> for the page topic, then use lower headings for sections.</p>
+        <pre class="code-example"><code>&lt;h1&gt;Aisha's Learning Profile&lt;/h1&gt;
+&lt;h2&gt;Current Goal&lt;/h2&gt;
+&lt;p&gt;I am learning HTML, CSS and JavaScript to build beginner projects.&lt;/p&gt;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not skip heading levels only to make text look bigger. Style size with CSS later.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>h1 to h6 and p</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>h1</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>h1</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write one <code>h1</code> and one <code>h2</code> for your page.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add a profile heading and introduction paragraph.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your profile page has a readable title and introduction.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="html-links-images">
+      <div class="section-heading"><p class="tag">Topic 4</p><h2>Links and images</h2><p>Links connect pages. Images need useful alt text.</p></div>
+      <article class="lesson-subtopic" id="html-links">
+        <h3>Links and navigation</h3>
+        <p>The <code>a</code> element links to pages, sections or external sites. Use clear link text.</p>
+        <pre class="code-example"><code>&lt;nav&gt;
+  &lt;a href="#skills"&gt;Skills&lt;/a&gt;
+  &lt;a href="#projects"&gt;Projects&lt;/a&gt;
+  &lt;a href="#projects"&gt;Projects&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Links and navigation</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>a</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>a</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Why is "View my projects" better than "Click here"?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add navigation links to your profile sections.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="html-images">
+        <h3>Images and alt text</h3>
+        <p>Use <code>alt</code> text to describe meaningful images. Decorative images can have empty alt text.</p>
+        <pre class="code-example"><code>&lt;img src="learning-profile.png" alt="Screenshot of my learning profile project"&gt;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not write "image of image" as alt text. Explain the useful meaning.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Images and alt text</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>alt</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>alt</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write alt text for a screenshot of your first webpage.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add a profile or learning image placeholder with meaningful alt text.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your page can now link between sections and include accessible image descriptions.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="html-lists">
+      <div class="section-heading"><p class="tag">Topic 5</p><h2>Lists</h2><p>Lists group related items clearly.</p></div>
+      <article class="lesson-subtopic" id="html-list-types">
+        <h3>ul, ol and li</h3>
+        <p>Use unordered lists for general items and ordered lists when sequence matters.</p>
+        <pre class="code-example"><code>&lt;h2&gt;Skills I am learning&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTML structure&lt;/li&gt;
+  &lt;li&gt;CSS layout&lt;/li&gt;
+  &lt;li&gt;JavaScript interaction&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>ul, ol and li</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;h2&gt;Skills I am learning&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;HTML structu...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;h2&gt;Skills I am learning&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;HTML structu...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Should project steps use <code>ul</code> or <code>ol</code>?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add skills and learning goals lists to your profile page.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your profile page now shows skills and goals in a scannable way.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="html-semantic">
+      <div class="section-heading"><p class="tag">Topic 6</p><h2>Semantic HTML</h2><p>Semantic elements explain the role of page areas.</p></div>
+      <div class="concept-diagram"><span class="flow-step">header</span><span class="flow-step">nav</span><span class="flow-step">main</span><span class="flow-step">section</span><span class="flow-step">footer</span></div>
+      <article class="lesson-subtopic" id="html-semantic-blocks">
+        <h3>header, nav, main, section, article, aside and footer</h3>
+        <p>Semantic structure helps accessibility, SEO and future maintenance.</p>
+        <pre class="code-example"><code>&lt;header&gt;...intro content...&lt;/header&gt;
+&lt;main&gt;
+  &lt;section id="skills"&gt;...skills...&lt;/section&gt;
+  &lt;section id="projects"&gt;...projects...&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;...contact links...&lt;/footer&gt;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>header, nav, main, section, article, aside and footer</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;header&gt;...intro content...&lt;/header&gt; &lt;main&gt; &lt;sectio...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;header&gt;...intro content...&lt;/header&gt; &lt;main&gt; &lt;sectio...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Which element should wrap the main unique content of the page?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Restructure your profile page with semantic elements.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your page has meaningful sections instead of generic blocks only.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="html-tables">
+      <div class="section-heading"><p class="tag">Topic 7</p><h2>Tables</h2><p>Use tables for data, not layout.</p></div>
+      <article class="lesson-subtopic" id="html-table-basics">
+        <h3>table, caption, thead, tbody, tr, th and td</h3>
+        <p>Tables work well for weekly schedules, marks or structured comparisons.</p>
+        <pre class="code-example"><code>&lt;table&gt;
+  &lt;caption&gt;Weekly learning schedule&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;Topic&lt;/th&gt;&lt;th&gt;Time&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;45 mins&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>table, caption, thead, tbody, tr, th and td</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;table&gt; &lt;caption&gt;Weekly learning schedule&lt;/caption&gt;...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;table&gt; &lt;caption&gt;Weekly learning schedule&lt;/caption&gt;...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>What should a table caption explain?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add a weekly learning schedule table.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your profile page can include structured schedule data.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="html-forms-accessibility">
+      <div class="section-heading"><p class="tag">Topic 8</p><h2>Forms and accessibility</h2><p>Forms collect input only when connected to a real process. This lesson uses a non-submitting example.</p></div>
+      <article class="lesson-subtopic" id="html-forms">
+        <h3>Forms basics</h3>
+        <p>Forms use labels and controls such as input, textarea, select and button. A static demo form does not send data anywhere.</p>
+        <pre class="code-example"><code>&lt;form action="#" aria-label="Learning reflection example"&gt;
+  &lt;label for="reflection"&gt;What did I learn today?&lt;/label&gt;
+  &lt;textarea id="reflection" name="reflection"&gt;&lt;/textarea&gt;
+  &lt;button type="button"&gt;Example button only&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        <div class="mistake-card"><h4>Beginner mistake to avoid</h4><p>Do not pretend a static form submits messages. It needs a real backend or service later.</p></div>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Forms basics</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;form action=&quot;#&quot; aria-label=&quot;Learning reflection ex...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;form action=&quot;#&quot; aria-label=&quot;Learning reflection ex...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Why should every input have a label?</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Create a non-submitting learning reflection form example.</p></div>
+      </article>
+      <article class="lesson-subtopic" id="html-accessibility">
+        <h3>Accessibility basics</h3>
+        <p>Use labels, alt text, heading order, meaningful link text and keyboard-friendly structure.</p>
+        <pre class="code-example"><code>&lt;a href="#projects"&gt;View my beginner projects&lt;/a&gt;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>Accessibility basics</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;a href=&quot;#projects&quot;&gt;View my beginner projects&lt;/a&gt;</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;a href=&quot;#projects&quot;&gt;View my beginner projects&lt;/a&gt;</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Replace "click here" with more meaningful link text.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Review your profile page for labels, alt text and heading order.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your page is easier to understand for people and assistive technologies.</p></div>
+    </section>
+
+    <section class="section lesson-module" id="html-seo">
+      <div class="section-heading"><p class="tag">Topic 9</p><h2>SEO basics for HTML</h2><p>Good HTML makes page purpose clearer to search engines and users.</p></div>
+      <article class="lesson-subtopic" id="html-seo-tags">
+        <h3>title, meta description, headings and semantic structure</h3>
+        <p>The title and meta description summarise the page. Clear headings and semantic sections support readability.</p>
+        <pre class="code-example"><code>&lt;title&gt;Aisha's Learning Profile&lt;/title&gt;
+&lt;meta name="description" content="A beginner learning profile showing skills, goals and projects."&gt;</code></pre>
+
+        <p><strong>Why this matters:</strong> It helps you give the Personal Learning Profile Page clear structure and meaning.</p>
+        <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
+        <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>title, meta description, headings and semantic structure</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>&lt;title&gt;Aisha&#39;s Learning Profile&lt;/title&gt; &lt;meta name=...</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>&lt;title&gt;Aisha&#39;s Learning Profile&lt;/title&gt; &lt;meta name=...</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Personal Learning Profile Page</td><td>Personal Learning Profile Page</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write a 140-character description for your profile page.</p></div>
+        <div class="mini-task-card"><h4>Mini-project task</h4><p>Add beginner SEO tags to your profile page.</p></div>
+      </article>
+      <div class="checkpoint-card"><h3>Topic checkpoint</h3><p>Your final page has basic metadata and a clear content structure.</p></div>
+    </section>
+
+    <section class="section lesson-module project-card" id="html-final-project">
+      <div class="section-heading"><p class="tag">Final mini project</p><h2>Personal Learning Profile Page</h2><p>This project combines document structure, headings, paragraphs, links, images, lists, semantic sections, tables, form basics, accessibility and SEO.</p></div>
+      <pre class="code-example final-code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="A beginner learning profile showing skills, goals and projects."&gt;
+  &lt;title&gt;My Learning Profile&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My Learning Profile&lt;/h1&gt;
+    &lt;p&gt;I am building web skills through structured beginner projects.&lt;/p&gt;
+    &lt;nav&gt;
+      &lt;a href="#skills"&gt;Skills&lt;/a&gt;
+      &lt;a href="#schedule"&gt;Schedule&lt;/a&gt;
+      &lt;a href="#projects"&gt;Projects&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section id="skills"&gt;
+      &lt;h2&gt;Skills I am learning&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Semantic HTML&lt;/li&gt;
+        &lt;li&gt;Responsive CSS&lt;/li&gt;
+        &lt;li&gt;JavaScript interaction&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+
+    &lt;section id="schedule"&gt;
+      &lt;h2&gt;Weekly schedule&lt;/h2&gt;
+      &lt;table&gt;
+        &lt;caption&gt;My study plan&lt;/caption&gt;
+        &lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;Topic&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;Built as a beginner HTML project.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <div class="grid cards">
+        <article class="practice-card"><h3>Explain each section</h3><p>The header introduces the learner, main contains skills and schedule content, and footer gives a simple project note.</p></article>
+        <article class="practice-card"><h3>Upgrade ideas</h3><ul><li>Add CSS styling</li><li>Add JavaScript interaction</li><li>Add project cards</li><li>Add a progress table</li><li>Add a downloadable CV link later</li></ul></article>
+      </div>
+      <div class="final-cta">
+        <p class="tag">Next step</p>
+        <h2>Style your HTML with CSS</h2>
+        <p>HTML gives structure. CSS turns that structure into a polished responsive layout.</p>
+        <div class="hero-actions"><a class="btn primary" href="css-learning.html">Continue to CSS</a><a class="btn secondary" href="javascript-learning.html">Learn JavaScript</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links" aria-label="Footer links"><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="business.html">Business</a></div>
+    <p>&copy; 2026 TechPath Readiness. Built for career-path learning and programming practice.</p>
+  </footer>
+  <script src="scroll-reveal.js"></script>
+  <script src="mocha-background.js"></script>
+</body>
+</html>
