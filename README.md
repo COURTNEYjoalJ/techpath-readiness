@@ -21,6 +21,7 @@ Repository: https://github.com/COURTNEYjoalJ/techpath-readiness
 - Partial scores not saved when a modal is closed early
 - Final scores saved only after full Career Path Guide skill-test completion
 - Dynamic Career Readiness Report scored out of 100
+- V2.0 localStorage-only Readiness Dashboard that aggregates saved Career Guide and GCSE quiz results without changing existing scoring logic
 - Homepage standalone practice quiz that does not save scores
 - Saved Career Path Guide scores using browser `localStorage`
 - Dedicated SEO roadmap pages for completed roles
@@ -72,6 +73,7 @@ The GCSE starter quiz has two modes:
 
 - `index.html`
 - `career-path-guide.html`
+- `readiness-dashboard.html`
 - `data-scientist-roadmap.html`
 - `data-analyst-roadmap.html`
 - `cloud-engineer-roadmap.html`
@@ -115,6 +117,7 @@ This project does not use React, a backend, a database, API keys, external libra
 .
 |-- index.html                     # Homepage, supported paths, practice quiz, feedback and LinkedIn CTA
 |-- career-path-guide.html         # Career Path Guide page
+|-- readiness-dashboard.html       # V2.0 browser-only readiness dashboard
 |-- data-scientist-roadmap.html    # Data Scientist SEO roadmap page
 |-- data-analyst-roadmap.html      # Data Analyst SEO roadmap page
 |-- cloud-engineer-roadmap.html    # Cloud Engineer SEO roadmap page
@@ -137,6 +140,7 @@ This project does not use React, a backend, a database, API keys, external libra
 |-- animations.css                 # Reusable scroll reveal animation styles
 |-- styles.css                     # Shared component design, layout and responsive styles
 |-- script.js                      # Homepage menu and practice quiz behavior
+|-- readiness-score.js             # Read-only localStorage aggregator for the readiness dashboard
 |-- scroll-reveal.js               # Repeatable scroll reveal animations
 |-- mocha-background.js            # Global procedural Mocha Sapphire animated background
 |-- gcse-starter-quiz.js           # Separate GCSE Maths + Python Basics starter quiz and result modal
@@ -162,6 +166,7 @@ You can also open `career-path-guide.html` or any roadmap page directly. Because
 - Career roles, skills, weights and topics are stored in local JavaScript files.
 - Question banks are stored in `career-questions.js`.
 - Full Career Path Guide skill-test scores may be saved in the user's browser with `localStorage`.
+- The V2.0 Readiness Dashboard reads existing saved Career Guide and GCSE starter quiz results only. It does not change existing score keys or quiz scoring logic.
 - Homepage practice quiz scores are not saved.
 - The GCSE Maths + Python Basics starter quiz may save the latest result and quiz mode locally with the separate key `techpathGcseStarterQuizResult`.
 - GCSE starter quiz results are not sent to a server because the site has no backend.
@@ -249,6 +254,13 @@ Courtney is based in Liverpool, United Kingdom, and is an MSc Data Science & AI 
 
 - Added a feedback collection route through a Google Form.
 - Testimonials and case studies should only be published later using real feedback with permission.
+
+### v2.0-readiness-dashboard
+
+- Added a localStorage-only Readiness Dashboard.
+- Aggregates existing saved Career Guide and GCSE starter quiz results into broader TechPath readiness categories.
+- Uses only real saved assessment data and shows unassessed areas as not assessed yet.
+- Kept existing quiz scoring logic and localStorage keys unchanged.
 
 ## Future Improvements
 

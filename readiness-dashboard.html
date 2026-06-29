@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your TechPath Readiness Dashboard | TechPath Readiness</title>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="View a browser-based TechPath readiness snapshot from saved Career Path Guide and GCSE starter quiz results." />
+  <link rel="canonical" href="https://courtneyjoalj.github.io/techpath-readiness/readiness-dashboard.html" />
+  <meta property="og:title" content="Your TechPath Readiness Dashboard | TechPath Readiness" />
+  <meta property="og:description" content="View a browser-based TechPath readiness snapshot from saved Career Path Guide and GCSE starter quiz results." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://courtneyjoalj.github.io/techpath-readiness/readiness-dashboard.html" />
+  <meta property="og:site_name" content="TechPath Readiness" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Your TechPath Readiness Dashboard | TechPath Readiness" />
+  <meta name="twitter:description" content="View a browser-based TechPath readiness snapshot from saved Career Path Guide and GCSE starter quiz results." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Your TechPath Readiness Dashboard | TechPath Readiness",
+      "description": "View a browser-based TechPath readiness snapshot from saved Career Path Guide and GCSE starter quiz results.",
+      "url": "https://courtneyjoalj.github.io/techpath-readiness/readiness-dashboard.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechPath Readiness"
+      }
+    }
+  </script>
+</head>
+<body class="guide-page readiness-dashboard-page">
+  <header class="site-header guide-header">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TechPath Readiness home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPath Readiness logo" /><span class="brand-text">TechPath <span>Readiness</span></span></a>
+      <a class="guide-home-link" href="index.html">Home</a>
+      <a class="guide-home-link" href="career-path-guide.html">Career Guide</a>
+      <a class="guide-home-link" href="gcse-maths-python-roadmap.html">GCSE Quiz</a>
+      <a class="guide-home-link" href="business.html">Beta Support</a>
+    </nav>
+
+    <section class="hero guide-hero readiness-dashboard-hero">
+      <div class="hero-text">
+        <p class="tag">V2.0 local readiness profile</p>
+        <h1>Your TechPath Readiness Dashboard</h1>
+        <p class="subtitle">
+          A browser-based snapshot of your saved skill test results across learning, technical skills, and career preparation.
+        </p>
+        <p class="readiness-dashboard-note">
+          Scores are calculated only from assessments completed in this browser. If you clear browser data or use another device, saved results may not appear.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="career-path-guide.html">Start Career Path Guide</a>
+          <a class="btn secondary" href="gcse-maths-python-roadmap.html">Try GCSE Starter Quiz</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main data-readiness-dashboard>
+    <section class="section readiness-dashboard-section">
+      <div class="section-heading">
+        <p class="tag">Saved results</p>
+        <h2>Readiness snapshot</h2>
+        <p>
+          This dashboard aggregates real saved Career Guide and GCSE starter quiz results. Categories with no saved assessment are shown as not assessed instead of being counted as zero.
+        </p>
+      </div>
+
+      <div class="dashboard-empty-state" data-dashboard-empty hidden>
+        <h2>You have not completed any saved readiness assessments yet.</h2>
+        <p>Start with a saved skill test or beginner quiz to unlock your browser-based readiness snapshot.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="career-path-guide.html">Start Career Path Guide</a>
+          <a class="btn secondary" href="gcse-maths-python-roadmap.html">Try GCSE Starter Quiz</a>
+        </div>
+      </div>
+
+      <div class="dashboard-summary-grid" data-dashboard-summary aria-live="polite"></div>
+    </section>
+
+    <section class="section alt">
+      <div class="section-heading">
+        <p class="tag">Eight categories</p>
+        <h2>Your broader TechPath profile</h2>
+        <p>Each category shows only real saved evidence. Projects and Career Prep stay unscored until a real assessment source exists.</p>
+      </div>
+
+      <div class="readiness-category-grid" data-dashboard-categories></div>
+    </section>
+
+    <section class="section" data-dashboard-supporting-notes hidden>
+      <div class="feedback-card readiness-supporting-notes">
+        <p class="tag">Supporting notes</p>
+        <h2>Beginner quiz topic signals</h2>
+        <div data-dashboard-notes></div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <p class="tag">Next step</p>
+      <h2>Build your readiness evidence one saved result at a time.</h2>
+      <p>Use the Career Path Guide for role-based skill tests, the GCSE Starter Quiz for beginner support, or request beta support if you want manual guidance.</p>
+      <a class="btn primary" href="career-path-guide.html">Start Career Path Guide</a>
+      <a class="btn secondary" href="gcse-maths-python-roadmap.html">Try GCSE Starter Quiz</a>
+      <a class="btn secondary" href="https://forms.gle/To4fx7kp5q3pFWRT9" target="_blank" rel="noopener noreferrer">Request Beta Support</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links" aria-label="Footer links">
+      <a href="index.html">Home</a>
+      <a href="career-path-guide.html">Career Guide</a>
+      <a href="gcse-maths-python-roadmap.html">GCSE Quiz</a>
+      <a href="business.html">Business</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; 2026 TechPath Readiness. Built for career-path learning and programming practice.</p>
+  </footer>
+
+  <script src="career-data.js"></script>
+  <script src="readiness-score.js"></script>
+  <script src="scroll-reveal.js"></script>
+  <script src="mocha-background.js"></script>
+</body>
+</html>
