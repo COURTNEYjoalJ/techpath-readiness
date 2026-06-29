@@ -245,6 +245,11 @@ Courtney is based in Liverpool, United Kingdom, and is an MSc Data Science & AI 
 - Added manual paid beta intake through a Google Form request link.
 - Kept the website static with no backend, payment system, fake form, booking system or account flow.
 
+### v1.7-testimonials-case-studies
+
+- Added a feedback collection route through a Google Form.
+- Testimonials and case studies should only be published later using real feedback with permission.
+
 ## Future Improvements
 
 - Add more career paths.
