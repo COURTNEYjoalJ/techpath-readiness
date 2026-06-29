@@ -201,23 +201,49 @@
     resultArea.appendChild(state);
   }
 
-  function createBarRow(label, percentage, statusLabel) {
-    const row = createElement("article", "readiness-preview-bar-row");
-    const header = createElement("div", "readiness-preview-bar-head");
-    const title = createElement("span", "", label);
-    const value = createElement("strong", "", percentage === null ? "Not tested" : `${percentage}%`);
-    const track = createElement("div", "readiness-preview-bar-track");
-    const fill = createElement("span", "readiness-preview-bar-fill");
-    const status = createElement("p", "readiness-preview-status", statusLabel);
+  function createGraphRow(label, percentage) {
+    const row = createElement("div", "readiness-graph-row");
+    const line = createElement("div", "readiness-graph-row-main");
+    const title = createElement("span", "readiness-graph-label", label);
+    const value = createElement("strong", "readiness-graph-value", percentage === null ? "Not tested" : `${percentage}%`);
+    const track = createElement("div", "readiness-graph-bar");
+    const fill = createElement("span", "readiness-graph-fill");
 
+    row.title = getStatusLabel(percentage);
     fill.style.width = percentage === null ? "0%" : `${percentage}%`;
     track.appendChild(fill);
-    header.appendChild(title);
-    header.appendChild(value);
-    row.appendChild(header);
+    line.appendChild(title);
+    line.appendChild(value);
+    row.appendChild(line);
     row.appendChild(track);
-    row.appendChild(status);
     return row;
+  }
+
+  function renderCompactGraph({ tag, title, score, status, meta, items }) {
+    clearResultArea();
+
+    const graph = createElement("div", "readiness-preview-graph");
+    const header = createElement("div", "readiness-graph-header");
+    const titleBlock = createElement("div", "readiness-graph-title");
+    const scoreBlock = createElement("div", "readiness-graph-score");
+    const list = createElement("div", "readiness-graph-list");
+
+    titleBlock.appendChild(createElement("p", "tag", tag));
+    titleBlock.appendChild(createElement("h2", "", title));
+    titleBlock.appendChild(createElement("p", "readiness-graph-meta", meta));
+
+    scoreBlock.appendChild(createElement("strong", "", score));
+    scoreBlock.appendChild(createElement("span", "", status));
+
+    items.forEach((item) => {
+      list.appendChild(createGraphRow(item.name, item.percentage));
+    });
+
+    header.appendChild(titleBlock);
+    header.appendChild(scoreBlock);
+    graph.appendChild(header);
+    graph.appendChild(list);
+    resultArea.appendChild(graph);
   }
 
   function renderCareerResult(result) {
@@ -231,25 +257,27 @@
       return;
     }
 
-    clearResultArea();
-
-    const summary = createElement("div", "readiness-preview-summary");
     const status = result.isComplete ? "Complete result" : "Partial result";
-    summary.appendChild(createElement("p", "tag", status));
-    summary.appendChild(createElement("h2", "", result.roleLabel));
-
+    const visibleScores = result.isComplete
+      ? result.skillScores
+      : result.skillScores.filter((item) => item.percentage !== null);
+    const scoreText = result.isComplete ? `${formatScore(result.overallScore)}/100` : `${result.completedCount}/${result.totalSkills}`;
+    const statusLabel = result.isComplete ? getStatusLabel(result.overallScore) : "Partial result";
     const metaText = result.isComplete
-      ? `Overall readiness: ${formatScore(result.overallScore)}/100 from ${result.countryLabel}.`
-      : `${result.completedCount} of ${result.totalSkills} skill tests completed${result.countryLabel ? ` for ${result.countryLabel}` : ""}.`;
-    summary.appendChild(createElement("p", "readiness-preview-meta", metaText));
+      ? `Weighted readiness score from ${result.countryLabel}.`
+      : `Skill tests completed${result.countryLabel ? ` for ${result.countryLabel}` : ""}.`;
 
-    const bars = createElement("div", "readiness-preview-bars");
-    result.skillScores.forEach((item) => {
-      bars.appendChild(createBarRow(item.name, item.percentage, getStatusLabel(item.percentage)));
+    renderCompactGraph({
+      tag: status,
+      title: result.roleLabel,
+      score: scoreText,
+      status: statusLabel,
+      meta: metaText,
+      items: visibleScores.map((item) => ({
+        name: item.name,
+        percentage: item.percentage
+      }))
     });
-
-    resultArea.appendChild(summary);
-    resultArea.appendChild(bars);
   }
 
   function renderGcseResult(result) {
@@ -263,25 +291,19 @@
       return;
     }
 
-    clearResultArea();
-
-    const summary = createElement("div", "readiness-preview-summary");
     const modeLabel = result.quizMode && result.quizMode.label ? result.quizMode.label : "Starter quiz";
-    summary.appendChild(createElement("p", "tag", modeLabel));
-    summary.appendChild(createElement("h2", "", "GCSE Maths + Python Basics"));
-    summary.appendChild(createElement(
-      "p",
-      "readiness-preview-meta",
-      `${result.percentage}% - ${result.level}. ${result.score} of ${result.total} questions correct.`
-    ));
 
-    const bars = createElement("div", "readiness-preview-bars");
-    result.topicBreakdown.forEach((item) => {
-      bars.appendChild(createBarRow(item.topic, normalisePercentage(item), getStatusLabel(normalisePercentage(item))));
+    renderCompactGraph({
+      tag: modeLabel,
+      title: "GCSE Maths + Python Basics",
+      score: `${result.percentage}%`,
+      status: result.level,
+      meta: `${result.score} of ${result.total} questions correct.`,
+      items: result.topicBreakdown.map((item) => ({
+        name: item.topic,
+        percentage: normalisePercentage(item)
+      }))
     });
-
-    resultArea.appendChild(summary);
-    resultArea.appendChild(bars);
   }
 
   function updateButtonStates() {

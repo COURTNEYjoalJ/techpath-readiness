@@ -25,6 +25,7 @@ Repository: https://github.com/COURTNEYjoalJ/techpath-readiness
 - Saved Career Path Guide scores using browser `localStorage`
 - Dedicated SEO roadmap pages for completed roles
 - GCSE Maths, Python Basics and Data Science starter roadmap page
+- Python Basics learning page with explanations, diagrams, exercises, mini-project tasks and a final beginner project
 - GCSE Maths + Python Basics starter quiz with quick/full modes and result modal
 - Career Guidance page for 1-to-1 teaching, project discussion and learning direction
 - About, Privacy Policy, and Contact pages
@@ -74,6 +75,7 @@ The GCSE starter quiz has two modes:
 - `frontend-developer-roadmap.html`
 - `backend-developer-roadmap.html`
 - `gcse-maths-python-roadmap.html`
+- `python-learning.html`
 - `career-guidance.html`
 - `about.html`
 - `privacy-policy.html`
@@ -110,6 +112,7 @@ This project does not use React, a backend, a database, API keys, external libra
 |-- frontend-developer-roadmap.html # Frontend Developer SEO roadmap page
 |-- backend-developer-roadmap.html # Backend Developer SEO roadmap page
 |-- gcse-maths-python-roadmap.html # GCSE Maths, Python and Data Science starter roadmap
+|-- python-learning.html           # Python basics lessons, diagrams, exercises and final mini project
 |-- career-guidance.html           # 1-to-1 guidance, teaching and project support page
 |-- about.html                     # About and founder page
 |-- privacy-policy.html            # Static website privacy policy
@@ -201,9 +204,17 @@ Courtney is based in Liverpool, United Kingdom, and is an MSc Data Science & AI 
 - Saved the latest GCSE starter quiz result and quiz mode locally with `techpathGcseStarterQuizResult`.
 - Kept the GCSE path separate from the main Career Path Guide scored roles.
 
+### v1.5-python-learning
+
+- Added a dedicated Python Basics learning page.
+- Included beginner-friendly explanations, Mocha Sapphire diagrams, real-life examples, quick exercises and mini-project tasks.
+- Added the final Student Marks and Study Tracker beginner project.
+- Kept the page static with plain HTML/CSS and no external libraries.
+
 ## Future Improvements
 
 - Add more career paths.
+- Add JavaScript and SQL learning pages next.
 - Add deeper quiz feedback.
 - Add more questions and topic coverage.
 - Add a built-in contact form in a future version.
