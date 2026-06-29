@@ -28,6 +28,7 @@ Repository: https://github.com/COURTNEYjoalJ/techpath-readiness
 - Beginner learning pages for Python, JavaScript, Java, SQL, HTML and CSS
 - Learning pages include structured beginner lessons, diagrams, real-life examples, code examples, key-words tables, quick exercises, mini-project tasks, checkpoints and final mini projects
 - Business/Beta Services landing page for GCSE Maths support, Python beginner coaching, readiness reports and career starter packages
+- V1.6 manual paid beta intake added through a Google Form request link
 - GCSE Maths + Python Basics starter quiz with quick/full modes and result modal
 - Career Guidance page for 1-to-1 teaching, project discussion and learning direction
 - About, Privacy Policy, and Contact pages
@@ -165,10 +166,11 @@ You can also open `career-path-guide.html` or any roadmap page directly. Because
 - The GCSE Maths + Python Basics starter quiz may save the latest result and quiz mode locally with the separate key `techpathGcseStarterQuizResult`.
 - GCSE starter quiz results are not sent to a server because the site has no backend.
 - The site does not use a backend, database, account system, API key or built-in contact form.
-- Feedback/contact is handled through GitHub Issues and LinkedIn links only.
-- 1-to-1 teaching and guidance discussions may be started through LinkedIn only.
+- Feedback is handled through GitHub Issues, beta support requests use a Google Form link, and LinkedIn remains available as an optional contact route.
+- 1-to-1 teaching and guidance discussions may be started through the beta request form or LinkedIn.
 - Messages on LinkedIn are governed by LinkedIn's own terms and privacy policy.
 - GitHub Issues feedback is governed by GitHub's own terms and privacy policy.
+- The beta support request form is hosted by Google Forms; email is optional at this stage to reduce unnecessary personal-data collection.
 - There is no fake contact form, payment system, booking system or calendar system.
 - The site does not claim guaranteed jobs, certificates or guaranteed outcomes.
 
@@ -237,6 +239,11 @@ Courtney is based in Liverpool, United Kingdom, and is an MSc Data Science & AI 
 - Added beta package information for GCSE Maths support, Python beginner coaching, readiness reports, data career starter support and international graduate job-search structure.
 - Added homepage navigation and CTA links to the Business page.
 - Kept support requests routed through the Contact page and LinkedIn, with no fake form, booking, payment or backend system.
+
+### v1.6-manual-paid-beta
+
+- Added manual paid beta intake through a Google Form request link.
+- Kept the website static with no backend, payment system, fake form, booking system or account flow.
 
 ## Future Improvements
 
