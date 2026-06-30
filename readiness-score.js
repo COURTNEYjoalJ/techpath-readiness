@@ -488,15 +488,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getLatestDate(categoriesList) {
-    const timestamps = categoriesList
-      .flatMap((category) => category.sources.map((source) => Date.parse(source.updatedAt)))
-      .filter((timestamp) => Number.isFinite(timestamp));
+    const timestamps = [];
+
+    categoriesList.forEach((category) => {
+      category.sources.forEach((source) => {
+        const timestamp = Date.parse(source.updatedAt);
+        if (Number.isFinite(timestamp)) {
+          timestamps.push(timestamp);
+        }
+      });
+    });
 
     if (!timestamps.length) {
       return null;
     }
 
     return new Date(Math.max(...timestamps));
+  }
+
+  function getDefaultCategoriesList() {
+    return categoryOrder.map((key) => {
+      const category = state[key];
+      return {
+        ...category,
+        score: getCategoryScore(category)
+      };
+    });
   }
 
   function createElement(tagName, className, text) {
@@ -554,6 +571,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderCategory(category) {
     const status = getStatus(category.score);
+    const action = roadmapActions[category.key] || {
+      label: "Open Career Path Guide",
+      href: "career-path-guide.html"
+    };
     const card = createElement("article", `readiness-category-card ${status.className}`);
     const header = createElement("div", "readiness-category-header");
     const scoreBlock = createElement("div", "readiness-category-score");
@@ -565,7 +586,7 @@ document.addEventListener("DOMContentLoaded", () => {
     header.appendChild(createElement("span", `readiness-category-status ${status.className}`, status.label));
 
     scoreBlock.appendChild(createElement("strong", "", formatScore(category.score)));
-    scoreBlock.appendChild(createElement("p", "", category.sources.length ? "Average from saved sources" : "No saved assessment source yet"));
+    scoreBlock.appendChild(createElement("p", "", category.sources.length ? "Average from saved sources" : "No saved assessment in this browser yet"));
 
     progressFill.style.width = Number.isFinite(category.score) ? `${category.score}%` : "0%";
     progressTrack.appendChild(progressFill);
@@ -581,7 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     } else {
       const item = document.createElement("li");
-      item.appendChild(createElement("span", "", "Not assessed yet"));
+      item.appendChild(createElement("span", "", "No saved assessment in this browser yet"));
       sourceList.appendChild(item);
     }
 
@@ -590,6 +611,10 @@ document.addEventListener("DOMContentLoaded", () => {
     card.appendChild(progressTrack);
     card.appendChild(sourceList);
     card.appendChild(createElement("p", "readiness-category-suggestion", category.suggestion));
+
+    const link = createElement("a", "btn secondary readiness-category-action", action.label);
+    link.href = action.href;
+    card.appendChild(link);
     return card;
   }
 
@@ -600,7 +625,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     categoryGrid.innerHTML = "";
-    categoriesList.forEach((category) => {
+    const safeCategoriesList = categoriesList && categoriesList.length ? categoriesList : getDefaultCategoriesList();
+    safeCategoriesList.forEach((category) => {
       categoryGrid.appendChild(renderCategory(category));
     });
   }
@@ -744,6 +770,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     roadmapArea.innerHTML = "";
+    const safeCategoriesList = categoriesList && categoriesList.length ? categoriesList : getDefaultCategoriesList();
 
     if (!hasSources) {
       const emptyState = createElement("div", "personalised-roadmap-empty");
@@ -763,22 +790,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const roadmapGrid = createElement("div", "personalised-roadmap-grid");
-    categoriesList.forEach((category) => {
+    safeCategoriesList.forEach((category) => {
       roadmapGrid.appendChild(createRoadmapCard(category));
     });
     roadmapArea.appendChild(roadmapGrid);
   }
 
-  collectCareerGuideScores();
-  collectGcseResult();
+  try {
+    collectCareerGuideScores();
+    collectGcseResult();
+  } catch (error) {
+    // Keep the default not-assessed dashboard visible if browser storage is unavailable.
+  }
 
-  const categoriesList = categoryOrder.map((key) => {
-    const category = state[key];
-    return {
-      ...category,
-      score: getCategoryScore(category)
-    };
-  });
+  const categoriesList = getDefaultCategoriesList();
   const hasSources = categoriesList.some((category) => category.sources.length > 0);
 
   renderEmptyState(hasSources);
