@@ -1,8 +1,6 @@
 (function () {
-  const newViewStorageKey = "techpath:new-view";
   const liquidPointerSelector = [
     ".tp-liquid-metal-link",
-    ".tp-new-view-toggle",
     ".tp-new-view-menu-button",
     ".tp-new-view-panel-link",
     ".tp-interactive-capsule",
@@ -48,7 +46,6 @@
     ".tp-liquid-metal-link",
     ".tp-new-view-panel-link",
     ".tp-new-view-menu-button",
-    ".tp-new-view-toggle",
     ".btn",
     ".card button",
     "a.btn",
@@ -129,31 +126,15 @@
   let liquidPointerReady = false;
   let newViewNavPanelReady = false;
 
-  function readNewViewPreference() {
-    try {
-      return window.localStorage.getItem(newViewStorageKey) === "on";
-    } catch (error) {
-      return false;
-    }
-  }
-
-  function saveNewViewPreference(isEnabled) {
-    try {
-      window.localStorage.setItem(newViewStorageKey, isEnabled ? "on" : "off");
-    } catch (error) {
-      // The visual toggle should still work for this page if storage is unavailable.
-    }
-  }
-
-  function applyNewViewPreference(isEnabled) {
-    document.documentElement.classList.toggle("tp-new-view", isEnabled);
+  function applyPermanentNewView() {
+    document.documentElement.classList.add("tp-new-view");
 
     if (document.body) {
-      document.body.classList.toggle("tp-new-view-body", isEnabled);
+      document.body.classList.add("tp-new-view-body");
     }
   }
 
-  applyNewViewPreference(readNewViewPreference());
+  applyPermanentNewView();
 
   function createBackground() {
     if (document.querySelector(".mocha-sapphire-bg")) {
@@ -241,18 +222,6 @@
     }
   }
 
-  function updateNewViewToggle(button, isEnabled) {
-    const value = button.querySelector("[data-new-view-toggle-value]");
-
-    button.setAttribute("aria-pressed", String(isEnabled));
-    button.classList.toggle("is-on", isEnabled);
-    button.setAttribute("aria-label", `New view ${isEnabled ? "on" : "off"}`);
-
-    if (value) {
-      value.textContent = isEnabled ? "On" : "Off";
-    }
-  }
-
   function getNewViewNavParts() {
     return {
       button: document.querySelector("[data-new-view-menu-button]"),
@@ -288,46 +257,6 @@
     if (panel) {
       panel.hidden = !isOpen;
     }
-  }
-
-  function initTechPathNewViewToggle() {
-    const nav = document.querySelector(".site-header .nav");
-
-    if (!nav || nav.querySelector("[data-new-view-toggle]")) {
-      return;
-    }
-
-    nav.classList.add("tp-new-view-nav-shell");
-
-    const toggleBox = document.createElement("div");
-    const toggleButton = document.createElement("button");
-
-    toggleBox.className = "tp-new-view-toggle-box";
-    toggleButton.className = "tp-new-view-toggle";
-    toggleButton.type = "button";
-    toggleButton.dataset.newViewToggle = "true";
-    toggleButton.innerHTML = `
-      <span class="tp-new-view-toggle-text">New view</span>
-      <span class="tp-new-view-toggle-switch" aria-hidden="true"><span></span></span>
-      <span class="tp-new-view-toggle-value" data-new-view-toggle-value>Off</span>
-    `;
-
-    updateNewViewToggle(toggleButton, document.documentElement.classList.contains("tp-new-view"));
-
-    toggleButton.addEventListener("click", () => {
-      const isEnabled = !document.documentElement.classList.contains("tp-new-view");
-      applyNewViewPreference(isEnabled);
-      saveNewViewPreference(isEnabled);
-      updateNewViewToggle(toggleButton, isEnabled);
-      initTechPathActionChromeCapsules();
-
-      if (!isEnabled) {
-        setNewViewNavOpen(false);
-      }
-    });
-
-    toggleBox.appendChild(toggleButton);
-    nav.appendChild(toggleBox);
   }
 
   function getComparableUrl(url) {
@@ -447,8 +376,7 @@
     menuButton.setAttribute("aria-label", "Open navigation menu");
     menuButton.innerHTML = '<span class="tp-menu-icon" data-new-view-menu-icon aria-hidden="true">&#9776;</span><span data-new-view-menu-label>Menu</span>';
 
-    const toggleBox = nav.querySelector(".tp-new-view-toggle-box");
-    nav.insertBefore(menuButton, toggleBox || null);
+    nav.appendChild(menuButton);
 
     const panel = document.createElement("div");
     const leftLinks = document.createElement("div");
@@ -537,13 +465,10 @@
       const shell = button
         ? button.closest(".tp-new-view-nav-shell")
         : document.querySelector(".tp-new-view-nav-shell");
-      const toggleBox = shell ? shell.querySelector(".tp-new-view-toggle-box") : document.querySelector(".tp-new-view-toggle-box");
-
       if (
         (button && button.contains(event.target)) ||
         (currentPanel && currentPanel.contains(event.target)) ||
-        (shell && shell.contains(event.target)) ||
-        (toggleBox && toggleBox.contains(event.target))
+        (shell && shell.contains(event.target))
       ) {
         return;
       }
@@ -651,7 +576,7 @@
       ["button", "link", "menuitem", "option", "radio", "checkbox", "tab"].includes(role) ||
       element.hasAttribute("onclick") ||
       element.matches(
-        "[data-new-view-menu-button], [data-new-view-toggle], [data-preview-path], .quiz-option, .answer-option, .test-option, .choice-option, .option-button, .gcse-option-button, .practice-answer-option, .custom-dropdown-trigger, .quiz-modal-close, .active-test-button, .disabled-test-button, .topic-choice-button, .practice-skill-button, .quiz-next-button, .quiz-retake-button, .starter-quiz-button, .gcse-secondary-button"
+        "[data-new-view-menu-button], [data-preview-path], .quiz-option, .answer-option, .test-option, .choice-option, .option-button, .gcse-option-button, .practice-answer-option, .custom-dropdown-trigger, .quiz-modal-close, .active-test-button, .disabled-test-button, .topic-choice-button, .practice-skill-button, .quiz-next-button, .quiz-retake-button, .starter-quiz-button, .gcse-secondary-button"
       )
     );
   }
@@ -719,8 +644,7 @@
   }
 
   function initTechPathNewViewUi() {
-    applyNewViewPreference(readNewViewPreference());
-    initTechPathNewViewToggle();
+    applyPermanentNewView();
     initTechPathPageLinks();
     initTechPathNewViewNavPanel();
     initTechPathSpotlightNav();

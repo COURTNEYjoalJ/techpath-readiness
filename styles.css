@@ -9950,3 +9950,12 @@ footer {
   cursor: not-allowed;
   transform: none !important;
 }
+
+/* New View: Permanent Theme Toggle Removal */
+.tp-new-view-toggle-box,
+.tp-new-view .tp-new-view-toggle-box,
+.tp-new-view-body .tp-new-view-toggle-box,
+.tp-new-view-toggle {
+  display: none !important;
+  pointer-events: none !important;
+}
