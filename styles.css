@@ -2840,6 +2840,1064 @@ pre {
   }
 }
 
+/* New View: Guaranteed Visible 2px Chrome Capsule Border */
+.tp-new-view {
+  --tp-action-chrome-width: 2px;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-toggle-box > .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+) {
+  border: var(--tp-action-chrome-width) solid rgba(225, 238, 245, 0.72) !important;
+  border-radius: 999px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(105, 210, 255, 0.12),
+    0 10px 28px rgba(0, 0, 0, 0.34) !important;
+  box-sizing: border-box;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-toggle-box > .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::after {
+  animation: tpChromeBorderSpin 9s linear infinite;
+  background:
+    conic-gradient(
+      from 0deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(105, 220, 255, 0.44),
+      rgba(185, 120, 255, 0.32),
+      rgba(255, 130, 220, 0.26),
+      rgba(110, 255, 210, 0.28),
+      rgba(255, 235, 190, 0.44),
+      rgba(255, 255, 255, 0.92)
+    );
+  border-radius: inherit;
+  box-sizing: border-box;
+  content: "";
+  inset: 0;
+  opacity: 0.72;
+  padding: var(--tp-action-chrome-width);
+  pointer-events: none;
+  position: absolute;
+  transform-origin: center;
+  z-index: 2;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-toggle-box > .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible) {
+  border-color: rgba(255, 255, 255, 0.92) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(120, 220, 255, 0.22),
+    0 0 26px rgba(120, 220, 255, 0.16),
+    0 14px 34px rgba(0, 0, 0, 0.42) !important;
+  transform: translateY(-1px);
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-toggle-box > .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible)::after {
+  opacity: 1;
+}
+
+.tp-new-view :is(.test-option:has(input:checked), .quiz-option.selected, .answer-option.selected, .choice-option.selected, .option-button.selected, .gcse-option-button.selected, .practice-answer-option.selected, .preview-path-selector button.is-selected, button[data-preview-path].is-selected) {
+  border-color: rgba(132, 225, 255, 0.94) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(132, 225, 255, 0.28),
+    0 0 24px rgba(90, 167, 214, 0.22),
+    0 12px 30px rgba(0, 0, 0, 0.36) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct, .test-option.correct, .quiz-option.correct, .answer-option.correct, .choice-option.correct, .option-button.correct, .answer-correct) {
+  border-color: rgba(143, 255, 190, 0.9) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(143, 255, 190, 0.26),
+    0 0 24px rgba(98, 230, 155, 0.18),
+    0 12px 30px rgba(0, 0, 0, 0.34) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect, .test-option.incorrect, .quiz-option.incorrect, .answer-option.incorrect, .choice-option.incorrect, .option-button.incorrect, .wrong, .answer-wrong) {
+  border-color: rgba(255, 162, 128, 0.9) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 162, 128, 0.24),
+    0 0 24px rgba(255, 112, 94, 0.16),
+    0 12px 30px rgba(0, 0, 0, 0.34) !important;
+}
+
+.tp-new-view :is(.disabled-test-button, button:disabled, .btn[aria-disabled="true"]):is(:hover, :focus-visible) {
+  border-color: rgba(225, 238, 245, 0.36) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 18px rgba(0, 0, 0, 0.26) !important;
+  transform: none;
+}
+
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  .tp-new-view .tp-action-chrome-capsule::after,
+  .tp-new-view .hero-actions a::after,
+  .tp-new-view a.btn::after,
+  .tp-new-view button.btn::after,
+  .tp-new-view .btn::after,
+  .tp-new-view .preview-path-selector button::after,
+  .tp-new-view button[data-preview-path]::after,
+  .tp-new-view .role-card-link::after,
+  .tp-new-view .lesson-card a::after,
+  .tp-new-view .quiz-option::after,
+  .tp-new-view .answer-option::after,
+  .tp-new-view .test-option::after,
+  .tp-new-view .gcse-option-button::after,
+  .tp-new-view .practice-answer-option::after {
+    display: none;
+  }
+}
+
+@keyframes tpChromeBorderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp-new-view .tp-action-chrome-capsule::after,
+  .tp-new-view .hero-actions a::after,
+  .tp-new-view a.btn::after,
+  .tp-new-view button.btn::after,
+  .tp-new-view .btn::after,
+  .tp-new-view .preview-path-selector button::after,
+  .tp-new-view button[data-preview-path]::after,
+  .tp-new-view .role-card-link::after,
+  .tp-new-view .lesson-card a::after,
+  .tp-new-view .quiz-option::after,
+  .tp-new-view .answer-option::after,
+  .tp-new-view .test-option::after,
+  .tp-new-view .gcse-option-button::after,
+  .tp-new-view .practice-answer-option::after {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* New View: Final border-only capsule rim fix */
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+) {
+  animation: tpChromeBorderColor 8s ease-in-out infinite;
+  border: var(--tp-action-chrome-width, 2px) solid rgba(225, 238, 245, 0.72) !important;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::before,
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::after {
+  animation: none !important;
+  background: none !important;
+  content: "" !important;
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible) {
+  animation-duration: 4.5s;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(120, 220, 255, 0.22),
+    0 0 26px rgba(120, 220, 255, 0.16),
+    0 14px 34px rgba(0, 0, 0, 0.42) !important;
+}
+
+.tp-new-view :is(.test-option:has(input:checked), .quiz-option.selected, .answer-option.selected, .choice-option.selected, .option-button.selected, .gcse-option-button.selected, .practice-answer-option.selected, .preview-path-selector button.is-selected, button[data-preview-path].is-selected) {
+  animation: none !important;
+  border-color: rgba(132, 225, 255, 0.94) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct, .test-option.correct, .quiz-option.correct, .answer-option.correct, .choice-option.correct, .option-button.correct, .answer-correct) {
+  animation: none !important;
+  border-color: rgba(143, 255, 190, 0.9) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect, .test-option.incorrect, .quiz-option.incorrect, .answer-option.incorrect, .choice-option.incorrect, .option-button.incorrect, .wrong, .answer-wrong) {
+  animation: none !important;
+  border-color: rgba(255, 162, 128, 0.9) !important;
+}
+
+.tp-new-view :is(.disabled-test-button, button:disabled, .btn[aria-disabled="true"]) {
+  animation: none !important;
+}
+
+@keyframes tpChromeBorderColor {
+  0%,
+  100% {
+    border-color: rgba(225, 238, 245, 0.72);
+  }
+
+  35% {
+    border-color: rgba(118, 220, 255, 0.86);
+  }
+
+  70% {
+    border-color: rgba(255, 226, 184, 0.82);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp-new-view .tp-action-chrome-capsule,
+  .tp-new-view .hero-actions a,
+  .tp-new-view a.btn,
+  .tp-new-view button.btn,
+  .tp-new-view .btn,
+  .tp-new-view .preview-path-selector button,
+  .tp-new-view button[data-preview-path],
+  .tp-new-view .role-card-link,
+  .tp-new-view .lesson-card a,
+  .tp-new-view .quiz-option,
+  .tp-new-view .answer-option,
+  .tp-new-view .test-option,
+  .tp-new-view .gcse-option-button,
+  .tp-new-view .practice-answer-option {
+    animation: none !important;
+  }
+}
+
+/* New View: Border-only capsule rim animation fix */
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+) {
+  animation: tpChromeBorderColor 8s ease-in-out infinite;
+  border: var(--tp-action-chrome-width, 2px) solid rgba(225, 238, 245, 0.72) !important;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::before,
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::after {
+  animation: none !important;
+  background: none !important;
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible) {
+  animation-duration: 4.5s;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(120, 220, 255, 0.22),
+    0 0 26px rgba(120, 220, 255, 0.16),
+    0 14px 34px rgba(0, 0, 0, 0.42) !important;
+}
+
+.tp-new-view :is(.test-option:has(input:checked), .quiz-option.selected, .answer-option.selected, .choice-option.selected, .option-button.selected, .gcse-option-button.selected, .practice-answer-option.selected, .preview-path-selector button.is-selected, button[data-preview-path].is-selected) {
+  animation: none !important;
+  border-color: rgba(132, 225, 255, 0.94) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct, .test-option.correct, .quiz-option.correct, .answer-option.correct, .choice-option.correct, .option-button.correct, .answer-correct) {
+  animation: none !important;
+  border-color: rgba(143, 255, 190, 0.9) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect, .test-option.incorrect, .quiz-option.incorrect, .answer-option.incorrect, .choice-option.incorrect, .option-button.incorrect, .wrong, .answer-wrong) {
+  animation: none !important;
+  border-color: rgba(255, 162, 128, 0.9) !important;
+}
+
+.tp-new-view :is(.disabled-test-button, button:disabled, .btn[aria-disabled="true"]) {
+  animation: none !important;
+}
+
+@keyframes tpChromeBorderColor {
+  0%,
+  100% {
+    border-color: rgba(225, 238, 245, 0.72);
+  }
+
+  35% {
+    border-color: rgba(118, 220, 255, 0.86);
+  }
+
+  70% {
+    border-color: rgba(255, 226, 184, 0.82);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp-new-view .tp-action-chrome-capsule,
+  .tp-new-view .hero-actions a,
+  .tp-new-view a.btn,
+  .tp-new-view button.btn,
+  .tp-new-view .btn,
+  .tp-new-view .preview-path-selector button,
+  .tp-new-view button[data-preview-path],
+  .tp-new-view .role-card-link,
+  .tp-new-view .lesson-card a,
+  .tp-new-view .quiz-option,
+  .tp-new-view .answer-option,
+  .tp-new-view .test-option,
+  .tp-new-view .gcse-option-button,
+  .tp-new-view .practice-answer-option {
+    animation: none !important;
+  }
+}
+
 .dock-popover {
   background: var(--gradient-panel);
   border: 1px solid var(--glass-border-copper-mix);
@@ -3619,6 +4677,14 @@ footer {
   padding-top: 12px;
 }
 
+.readiness-category-action {
+  justify-self: start;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+  white-space: normal;
+}
+
 .readiness-supporting-notes {
   max-width: 920px;
 }
@@ -3790,6 +4856,854 @@ footer {
   overflow-wrap: anywhere;
   text-align: center;
   white-space: normal;
+}
+
+:root {
+  --tp-new-view-nav-bg: linear-gradient(145deg, rgba(8, 12, 18, 0.82), rgba(23, 13, 8, 0.76) 48%, rgba(5, 14, 24, 0.82));
+  --tp-new-view-nav-border: rgba(255, 225, 179, 0.22);
+  --tp-new-view-nav-line: rgba(110, 210, 255, 0.22);
+  --tp-new-view-metal-edge: rgba(205, 245, 255, 0.72);
+  --tp-new-view-metal-warm: rgba(255, 225, 179, 0.72);
+  --tp-new-view-metal-muted: rgba(90, 167, 214, 0.28);
+  --tp-new-view-spotlight: rgba(110, 210, 255, 0.18);
+  --tp-new-view-toggle-bg: linear-gradient(145deg, rgba(9, 16, 25, 0.82), rgba(31, 18, 10, 0.7));
+}
+
+.tp-new-view-toggle-box {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  margin-left: clamp(8px, 1.4vw, 16px);
+  position: relative;
+  z-index: 4;
+}
+
+.tp-new-view-toggle {
+  align-items: center;
+  background:
+    var(--tp-new-view-toggle-bg) padding-box,
+    linear-gradient(135deg, rgba(255, 225, 179, 0.46), rgba(90, 167, 214, 0.34), rgba(255, 255, 255, 0.16)) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 900;
+  gap: 8px;
+  letter-spacing: 0;
+  min-height: 38px;
+  padding: 6px 9px 6px 12px;
+  transition:
+    background var(--nav-hover-duration) var(--ease-premium),
+    border-color var(--nav-hover-duration) var(--ease-premium),
+    box-shadow var(--nav-hover-duration) var(--ease-premium),
+    color var(--nav-hover-duration) var(--ease-premium),
+    transform var(--nav-hover-duration) var(--ease-premium);
+  white-space: nowrap;
+  backdrop-filter: var(--glass-blur-strong);
+  -webkit-backdrop-filter: var(--glass-blur-strong);
+}
+
+.tp-new-view-toggle:hover,
+.tp-new-view-toggle:focus-visible,
+.tp-new-view-toggle.is-on {
+  color: var(--color-champagne-light);
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.32),
+    0 0 18px rgba(90, 167, 214, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.tp-new-view-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.tp-new-view-toggle:focus-visible {
+  outline: 2px solid rgba(255, 225, 179, 0.56);
+  outline-offset: 3px;
+}
+
+.tp-new-view-toggle-switch {
+  align-items: center;
+  background: rgba(3, 7, 17, 0.72);
+  border: 1px solid rgba(255, 225, 179, 0.2);
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  height: 20px;
+  padding: 2px;
+  width: 38px;
+}
+
+.tp-new-view-toggle-switch span {
+  background: linear-gradient(145deg, rgba(216, 200, 182, 0.9), rgba(90, 167, 214, 0.62));
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(90, 167, 214, 0.18);
+  display: block;
+  height: 14px;
+  transform: translateX(0);
+  transition:
+    background var(--nav-hover-duration) var(--ease-premium),
+    box-shadow var(--nav-hover-duration) var(--ease-premium),
+    transform var(--nav-hover-duration) var(--ease-premium);
+  width: 14px;
+}
+
+.tp-new-view-toggle.is-on .tp-new-view-toggle-switch span {
+  background: linear-gradient(145deg, var(--color-champagne-light), var(--color-sapphire-light));
+  box-shadow:
+    0 0 12px rgba(110, 210, 255, 0.34),
+    0 0 14px rgba(240, 197, 141, 0.2);
+  transform: translateX(18px);
+}
+
+.tp-new-view-toggle-value {
+  color: var(--color-champagne-light);
+  min-width: 22px;
+  text-align: left;
+}
+
+.tp-new-view .nav,
+.tp-new-view .tp-new-view-nav-shell {
+  --tp-spotlight-x: 50%;
+  --tp-spotlight-y: 50%;
+  --tp-spotlight-opacity: 0;
+  background: var(--tp-new-view-nav-bg);
+  border: 1px solid var(--tp-new-view-nav-border);
+  border-radius: clamp(26px, 4vw, 46px);
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(110, 210, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -24px 50px rgba(4, 12, 22, 0.28);
+  gap: clamp(10px, 1.6vw, 18px);
+  isolation: isolate;
+  margin-top: 14px;
+  overflow: visible;
+  padding: clamp(11px, 1.35vw, 15px) clamp(12px, 2vw, 20px);
+  backdrop-filter: var(--glass-blur-strong);
+  -webkit-backdrop-filter: var(--glass-blur-strong);
+}
+
+.tp-new-view .nav::before {
+  background:
+    radial-gradient(circle at var(--tp-spotlight-x) var(--tp-spotlight-y), var(--tp-new-view-spotlight), transparent 34%),
+    linear-gradient(90deg, transparent, rgba(255, 225, 179, 0.06), transparent);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  opacity: var(--tp-spotlight-opacity);
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.24s var(--ease-premium);
+  z-index: 0;
+}
+
+.tp-new-view .nav::after {
+  background: linear-gradient(90deg, transparent, var(--tp-new-view-nav-line), rgba(255, 225, 179, 0.24), transparent);
+  bottom: -5px;
+  box-shadow: 0 0 18px rgba(90, 167, 214, 0.2);
+  content: "";
+  height: 1px;
+  left: 16%;
+  pointer-events: none;
+  position: absolute;
+  right: 16%;
+  z-index: 0;
+}
+
+.tp-new-view .brand,
+.tp-new-view .menu-btn,
+.tp-new-view .nav-links,
+.tp-new-view .learning-nav-links,
+.tp-new-view .guide-home-link,
+.tp-new-view .tp-new-view-toggle-box {
+  position: relative;
+  z-index: 1;
+}
+
+.tp-new-view .nav-links,
+.tp-new-view .learning-nav-links {
+  gap: 8px;
+}
+
+.tp-new-view .tp-liquid-metal-link {
+  background:
+    linear-gradient(145deg, rgba(8, 13, 20, 0.9), rgba(24, 14, 8, 0.78)) padding-box,
+    conic-gradient(
+      from 160deg,
+      rgba(255, 225, 179, 0.16),
+      var(--tp-new-view-metal-edge),
+      rgba(90, 167, 214, 0.34),
+      var(--tp-new-view-metal-warm),
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 225, 179, 0.16)
+    ) border-box;
+  background-size: 100% 100%, 180% 180%;
+  border: 1px solid transparent;
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.11);
+  color: var(--color-text-muted);
+  min-height: 39px;
+  overflow: hidden;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.28);
+}
+
+.tp-new-view .tp-liquid-metal-link::before {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.18), transparent 28%),
+    linear-gradient(115deg, transparent 0%, rgba(205, 245, 255, 0.18) 42%, rgba(255, 225, 179, 0.2) 50%, transparent 62%);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  opacity: 0.18;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-34%);
+  transition:
+    opacity var(--nav-hover-duration) var(--ease-premium),
+    transform 0.78s var(--ease-premium);
+}
+
+.tp-new-view .tp-liquid-metal-link::after {
+  background: linear-gradient(90deg, transparent, rgba(205, 245, 255, 0.82), var(--color-champagne-light), transparent);
+  bottom: 6px;
+  content: "";
+  height: 1px;
+  left: 16px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 16px;
+  transform: scaleX(0.28);
+  transform-origin: left;
+  transition:
+    opacity var(--nav-hover-duration) var(--ease-premium),
+    transform var(--nav-hover-duration) var(--ease-premium);
+}
+
+.tp-new-view .tp-liquid-metal-link:hover,
+.tp-new-view .tp-liquid-metal-link:focus,
+.tp-new-view .tp-liquid-metal-link:focus-visible,
+.tp-new-view .tp-liquid-metal-link.tp-current-page-link {
+  border-color: transparent;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(90, 167, 214, 0.18),
+    0 0 16px rgba(240, 197, 141, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  color: var(--color-champagne-light);
+}
+
+.tp-new-view .tp-liquid-metal-link:hover,
+.tp-new-view .tp-liquid-metal-link:focus-visible {
+  animation: tpLiquidMetalEdge 4.8s linear infinite;
+}
+
+.tp-new-view .tp-liquid-metal-link:hover::before,
+.tp-new-view .tp-liquid-metal-link:focus::before,
+.tp-new-view .tp-liquid-metal-link:focus-visible::before,
+.tp-new-view .tp-liquid-metal-link.tp-current-page-link::before {
+  opacity: 0.46;
+  transform: translateX(26%);
+}
+
+.tp-new-view .tp-liquid-metal-link:hover::after,
+.tp-new-view .tp-liquid-metal-link:focus::after,
+.tp-new-view .tp-liquid-metal-link:focus-visible::after,
+.tp-new-view .tp-liquid-metal-link.tp-current-page-link::after {
+  opacity: 0.94;
+  transform: scaleX(1);
+}
+
+.tp-new-view .tp-liquid-metal-link:focus-visible {
+  outline: 2px solid rgba(255, 225, 179, 0.58);
+  outline-offset: 4px;
+}
+
+@keyframes tpLiquidMetalEdge {
+  0% {
+    background-position: 0 0, 0% 50%;
+  }
+
+  50% {
+    background-position: 0 0, 100% 50%;
+  }
+
+  100% {
+    background-position: 0 0, 0% 50%;
+  }
+}
+
+/* New View: Liquid Metal System */
+.tp-new-view {
+  --tp-nav-height: 76px;
+  --tp-nav-top-gap: 8px;
+  --tp-notch-clearance: 96px;
+  --tp-liquid-rest-bg: linear-gradient(145deg, rgba(7, 11, 18, 0.8), rgba(27, 16, 10, 0.64) 52%, rgba(5, 14, 24, 0.78));
+  --tp-liquid-rest-border: conic-gradient(
+    from 180deg,
+    rgba(255, 225, 179, 0.12),
+    rgba(205, 245, 255, 0.48),
+    rgba(90, 167, 214, 0.2),
+    rgba(240, 197, 141, 0.46),
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 225, 179, 0.12)
+  );
+  --tp-liquid-hover-border: conic-gradient(
+    from 130deg,
+    rgba(255, 255, 255, 0.28),
+    rgba(205, 245, 255, 0.92),
+    rgba(90, 167, 214, 0.56),
+    rgba(255, 225, 179, 0.86),
+    rgba(255, 255, 255, 0.24),
+    rgba(205, 245, 255, 0.72)
+  );
+  --tp-liquid-shadow: 0 22px 54px rgba(0, 0, 0, 0.36), 0 0 24px rgba(90, 167, 214, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.11);
+  --tp-liquid-shadow-hover: 0 26px 64px rgba(0, 0, 0, 0.4), 0 0 28px rgba(90, 167, 214, 0.22), 0 0 22px rgba(240, 197, 141, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.tp-new-view body {
+  padding-top: calc(var(--tp-nav-height) + var(--tp-nav-top-gap) + 14px);
+}
+
+.tp-new-view :is(
+  .hero-card,
+  .career-preview,
+  .preview-panel,
+  .readiness-preview-result,
+  .card,
+  .role-card,
+  .lesson-box,
+  .lesson-overview-grid a,
+  .lesson-module,
+  .lesson-subtopic,
+  .exercise-card,
+  .mini-task-card,
+  .mistake-card,
+  .checkpoint-card,
+  .project-card,
+  .practice-card,
+  .code-example,
+  .concept-diagram,
+  .flow-step,
+  .list-diagram span,
+  .record-diagram p,
+  .keyword-table-wrap,
+  .quiz-card,
+  .practice-quiz-card,
+  .newsletter,
+  .project-list div,
+  .step,
+  .feedback-card,
+  .business-mini-card,
+  .business-package-card,
+  .business-faq-item,
+  .business-pricing-note,
+  .dashboard-summary-card,
+  .readiness-category-card,
+  .readiness-supporting-note,
+  .personalised-roadmap-card,
+  .personalised-roadmap-note,
+  .readiness-skill-card,
+  .readiness-study-card,
+  .readiness-strong-card,
+  .readiness-day-card,
+  .gcse-mode-card,
+  .gcse-result-card,
+  .gcse-result-summary,
+  .gcse-quiz-feedback,
+  .practice-answer-feedback,
+  .quiz-modal,
+  .test-explanation,
+  .test-score-summary,
+  .guide-placeholder,
+  .custom-select-field,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .topic-choice-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .quiz-modal-close,
+  .btn,
+  .card button,
+  .role-card-link,
+  .breadcrumb a,
+  .footer-links a,
+  .active-test-button,
+  .disabled-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .tag,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .readiness-label,
+  .readiness-category-status,
+  .personalised-roadmap-stage,
+  .package-price,
+  .tp-metal-surface,
+  .tp-liquid-border,
+  .tp-glass-box,
+  .tp-metal-hover
+) {
+  --tp-glow-x: 50%;
+  --tp-glow-y: 50%;
+  background:
+    var(--tp-liquid-rest-bg) padding-box,
+    var(--tp-liquid-rest-border) border-box;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  box-shadow: var(--tp-liquid-shadow);
+  isolation: isolate;
+  position: relative;
+  transition:
+    background-position 0.62s var(--ease-premium),
+    border-color var(--nav-hover-duration) var(--ease-premium),
+    box-shadow var(--nav-hover-duration) var(--ease-premium),
+    color var(--nav-hover-duration) var(--ease-premium),
+    opacity var(--nav-hover-duration) var(--ease-premium),
+    transform var(--nav-hover-duration) var(--ease-premium);
+  backdrop-filter: var(--glass-blur-strong);
+  -webkit-backdrop-filter: var(--glass-blur-strong);
+}
+
+.tp-new-view :is(
+  .hero-card,
+  .career-preview,
+  .preview-panel,
+  .readiness-preview-result,
+  .card,
+  .role-card,
+  .lesson-box,
+  .lesson-overview-grid a,
+  .lesson-module,
+  .lesson-subtopic,
+  .exercise-card,
+  .mini-task-card,
+  .mistake-card,
+  .checkpoint-card,
+  .project-card,
+  .practice-card,
+  .code-example,
+  .concept-diagram,
+  .flow-step,
+  .list-diagram span,
+  .record-diagram p,
+  .keyword-table-wrap,
+  .quiz-card,
+  .practice-quiz-card,
+  .newsletter,
+  .project-list div,
+  .step,
+  .feedback-card,
+  .business-mini-card,
+  .business-package-card,
+  .business-faq-item,
+  .business-pricing-note,
+  .dashboard-summary-card,
+  .readiness-category-card,
+  .readiness-supporting-note,
+  .personalised-roadmap-card,
+  .personalised-roadmap-note,
+  .readiness-skill-card,
+  .readiness-study-card,
+  .readiness-strong-card,
+  .readiness-day-card,
+  .gcse-mode-card,
+  .gcse-result-card,
+  .gcse-result-summary,
+  .gcse-quiz-feedback,
+  .practice-answer-feedback,
+  .quiz-modal,
+  .test-explanation,
+  .test-score-summary,
+  .guide-placeholder,
+  .custom-select-field,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .topic-choice-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .quiz-modal-close,
+  .btn,
+  .card button,
+  .role-card-link,
+  .breadcrumb a,
+  .footer-links a,
+  .active-test-button,
+  .disabled-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .tag,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .readiness-label,
+  .readiness-category-status,
+  .personalised-roadmap-stage,
+  .package-price,
+  .tp-metal-surface,
+  .tp-liquid-border,
+  .tp-glass-box,
+  .tp-metal-hover
+)::before {
+  background:
+    radial-gradient(circle at var(--tp-glow-x) var(--tp-glow-y), rgba(205, 245, 255, 0.22), transparent 30%),
+    linear-gradient(118deg, transparent 0%, rgba(255, 255, 255, 0.1) 38%, rgba(240, 197, 141, 0.12) 49%, rgba(90, 167, 214, 0.1) 61%, transparent 76%);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  opacity: 0.18;
+  pointer-events: none;
+  position: absolute;
+  transform: translate3d(-8px, 0, 0);
+  transition:
+    opacity var(--nav-hover-duration) var(--ease-premium),
+    transform 0.68s var(--ease-premium);
+  z-index: 0;
+}
+
+.tp-new-view :is(
+  .card,
+  .role-card,
+  .lesson-box,
+  .lesson-overview-grid a,
+  .lesson-module,
+  .lesson-subtopic,
+  .exercise-card,
+  .mini-task-card,
+  .mistake-card,
+  .checkpoint-card,
+  .project-card,
+  .practice-card,
+  .code-example,
+  .concept-diagram,
+  .flow-step,
+  .list-diagram span,
+  .record-diagram p,
+  .keyword-table-wrap,
+  .quiz-card,
+  .feedback-card,
+  .business-mini-card,
+  .business-package-card,
+  .dashboard-summary-card,
+  .readiness-category-card,
+  .personalised-roadmap-card,
+  .readiness-skill-card,
+  .readiness-study-card,
+  .readiness-strong-card,
+  .readiness-day-card,
+  .gcse-mode-card,
+  .gcse-result-card,
+  .guide-placeholder,
+  .preview-panel,
+  .hero-card
+):hover {
+  box-shadow: var(--tp-liquid-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.tp-new-view :is(
+  .btn,
+  .card button,
+  .role-card-link,
+  .lesson-overview-grid a,
+  .breadcrumb a,
+  .footer-links a,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .topic-choice-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-select-field,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .tp-metal-hover
+):is(:hover, :focus, :focus-visible, :focus-within),
+.tp-new-view :is(.preview-role-list button.is-selected) {
+  background:
+    linear-gradient(145deg, rgba(9, 16, 25, 0.92), rgba(34, 20, 11, 0.84)) padding-box,
+    var(--tp-liquid-hover-border) border-box;
+  border-color: transparent;
+  box-shadow: var(--tp-liquid-shadow-hover);
+  color: var(--color-champagne-light);
+  transform: translateY(-1px);
+}
+
+.tp-new-view :is(
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .topic-choice-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-select-field,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .tp-metal-hover
+):is(:hover, :focus, :focus-visible, :focus-within)::before,
+.tp-new-view :is(.preview-role-list button.is-selected)::before {
+  opacity: 0.52;
+  transform: translate3d(10px, 0, 0);
+}
+
+.tp-new-view :is(.btn, button, a, .test-option):focus-visible {
+  outline: 2px solid rgba(255, 225, 179, 0.62);
+  outline-offset: 4px;
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct) {
+  background:
+    linear-gradient(145deg, rgba(8, 31, 20, 0.84), rgba(5, 18, 15, 0.78)) padding-box,
+    linear-gradient(135deg, rgba(159, 227, 192, 0.72), rgba(205, 245, 255, 0.28)) border-box;
+  color: var(--color-text);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.34),
+    0 0 20px rgba(159, 227, 192, 0.18);
+}
+
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect) {
+  background:
+    linear-gradient(145deg, rgba(38, 20, 10, 0.86), rgba(12, 8, 6, 0.8)) padding-box,
+    linear-gradient(135deg, rgba(240, 197, 141, 0.72), rgba(198, 138, 82, 0.34)) border-box;
+  color: var(--color-text);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.34),
+    0 0 20px rgba(240, 197, 141, 0.16);
+}
+
+/* New View: Notch Navbar */
+.tp-new-view .site-header {
+  overflow: visible;
+}
+
+.tp-new-view .nav {
+  --tp-spotlight-x: 50%;
+  --tp-spotlight-y: 50%;
+  --tp-spotlight-opacity: 0;
+  align-items: center;
+  background:
+    radial-gradient(circle at 50% 120%, rgba(90, 167, 214, 0.14), transparent 26%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.78), rgba(5, 8, 12, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 30px 30px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 225, 179, 0.08);
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  left: 50%;
+  min-height: var(--tp-nav-height);
+  overflow: visible;
+  padding: 10px clamp(14px, 2vw, 26px);
+  position: fixed;
+  top: var(--tp-nav-top-gap);
+  transform: translateX(-50%);
+  width: min(100% - 20px, 1320px);
+  z-index: 1200;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+
+.tp-new-view .nav::before {
+  background:
+    radial-gradient(circle at var(--tp-spotlight-x) var(--tp-spotlight-y), rgba(205, 245, 255, 0.18), transparent 30%),
+    linear-gradient(90deg, transparent, rgba(255, 225, 179, 0.08), transparent);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  opacity: var(--tp-spotlight-opacity);
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.24s var(--ease-premium);
+  z-index: 0;
+}
+
+.tp-new-view .nav::after {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.88) 0 42%, rgba(255, 255, 255, 0.08) 43%, transparent 45%),
+    linear-gradient(90deg, transparent, rgba(205, 245, 255, 0.24), rgba(255, 225, 179, 0.24), transparent);
+  border-radius: 0 0 48px 48px;
+  bottom: -28px;
+  content: "";
+  height: 38px;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  width: clamp(170px, 24vw, 330px);
+  z-index: 0;
+}
+
+.tp-new-view .brand {
+  background:
+    linear-gradient(145deg, rgba(0, 0, 0, 0.78), rgba(7, 14, 22, 0.88)) padding-box,
+    linear-gradient(135deg, rgba(255, 225, 179, 0.28), rgba(205, 245, 255, 0.3)) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.32),
+    0 0 24px rgba(90, 167, 214, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  left: 50%;
+  padding: 7px 14px 7px 9px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.tp-new-view .brand .site-logo-image {
+  height: 42px;
+  width: 42px;
+}
+
+.tp-new-view .brand-text {
+  font-size: clamp(0.92rem, 1.2vw, 1.1rem);
+}
+
+.tp-new-view .nav-links,
+.tp-new-view .learning-nav-links {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  gap: 8px;
+  justify-content: center;
+  min-width: 0;
+  padding-right: clamp(82px, 12vw, 160px);
+  position: relative;
+  z-index: 2;
+}
+
+.tp-new-view .nav > .guide-home-link {
+  position: relative;
+  z-index: 2;
+}
+
+.tp-new-view .nav-links a:nth-child(3),
+.tp-new-view .learning-nav-links .guide-home-link:nth-child(2) {
+  margin-right: clamp(122px, 18vw, 220px);
+}
+
+.tp-new-view .nav > .guide-home-link:nth-of-type(2) {
+  margin-left: 0;
+}
+
+.tp-new-view .nav > .guide-home-link:nth-of-type(3) {
+  margin-right: clamp(118px, 16vw, 210px);
+}
+
+.tp-new-view .menu-btn,
+.tp-new-view .tp-new-view-toggle-box {
+  position: relative;
+  z-index: 3;
+}
+
+.tp-new-view .tp-new-view-toggle-box {
+  margin-left: 8px;
+}
+
+.tp-new-view .tp-new-view-toggle {
+  background:
+    linear-gradient(145deg, rgba(0, 0, 0, 0.68), rgba(8, 16, 25, 0.72)) padding-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(205, 245, 255, 0.28), rgba(255, 225, 179, 0.22)) border-box;
+  min-height: 38px;
+}
+
+.tp-new-view .tp-liquid-metal-link {
+  background:
+    linear-gradient(145deg, rgba(4, 8, 13, 0.88), rgba(14, 20, 29, 0.74)) padding-box,
+    var(--tp-liquid-rest-border) border-box;
+  background-size: 100% 100%, 210% 210%;
+  border: 1px solid transparent;
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+  min-height: 38px;
+  overflow: hidden;
+}
+
+.tp-new-view .tp-liquid-metal-link::before {
+  background:
+    radial-gradient(circle at var(--tp-glow-x) var(--tp-glow-y), rgba(205, 245, 255, 0.26), transparent 32%),
+    linear-gradient(112deg, transparent 0%, rgba(255, 255, 255, 0.14) 40%, rgba(240, 197, 141, 0.16) 50%, rgba(90, 167, 214, 0.12) 62%, transparent 76%);
+  opacity: 0.2;
+  transform: translateX(-20%);
+}
+
+.tp-new-view .tp-liquid-metal-link:hover,
+.tp-new-view .tp-liquid-metal-link:focus,
+.tp-new-view .tp-liquid-metal-link:focus-visible,
+.tp-new-view .tp-liquid-metal-link.tp-current-page-link {
+  background:
+    linear-gradient(145deg, rgba(8, 14, 22, 0.94), rgba(28, 17, 10, 0.82)) padding-box,
+    var(--tp-liquid-hover-border) border-box;
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.32),
+    0 0 22px rgba(90, 167, 214, 0.2),
+    0 0 18px rgba(240, 197, 141, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.tp-new-view .tp-liquid-metal-link:hover,
+.tp-new-view .tp-liquid-metal-link:focus-visible {
+  animation: tpLiquidMetalFlow 5.8s linear infinite;
+}
+
+.tp-new-view .tp-liquid-metal-link:hover::before,
+.tp-new-view .tp-liquid-metal-link:focus::before,
+.tp-new-view .tp-liquid-metal-link:focus-visible::before,
+.tp-new-view .tp-liquid-metal-link.tp-current-page-link::before {
+  opacity: 0.58;
+  transform: translateX(16%);
+}
+
+.tp-new-view .tp-current-page-link::after {
+  background: linear-gradient(90deg, transparent, rgba(205, 245, 255, 0.9), var(--color-champagne-light), transparent);
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* New View: Pointer Glow */
+@keyframes tpLiquidMetalFlow {
+  0% {
+    background-position: 0 0, 0% 50%;
+  }
+
+  50% {
+    background-position: 0 0, 100% 50%;
+  }
+
+  100% {
+    background-position: 0 0, 0% 50%;
+  }
 }
 
 @media (max-width: 1179px) {
@@ -4177,12 +6091,2660 @@ footer {
   }
 }
 
+@media (max-width: 900px) {
+  .tp-new-view {
+    --tp-nav-height: 70px;
+    --tp-nav-top-gap: 6px;
+  }
+
+  .tp-new-view body {
+    padding-top: 126px;
+  }
+
+  .tp-new-view-toggle-box {
+    justify-content: flex-end;
+    margin-left: 0;
+    order: 4;
+    width: auto;
+  }
+
+  .tp-new-view .nav {
+    align-content: flex-start;
+    border-radius: 0 0 24px 24px;
+    flex-wrap: wrap;
+    gap: 9px;
+    justify-content: space-between;
+    min-height: var(--tp-nav-height);
+    padding: 10px 12px;
+    width: min(100% - 14px, 1120px);
+  }
+
+  .tp-new-view .nav::after {
+    bottom: -22px;
+    height: 30px;
+    width: clamp(130px, 36vw, 240px);
+  }
+
+  .tp-new-view .brand {
+    padding: 6px 11px 6px 7px;
+  }
+
+  .tp-new-view .brand .site-logo-image {
+    height: 38px;
+    width: 38px;
+  }
+
+  .tp-new-view .menu-btn {
+    order: 1;
+  }
+
+  .tp-new-view .nav-links {
+    background:
+      linear-gradient(145deg, rgba(8, 12, 18, 0.94), rgba(24, 14, 8, 0.9)) padding-box,
+      linear-gradient(135deg, rgba(255, 225, 179, 0.32), rgba(90, 167, 214, 0.22)) border-box;
+    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    box-shadow:
+      0 20px 44px rgba(0, 0, 0, 0.44),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    padding: 10px;
+    right: 0;
+    top: calc(100% + 8px);
+    z-index: 4;
+  }
+
+  .tp-new-view .nav-links a {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .tp-new-view .nav-links a:nth-child(3),
+  .tp-new-view .learning-nav-links .guide-home-link:nth-child(2),
+  .tp-new-view .nav > .guide-home-link:nth-of-type(3) {
+    margin-right: 0;
+  }
+
+  .tp-new-view .learning-nav-links {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    order: 5;
+    overflow-x: auto;
+    padding: 0;
+    scrollbar-width: thin;
+    width: 100%;
+  }
+
+  .tp-new-view .learning-nav-links .tp-liquid-metal-link {
+    flex: 0 0 auto;
+  }
+
+  .tp-new-view .nav > .guide-home-link {
+    flex: 0 0 auto;
+    order: 5;
+  }
+}
+
+@media (max-width: 640px) {
+  .tp-new-view body {
+    padding-top: 154px;
+  }
+
+  .tp-new-view-toggle-box {
+    justify-content: flex-end;
+  }
+
+  .tp-new-view-toggle {
+    max-width: 100%;
+  }
+
+  .tp-new-view .brand-text {
+    display: none;
+  }
+
+  .tp-new-view .brand {
+    padding: 6px;
+  }
+
+  .tp-new-view .learning-nav-links .tp-liquid-metal-link {
+    flex: 1 1 auto;
+    min-width: min(100%, 138px);
+  }
+}
+
+@media (max-width: 420px) {
+  .tp-new-view-toggle {
+    font-size: 0.72rem;
+    gap: 6px;
+    justify-content: center;
+    padding-inline: 8px;
+  }
+
+  .tp-new-view .tp-liquid-metal-link {
+    white-space: normal;
+  }
+
+  .tp-new-view .tp-new-view-toggle-text {
+    display: none;
+  }
+}
+
+/* New View: Step 1 Navbar and Pill Correction */
+.tp-new-view {
+  --tp-nav-height: 72px;
+  --tp-nav-top-gap: 8px;
+  --tp-pill-bg: linear-gradient(145deg, rgba(5, 10, 15, 0.84), rgba(10, 18, 27, 0.74) 48%, rgba(23, 14, 9, 0.72));
+  --tp-pill-border: linear-gradient(135deg, rgba(156, 198, 220, 0.36), rgba(255, 225, 179, 0.2), rgba(90, 167, 214, 0.26));
+  --tp-pill-border-hover: linear-gradient(135deg, rgba(205, 245, 255, 0.62), rgba(255, 225, 179, 0.42), rgba(90, 167, 214, 0.38));
+  --tp-card-glass-bg: linear-gradient(145deg, rgba(6, 11, 17, 0.76), rgba(18, 12, 8, 0.58) 52%, rgba(5, 14, 23, 0.68));
+  --tp-card-glass-border: rgba(156, 198, 220, 0.17);
+  --tp-card-glass-shadow: 0 18px 44px rgba(0, 0, 0, 0.32), 0 0 18px rgba(90, 167, 214, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.tp-new-view body {
+  padding-top: calc(var(--tp-nav-height) + var(--tp-nav-top-gap) + 18px);
+}
+
+.tp-new-view .nav {
+  align-items: center;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(3, 7, 10, 0.88));
+  border: 1px solid rgba(156, 198, 220, 0.18);
+  border-radius: 0 0 32px 32px;
+  box-shadow:
+    0 16px 46px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(90, 167, 214, 0.08);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: clamp(8px, 1vw, 12px);
+  justify-content: center;
+  min-height: var(--tp-nav-height);
+  overflow: visible;
+  padding: 8px clamp(10px, 1.6vw, 20px);
+  position: fixed;
+  top: var(--tp-nav-top-gap);
+  width: min(92vw, 1500px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.tp-new-view .nav::after {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.72) 0 38%, rgba(156, 198, 220, 0.14) 39%, transparent 46%),
+    linear-gradient(90deg, transparent, rgba(156, 198, 220, 0.2), rgba(255, 225, 179, 0.14), transparent);
+  border-radius: 0 0 34px 34px;
+  bottom: -12px;
+  height: 18px;
+  width: clamp(120px, 16vw, 210px);
+}
+
+.tp-new-view .brand {
+  background:
+    linear-gradient(145deg, rgba(4, 8, 12, 0.9), rgba(10, 18, 27, 0.8)) padding-box,
+    var(--tp-pill-border) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  flex: 0 0 auto;
+  left: auto;
+  margin-inline: clamp(8px, 1.2vw, 16px);
+  order: 2;
+  padding: 6px 12px 6px 7px;
+  position: relative;
+  top: auto;
+  transform: none;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.tp-new-view .brand .site-logo-image {
+  height: 38px;
+  width: 38px;
+}
+
+.tp-new-view .brand-text {
+  font-size: clamp(0.86rem, 1vw, 1rem);
+}
+
+.tp-new-view .nav-links,
+.tp-new-view .learning-nav-links {
+  align-items: center;
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
+  gap: clamp(6px, 0.75vw, 10px);
+  justify-content: flex-end;
+  min-width: 0;
+  order: 1;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.tp-new-view .nav > .guide-home-link {
+  flex: 0 0 auto;
+  order: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.tp-new-view .nav-links a:nth-child(3),
+.tp-new-view .learning-nav-links .guide-home-link:nth-child(2),
+.tp-new-view .nav > .guide-home-link:nth-of-type(2),
+.tp-new-view .nav > .guide-home-link:nth-of-type(3) {
+  margin: 0;
+}
+
+.tp-new-view .menu-btn {
+  flex: 0 0 auto;
+  order: 1;
+}
+
+.tp-new-view .tp-new-view-toggle-box {
+  flex: 0 0 auto;
+  margin-left: 0;
+  order: 3;
+  width: auto;
+}
+
+.tp-new-view :is(
+  .site-header .tp-liquid-metal-link,
+  .site-header .guide-home-link,
+  .site-header .nav-links a,
+  .site-header .learning-nav-links .guide-home-link,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .lesson-overview-grid a,
+  .breadcrumb a,
+  .footer-links a,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close
+) {
+  background:
+    var(--tp-pill-bg) padding-box,
+    var(--tp-pill-border) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: var(--color-champagne-light);
+  min-height: 42px;
+  padding: 0.68rem 1rem;
+}
+
+.tp-new-view .site-header :is(.tp-liquid-metal-link, .guide-home-link, .nav-links a, .learning-nav-links .guide-home-link) {
+  font-size: clamp(0.72rem, 0.75vw, 0.84rem);
+  min-height: 40px;
+  padding: 0.58rem 0.78rem;
+}
+
+.tp-new-view :is(
+  .site-header .tp-liquid-metal-link,
+  .site-header .guide-home-link,
+  .site-header .nav-links a,
+  .site-header .learning-nav-links .guide-home-link,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .lesson-overview-grid a,
+  .breadcrumb a,
+  .footer-links a,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close
+)::before {
+  background:
+    radial-gradient(circle at var(--tp-glow-x) var(--tp-glow-y), rgba(205, 245, 255, 0.18), transparent 34%),
+    linear-gradient(112deg, transparent 0%, rgba(255, 255, 255, 0.09) 42%, rgba(255, 225, 179, 0.11) 52%, transparent 68%);
+  opacity: 0.14;
+  transform: translate3d(-4px, 0, 0);
+}
+
+.tp-new-view :is(
+  .site-header .tp-liquid-metal-link,
+  .site-header .guide-home-link,
+  .site-header .nav-links a,
+  .site-header .learning-nav-links .guide-home-link,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .lesson-overview-grid a,
+  .breadcrumb a,
+  .footer-links a,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close
+):is(:hover, :focus, :focus-visible),
+.tp-new-view .preview-role-list button.is-selected,
+.tp-new-view .tp-current-page-link {
+  background:
+    linear-gradient(145deg, rgba(8, 14, 21, 0.92), rgba(19, 14, 10, 0.82)) padding-box,
+    var(--tp-pill-border-hover) border-box;
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.26),
+    0 0 14px rgba(90, 167, 214, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  color: var(--color-champagne-light);
+  transform: translateY(-1px);
+}
+
+.tp-new-view :is(
+  .site-header .tp-liquid-metal-link,
+  .site-header .guide-home-link,
+  .site-header .nav-links a,
+  .site-header .learning-nav-links .guide-home-link,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .lesson-overview-grid a,
+  .breadcrumb a,
+  .footer-links a,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close
+):is(:hover, :focus, :focus-visible)::before,
+.tp-new-view .preview-role-list button.is-selected::before,
+.tp-new-view .tp-current-page-link::before {
+  opacity: 0.32;
+  transform: translate3d(6px, 0, 0);
+}
+
+.tp-new-view .tp-liquid-metal-link:hover,
+.tp-new-view .tp-liquid-metal-link:focus-visible {
+  animation: none;
+}
+
+.tp-new-view .tp-current-page-link::after {
+  bottom: 6px;
+  opacity: 0.78;
+}
+
+.tp-new-view :is(
+  .hero-card,
+  .career-preview,
+  .preview-panel,
+  .readiness-preview-result,
+  .card,
+  .role-card,
+  .lesson-box,
+  .lesson-module,
+  .lesson-subtopic,
+  .exercise-card,
+  .mini-task-card,
+  .mistake-card,
+  .checkpoint-card,
+  .project-card,
+  .practice-card,
+  .code-example,
+  .concept-diagram,
+  .flow-step,
+  .list-diagram span,
+  .record-diagram p,
+  .keyword-table-wrap,
+  .quiz-card,
+  .practice-quiz-card,
+  .newsletter,
+  .project-list div,
+  .step,
+  .feedback-card,
+  .business-mini-card,
+  .business-package-card,
+  .business-faq-item,
+  .business-pricing-note,
+  .dashboard-summary-card,
+  .readiness-category-card,
+  .readiness-supporting-note,
+  .personalised-roadmap-card,
+  .personalised-roadmap-note,
+  .readiness-skill-card,
+  .readiness-study-card,
+  .readiness-strong-card,
+  .readiness-day-card,
+  .gcse-mode-card,
+  .gcse-result-card,
+  .gcse-result-summary,
+  .gcse-quiz-feedback,
+  .practice-answer-feedback,
+  .quiz-modal,
+  .test-explanation,
+  .test-score-summary,
+  .guide-placeholder,
+  .custom-select-field
+) {
+  background: var(--tp-card-glass-bg);
+  border: 1px solid var(--tp-card-glass-border);
+  box-shadow: var(--tp-card-glass-shadow);
+}
+
+.tp-new-view :is(
+  .hero-card,
+  .career-preview,
+  .preview-panel,
+  .readiness-preview-result,
+  .card,
+  .role-card,
+  .lesson-box,
+  .lesson-module,
+  .lesson-subtopic,
+  .exercise-card,
+  .mini-task-card,
+  .mistake-card,
+  .checkpoint-card,
+  .project-card,
+  .practice-card,
+  .code-example,
+  .concept-diagram,
+  .flow-step,
+  .list-diagram span,
+  .record-diagram p,
+  .keyword-table-wrap,
+  .quiz-card,
+  .practice-quiz-card,
+  .newsletter,
+  .project-list div,
+  .step,
+  .feedback-card,
+  .business-mini-card,
+  .business-package-card,
+  .business-faq-item,
+  .business-pricing-note,
+  .dashboard-summary-card,
+  .readiness-category-card,
+  .readiness-supporting-note,
+  .personalised-roadmap-card,
+  .personalised-roadmap-note,
+  .readiness-skill-card,
+  .readiness-study-card,
+  .readiness-strong-card,
+  .readiness-day-card,
+  .gcse-mode-card,
+  .gcse-result-card,
+  .gcse-result-summary,
+  .gcse-quiz-feedback,
+  .practice-answer-feedback,
+  .quiz-modal,
+  .test-explanation,
+  .test-score-summary,
+  .guide-placeholder,
+  .custom-select-field
+)::before {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), transparent 34%),
+    radial-gradient(circle at var(--tp-glow-x) var(--tp-glow-y), rgba(90, 167, 214, 0.08), transparent 36%);
+  opacity: 0.12;
+  transform: none;
+}
+
+.tp-new-view :is(
+  .card,
+  .role-card,
+  .lesson-box,
+  .lesson-module,
+  .lesson-subtopic,
+  .exercise-card,
+  .mini-task-card,
+  .mistake-card,
+  .checkpoint-card,
+  .project-card,
+  .practice-card,
+  .code-example,
+  .concept-diagram,
+  .flow-step,
+  .list-diagram span,
+  .record-diagram p,
+  .keyword-table-wrap,
+  .quiz-card,
+  .feedback-card,
+  .business-mini-card,
+  .business-package-card,
+  .dashboard-summary-card,
+  .readiness-category-card,
+  .personalised-roadmap-card,
+  .readiness-skill-card,
+  .readiness-study-card,
+  .readiness-strong-card,
+  .readiness-day-card,
+  .gcse-mode-card,
+  .gcse-result-card,
+  .guide-placeholder,
+  .preview-panel,
+  .hero-card
+):hover {
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.34),
+    0 0 20px rgba(90, 167, 214, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.tp-new-view :is(.btn.primary, .btn.secondary, .quiz-next-button, .quiz-retake-button) {
+  color: var(--color-champagne-light);
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct),
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect) {
+  color: var(--color-text);
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .tp-new-view .brand-text {
+    display: none;
+  }
+
+  .tp-new-view .site-header :is(.tp-liquid-metal-link, .guide-home-link, .nav-links a, .learning-nav-links .guide-home-link) {
+    font-size: 0.7rem;
+    min-height: 38px;
+    padding-inline: 0.62rem;
+  }
+
+  .tp-new-view .tp-new-view-toggle-text {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .tp-new-view {
+    --tp-nav-height: 70px;
+  }
+
+  .tp-new-view body {
+    padding-top: 128px;
+  }
+
+  .tp-new-view .nav {
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: var(--tp-nav-height);
+    padding: 9px 12px;
+    width: min(100% - 14px, 1120px);
+  }
+
+  .tp-new-view .brand {
+    left: 50%;
+    margin: 0;
+    padding: 6px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .tp-new-view .brand-text {
+    display: none;
+  }
+
+  .tp-new-view .menu-btn {
+    display: block;
+    order: 1;
+  }
+
+  .tp-new-view .tp-new-view-toggle-box {
+    order: 3;
+  }
+
+  .tp-new-view .nav-links {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    order: 5;
+  }
+
+  .tp-new-view .learning-nav-links,
+  .tp-new-view .nav > .guide-home-link {
+    order: 5;
+  }
+}
+
+@media (max-width: 640px) {
+  .tp-new-view body {
+    padding-top: 150px;
+  }
+}
+
+/* New View: Collapsed Floating Navigation */
+.tp-new-view-menu-button,
+.tp-new-view-nav-panel {
+  display: none;
+}
+
+.tp-new-view body {
+  padding-top: 0;
+}
+
+.tp-new-view .nav {
+  align-items: center;
+  background:
+    linear-gradient(145deg, rgba(2, 4, 6, 0.9), rgba(7, 10, 14, 0.82));
+  border: 1px solid rgba(160, 200, 220, 0.16);
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  left: auto;
+  margin: 0;
+  min-height: auto;
+  overflow: visible;
+  padding: 8px;
+  position: fixed;
+  right: clamp(12px, 2vw, 22px);
+  top: clamp(10px, 1.5vw, 18px);
+  transform: none;
+  width: auto;
+  z-index: 2147483000;
+  pointer-events: auto;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.tp-new-view .nav::before,
+.tp-new-view .nav::after {
+  content: none;
+  display: none;
+}
+
+.tp-new-view .nav > .brand,
+.tp-new-view .nav > .nav-links,
+.tp-new-view .nav > .learning-nav-links,
+.tp-new-view .nav > .guide-home-link,
+.tp-new-view .nav > .menu-btn {
+  display: none;
+}
+
+.tp-new-view .tp-new-view-menu-button {
+  align-items: center;
+  background:
+    var(--tp-pill-bg) padding-box,
+    var(--tp-pill-border) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: var(--color-champagne-light);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 900;
+  gap: 8px;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.62rem 0.9rem;
+  position: relative;
+  transition:
+    background var(--nav-hover-duration) var(--ease-premium),
+    box-shadow var(--nav-hover-duration) var(--ease-premium),
+    color var(--nav-hover-duration) var(--ease-premium),
+    transform var(--nav-hover-duration) var(--ease-premium);
+  white-space: nowrap;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.tp-new-view .tp-menu-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.tp-new-view .tp-new-view-toggle-box {
+  margin: 0;
+  order: initial;
+  width: auto;
+  pointer-events: auto;
+}
+
+.tp-new-view .tp-new-view-toggle {
+  min-height: 40px;
+  padding: 0.55rem 0.72rem;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.tp-new-view .tp-new-view-menu-button:hover,
+.tp-new-view .tp-new-view-menu-button:focus-visible,
+.tp-new-view.tp-nav-open .tp-new-view-menu-button {
+  background:
+    linear-gradient(145deg, rgba(8, 14, 21, 0.92), rgba(19, 14, 10, 0.82)) padding-box,
+    var(--tp-pill-border-hover) border-box;
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.26),
+    0 0 14px rgba(90, 167, 214, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* New View: Expanded Navigation Panel */
+.tp-new-view .tp-new-view-nav-panel {
+  background:
+    linear-gradient(180deg, rgba(2, 4, 6, 0.96), rgba(6, 9, 12, 0.92));
+  border: 1px solid rgba(160, 200, 220, 0.16);
+  border-radius: 28px;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: var(--color-text);
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+  padding: 22px;
+  position: fixed;
+  right: clamp(12px, 2vw, 22px);
+  top: 72px;
+  width: min(420px, calc(100vw - 32px));
+  z-index: 9998;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.tp-new-view .tp-new-view-nav-panel[hidden] {
+  display: none;
+}
+
+.tp-new-view.tp-nav-open .tp-new-view-nav-panel:not([hidden]) {
+  display: grid;
+  gap: 18px;
+}
+
+/* New View: Brand Centering */
+.tp-new-view .tp-new-view-nav-brand {
+  align-items: center;
+  border-bottom: 1px solid rgba(160, 200, 220, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  padding: 4px 0 16px;
+  text-align: center;
+}
+
+.tp-new-view .tp-new-view-nav-logo {
+  display: block;
+  filter:
+    drop-shadow(0 0 12px rgba(90, 167, 214, 0.18))
+    drop-shadow(0 0 12px rgba(240, 197, 141, 0.1));
+  height: 54px;
+  object-fit: contain;
+  width: 54px;
+}
+
+.tp-new-view .tp-new-view-nav-brand span {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.tp-new-view .tp-new-view-nav-links {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tp-new-view .tp-new-view-panel-link {
+  align-items: center;
+  background:
+    var(--tp-pill-bg) padding-box,
+    var(--tp-pill-border) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: var(--color-champagne-light);
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 44px;
+  overflow: hidden;
+  padding: 0.72rem 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.tp-new-view .tp-new-view-panel-link:hover,
+.tp-new-view .tp-new-view-panel-link:focus-visible,
+.tp-new-view .tp-new-view-panel-link.tp-current-page-link {
+  background:
+    linear-gradient(145deg, rgba(8, 14, 21, 0.92), rgba(19, 14, 10, 0.82)) padding-box,
+    var(--tp-pill-border-hover) border-box;
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.26),
+    0 0 14px rgba(90, 167, 214, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* New View: Disable Outer Panel Glow */
+.tp-new-view .nav,
+.tp-new-view .tp-new-view-nav-panel,
+.tp-new-view .tp-new-view-nav-brand,
+.tp-new-view .tp-new-view-nav-links {
+  --tp-spotlight-opacity: 0 !important;
+  --tp-glow-x: 50%;
+  --tp-glow-y: 50%;
+}
+
+.tp-new-view .tp-new-view-nav-panel::before,
+.tp-new-view .tp-new-view-nav-panel::after,
+.tp-new-view .tp-new-view-nav-brand::before,
+.tp-new-view .tp-new-view-nav-links::before {
+  content: none;
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .tp-new-view .nav {
+    gap: 8px;
+    max-width: calc(100vw - 20px);
+    padding: 7px;
+    right: 10px;
+    top: 10px;
+  }
+
+  .tp-new-view .tp-new-view-menu-button,
+  .tp-new-view .tp-new-view-toggle {
+    font-size: 0.76rem;
+    min-height: 38px;
+    padding-inline: 0.72rem;
+  }
+
+  .tp-new-view .tp-new-view-nav-panel {
+    border-radius: 22px;
+    max-height: calc(100vh - 82px);
+    padding: 18px;
+    right: 10px;
+    top: 66px;
+    width: min(390px, calc(100vw - 20px));
+  }
+
+  .tp-new-view .tp-new-view-nav-links {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-new-view .tp-new-view-nav-logo {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .tp-new-view .tp-new-view-toggle-text,
+  .tp-new-view .tp-new-view-toggle-value {
+    display: none;
+  }
+
+  .tp-new-view .tp-new-view-toggle-switch {
+    margin-inline: 0;
+  }
+}
+
+/* New View: Horizontal Notch Menu */
+.tp-new-view .tp-new-view-nav-panel {
+  align-items: center;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.96), rgba(3, 7, 10, 0.94));
+  border: 1px solid rgba(170, 210, 230, 0.14);
+  border-radius: 30px;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  column-gap: clamp(10px, 1.5vw, 22px);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  justify-items: stretch;
+  left: 50%;
+  max-height: none;
+  min-height: 86px;
+  overflow: visible;
+  padding: 12px clamp(16px, 2vw, 28px);
+  right: auto;
+  top: clamp(14px, 1.5vw, 18px);
+  transform: translateX(-50%);
+  width: min(1120px, calc(100vw - 40px));
+  z-index: 2147482999;
+  pointer-events: auto;
+}
+
+.tp-new-view .tp-new-view-nav-panel::after {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(1, 3, 5, 0.68) 0 42%, rgba(0, 0, 0, 0.34) 52%, transparent 72%);
+  border-radius: 0 0 42px 42px;
+  bottom: -20px;
+  content: "";
+  display: block;
+  filter: blur(1px);
+  height: 30px;
+  left: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  width: clamp(150px, 20vw, 260px);
+}
+
+.tp-new-view.tp-nav-open .tp-new-view-nav-panel:not([hidden]) {
+  display: grid;
+}
+
+/* New View: Notch Menu Brand */
+.tp-new-view .tp-new-view-nav-brand {
+  align-self: center;
+  border: 0;
+  gap: 5px;
+  grid-column: 2;
+  min-width: clamp(116px, 14vw, 160px);
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.tp-new-view .tp-new-view-nav-brand::before,
+.tp-new-view .tp-new-view-nav-brand::after {
+  content: none;
+  display: none;
+}
+
+.tp-new-view .tp-new-view-nav-logo {
+  height: 42px;
+  width: 42px;
+}
+
+.tp-new-view .tp-new-view-nav-brand span {
+  font-size: clamp(0.74rem, 0.9vw, 0.9rem);
+  line-height: 1.1;
+  max-width: 150px;
+}
+
+/* New View: Notch Menu Links */
+.tp-new-view .tp-new-view-nav-left,
+.tp-new-view .tp-new-view-nav-right {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: clamp(7px, 0.9vw, 11px);
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.tp-new-view .tp-new-view-nav-left {
+  grid-column: 1;
+  justify-content: flex-end;
+}
+
+.tp-new-view .tp-new-view-nav-right {
+  grid-column: 3;
+  justify-content: flex-start;
+}
+
+.tp-new-view .tp-new-view-panel-link {
+  flex: 0 1 auto;
+  font-size: clamp(0.68rem, 0.82vw, 0.84rem);
+  min-height: 42px;
+  min-width: 0;
+  padding: 0.62rem clamp(0.68rem, 1vw, 0.95rem);
+  white-space: nowrap;
+}
+
+/* New View: Notch Menu Mobile */
+@media (max-width: 900px) {
+  .tp-new-view .tp-new-view-nav-panel {
+    align-items: center;
+    gap: 14px;
+    grid-template-columns: 1fr;
+    left: 50%;
+    max-height: calc(100vh - 86px);
+    min-height: 0;
+    overflow-y: auto;
+    padding: 18px;
+    right: auto;
+    top: 68px;
+    transform: translateX(-50%);
+    width: calc(100vw - 24px);
+  }
+
+  .tp-new-view .tp-new-view-nav-panel::after {
+    bottom: -15px;
+    height: 22px;
+    width: 150px;
+  }
+
+  .tp-new-view .tp-new-view-nav-brand,
+  .tp-new-view .tp-new-view-nav-left,
+  .tp-new-view .tp-new-view-nav-right {
+    grid-column: 1;
+  }
+
+  .tp-new-view .tp-new-view-nav-left,
+  .tp-new-view .tp-new-view-nav-right {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    width: 100%;
+  }
+
+  .tp-new-view .tp-new-view-panel-link {
+    justify-content: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 420px) {
+  .tp-new-view .tp-new-view-nav-left,
+  .tp-new-view .tp-new-view-nav-right {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* New View: Premium Capsule System */
+.tp-new-view {
+  --tp-capsule-bg: rgba(5, 8, 10, 0.88);
+  --tp-capsule-bg-hover: rgba(9, 14, 18, 0.94);
+  --tp-capsule-text: #fff2d8;
+  --tp-capsule-border: rgba(225, 239, 248, 0.34);
+  --tp-capsule-border-hover: rgba(245, 250, 255, 0.52);
+  --tp-capsule-shadow: 0 13px 30px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.055);
+  --tp-capsule-inner: inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 0 -9px 20px rgba(0, 0, 0, 0.3);
+  --tp-capsule-rim:
+    conic-gradient(
+      from var(--tp-rim-angle, 135deg),
+      rgba(255, 255, 255, 0.86),
+      rgba(120, 220, 255, 0.34),
+      rgba(210, 120, 255, 0.22),
+      rgba(120, 255, 210, 0.18),
+      rgba(255, 210, 160, 0.3),
+      rgba(120, 180, 255, 0.24),
+      rgba(255, 255, 255, 0.72)
+    );
+  --tp-action-capsule-bg: linear-gradient(180deg, rgba(15, 20, 24, 0.94), rgba(5, 8, 10, 0.92) 48%, rgba(2, 4, 6, 0.96));
+  --tp-action-capsule-text: #fff4df;
+  --tp-action-chrome-width: 2px;
+  --tp-action-chrome-speed: 9s;
+  --tp-action-chrome-glow: 0 0 24px rgba(112, 218, 255, 0.16), 0 0 14px rgba(255, 221, 174, 0.1);
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-panel-link,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .disabled-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .test-option,
+  .topic-choice-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+) {
+  background:
+    linear-gradient(180deg, rgba(12, 17, 20, 0.92), var(--tp-capsule-bg) 48%, rgba(2, 4, 6, 0.94)) padding-box,
+    var(--tp-capsule-rim) border-box;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 999px;
+  box-shadow:
+    var(--tp-capsule-shadow),
+    var(--tp-capsule-inner),
+    0 0 0 1px rgba(255, 255, 255, 0.035);
+  box-sizing: border-box;
+  color: var(--tp-capsule-text);
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.55);
+  transition:
+    background var(--nav-hover-duration) var(--ease-premium),
+    border-color var(--nav-hover-duration) var(--ease-premium),
+    box-shadow var(--nav-hover-duration) var(--ease-premium),
+    color var(--nav-hover-duration) var(--ease-premium),
+    opacity var(--nav-hover-duration) var(--ease-premium),
+    transform var(--nav-hover-duration) var(--ease-premium);
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-panel-link,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .disabled-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .test-option,
+  .topic-choice-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::before,
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-panel-link,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .disabled-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .test-option,
+  .topic-choice-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::after {
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-panel-link,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .disabled-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .test-option,
+  .topic-choice-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::before {
+  background:
+    linear-gradient(105deg, transparent 0 18%, rgba(255, 255, 255, 0.22) 31%, transparent 46%),
+    radial-gradient(circle at 18% 0%, rgba(255, 242, 216, 0.24), transparent 34%),
+    radial-gradient(circle at 85% 100%, rgba(120, 220, 255, 0.2), transparent 38%),
+    conic-gradient(from var(--tp-rim-angle, 135deg), transparent 0 18%, rgba(255, 255, 255, 0.16) 28%, transparent 42%, rgba(120, 255, 210, 0.1) 60%, transparent 74%);
+  background-size: 220% 100%, 100% 100%, 100% 100%, 170% 170%;
+  opacity: 0.34;
+  transform: translateX(-18%);
+  transition:
+    opacity var(--nav-hover-duration) var(--ease-premium),
+    transform 420ms var(--ease-premium);
+  animation: tpCapsuleRimDrift 8s linear infinite;
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-panel-link,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .disabled-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .test-option,
+  .topic-choice-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::after {
+  background:
+    radial-gradient(circle at var(--tp-glow-x, 50%) var(--tp-glow-y, 50%), rgba(255, 255, 255, 0.28), rgba(120, 220, 255, 0.16) 22%, transparent 44%);
+  opacity: 0.18;
+  transition: opacity var(--nav-hover-duration) var(--ease-premium);
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-panel-link,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .test-option,
+  .topic-choice-button,
+  .gcse-option-button,
+  .practice-answer-option
+):is(:hover, :focus-visible),
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .btn,
+  .preview-role-list button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .test-option
+):is(.tp-current-page-link, .is-selected, .selected, .active, [aria-pressed="true"], [aria-current="page"]) {
+  background:
+    linear-gradient(180deg, rgba(18, 24, 29, 0.96), var(--tp-capsule-bg-hover) 48%, rgba(4, 7, 10, 0.98)) padding-box,
+    var(--tp-capsule-rim) border-box;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.42),
+    0 0 18px rgba(90, 167, 214, 0.16),
+    var(--tp-capsule-inner);
+  color: #fff8ea;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-panel-link,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .test-option,
+  .topic-choice-button,
+  .gcse-option-button,
+  .practice-answer-option
+):is(:hover, :focus-visible)::before {
+  opacity: 0.58;
+  transform: translateX(14%);
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .tp-new-view-panel-link,
+  .btn,
+  .card button,
+  .role-card-link,
+  .active-test-button,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .quiz-modal-close,
+  .test-option,
+  .topic-choice-button,
+  .gcse-option-button,
+  .practice-answer-option
+):is(:hover, :focus-visible)::after {
+  opacity: 0.38;
+}
+
+.tp-new-view .tag {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1.12;
+  min-height: 40px;
+  padding: 0.62rem 1.12rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tp-new-view :is(.hero-text > .tag, .section-heading .tag, .feedback-card > .tag, .business-page .tag) {
+  font-size: clamp(0.72rem, 0.9vw, 0.84rem);
+  min-height: 42px;
+  padding: 0.68rem 1.22rem;
+}
+
+.tp-new-view :is(.btn.primary, .btn.secondary, .hero-actions .btn, .final-cta .btn, .readiness-dashboard-page .hero-actions .btn) {
+  min-height: 48px;
+  padding: 0.78rem 1.28rem;
+}
+
+/* New View: Unified 2px Chrome Capsule Rim */
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+) {
+  --tp-action-rim-opacity: 0.9;
+  border-width: 0;
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::before {
+  background:
+    conic-gradient(
+      from 80deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(112, 218, 255, 0.58),
+      rgba(85, 142, 255, 0.36),
+      rgba(182, 128, 255, 0.3),
+      rgba(255, 128, 210, 0.24),
+      rgba(118, 255, 206, 0.26),
+      rgba(255, 221, 174, 0.44),
+      rgba(255, 255, 255, 0.9)
+    );
+  background-size: 210% 210%;
+  inset: 0;
+  opacity: var(--tp-action-rim-opacity);
+  padding: var(--tp-action-chrome-width);
+  transform: none;
+  animation: tpActionChromeRim var(--tp-action-chrome-speed) linear infinite;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::after {
+  background:
+    radial-gradient(circle at var(--tp-glow-x, 50%) var(--tp-glow-y, 50%), rgba(255, 255, 255, 0.28), rgba(112, 218, 255, 0.14) 22%, transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 58%);
+  opacity: 0.12;
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible) {
+  --tp-action-rim-opacity: 0.98;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.42),
+    var(--tp-action-chrome-glow),
+    var(--tp-capsule-inner);
+}
+
+.tp-new-view :is(
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  .card button,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible)::after {
+  opacity: 0.34;
+}
+
+.tp-new-view .test-option:has(input:checked) {
+  --tp-action-rim-opacity: 1;
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(112, 218, 255, 0.18),
+    var(--tp-capsule-inner);
+}
+
+.tp-new-view .test-option:has(input:checked)::before {
+  background:
+    conic-gradient(
+      from 80deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(112, 218, 255, 0.72),
+      rgba(255, 221, 174, 0.42),
+      rgba(118, 255, 206, 0.28),
+      rgba(255, 255, 255, 0.86)
+    );
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct, .test-option.correct) {
+  background:
+    linear-gradient(180deg, rgba(9, 29, 20, 0.96), rgba(4, 14, 11, 0.98)) padding-box,
+    linear-gradient(135deg, rgba(143, 255, 190, 0.74), rgba(120, 220, 255, 0.24), rgba(255, 242, 216, 0.26)) border-box;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.34),
+    0 0 18px rgba(98, 230, 155, 0.16),
+    var(--tp-capsule-inner);
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct, .test-option.correct)::before {
+  background:
+    conic-gradient(
+      from 80deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(143, 255, 190, 0.72),
+      rgba(112, 218, 255, 0.28),
+      rgba(143, 255, 190, 0.54),
+      rgba(255, 255, 255, 0.76)
+    );
+  opacity: 0.96;
+}
+
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect, .test-option.incorrect) {
+  background:
+    linear-gradient(180deg, rgba(36, 12, 12, 0.96), rgba(16, 5, 6, 0.98)) padding-box,
+    linear-gradient(135deg, rgba(255, 150, 120, 0.66), rgba(255, 210, 160, 0.24), rgba(120, 220, 255, 0.14)) border-box;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.34),
+    0 0 18px rgba(255, 112, 94, 0.14),
+    var(--tp-capsule-inner);
+}
+
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect, .test-option.incorrect)::before {
+  background:
+    conic-gradient(
+      from 80deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 150, 120, 0.7),
+      rgba(255, 221, 174, 0.38),
+      rgba(255, 112, 94, 0.46),
+      rgba(255, 255, 255, 0.66)
+    );
+  opacity: 0.92;
+}
+
+.tp-new-view :is(.disabled-test-button, button:disabled, .btn[aria-disabled="true"]) {
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  opacity: 0.62;
+  transform: none;
+}
+
+.tp-new-view :is(.disabled-test-button, button:disabled, .btn[aria-disabled="true"])::before {
+  animation: none;
+  opacity: 0.26;
+}
+
+.tp-new-view :is(.disabled-test-button, button:disabled, .btn[aria-disabled="true"])::after {
+  opacity: 0;
+}
+
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  .tp-new-view :is(
+    .tp-liquid-metal-link,
+    .tp-new-view-panel-link,
+    .tp-new-view-menu-button,
+    .tp-new-view-toggle,
+    .btn,
+    .card button,
+    a.btn,
+    .hero-actions a,
+    .final-cta a,
+    .feedback-card a.btn,
+    .role-card-link,
+    .path-card a,
+    .language-card a,
+    .lesson-card a,
+    .roadmap-card a,
+    .service-card a,
+    .pricing-card a,
+    .preview-steps a,
+    .preview-role-list a,
+    .preview-role-list button,
+    .preview-path-button,
+    .guide-home-link,
+    .readiness-category-action,
+    .personalised-roadmap-action,
+    .active-test-button,
+    .disabled-test-button,
+    .topic-choice-button,
+    .practice-skill-button,
+    .quiz-next-button,
+    .quiz-retake-button,
+    .starter-quiz-button,
+    .gcse-secondary-button,
+    .quiz-modal-close,
+    .quiz-option,
+    .answer-option,
+    .choice-option,
+    .option-button,
+    .test-option,
+    .gcse-option-button,
+    .practice-answer-option,
+    .custom-dropdown-trigger,
+    .custom-dropdown-menu button,
+    .future-status-pill,
+    .difficulty-badge,
+    .topic-status-pill,
+    .readiness-status-badge,
+    .personalised-roadmap-stage,
+    .readiness-category-status,
+    .readiness-label,
+    .package-price,
+    .tag,
+    .badge,
+    .pill,
+    .chip,
+    .status-badge,
+    .skill-tag,
+    .category-pill,
+    .roadmap-step,
+    .step-pill,
+    button[class*="pill"],
+    a[class*="pill"],
+    span[class*="pill"],
+    button[class*="badge"],
+    a[class*="badge"],
+    span[class*="badge"],
+    button[class*="tag"],
+    a[class*="tag"],
+    span[class*="tag"]
+  )::before {
+    display: none;
+  }
+
+  .tp-new-view :is(
+    .tp-liquid-metal-link,
+    .tp-new-view-panel-link,
+    .tp-new-view-menu-button,
+    .tp-new-view-toggle,
+    .btn,
+    .card button,
+    a.btn,
+    .hero-actions a,
+    .final-cta a,
+    .feedback-card a.btn,
+    .role-card-link,
+    .path-card a,
+    .language-card a,
+    .lesson-card a,
+    .roadmap-card a,
+    .service-card a,
+    .pricing-card a,
+    .preview-steps a,
+    .preview-role-list a,
+    .preview-role-list button,
+    .preview-path-button,
+    .guide-home-link,
+    .readiness-category-action,
+    .personalised-roadmap-action,
+    .active-test-button,
+    .disabled-test-button,
+    .topic-choice-button,
+    .practice-skill-button,
+    .quiz-next-button,
+    .quiz-retake-button,
+    .starter-quiz-button,
+    .gcse-secondary-button,
+    .quiz-modal-close,
+    .quiz-option,
+    .answer-option,
+    .choice-option,
+    .option-button,
+    .test-option,
+    .gcse-option-button,
+    .practice-answer-option,
+    .custom-dropdown-trigger,
+    .custom-dropdown-menu button,
+    .future-status-pill,
+    .difficulty-badge,
+    .topic-status-pill,
+    .readiness-status-badge,
+    .personalised-roadmap-stage,
+    .readiness-category-status,
+    .readiness-label,
+    .package-price,
+    .tag,
+    .badge,
+    .pill,
+    .chip,
+    .status-badge,
+    .skill-tag,
+    .category-pill,
+    .roadmap-step,
+    .step-pill,
+    button[class*="pill"],
+    a[class*="pill"],
+    span[class*="pill"],
+    button[class*="badge"],
+    a[class*="badge"],
+    span[class*="badge"],
+    button[class*="tag"],
+    a[class*="tag"],
+    span[class*="tag"]
+  ) {
+    box-shadow:
+      0 0 0 var(--tp-action-chrome-width) rgba(225, 239, 248, 0.32),
+      var(--tp-capsule-shadow),
+      var(--tp-capsule-inner);
+  }
+}
+
+.tp-new-view :is(.breadcrumb a, .footer-links a):not(.btn):not(.tp-liquid-metal-link) {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: inherit;
+  overflow: visible;
+  padding: 0;
+  text-shadow: none;
+}
+
+.tp-new-view :is(.breadcrumb a, .footer-links a):not(.btn):not(.tp-liquid-metal-link)::before,
+.tp-new-view :is(.breadcrumb a, .footer-links a):not(.btn):not(.tp-liquid-metal-link)::after {
+  content: none;
+  display: none;
+}
+
+@keyframes tpCapsuleRimDrift {
+  0% {
+    background-position: -120% 50%, 0 0, 100% 100%, 0% 50%;
+    filter: saturate(1);
+  }
+
+  50% {
+    background-position: 140% 50%, 8% 0, 92% 100%, 100% 50%;
+    filter: saturate(1.08);
+  }
+
+  100% {
+    background-position: -120% 50%, 0 0, 100% 100%, 0% 50%;
+    filter: saturate(1);
+  }
+}
+
+@keyframes tpActionChromeRim {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* New View: Guaranteed 2px Chrome Capsule Rim */
+.tp-new-view {
+  --tp-action-chrome-width: 2px;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+) {
+  --tp-action-rim-opacity: 0.94;
+  border-radius: 999px;
+  box-sizing: border-box;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::before {
+  animation: tpActionChromeRim var(--tp-action-chrome-speed, 9s) linear infinite;
+  background:
+    conic-gradient(
+      from 80deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(112, 218, 255, 0.6),
+      rgba(85, 142, 255, 0.38),
+      rgba(182, 128, 255, 0.32),
+      rgba(255, 128, 210, 0.24),
+      rgba(118, 255, 206, 0.28),
+      rgba(255, 221, 174, 0.46),
+      rgba(255, 255, 255, 0.9)
+    );
+  background-size: 210% 210%;
+  border-radius: inherit;
+  box-sizing: border-box;
+  content: "";
+  inset: 0;
+  opacity: var(--tp-action-rim-opacity);
+  padding: var(--tp-action-chrome-width);
+  pointer-events: none;
+  position: absolute;
+  transform: none;
+  z-index: 1;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::after {
+  background:
+    radial-gradient(circle at var(--tp-glow-x, 50%) var(--tp-glow-y, 50%), rgba(255, 255, 255, 0.24), rgba(112, 218, 255, 0.12) 24%, transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 58%);
+  border-radius: inherit;
+  box-sizing: border-box;
+  content: "";
+  inset: 0;
+  opacity: 0.08;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity var(--nav-hover-duration, 260ms) var(--ease-premium, ease);
+  z-index: 0;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible) {
+  --tp-action-rim-opacity: 1;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .btn,
+  a.btn,
+  .hero-actions a,
+  .final-cta a,
+  .feedback-card a.btn,
+  .role-card-link,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .preview-steps a,
+  .preview-role-list a,
+  .preview-role-list button,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-path-button,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .quiz-option,
+  .answer-option,
+  .choice-option,
+  .option-button,
+  .test-option,
+  .gcse-option-button,
+  .practice-answer-option,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible)::after {
+  opacity: 0.28;
+}
+
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  .tp-new-view .tp-action-chrome-capsule::before {
+    display: none;
+  }
+
+  .tp-new-view .tp-action-chrome-capsule {
+    box-shadow:
+      0 0 0 var(--tp-action-chrome-width) rgba(225, 239, 248, 0.42),
+      0 0 0 calc(var(--tp-action-chrome-width) + 1px) rgba(112, 218, 255, 0.12),
+      var(--tp-capsule-shadow, 0 12px 28px rgba(0, 0, 0, 0.35));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp-new-view .tp-action-chrome-capsule::before {
+    animation: none !important;
+    background-position: 50% 50%;
+  }
+}
+
+/* New View: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .lesson-dock-item,
   .dock-label,
   .dock-popover,
-  .dock-popover a {
+  .dock-popover a,
+  .tp-new-view-toggle,
+  .tp-new-view-toggle-switch span,
+  .tp-new-view .nav::before,
+  .tp-new-view .tp-liquid-metal-link,
+  .tp-new-view .tp-liquid-metal-link::before,
+  .tp-new-view .tp-liquid-metal-link::after,
+  .tp-new-view .tp-metal-surface,
+  .tp-new-view .tp-liquid-border,
+  .tp-new-view .tp-glass-box,
+  .tp-new-view .tp-metal-hover,
+  .tp-new-view :is(.card, .role-card, .lesson-box, .quiz-card, .hero-card, .preview-panel, .readiness-category-card, .dashboard-summary-card, .personalised-roadmap-card, .business-package-card, .feedback-card, .gcse-mode-card, .gcse-result-card, .test-option, .gcse-option-button, .practice-answer-option, .btn, .role-card-link)::before {
     transition: none !important;
+    animation: none !important;
+  }
+
+  .tp-new-view :is(
+    .tp-liquid-metal-link,
+    .tp-new-view-menu-button,
+    .tp-new-view-toggle,
+    .tp-new-view-panel-link,
+    .btn,
+    .card button,
+    .role-card-link,
+    .active-test-button,
+    .disabled-test-button,
+    .preview-steps a,
+    .preview-role-list a,
+    .preview-role-list button,
+    .preview-path-button,
+    .custom-dropdown-trigger,
+    .custom-dropdown-menu button,
+    .quiz-modal-close,
+    .quiz-option,
+    .answer-option,
+    .choice-option,
+    .option-button,
+    .test-option,
+    .topic-choice-button,
+    .gcse-option-button,
+    .practice-answer-option,
+    .future-status-pill,
+    .difficulty-badge,
+    .topic-status-pill,
+    .readiness-status-badge,
+    .personalised-roadmap-stage,
+    .readiness-category-status,
+    .readiness-label,
+    .package-price,
+    .tag,
+    button[class*="pill"],
+    a[class*="pill"],
+    span[class*="pill"],
+    button[class*="badge"],
+    a[class*="badge"],
+    span[class*="badge"],
+    button[class*="tag"],
+    a[class*="tag"],
+    span[class*="tag"]
+  )::before {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .tp-new-view :is(
+    .tp-liquid-metal-link,
+    .tp-new-view-panel-link,
+    .tp-new-view-menu-button,
+    .tp-new-view-toggle,
+    .btn,
+    .card button,
+    a.btn,
+    .hero-actions a,
+    .final-cta a,
+    .feedback-card a.btn,
+    .role-card-link,
+    .path-card a,
+    .language-card a,
+    .lesson-card a,
+    .roadmap-card a,
+    .service-card a,
+    .pricing-card a,
+    .preview-steps a,
+    .preview-role-list a,
+    .preview-role-list button,
+    .preview-path-button,
+    .guide-home-link,
+    .readiness-category-action,
+    .personalised-roadmap-action,
+    .active-test-button,
+    .disabled-test-button,
+    .topic-choice-button,
+    .practice-skill-button,
+    .quiz-next-button,
+    .quiz-retake-button,
+    .starter-quiz-button,
+    .gcse-secondary-button,
+    .quiz-modal-close,
+    .quiz-option,
+    .answer-option,
+    .choice-option,
+    .option-button,
+    .test-option,
+    .gcse-option-button,
+    .practice-answer-option,
+    .custom-dropdown-trigger,
+    .custom-dropdown-menu button,
+    .future-status-pill,
+    .difficulty-badge,
+    .topic-status-pill,
+    .readiness-status-badge,
+    .personalised-roadmap-stage,
+    .readiness-category-status,
+    .readiness-label,
+    .package-price,
+    .tag,
+    .badge,
+    .pill,
+    .chip,
+    .status-badge,
+    .skill-tag,
+    .category-pill,
+    .roadmap-step,
+    .step-pill,
+    button[class*="pill"],
+    a[class*="pill"],
+    span[class*="pill"],
+    button[class*="badge"],
+    a[class*="badge"],
+    span[class*="badge"],
+    button[class*="tag"],
+    a[class*="tag"],
+    span[class*="tag"]
+  )::before {
+    animation: none !important;
+    background-position: 50% 50%;
+  }
+
+  .tp-new-view .nav {
+    --tp-spotlight-opacity: 0 !important;
   }
 
   .dock-label {
@@ -4207,5 +8769,951 @@ footer {
     .lesson-dock-group:has(+ .lesson-dock-group + .lesson-dock-group:focus-within) > .lesson-dock-item {
       transform: none !important;
     }
+  }
+}
+
+/* New View: Final Capsule Border Cascade Guard */
+.tp-new-view {
+  --tp-action-chrome-width: 2px;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+) {
+  border: var(--tp-action-chrome-width) solid rgba(225, 238, 245, 0.72) !important;
+  border-radius: 999px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(105, 210, 255, 0.12),
+    0 10px 28px rgba(0, 0, 0, 0.34) !important;
+  box-sizing: border-box;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible) {
+  border-color: rgba(255, 255, 255, 0.92) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(120, 220, 255, 0.22),
+    0 0 26px rgba(120, 220, 255, 0.16),
+    0 14px 34px rgba(0, 0, 0, 0.42) !important;
+}
+
+.tp-new-view :is(.test-option:has(input:checked), .quiz-option.selected, .answer-option.selected, .choice-option.selected, .option-button.selected, .gcse-option-button.selected, .practice-answer-option.selected, .preview-path-selector button.is-selected, button[data-preview-path].is-selected) {
+  border-color: rgba(132, 225, 255, 0.94) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(132, 225, 255, 0.28),
+    0 0 24px rgba(90, 167, 214, 0.22),
+    0 12px 30px rgba(0, 0, 0, 0.36) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct, .test-option.correct, .quiz-option.correct, .answer-option.correct, .choice-option.correct, .option-button.correct, .answer-correct) {
+  border-color: rgba(143, 255, 190, 0.9) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect, .test-option.incorrect, .quiz-option.incorrect, .answer-option.incorrect, .choice-option.incorrect, .option-button.incorrect, .wrong, .answer-wrong) {
+  border-color: rgba(255, 162, 128, 0.9) !important;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+)::after {
+  animation: none !important;
+  background:
+    conic-gradient(
+      from 0deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(105, 220, 255, 0.44),
+      rgba(185, 120, 255, 0.32),
+      rgba(255, 130, 220, 0.26),
+      rgba(110, 255, 210, 0.28),
+      rgba(255, 235, 190, 0.44),
+      rgba(255, 255, 255, 0.92)
+    ) !important;
+  border-radius: inherit;
+  box-sizing: border-box;
+  content: "" !important;
+  display: none !important;
+  inset: 0;
+  opacity: 0.76;
+  padding: var(--tp-action-chrome-width);
+  pointer-events: none;
+  position: absolute;
+  transform-origin: center;
+  z-index: 2;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible)::after {
+  opacity: 1;
+}
+
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  .tp-new-view .tp-action-chrome-capsule::after,
+  .tp-new-view .hero-actions a::after,
+  .tp-new-view a.btn::after,
+  .tp-new-view button.btn::after,
+  .tp-new-view .btn::after,
+  .tp-new-view .preview-path-selector button::after,
+  .tp-new-view button[data-preview-path]::after,
+  .tp-new-view .role-card-link::after,
+  .tp-new-view .lesson-card a::after,
+  .tp-new-view .quiz-option::after,
+  .tp-new-view .answer-option::after,
+  .tp-new-view .test-option::after,
+  .tp-new-view .gcse-option-button::after,
+  .tp-new-view .practice-answer-option::after {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp-new-view .tp-action-chrome-capsule::after,
+  .tp-new-view .hero-actions a::after,
+  .tp-new-view a.btn::after,
+  .tp-new-view button.btn::after,
+  .tp-new-view .btn::after,
+  .tp-new-view .preview-path-selector button::after,
+  .tp-new-view button[data-preview-path]::after,
+  .tp-new-view .role-card-link::after,
+  .tp-new-view .lesson-card a::after,
+  .tp-new-view .quiz-option::after,
+  .tp-new-view .answer-option::after,
+  .tp-new-view .test-option::after,
+  .tp-new-view .gcse-option-button::after,
+  .tp-new-view .practice-answer-option::after {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* New View: Premium Liquid Chrome Capsule System */
+@property --tp-chrome-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.tp-new-view {
+  --tp-action-chrome-width: 2px;
+  --tp-chrome-angle: 0deg;
+  --tp-capsule-text: #fff2d8;
+  --tp-liquid-capsule-fill:
+    linear-gradient(
+      135deg,
+      rgba(18, 25, 29, 0.98) 0%,
+      rgba(9, 13, 16, 0.98) 45%,
+      rgba(2, 4, 6, 0.99) 100%
+    );
+  --tp-liquid-capsule-rim:
+    conic-gradient(
+      from var(--tp-chrome-angle),
+      rgba(255, 255, 255, 0.92) 0deg,
+      rgba(155, 225, 255, 0.46) 38deg,
+      rgba(255, 255, 255, 0.7) 78deg,
+      rgba(190, 130, 255, 0.34) 126deg,
+      rgba(255, 150, 220, 0.26) 168deg,
+      rgba(145, 255, 220, 0.3) 212deg,
+      rgba(125, 205, 255, 0.42) 258deg,
+      rgba(255, 240, 205, 0.62) 312deg,
+      rgba(255, 255, 255, 0.92) 360deg
+    );
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+) {
+  animation: tpLiquidChromeRim 9s linear infinite !important;
+  background:
+    var(--tp-liquid-capsule-fill) padding-box,
+    conic-gradient(
+      from var(--tp-chrome-angle),
+      rgba(255, 255, 255, 0.92) 0deg,
+      rgba(155, 225, 255, 0.46) 38deg,
+      rgba(255, 255, 255, 0.7) 78deg,
+      rgba(190, 130, 255, 0.34) 126deg,
+      rgba(255, 150, 220, 0.26) 168deg,
+      rgba(145, 255, 220, 0.3) 212deg,
+      rgba(125, 205, 255, 0.42) 258deg,
+      rgba(255, 240, 205, 0.62) 312deg,
+      rgba(255, 255, 255, 0.92) 360deg
+    ) border-box !important;
+  border: var(--tp-action-chrome-width) solid transparent !important;
+  border-radius: 999px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 10px 28px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(120, 220, 255, 0.08) !important;
+  box-sizing: border-box;
+  color: var(--tp-capsule-text, #fff2d8);
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .tag,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible) {
+  animation-duration: 6s !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 31, 36, 0.99) 0%,
+      rgba(10, 15, 19, 0.99) 45%,
+      rgba(2, 4, 6, 0.99) 100%
+    ) padding-box,
+    conic-gradient(
+      from var(--tp-chrome-angle),
+      rgba(255, 255, 255, 1) 0deg,
+      rgba(145, 230, 255, 0.62) 36deg,
+      rgba(255, 255, 255, 0.82) 78deg,
+      rgba(197, 136, 255, 0.44) 126deg,
+      rgba(255, 152, 218, 0.34) 170deg,
+      rgba(145, 255, 220, 0.38) 214deg,
+      rgba(135, 215, 255, 0.54) 260deg,
+      rgba(255, 240, 205, 0.74) 314deg,
+      rgba(255, 255, 255, 1) 360deg
+    ) border-box !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(120, 220, 255, 0.22),
+    0 0 26px rgba(120, 220, 255, 0.16),
+    0 14px 34px rgba(0, 0, 0, 0.42) !important;
+  transform: translateY(-1px);
+}
+
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::before,
+.tp-new-view :is(
+  .tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn,
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .final-cta a,
+  .feedback-card a.btn,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .disabled-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .tag,
+  .badge,
+  .pill,
+  .chip,
+  .status-badge,
+  .skill-tag,
+  .category-pill,
+  .roadmap-step,
+  .step-pill,
+  button[class*="pill"],
+  a[class*="pill"],
+  span[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  span[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"],
+  span[class*="tag"]
+)::after {
+  animation: none !important;
+  background: none !important;
+  background-image: none !important;
+  content: "" !important;
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.tp-new-view :is(.tag, .badge, .pill, .chip, .status-badge, .skill-tag, .category-pill, .roadmap-step, .step-pill, .future-status-pill, .difficulty-badge, .topic-status-pill, .readiness-status-badge, .personalised-roadmap-stage, .readiness-category-status, .readiness-label, .package-price) {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0.5rem 0.9rem;
+  text-align: center;
+}
+
+.tp-new-view :is(.test-option:has(input:checked), .quiz-option.selected, .answer-option.selected, .choice-option.selected, .option-button.selected, .gcse-option-button.selected, .practice-answer-option.selected, .preview-path-selector button.is-selected, button[data-preview-path].is-selected) {
+  background:
+    var(--tp-liquid-capsule-fill) padding-box,
+    conic-gradient(
+      from var(--tp-chrome-angle),
+      rgba(255, 255, 255, 0.96),
+      rgba(132, 225, 255, 0.92),
+      rgba(255, 240, 205, 0.6),
+      rgba(132, 225, 255, 0.82),
+      rgba(255, 255, 255, 0.9)
+    ) border-box !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(132, 225, 255, 0.28),
+    0 0 24px rgba(90, 167, 214, 0.22),
+    0 12px 30px rgba(0, 0, 0, 0.36) !important;
+}
+
+.tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct, .test-option.correct, .quiz-option.correct, .answer-option.correct, .choice-option.correct, .option-button.correct, .answer-correct) {
+  background:
+    var(--tp-liquid-capsule-fill) padding-box,
+    conic-gradient(
+      from var(--tp-chrome-angle),
+      rgba(255, 255, 255, 0.9),
+      rgba(143, 255, 190, 0.9),
+      rgba(112, 218, 255, 0.35),
+      rgba(143, 255, 190, 0.72),
+      rgba(255, 255, 255, 0.82)
+    ) border-box !important;
+}
+
+.tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect, .test-option.incorrect, .quiz-option.incorrect, .answer-option.incorrect, .choice-option.incorrect, .option-button.incorrect, .wrong, .answer-wrong) {
+  background:
+    var(--tp-liquid-capsule-fill) padding-box,
+    conic-gradient(
+      from var(--tp-chrome-angle),
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 162, 128, 0.86),
+      rgba(255, 226, 184, 0.46),
+      rgba(255, 112, 94, 0.58),
+      rgba(255, 255, 255, 0.7)
+    ) border-box !important;
+}
+
+.tp-new-view :is(.disabled-test-button, button:disabled, .btn[aria-disabled="true"]) {
+  animation: none !important;
+  opacity: 0.62;
+  transform: none;
+}
+
+.tp-new-view .tp-new-view-nav-shell {
+  z-index: 2147483000;
+  pointer-events: auto;
+}
+
+.tp-new-view .tp-new-view-nav-panel {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: min(1120px, calc(100vw - 40px));
+  z-index: 2147482999;
+  pointer-events: auto;
+}
+
+.tp-new-view .tp-new-view-nav-panel,
+.tp-new-view .tp-new-view-nav-left,
+.tp-new-view .tp-new-view-nav-right,
+.tp-new-view .tp-new-view-nav-brand {
+  --tp-glow-x: 50%;
+  --tp-glow-y: 50%;
+  --tp-spotlight-opacity: 0 !important;
+}
+
+.tp-new-view .tp-new-view-nav-panel::before,
+.tp-new-view .tp-new-view-nav-panel::after,
+.tp-new-view .tp-new-view-nav-brand::before,
+.tp-new-view .tp-new-view-nav-brand::after {
+  content: none !important;
+  display: none !important;
+}
+
+@keyframes tpLiquidChromeRim {
+  0% {
+    --tp-chrome-angle: 0deg;
+  }
+
+  100% {
+    --tp-chrome-angle: 360deg;
+  }
+}
+
+@media (max-width: 900px) {
+  .tp-new-view .tp-new-view-nav-panel {
+    width: calc(100vw - 24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp-new-view :is(
+    .tp-action-chrome-capsule,
+    .tp-liquid-metal-link,
+    .tp-new-view-panel-link,
+    .tp-new-view-menu-button,
+    .tp-new-view-toggle,
+    .hero-actions a,
+    a.btn,
+    button.btn,
+    .btn,
+    .preview-path-selector button,
+    button[data-preview-path],
+    .quiz-option,
+    .answer-option,
+    .test-option,
+    .choice-option,
+    .option-button,
+    .gcse-option-button,
+    .practice-answer-option
+  ) {
+    animation: none !important;
+  }
+}
+
+/* New View: Floating Menu Always On Top */
+.tp-new-view .site-header,
+.tp-new-view-body .site-header {
+  overflow: visible !important;
+  position: relative !important;
+  transform: none !important;
+  z-index: 2147483646 !important;
+}
+
+.tp-new-view .tp-new-view-nav-shell,
+.tp-new-view-body .tp-new-view-nav-shell,
+.tp-new-view .nav.tp-new-view-nav-shell,
+.tp-new-view-body .nav.tp-new-view-nav-shell {
+  isolation: isolate !important;
+  left: auto !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  position: fixed !important;
+  right: max(18px, env(safe-area-inset-right)) !important;
+  top: max(14px, env(safe-area-inset-top)) !important;
+  transform: translateZ(0) !important;
+  will-change: transform;
+  z-index: 2147483647 !important;
+}
+
+.tp-new-view .tp-new-view-menu-button,
+.tp-new-view .tp-new-view-menu-button *,
+.tp-new-view .tp-new-view-toggle-box,
+.tp-new-view .tp-new-view-toggle-box *,
+.tp-new-view .tp-new-view-toggle,
+.tp-new-view-body .tp-new-view-menu-button,
+.tp-new-view-body .tp-new-view-menu-button *,
+.tp-new-view-body .tp-new-view-toggle-box,
+.tp-new-view-body .tp-new-view-toggle-box *,
+.tp-new-view-body .tp-new-view-toggle {
+  pointer-events: auto !important;
+}
+
+.tp-new-view .tp-new-view-nav-panel,
+.tp-new-view-body .tp-new-view-nav-panel {
+  isolation: isolate !important;
+  left: 50% !important;
+  pointer-events: auto !important;
+  position: fixed !important;
+  right: auto !important;
+  top: clamp(14px, 1.5vw, 18px) !important;
+  transform: translateX(-50%) !important;
+  width: min(1120px, calc(100vw - 40px)) !important;
+  z-index: 2147483646 !important;
+}
+
+.tp-new-view .tp-new-view-nav-panel[hidden],
+.tp-new-view-body .tp-new-view-nav-panel[hidden] {
+  display: none !important;
+}
+
+.tp-new-view :is(
+  .mocha-sapphire-bg,
+  .mocha-bg-layer
+),
+.tp-new-view :is(
+  .card,
+  .feature-card,
+  .language-card,
+  .path-card,
+  .role-card,
+  .roadmap-card,
+  .dashboard-card,
+  .readiness-category-card,
+  .personalised-roadmap-card,
+  .lesson-card,
+  .hero-card,
+  .preview-panel,
+  .quiz-card,
+  .service-card,
+  .pricing-card,
+  .feedback-card
+)::before,
+.tp-new-view :is(
+  .card,
+  .feature-card,
+  .language-card,
+  .path-card,
+  .role-card,
+  .roadmap-card,
+  .dashboard-card,
+  .readiness-category-card,
+  .personalised-roadmap-card,
+  .lesson-card,
+  .hero-card,
+  .preview-panel,
+  .quiz-card,
+  .service-card,
+  .pricing-card,
+  .feedback-card
+)::after {
+  pointer-events: none !important;
+}
+
+@media (max-width: 900px) {
+  .tp-new-view .tp-new-view-nav-shell,
+  .tp-new-view-body .tp-new-view-nav-shell {
+    right: max(10px, env(safe-area-inset-right)) !important;
+    top: max(10px, env(safe-area-inset-top)) !important;
+  }
+
+  .tp-new-view .tp-new-view-nav-panel,
+  .tp-new-view-body .tp-new-view-nav-panel {
+    max-height: calc(100vh - 86px);
+    overflow-y: auto;
+    top: 68px !important;
+    width: calc(100vw - 24px) !important;
   }
 }
