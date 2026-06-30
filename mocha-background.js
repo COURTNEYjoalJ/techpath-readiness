@@ -5,7 +5,10 @@
     ".tp-new-view-toggle",
     ".tp-new-view-menu-button",
     ".tp-new-view-panel-link",
-    ".tp-action-chrome-capsule",
+    ".tp-interactive-capsule",
+    "a.tp-action-chrome-capsule",
+    "button.tp-action-chrome-capsule",
+    "[role='button'].tp-action-chrome-capsule",
     ".tp-metal-hover",
     ".custom-dropdown-trigger",
     ".custom-dropdown-menu button",
@@ -22,26 +25,26 @@
     ".preview-steps a",
     ".preview-role-list a",
     ".preview-role-list button",
-    ".tag",
-    ".future-status-pill",
-    ".difficulty-badge",
-    ".topic-status-pill",
-    ".readiness-status-badge",
-    ".personalised-roadmap-stage",
-    ".readiness-category-status",
-    ".readiness-label",
-    ".package-price",
+    ".preview-path-selector button",
+    "button[data-preview-path]",
+    ".guide-home-link",
+    ".readiness-category-action",
+    ".personalised-roadmap-action",
+    ".path-card a",
+    ".language-card a",
+    ".lesson-card a",
+    ".roadmap-card a",
+    ".service-card a",
+    ".pricing-card a",
     "button[class*='pill']",
     "a[class*='pill']",
-    "span[class*='pill']",
     "button[class*='badge']",
     "a[class*='badge']",
-    "span[class*='badge']",
     "button[class*='tag']",
-    "a[class*='tag']",
-    "span[class*='tag']"
+    "a[class*='tag']"
   ].join(", ");
   const actionChromeCapsuleSelector = [
+    ".tp-interactive-capsule",
     ".tp-liquid-metal-link",
     ".tp-new-view-panel-link",
     ".tp-new-view-menu-button",
@@ -84,7 +87,9 @@
     ".gcse-option-button",
     ".practice-answer-option",
     ".custom-dropdown-trigger",
-    ".custom-dropdown-menu button",
+    ".custom-dropdown-menu button"
+  ].join(", ");
+  const staticChromeCapsuleSelector = [
     ".future-status-pill",
     ".difficulty-badge",
     ".topic-status-pill",
@@ -102,15 +107,18 @@
     ".category-pill",
     ".roadmap-step",
     ".step-pill",
-    "button[class*='pill']",
-    "a[class*='pill']",
     "span[class*='pill']",
-    "button[class*='badge']",
-    "a[class*='badge']",
+    "div[class*='pill']",
+    "p[class*='pill']",
     "span[class*='badge']",
-    "button[class*='tag']",
-    "a[class*='tag']",
-    "span[class*='tag']"
+    "div[class*='badge']",
+    "p[class*='badge']",
+    "span[class*='tag']",
+    ".section-eyebrow",
+    ".eyebrow",
+    ".section-label",
+    ".status-label",
+    ".preview-path-selector-label"
   ].join(", ");
   const actionChromeTextPattern = /\b(take readiness assessment|explore paths|open readiness dashboard|explore beta services|view|start|message|suggest|choose|follow|review|take tests)\b/i;
   const reduceMotionQuery = window.matchMedia
@@ -625,6 +633,39 @@
     }, { passive: true });
   }
 
+  function isInteractiveCapsuleElement(element) {
+    if (!element || element.nodeType !== 1) {
+      return false;
+    }
+
+    const tagName = element.tagName.toLowerCase();
+    const inputType = tagName === "input"
+      ? (element.getAttribute("type") || "").toLowerCase()
+      : "";
+    const role = (element.getAttribute("role") || "").toLowerCase();
+
+    return (
+      (tagName === "a" && element.hasAttribute("href")) ||
+      tagName === "button" ||
+      ["button", "submit", "reset", "radio", "checkbox"].includes(inputType) ||
+      ["button", "link", "menuitem", "option", "radio", "checkbox", "tab"].includes(role) ||
+      element.hasAttribute("onclick") ||
+      element.matches(
+        "[data-new-view-menu-button], [data-new-view-toggle], [data-preview-path], .quiz-option, .answer-option, .test-option, .choice-option, .option-button, .gcse-option-button, .practice-answer-option, .custom-dropdown-trigger, .quiz-modal-close, .active-test-button, .disabled-test-button, .topic-choice-button, .practice-skill-button, .quiz-next-button, .quiz-retake-button, .starter-quiz-button, .gcse-secondary-button"
+      )
+    );
+  }
+
+  function markInteractiveCapsule(element) {
+    element.classList.add("tp-action-chrome-capsule", "tp-interactive-capsule");
+    element.classList.remove("tp-static-capsule");
+  }
+
+  function markStaticCapsule(element) {
+    element.classList.add("tp-static-capsule");
+    element.classList.remove("tp-action-chrome-capsule", "tp-interactive-capsule");
+  }
+
   function initTechPathActionChromeCapsules() {
     document.querySelectorAll(actionChromeCapsuleSelector).forEach((element) => {
       if (
@@ -634,7 +675,11 @@
         return;
       }
 
-      element.classList.add("tp-action-chrome-capsule");
+      if (isInteractiveCapsuleElement(element)) {
+        markInteractiveCapsule(element);
+      } else {
+        markStaticCapsule(element);
+      }
     });
 
     document.querySelectorAll("a, button").forEach((element) => {
@@ -653,7 +698,22 @@
         element.closest(".card, .hero-actions, .final-cta, .feedback-card, .path-card, .language-card, .lesson-card, .roadmap-card, .service-card, .pricing-card, .preview-steps, .preview-path-selector, .readiness-dashboard-page, .guide-page, .quiz-card, .test-options, .gcse-answer-options") &&
         actionChromeTextPattern.test(element.textContent.trim())
       ) {
-        element.classList.add("tp-action-chrome-capsule");
+        markInteractiveCapsule(element);
+      }
+    });
+
+    document.querySelectorAll(staticChromeCapsuleSelector).forEach((element) => {
+      if (
+        element.closest(".tp-new-view-nav-panel, .tp-new-view-nav-links, .tp-new-view-nav-brand") &&
+        !element.matches(".tp-new-view-panel-link")
+      ) {
+        return;
+      }
+
+      if (isInteractiveCapsuleElement(element)) {
+        markInteractiveCapsule(element);
+      } else {
+        markStaticCapsule(element);
       }
     });
   }

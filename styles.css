@@ -9717,3 +9717,236 @@ footer {
     width: calc(100vw - 24px) !important;
   }
 }
+
+/* New View: Interactive vs Static Capsules */
+.tp-new-view :is(
+  .tp-interactive-capsule,
+  a.tp-action-chrome-capsule,
+  button.tp-action-chrome-capsule,
+  [role="button"].tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn:is(a, button),
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+) {
+  animation: tpLiquidChromeRim 9s linear infinite !important;
+  cursor: pointer;
+}
+
+.tp-new-view :is(
+  .tp-interactive-capsule,
+  a.tp-action-chrome-capsule,
+  button.tp-action-chrome-capsule,
+  [role="button"].tp-action-chrome-capsule,
+  .tp-liquid-metal-link,
+  .tp-new-view-panel-link,
+  .tp-new-view-menu-button,
+  .tp-new-view-toggle,
+  .hero-actions a,
+  a.btn,
+  button.btn,
+  .btn:is(a, button),
+  .preview-path-selector button,
+  button[data-preview-path],
+  .preview-steps a,
+  .role-card-link,
+  .guide-home-link,
+  .readiness-category-action,
+  .personalised-roadmap-action,
+  .path-card a,
+  .language-card a,
+  .lesson-card a,
+  .roadmap-card a,
+  .service-card a,
+  .pricing-card a,
+  .quiz-option,
+  .answer-option,
+  .test-option,
+  .choice-option,
+  .option-button,
+  .gcse-option-button,
+  .practice-answer-option,
+  .active-test-button,
+  .topic-choice-button,
+  .practice-skill-button,
+  .quiz-next-button,
+  .quiz-retake-button,
+  .starter-quiz-button,
+  .gcse-secondary-button,
+  .quiz-modal-close,
+  .custom-dropdown-trigger,
+  .custom-dropdown-menu button,
+  button[class*="pill"],
+  a[class*="pill"],
+  button[class*="badge"],
+  a[class*="badge"],
+  button[class*="tag"],
+  a[class*="tag"]
+):is(:hover, :focus-visible) {
+  animation-duration: 6s !important;
+}
+
+.tp-new-view :is(
+  .tp-static-capsule,
+  .tp-action-chrome-capsule:not(.tp-interactive-capsule):not(a):not(button):not([role="button"]),
+  span.tp-action-chrome-capsule,
+  div.tp-action-chrome-capsule,
+  p.tp-action-chrome-capsule,
+  .badge:not(a):not(button):not([role="button"]),
+  .pill:not(a):not(button):not([role="button"]),
+  .tag:not(a):not(button):not([role="button"]),
+  .chip:not(a):not(button):not([role="button"]),
+  .status-badge:not(a):not(button):not([role="button"]),
+  .skill-tag:not(a):not(button):not([role="button"]),
+  .category-pill:not(a):not(button):not([role="button"]),
+  .roadmap-step:not(a):not(button):not([role="button"]),
+  .step-pill:not(a):not(button):not([role="button"]),
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .section-eyebrow,
+  .eyebrow,
+  .section-label,
+  .status-label,
+  .preview-path-selector-label,
+  span[class*="pill"],
+  div[class*="pill"],
+  p[class*="pill"],
+  span[class*="badge"],
+  div[class*="badge"],
+  p[class*="badge"],
+  span[class*="tag"]
+):not(.tp-interactive-capsule) {
+  --tp-chrome-angle: 0deg;
+  animation: none !important;
+  background:
+    var(--tp-liquid-capsule-fill) padding-box,
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.62),
+      rgba(155, 225, 255, 0.26) 34%,
+      rgba(255, 240, 205, 0.34) 62%,
+      rgba(190, 130, 255, 0.18)
+    ) border-box !important;
+  border: var(--tp-action-chrome-width, 2px) solid transparent !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -8px 20px rgba(0, 0, 0, 0.3),
+    0 8px 22px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(120, 220, 255, 0.07) !important;
+  cursor: default !important;
+  transform: none !important;
+}
+
+.tp-new-view :is(
+  .tp-static-capsule,
+  .tp-action-chrome-capsule:not(.tp-interactive-capsule):not(a):not(button):not([role="button"]),
+  span.tp-action-chrome-capsule,
+  div.tp-action-chrome-capsule,
+  p.tp-action-chrome-capsule,
+  .badge:not(a):not(button):not([role="button"]),
+  .pill:not(a):not(button):not([role="button"]),
+  .tag:not(a):not(button):not([role="button"]),
+  .chip:not(a):not(button):not([role="button"]),
+  .status-badge:not(a):not(button):not([role="button"]),
+  .skill-tag:not(a):not(button):not([role="button"]),
+  .category-pill:not(a):not(button):not([role="button"]),
+  .roadmap-step:not(a):not(button):not([role="button"]),
+  .step-pill:not(a):not(button):not([role="button"]),
+  .future-status-pill,
+  .difficulty-badge,
+  .topic-status-pill,
+  .readiness-status-badge,
+  .personalised-roadmap-stage,
+  .readiness-category-status,
+  .readiness-label,
+  .package-price,
+  .section-eyebrow,
+  .eyebrow,
+  .section-label,
+  .status-label,
+  .preview-path-selector-label,
+  span[class*="pill"],
+  div[class*="pill"],
+  p[class*="pill"],
+  span[class*="badge"],
+  div[class*="badge"],
+  p[class*="badge"],
+  span[class*="tag"]
+):not(.tp-interactive-capsule):is(:hover, :focus, :focus-visible) {
+  --tp-chrome-angle: 0deg;
+  animation: none !important;
+  background:
+    var(--tp-liquid-capsule-fill) padding-box,
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.62),
+      rgba(155, 225, 255, 0.26) 34%,
+      rgba(255, 240, 205, 0.34) 62%,
+      rgba(190, 130, 255, 0.18)
+    ) border-box !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -8px 20px rgba(0, 0, 0, 0.3),
+    0 8px 22px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(120, 220, 255, 0.07) !important;
+  cursor: default !important;
+  transform: none !important;
+}
+
+.tp-new-view :is(
+  .disabled-test-button,
+  button:disabled,
+  .tp-interactive-capsule[disabled],
+  .tp-interactive-capsule[aria-disabled="true"],
+  .btn[aria-disabled="true"]
+) {
+  animation: none !important;
+  cursor: not-allowed;
+  transform: none !important;
+}
