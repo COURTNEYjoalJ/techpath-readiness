@@ -262,6 +262,13 @@ Courtney is based in Liverpool, United Kingdom, and is an MSc Data Science & AI 
 - Uses only real saved assessment data and shows unassessed areas as not assessed yet.
 - Kept existing quiz scoring logic and localStorage keys unchanged.
 
+### v2.1-personalised-roadmap
+
+- Added a rules-based personalised roadmap section to the Readiness Dashboard.
+- Uses saved localStorage assessment data and simple score bands.
+- Does not use AI, a backend, accounts or external services.
+- Keeps unassessed categories separate instead of treating them as failed scores.
+
 ## Future Improvements
 
 - Add more career paths.
