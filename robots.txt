@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://courtneyjoalj.github.io/techpath-readiness/sitemap.xml
+Sitemap: https://techpathready.com/sitemap.xml

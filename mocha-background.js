@@ -351,7 +351,7 @@
       brand.appendChild(logoClone);
     }
 
-    label.textContent = "TechPath Readiness";
+    label.textContent = "TechPathReady";
     brand.appendChild(label);
 
     return brand;
