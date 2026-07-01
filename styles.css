@@ -2175,6 +2175,76 @@ pre {
   grid-column: 1 / -1;
 }
 
+.start-here-panel {
+  gap: 18px;
+}
+
+.start-here-intro {
+  color: var(--muted);
+  margin: -4px 0 0;
+}
+
+.start-here-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.start-here-group {
+  display: grid;
+  gap: 12px;
+}
+
+.start-here-group h2 {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.start-here-links {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.start-here-links .btn {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 44px;
+  text-align: center;
+}
+
+.directory-links .btn:last-child {
+  grid-column: 1 / -1;
+}
+
+.readiness-preview-section {
+  padding-top: 48px;
+}
+
+.career-preview-lower {
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.start-here-panel,
+.career-preview-lower .preview-panel {
+  background-clip: padding-box, border-box;
+  border-radius: var(--panel-radius-large);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.start-here-panel::before,
+.start-here-panel::after,
+.career-preview-lower .preview-panel::before,
+.career-preview-lower .preview-panel::after {
+  border-radius: inherit;
+  pointer-events: none;
+}
+
 .stats {
   width: min(1120px, 92%);
   margin: 42px auto 40px;
@@ -2465,9 +2535,12 @@ pre {
 }
 
 .practice-skill-button {
+  align-items: center;
   display: grid;
   gap: 6px;
+  justify-items: center;
   padding: 16px;
+  text-align: center;
 }
 
 .practice-skill-button span {
@@ -2669,12 +2742,30 @@ pre {
   flex-wrap: wrap;
   font-size: 0.86rem;
   font-weight: 800;
-  gap: 8px;
+  gap: 0.45rem;
+  line-height: 1.2;
   margin-bottom: 18px;
+}
+
+.breadcrumb > * {
+  align-items: center;
+  display: inline-flex;
+  min-height: 1.35em;
 }
 
 .breadcrumb a {
   color: var(--color-champagne-light);
+}
+
+.breadcrumb span[aria-hidden="true"] {
+  color: rgba(240, 197, 141, 0.68);
+  justify-content: center;
+  line-height: 1;
+  margin: 0 0.12rem;
+}
+
+.breadcrumb > span:not([aria-hidden="true"]) {
+  color: var(--muted);
 }
 
 .breadcrumb a:hover,
@@ -4300,6 +4391,17 @@ pre {
   justify-self: start;
 }
 
+.home-beta-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.home-beta-actions .btn {
+  justify-self: auto;
+}
+
 footer {
   padding: 34px;
   text-align: center;
@@ -5841,6 +5943,14 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .start-here-links {
+    grid-template-columns: 1fr;
+  }
+
+  .directory-links .btn:last-child {
+    grid-column: auto;
+  }
+
   .preview-role-list a:last-child,
   .preview-role-list button:last-child {
     grid-column: auto;
@@ -5967,6 +6077,17 @@ footer {
   }
 
   .hero-actions .btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .home-beta-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .home-beta-actions .btn {
+    justify-content: center;
     text-align: center;
     width: 100%;
   }
@@ -9958,4 +10079,62 @@ footer {
 .tp-new-view-toggle {
   display: none !important;
   pointer-events: none !important;
+}
+
+/* Homepage: Start Here Rounded Panel Cleanup */
+.tp-new-view .start-here-hub,
+.tp-new-view-body .start-here-hub,
+.tp-new-view .career-preview-lower,
+.tp-new-view-body .career-preview-lower {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+}
+
+.tp-new-view .start-here-hub::before,
+.tp-new-view .start-here-hub::after,
+.tp-new-view-body .start-here-hub::before,
+.tp-new-view-body .start-here-hub::after,
+.tp-new-view .career-preview-lower::before,
+.tp-new-view .career-preview-lower::after,
+.tp-new-view-body .career-preview-lower::before,
+.tp-new-view-body .career-preview-lower::after {
+  content: none !important;
+  display: none !important;
+}
+
+.tp-new-view .start-here-panel,
+.tp-new-view-body .start-here-panel,
+.tp-new-view .career-preview-lower .preview-panel,
+.tp-new-view-body .career-preview-lower .preview-panel {
+  background-clip: padding-box, border-box !important;
+  border-radius: var(--panel-radius-large) !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+}
+
+.tp-new-view .start-here-panel::before,
+.tp-new-view .start-here-panel::after,
+.tp-new-view-body .start-here-panel::before,
+.tp-new-view-body .start-here-panel::after,
+.tp-new-view .career-preview-lower .preview-panel::before,
+.tp-new-view .career-preview-lower .preview-panel::after,
+.tp-new-view-body .career-preview-lower .preview-panel::before,
+.tp-new-view-body .career-preview-lower .preview-panel::after {
+  border-radius: inherit !important;
+  pointer-events: none !important;
+}
+
+/* Homepage: Readiness Preview Label Alignment */
+.tp-new-view .career-preview-lower .preview-path-selector-label,
+.tp-new-view-body .career-preview-lower .preview-path-selector-label {
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  min-height: 44px;
+  text-align: center !important;
 }
