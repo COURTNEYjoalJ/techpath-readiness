@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="animations.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="reference-theme.css" />
   <meta name="description" content="Learn how TechPathReady helps learners explore tech career paths using roadmaps, skill quizzes and browser-saved readiness reports." />
   <link rel="canonical" href="https://techpathready.com/about.html" />
   <meta property="og:title" content="About TechPathReady | Tech Career Roadmaps and Readiness" />
@@ -41,12 +42,15 @@
   </script>
 </head>
 <body class="guide-page">
-  <header class="site-header guide-header">
+  <div class="sticky-nav-shell">
     <nav class="nav">
-      <a class="brand" href="index.html" aria-label="TechPathReady home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPathReady logo" /><span class="brand-text">TechPathReady</span></a>
+      <a class="brand" href="index.html" aria-label="TechPathReady home"><img class="site-logo-image" src="assets/favicon-512x512.png" alt="TechPathReady logo" /><span class="brand-text">TechPathReady</span></a>
       <a class="guide-home-link" href="index.html">Home</a>
       <a class="guide-home-link" href="career-path-guide.html">Career Guide</a>
     </nav>
+  </div>
+  <header class="site-header guide-header">
+
 
     <section class="hero guide-hero">
       <div class="hero-text">
@@ -60,6 +64,27 @@
   </header>
 
   <main>
+    <section class="section">
+      <div class="feedback-card">
+        <p class="tag">Founder</p>
+        <a class="btn secondary" href="courtney-joal-portfolio.html">Explore Courtney’s portfolio ↗</a>
+        <h2>Built by Courtney Joal J</h2>
+        <p>
+          TechPathReady was built by Courtney Joal J, an MSc Data Science & AI graduate from the University of Liverpool based in Liverpool, UK.
+        </p>
+        <p>
+          Courtney's background includes data science, AI, cloud learning, Python, SQL, machine learning, data analytics and Google Cloud Associate Cloud Engineer preparation.
+        </p>
+        <p>
+          The site was created to make career learning more structured: choose a path, follow a roadmap, test skills and review readiness before deciding what to study next.
+        </p>
+        <p>
+          Learners who want early 1-to-1 teaching or roadmap guidance for learning direction, project ideas, portfolio planning, personal development or career development can connect with Courtney on LinkedIn.
+        </p>
+        <a class="btn primary" href="career-guidance.html">Explore Career Guidance</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/courtney-joal-j/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      </div>
+    </section>
     <section class="section">
       <div class="section-heading">
         <p class="tag">Purpose</p>
@@ -127,26 +152,7 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="feedback-card">
-        <p class="tag">Founder</p>
-        <h2>Built by Courtney Joal J</h2>
-        <p>
-          TechPathReady was built by Courtney Joal J, an MSc Data Science & AI graduate from the University of Liverpool based in Liverpool, UK.
-        </p>
-        <p>
-          Courtney's background includes data science, AI, cloud learning, Python, SQL, machine learning, data analytics and Google Cloud Associate Cloud Engineer preparation.
-        </p>
-        <p>
-          The site was created to make career learning more structured: choose a path, follow a roadmap, test skills and review readiness before deciding what to study next.
-        </p>
-        <p>
-          Learners who want early 1-to-1 teaching or roadmap guidance for learning direction, project ideas, portfolio planning, personal development or career development can connect with Courtney on LinkedIn.
-        </p>
-        <a class="btn primary" href="career-guidance.html">Explore Career Guidance</a>
-        <a class="btn secondary" href="https://www.linkedin.com/in/courtney-joal-j/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
-      </div>
-    </section>
+
 
     <section class="section final-cta">
       <p class="tag">Start</p>
@@ -166,6 +172,7 @@
   </footer>
 
   <script src="scroll-reveal.js"></script>
-  <script src="mocha-background.js"></script>
+  <script src="reference-theme.js"></script>
 </body>
 </html>
+

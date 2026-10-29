@@ -292,8 +292,8 @@ body > footer {
 
 .mocha-bg-vignette {
   background:
-    radial-gradient(circle at 22% 78%, transparent 0 26%, rgba(2, 3, 5, 0.5) 62%, var(--bg-vignette) 100%),
-    linear-gradient(180deg, rgba(2, 3, 5, 0.35), rgba(1, 1, 1, 0.82));
+    radial-gradient(circle at 22% 78%, transparent 0 26%, rgba(238, 239, 246, 0.5) 62%, var(--bg-vignette) 100%),
+    linear-gradient(180deg, rgba(238, 239, 246, 0.35), rgba(238, 239, 246, 0.82));
 }
 
 body:not(.guide-page) .site-header {
@@ -874,7 +874,7 @@ body:not(.guide-page) .site-header::after {
 
 .readiness-score-ring-inner {
   align-items: center;
-  background: rgba(8, 6, 4, 0.88);
+  background: rgba(238, 239, 246, 0.88);
   border: 1px solid var(--color-border);
   border-radius: 50%;
   display: flex;
@@ -1493,7 +1493,7 @@ body.modal-open {
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
   color: var(--accent);
-  padding: 7px 10px;
+  padding: 7px10px;
 }
 
 .gcse-answer-options {
@@ -1834,7 +1834,7 @@ pre {
 }
 
 .readiness-preview-result {
-  background: linear-gradient(145deg, rgba(3, 7, 17, 0.46), rgba(24, 14, 8, 0.3));
+  background: linear-gradient(145deg, rgba(238, 239, 246, 0.46), rgba(238, 239, 246, 0.3));
   border: 1px solid rgba(240, 197, 141, 0.24);
   border-radius: var(--radius-lg);
   box-shadow:
@@ -1913,7 +1913,7 @@ pre {
 }
 
 .readiness-graph-score {
-  background: rgba(6, 17, 29, 0.5);
+  background: rgba(238, 239, 246, 0.5);
   border: 1px solid rgba(255, 225, 179, 0.18);
   border-radius: var(--radius-md);
   min-width: 92px;
@@ -1971,7 +1971,7 @@ pre {
 }
 
 .readiness-graph-bar {
-  background: rgba(6, 17, 29, 0.74);
+  background: rgba(238, 239, 246, 0.74);
   border: 1px solid rgba(255, 225, 179, 0.1);
   border-radius: var(--radius-pill);
   height: 7px;
@@ -2341,7 +2341,7 @@ pre {
   align-items: center;
   align-self: start;
   background:
-    linear-gradient(135deg, rgba(18, 25, 29, 0.98), rgba(2, 4, 6, 0.99)) padding-box,
+    linear-gradient(135deg, rgba(238, 239, 246, 0.98), rgba(238, 239, 246, 0.99)) padding-box,
     linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(155, 225, 255, 0.28), rgba(255, 240, 205, 0.34)) border-box;
   border: 2px solid transparent;
   border-radius: var(--radius-pill);
@@ -2391,7 +2391,7 @@ pre {
 
 .payment-review-note {
   background:
-    linear-gradient(135deg, rgba(18, 25, 29, 0.82), rgba(5, 8, 10, 0.9)) padding-box,
+    linear-gradient(135deg, rgba(238, 239, 246, 0.82), rgba(238, 239, 246, 0.9)) padding-box,
     linear-gradient(135deg, rgba(255, 255, 255, 0.42), rgba(155, 225, 255, 0.18), rgba(255, 240, 205, 0.22)) border-box;
   border: 1px solid transparent;
   border-radius: var(--panel-radius-large);
@@ -2437,7 +2437,7 @@ pre {
   padding-right: max(4%, calc((100% - 1120px) / 2));
   background:
     radial-gradient(circle at 14% 10%, rgba(45, 140, 200, 0.08), transparent 28%),
-    linear-gradient(180deg, rgba(13, 8, 5, 0.82), rgba(8, 6, 4, 0.94));
+    linear-gradient(180deg, rgba(238, 239, 246, 0.82), rgba(238, 239, 246, 0.94));
 }
 
 .section-heading {
@@ -2563,7 +2563,7 @@ pre {
 }
 
 .future-role-card {
-  background: linear-gradient(145deg, rgba(45, 140, 200, 0.11), rgba(24, 14, 8, 0.64));
+  background: linear-gradient(145deg, rgba(45, 140, 200, 0.11), rgba(238, 239, 246, 0.64));
 }
 
 .future-status-pill {
@@ -2928,7 +2928,7 @@ pre {
 .lesson-dock {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.06), transparent 28%),
-    linear-gradient(180deg, rgba(24, 14, 8, 0.74), rgba(7, 12, 17, 0.78));
+    linear-gradient(180deg, rgba(238, 239, 246, 0.74), rgba(238, 239, 246, 0.78));
   border: 1px solid rgba(240, 197, 141, 0.34);
   border-radius: var(--radius-pill);
   box-shadow:
@@ -2955,7 +2955,7 @@ pre {
 
 .lesson-dock-item {
   align-items: center;
-  background: rgba(6, 17, 29, 0.62);
+  background: rgba(238, 239, 246, 0.62);
   border: 1px solid rgba(255, 225, 179, 0.2);
   border-radius: var(--radius-pill);
   color: var(--text);
@@ -2990,7 +2990,7 @@ pre {
 .dock-label {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 34%),
-    rgba(7, 12, 17, 0.88);
+    rgba(238, 239, 246, 0.88);
   border: 1px solid rgba(240, 197, 141, 0.34);
   border-radius: var(--radius-pill);
   box-shadow:
@@ -3250,7 +3250,7 @@ pre {
   opacity: 0.72;
   padding: var(--tp-action-chrome-width);
   pointer-events: none;
-  position: absolute;
+  position:absolute;
   transform-origin: center;
   z-index: 2;
   -webkit-mask:
@@ -4287,14 +4287,14 @@ pre {
 }
 
 .mistake-card {
-  background: linear-gradient(145deg, rgba(58, 31, 17, 0.56), rgba(8, 12, 16, 0.62));
+  background: linear-gradient(145deg, rgba(238, 239, 246, 0.56), rgba(238, 239, 246, 0.62));
   border-color: rgba(240, 197, 141, 0.3);
 }
 
 .keyword-table-wrap {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.06), transparent 26%),
-    rgba(6, 17, 29, 0.58);
+    rgba(238, 239, 246, 0.58);
   border: 1px solid rgba(255, 225, 179, 0.18);
   border-radius: var(--radius-lg);
   box-shadow:
@@ -4345,7 +4345,7 @@ pre {
 .checkpoint-card {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.07), transparent 24%),
-    linear-gradient(135deg, rgba(6, 17, 29, 0.68), rgba(24, 14, 8, 0.72));
+    linear-gradient(135deg, rgba(238, 239, 246, 0.68), rgba(238, 239, 246, 0.72));
 }
 
 .concept-diagram,
@@ -4374,7 +4374,7 @@ pre {
 .flow-step,
 .list-diagram span,
 .record-diagram p {
-  background: rgba(6, 17, 29, 0.62);
+  background: rgba(238, 239, 246, 0.62);
   border: 1px solid rgba(255, 225, 179, 0.2);
   border-radius: var(--radius-lg);
   color: var(--text);
@@ -4421,7 +4421,7 @@ pre {
 }
 
 .code-example {
-  background: rgba(3, 7, 17, 0.84);
+  background: rgba(238, 239, 246, 0.84);
   border: 1px solid rgba(255, 225, 179, 0.18);
   border-radius: var(--radius-lg);
   color: var(--color-primary-strong);
@@ -4655,7 +4655,7 @@ footer {
 }
 
 .business-pricing-note {
-  background: rgba(6, 17, 29, 0.58);
+  background: rgba(238, 239, 246, 0.58);
   border: 1px solid rgba(255, 225, 179, 0.18);
   border-radius: var(--radius-lg);
   color: var(--muted);
@@ -4700,7 +4700,7 @@ footer {
 }
 
 .readiness-dashboard-note {
-  background: rgba(6, 17, 29, 0.58);
+  background: rgba(238, 239, 246, 0.58);
   border: 1px solid rgba(255, 225, 179, 0.18);
   border-radius: var(--radius-lg);
   box-sizing: border-box;
@@ -4869,7 +4869,7 @@ footer {
 }
 
 .readiness-category-progress {
-  background: rgba(1, 2, 4, 0.48);
+  background: rgba(238, 239, 246, 0.48);
   border: 1px solid rgba(255, 225, 179, 0.14);
   border-radius: var(--radius-pill);
   height: 8px;
@@ -4893,7 +4893,7 @@ footer {
 }
 
 .readiness-source-list li {
-  background: rgba(6, 17, 29, 0.46);
+  background: rgba(238, 239, 246, 0.46);
   border: 1px solid rgba(255, 225, 179, 0.14);
   border-radius: var(--radius-md);
   display: grid;
@@ -4941,7 +4941,7 @@ footer {
 }
 
 .readiness-roadmap-safe-note {
-  background: rgba(6, 17, 29, 0.58);
+  background: rgba(238, 239, 246, 0.58);
   border: 1px solid rgba(255, 225, 179, 0.16);
   border-radius: var(--radius-lg);
   color: var(--muted);
@@ -5071,7 +5071,7 @@ footer {
 }
 
 .personalised-roadmap-note {
-  background: rgba(6, 17, 29, 0.46);
+  background: rgba(238, 239, 246, 0.46);
   border: 1px solid rgba(255, 225, 179, 0.14);
   border-radius: var(--radius-md);
   font-size: 0.92rem;
@@ -5173,7 +5173,7 @@ footer {
 
 .tp-new-view-toggle-switch {
   align-items: center;
-  background: rgba(3, 7, 17, 0.72);
+  background: rgba(238, 239, 246, 0.72);
   border: 1px solid rgba(255, 225, 179, 0.2);
   border-radius: var(--radius-pill);
   display: inline-flex;
@@ -5276,7 +5276,7 @@ footer {
 
 .tp-new-view .tp-liquid-metal-link {
   background:
-    linear-gradient(145deg, rgba(8, 13, 20, 0.9), rgba(24, 14, 8, 0.78)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.9), rgba(238, 239, 246, 0.78)) padding-box,
     conic-gradient(
       from 160deg,
       rgba(255, 225, 179, 0.16),
@@ -5681,7 +5681,7 @@ footer {
 ):is(:hover, :focus, :focus-visible, :focus-within),
 .tp-new-view :is(.preview-role-list button.is-selected) {
   background:
-    linear-gradient(145deg, rgba(9, 16, 25, 0.92), rgba(34, 20, 11, 0.84)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.92), rgba(238, 239, 246, 0.84)) padding-box,
     var(--tp-liquid-hover-border) border-box;
   border-color: transparent;
   box-shadow: var(--tp-liquid-shadow-hover);
@@ -5719,7 +5719,7 @@ footer {
 
 .tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct) {
   background:
-    linear-gradient(145deg, rgba(8, 31, 20, 0.84), rgba(5, 18, 15, 0.78)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.84), rgba(238, 239, 246, 0.78)) padding-box,
     linear-gradient(135deg, rgba(159, 227, 192, 0.72), rgba(205, 245, 255, 0.28)) border-box;
   color: var(--color-text);
   box-shadow:
@@ -5729,7 +5729,7 @@ footer {
 
 .tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect) {
   background:
-    linear-gradient(145deg, rgba(38, 20, 10, 0.86), rgba(12, 8, 6, 0.8)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.86), rgba(238, 239, 246, 0.8)) padding-box,
     linear-gradient(135deg, rgba(240, 197, 141, 0.72), rgba(198, 138, 82, 0.34)) border-box;
   color: var(--color-text);
   box-shadow:
@@ -5749,7 +5749,7 @@ footer {
   align-items: center;
   background:
     radial-gradient(circle at 50% 120%, rgba(90, 167, 214, 0.14), transparent 26%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.78), rgba(5, 8, 12, 0.9));
+    linear-gradient(180deg, rgba(238, 239, 246, 0.78), rgba(238, 239, 246, 0.9));
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0 0 30px 30px;
   box-shadow:
@@ -5788,7 +5788,7 @@ footer {
 
 .tp-new-view .nav::after {
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.88) 0 42%, rgba(255, 255, 255, 0.08) 43%, transparent 45%),
+    radial-gradient(ellipse at 50% 0%, rgba(238, 239, 246, 0.88) 0 42%, rgba(255, 255, 255, 0.08) 43%, transparent 45%),
     linear-gradient(90deg, transparent, rgba(205, 245, 255, 0.24), rgba(255, 225, 179, 0.24), transparent);
   border-radius: 0 0 48px 48px;
   bottom: -28px;
@@ -5804,7 +5804,7 @@ footer {
 
 .tp-new-view .brand {
   background:
-    linear-gradient(145deg, rgba(0, 0, 0, 0.78), rgba(7, 14, 22, 0.88)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.78), rgba(238, 239, 246, 0.88)) padding-box,
     linear-gradient(135deg, rgba(255, 225, 179, 0.28), rgba(205, 245, 255, 0.3)) border-box;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
@@ -5873,14 +5873,14 @@ footer {
 
 .tp-new-view .tp-new-view-toggle {
   background:
-    linear-gradient(145deg, rgba(0, 0, 0, 0.68), rgba(8, 16, 25, 0.72)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.68), rgba(238, 239, 246, 0.72)) padding-box,
     linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(205, 245, 255, 0.28), rgba(255, 225, 179, 0.22)) border-box;
   min-height: 38px;
 }
 
 .tp-new-view .tp-liquid-metal-link {
   background:
-    linear-gradient(145deg, rgba(4, 8, 13, 0.88), rgba(14, 20, 29, 0.74)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.88), rgba(238, 239, 246, 0.74)) padding-box,
     var(--tp-liquid-rest-border) border-box;
   background-size: 100% 100%, 210% 210%;
   border: 1px solid transparent;
@@ -5905,7 +5905,7 @@ footer {
 .tp-new-view .tp-liquid-metal-link:focus-visible,
 .tp-new-view .tp-liquid-metal-link.tp-current-page-link {
   background:
-    linear-gradient(145deg, rgba(8, 14, 22, 0.94), rgba(28, 17, 10, 0.82)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.94), rgba(238, 239, 246, 0.82)) padding-box,
     var(--tp-liquid-hover-border) border-box;
   box-shadow:
     0 16px 36px rgba(0, 0, 0, 0.32),
@@ -6425,7 +6425,7 @@ footer {
 
   .tp-new-view .nav-links {
     background:
-      linear-gradient(145deg, rgba(8, 12, 18, 0.94), rgba(24, 14, 8, 0.9)) padding-box,
+      linear-gradient(145deg, rgba(238, 239, 246, 0.94), rgba(238, 239, 246, 0.9)) padding-box,
       linear-gradient(135deg, rgba(255, 225, 179, 0.32), rgba(90, 167, 214, 0.22)) border-box;
     border: 1px solid transparent;
     border-radius: var(--radius-lg);
@@ -6532,7 +6532,7 @@ footer {
 .tp-new-view .nav {
   align-items: center;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(3, 7, 10, 0.88));
+    linear-gradient(180deg, rgba(238, 239, 246, 0.72), rgba(238, 239, 246, 0.88));
   border: 1px solid rgba(156, 198, 220, 0.18);
   border-radius: 0 0 32px 32px;
   box-shadow:
@@ -6555,7 +6555,7 @@ footer {
 
 .tp-new-view .nav::after {
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.72) 0 38%, rgba(156, 198, 220, 0.14) 39%, transparent 46%),
+    radial-gradient(ellipse at 50% 0%, rgba(238, 239, 246, 0.72) 0 38%, rgba(156, 198, 220, 0.14) 39%, transparent 46%),
     linear-gradient(90deg, transparent, rgba(156, 198, 220, 0.2), rgba(255, 225, 179, 0.14), transparent);
   border-radius: 0 0 34px 34px;
   bottom: -12px;
@@ -6565,7 +6565,7 @@ footer {
 
 .tp-new-view .brand {
   background:
-    linear-gradient(145deg, rgba(4, 8, 12, 0.9), rgba(10, 18, 27, 0.8)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.9), rgba(238, 239, 246, 0.8)) padding-box,
     var(--tp-pill-border) border-box;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
@@ -6724,7 +6724,7 @@ footer {
 .tp-new-view .preview-role-list button.is-selected,
 .tp-new-view .tp-current-page-link {
   background:
-    linear-gradient(145deg, rgba(8, 14, 21, 0.92), rgba(19, 14, 10, 0.82)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.92), rgba(238, 239, 246, 0.82)) padding-box,
     var(--tp-pill-border-hover) border-box;
   box-shadow:
     0 10px 22px rgba(0, 0, 0, 0.26),
@@ -7024,7 +7024,7 @@ footer {
 .tp-new-view .nav {
   align-items: center;
   background:
-    linear-gradient(145deg, rgba(2, 4, 6, 0.9), rgba(7, 10, 14, 0.82));
+    linear-gradient(145deg, rgba(238, 239, 246, 0.9), rgba(238, 239, 246, 0.82));
   border: 1px solid rgba(160, 200, 220, 0.16);
   border-radius: var(--radius-pill);
   box-shadow:
@@ -7117,7 +7117,7 @@ footer {
 .tp-new-view .tp-new-view-menu-button:focus-visible,
 .tp-new-view.tp-nav-open .tp-new-view-menu-button {
   background:
-    linear-gradient(145deg, rgba(8, 14, 21, 0.92), rgba(19, 14, 10, 0.82)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.92), rgba(238, 239, 246, 0.82)) padding-box,
     var(--tp-pill-border-hover) border-box;
   box-shadow:
     0 10px 22px rgba(0, 0, 0, 0.26),
@@ -7130,7 +7130,7 @@ footer {
 /* New View: Expanded Navigation Panel */
 .tp-new-view .tp-new-view-nav-panel {
   background:
-    linear-gradient(180deg, rgba(2, 4, 6, 0.96), rgba(6, 9, 12, 0.92));
+    linear-gradient(180deg, rgba(238, 239, 246, 0.96), rgba(238, 239, 246, 0.92));
   border: 1px solid rgba(160, 200, 220, 0.16);
   border-radius: 28px;
   box-shadow:
@@ -7219,7 +7219,7 @@ footer {
 .tp-new-view .tp-new-view-panel-link:focus-visible,
 .tp-new-view .tp-new-view-panel-link.tp-current-page-link {
   background:
-    linear-gradient(145deg, rgba(8, 14, 21, 0.92), rgba(19, 14, 10, 0.82)) padding-box,
+    linear-gradient(145deg, rgba(238, 239, 246, 0.92), rgba(238, 239, 246, 0.82)) padding-box,
     var(--tp-pill-border-hover) border-box;
   box-shadow:
     0 10px 22px rgba(0, 0, 0, 0.26),
@@ -7297,7 +7297,7 @@ footer {
 .tp-new-view .tp-new-view-nav-panel {
   align-items: center;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.96), rgba(3, 7, 10, 0.94));
+    linear-gradient(180deg, rgba(238, 239, 246, 0.96), rgba(238, 239, 246, 0.94));
   border: 1px solid rgba(170, 210, 230, 0.14);
   border-radius: 30px;
   box-shadow:
@@ -7321,7 +7321,7 @@ footer {
 
 .tp-new-view .tp-new-view-nav-panel::after {
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(1, 3, 5, 0.68) 0 42%, rgba(0, 0, 0, 0.34) 52%, transparent 72%);
+    radial-gradient(ellipse at 50% 0%, rgba(238, 239, 246, 0.68) 0 42%, rgba(238, 239, 246, 0.34) 52%, transparent 72%);
   border-radius: 0 0 42px 42px;
   bottom: -20px;
   content: "";
@@ -7518,7 +7518,7 @@ footer {
   span[class*="tag"]
 ) {
   background:
-    linear-gradient(180deg, rgba(12, 17, 20, 0.92), var(--tp-capsule-bg) 48%, rgba(2, 4, 6, 0.94)) padding-box,
+    linear-gradient(180deg, rgba(238, 239, 246, 0.92), var(--tp-capsule-bg) 48%, rgba(238, 239, 246, 0.94)) padding-box,
     var(--tp-capsule-rim) border-box;
   border-color: transparent;
   border-style: solid;
@@ -7757,7 +7757,7 @@ footer {
   .test-option
 ):is(.tp-current-page-link, .is-selected, .selected, .active, [aria-pressed="true"], [aria-current="page"]) {
   background:
-    linear-gradient(180deg, rgba(18, 24, 29, 0.96), var(--tp-capsule-bg-hover) 48%, rgba(4, 7, 10, 0.98)) padding-box,
+    linear-gradient(180deg, rgba(238, 239, 246, 0.96), var(--tp-capsule-bg-hover) 48%, rgba(238, 239, 246, 0.98)) padding-box,
     var(--tp-capsule-rim) border-box;
   box-shadow:
     0 14px 34px rgba(0, 0, 0, 0.42),
@@ -8218,7 +8218,7 @@ footer {
 
 .tp-new-view :is(.gcse-option-button.correct, .practice-answer-option.correct, .test-option.correct) {
   background:
-    linear-gradient(180deg, rgba(9, 29, 20, 0.96), rgba(4, 14, 11, 0.98)) padding-box,
+    linear-gradient(180deg, rgba(238, 239, 246, 0.96), rgba(238, 239, 246, 0.98)) padding-box,
     linear-gradient(135deg, rgba(143, 255, 190, 0.74), rgba(120, 220, 255, 0.24), rgba(255, 242, 216, 0.26)) border-box;
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.34),
@@ -8241,7 +8241,7 @@ footer {
 
 .tp-new-view :is(.gcse-option-button.incorrect, .practice-answer-option.incorrect, .test-option.incorrect) {
   background:
-    linear-gradient(180deg, rgba(36, 12, 12, 0.96), rgba(16, 5, 6, 0.98)) padding-box,
+    linear-gradient(180deg, rgba(238, 239, 246, 0.96), rgba(238, 239, 246, 0.98)) padding-box,
     linear-gradient(135deg, rgba(255, 150, 120, 0.66), rgba(255, 210, 160, 0.24), rgba(120, 220, 255, 0.14)) border-box;
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.34),
@@ -9583,9 +9583,9 @@ footer {
   background:
     linear-gradient(
       135deg,
-      rgba(22, 31, 36, 0.99) 0%,
-      rgba(10, 15, 19, 0.99) 45%,
-      rgba(2, 4, 6, 0.99) 100%
+      rgba(238, 239, 246, 0.99) 0%,
+      rgba(238, 239, 246, 0.99) 45%,
+      rgba(238, 239, 246, 0.99) 100%
     ) padding-box,
     conic-gradient(
       from var(--tp-chrome-angle),
@@ -10302,3 +10302,4 @@ footer {
   min-height: 44px;
   text-align: center !important;
 }
+

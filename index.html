@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="animations.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="reference-theme.css" />
   <meta name="description" content="Explore tech career roadmaps, choose a role-based learning path, practice skill quizzes and review readiness reports with TechPathReady." />
   <link rel="canonical" href="https://techpathready.com/" />
   <meta property="og:title" content="TechPathReady | Tech Career Roadmaps and Skill Tests" />
@@ -32,10 +33,10 @@
     }
   </script>
 </head>
-<body>
-  <header class="site-header">
+<body class="home-page">
+  <div class="sticky-nav-shell">
     <nav class="nav">
-      <a class="brand" href="index.html" aria-label="TechPathReady home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPathReady logo" /><span class="brand-text">TechPathReady</span></a>
+      <a class="brand" href="index.html" aria-label="TechPathReady home"><img class="site-logo-image" src="assets/favicon-512x512.png" alt="TechPathReady logo" /><span class="brand-text">TechPathReady</span></a>
       <button class="menu-btn" id="menuBtn">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="#supported-paths">Career Paths</a>
@@ -43,15 +44,19 @@
         <a href="#supported-paths">Roadmap</a>
         <a href="#projects">Projects</a>
         <a href="#quiz">Quiz</a>
+        <a href="about.html">About</a>
         <a href="business.html">Business</a>
         <a href="career-path-guide.html">Career Guide</a>
       </div>
     </nav>
+  </div>
+  <header class="site-header">
+
 
     <section class="hero">
       <div class="hero-text">
         <p class="tag">Career-path learning and readiness</p>
-        <h1>Your Path. Your Future.</h1>
+        <h1>Your Path. <span>Your Future.</span></h1>
         <p class="subtitle">
           Discover your readiness, explore career paths, and build the skills that drive real impact.
           TechPathReady brings roadmaps, skill tests and next-step reports into one focused experience.
@@ -61,6 +66,11 @@
           <a class="btn secondary" href="#supported-paths">Explore Paths</a>
         </div>
       </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section support-section" aria-label="Start here">
       <div class="career-preview start-here-hub" aria-label="Start here links">
         <div class="preview-panel start-here-panel">
           <div class="preview-header">
@@ -99,9 +109,6 @@
         </div>
       </div>
     </section>
-  </header>
-
-  <main>
     <section class="stats">
       <div>
         <h2>6</h2>
@@ -491,6 +498,7 @@
   <script src="script.js"></script>
   <script src="homepage-readiness-preview.js"></script>
   <script src="scroll-reveal.js"></script>
-  <script src="mocha-background.js"></script>
+  <script src="reference-theme.js"></script>
 </body>
 </html>
+

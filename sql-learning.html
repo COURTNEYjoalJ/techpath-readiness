@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="animations.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="reference-theme.css" />
   <meta name="description" content="Learn SQL from scratch with tables, query examples, diagrams, exercises, mini-project tasks and a final student progress database report." />
   <link rel="canonical" href="https://techpathready.com/sql-learning.html" />
   <meta property="og:title" content="SQL Learning Path for Beginners | TechPathReady" />
@@ -37,9 +38,9 @@
   </script>
 </head>
 <body id="top" class="guide-page learning-page">
-  <header class="site-header guide-header lesson-hero">
+  <div class="sticky-nav-shell">
     <nav class="nav">
-      <a class="brand" href="index.html" aria-label="TechPathReady home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPathReady logo" /><span class="brand-text">TechPathReady</span></a>
+      <a class="brand" href="index.html" aria-label="TechPathReady home"><img class="site-logo-image" src="assets/favicon-512x512.png" alt="TechPathReady logo" /><span class="brand-text">TechPathReady</span></a>
       <div class="learning-nav-links" aria-label="SQL learning navigation">
         <a class="guide-home-link" href="index.html">Home</a>
         <a class="guide-home-link" href="python-learning.html">Python</a>
@@ -47,6 +48,9 @@
         <a class="guide-home-link" href="contact.html">Contact</a>
       </div>
     </nav>
+  </div>
+  <header class="site-header guide-header lesson-hero">
+
 
     <section class="hero guide-hero">
       <div class="hero-text">
@@ -186,7 +190,7 @@ learner_id | learner_name
         <pre class="code-example"><code>SELECT learner_name, readiness_score
 FROM learners;</code></pre>
 
-        <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
+   <p><strong>Why this matters:</strong> It helps you turn table data into the Student Progress Database Report.</p>
         <p><strong>How to understand this example:</strong> Read it from top to bottom. First notice the key word, then notice the value, element or result it controls.</p>
         <div class="keyword-table-wrap"><table class="keyword-table"><caption>Key words for this subtopic</caption><thead><tr><th>Key word</th><th>Simple meaning</th><th>Why we use it</th><th>Tiny example</th></tr></thead><tbody><tr><td>SELECT specific columns and SELECT *</td><td>The main idea in this part of the lesson</td><td>It gives you one building block for the final project</td><td><code>SELECT *</code></td></tr><tr><td>example</td><td>A small sample that shows the idea</td><td>It helps you see how the concept looks in practice</td><td><code>SELECT *</code></td></tr><tr><td>mini-project task</td><td>A small build step after the exercise</td><td>It turns the lesson into part of the Student Progress Database Report</td><td>Student Progress Database Report</td></tr></tbody></table></div>        <div class="exercise-card"><h4>Quick exercise</h4><p>Write a query that shows learner names and courses.</p></div>
         <div class="mini-task-card"><h4>Mini-project task</h4><p>Write a query to display learner progress.</p></div>
@@ -412,6 +416,7 @@ ORDER BY average_score ASC;</code></pre>
     <p>&copy; 2026 TechPathReady. Built for career-path learning and programming practice.</p>
   </footer>
   <script src="scroll-reveal.js"></script>
-  <script src="mocha-background.js"></script>
+  <script src="reference-theme.js"></script>
 </body>
 </html>
+

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="animations.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="reference-theme.css" />
   <meta name="description" content="View a browser-based TechPathReady snapshot from saved Career Path Guide and GCSE starter quiz results." />
   <link rel="canonical" href="https://techpathready.com/readiness-dashboard.html" />
   <meta property="og:title" content="Your TechPathReady Dashboard | TechPathReady" />
@@ -37,14 +38,17 @@
   </script>
 </head>
 <body class="guide-page readiness-dashboard-page">
-  <header class="site-header guide-header">
+  <div class="sticky-nav-shell">
     <nav class="nav">
-      <a class="brand" href="index.html" aria-label="TechPathReady home"><img class="site-logo-image" src="assets/techpath-logo.png" alt="TechPathReady logo" /><span class="brand-text">TechPathReady</span></a>
+      <a class="brand" href="index.html" aria-label="TechPathReady home"><img class="site-logo-image" src="assets/favicon-512x512.png" alt="TechPathReady logo" /><span class="brand-text">TechPathReady</span></a>
       <a class="guide-home-link" href="index.html">Home</a>
       <a class="guide-home-link" href="career-path-guide.html">Career Guide</a>
       <a class="guide-home-link" href="gcse-maths-python-roadmap.html">GCSE Quiz</a>
       <a class="guide-home-link" href="business.html">Beta Support</a>
     </nav>
+  </div>
+  <header class="site-header guide-header">
+
 
     <section class="hero guide-hero readiness-dashboard-hero">
       <div class="hero-text">
@@ -143,6 +147,7 @@
   <script src="career-data.js"></script>
   <script src="readiness-score.js"></script>
   <script src="scroll-reveal.js"></script>
-  <script src="mocha-background.js"></script>
+  <script src="reference-theme.js"></script>
 </body>
 </html>
+
