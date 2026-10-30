@@ -36,3 +36,19 @@
  Object.entries(groups).forEach(([name,items])=>{const title=document.createElement('h4');title.textContent=name;const ul=document.createElement('ul');items.forEach(item=>{const li=document.createElement('li');const b=document.createElement('button');b.type='button';b.className='skill-filter';b.textContent=item;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{activeSkill=activeSkill===item?null:item;skillButtons.forEach(x=>x.setAttribute('aria-pressed',String(x.textContent===activeSkill)));filter(activeStatus);});skillButtons.push(b);li.append(b);ul.append(li);});skills.append(title,ul);});
  const clear=document.createElement('button');clear.type='button';clear.className='skill-filter';clear.textContent='Clear skill filter';clear.addEventListener('click',()=>{activeSkill=null;skillButtons.forEach(b=>b.setAttribute('aria-pressed','false'));filter(activeStatus);});skills.append(clear);browser.append(list,detail,skills);grid.replaceWith(browser);filter(0);
 })();
+
+/* Hand wheel input back to the document when an inner pane cannot scroll. */
+(() => {
+ const browser=document.querySelector('.project-browser');
+ if(!browser)return;
+ browser.addEventListener('wheel',event=>{
+  if(event.ctrlKey||event.shiftKey||Math.abs(event.deltaX)>Math.abs(event.deltaY)||!event.deltaY)return;
+  const pane=event.target.closest('.project-list,.project-detail,.portfolio-skills');
+  if(!pane)return;
+  const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?window.innerHeight:1);
+  const maximum=Math.max(0,pane.scrollHeight-pane.clientHeight);
+  const canScroll=delta>0?pane.scrollTop<maximum-1:pane.scrollTop>1;
+  if(!canScroll){event.preventDefault();window.scrollBy({top:delta,behavior:'instant'});}
+ },{passive:false});
+})();
+
