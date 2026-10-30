@@ -198,3 +198,47 @@ body.portfolio-page[data-mode="light"] .project-filters .glass-filter[aria-press
 body.portfolio-page[data-mode="light"] .filter-slider { background:linear-gradient(135deg,#fff8f0,#f2d9c5) !important; border-color:#b94c08 !important; box-shadow:inset 0 1px 1px #fff,0 2px 7px #70300018 !important; }
 body.portfolio-page[data-mode="light"] .portfolio-skills .skill-filter[aria-pressed="true"] { background:#f8e4d4 !important; color:#702800 !important; border-color:#b94c08 !important; }
 body.portfolio-page[data-mode="light"][data-neon="true"] :is(.tag,.portfolio-status,.terminal-command span),body.portfolio-page[data-mode="light"][data-neon="true"] .project-select[aria-pressed="true"] strong { text-shadow:none !important; }
+/* Mobile-only portfolio layout: desktop rules remain unchanged. */
+@media (max-width:700px) {
+ body.portfolio-page { font-size:14px; line-height:1.6; overflow-x:clip; }
+ .portfolio-page .sticky-nav-shell .nav { width:92%; display:grid; grid-template-columns:1fr auto; padding:10px 0; gap:8px 10px; }
+ .portfolio-page .sticky-nav-shell .brand { font-size:17px; letter-spacing:-.04em; }
+ .portfolio-page .portfolio-preferences { grid-column:2; grid-row:1; }
+ body.portfolio-page .portfolio-preferences button { font-size:11px; min-height:36px; padding:7px 9px; }
+ .portfolio-page .sticky-nav-shell .portfolio-index { grid-column:1/-1; grid-row:2; display:flex; flex-wrap:nowrap; overflow-x:auto; gap:18px; padding:4px 0; font-size:11px; line-height:1.4; scrollbar-width:none; }
+ .portfolio-page .sticky-nav-shell .portfolio-index a { white-space:nowrap; padding:5px 0; }
+ .portfolio-page .terminal-hero { min-height:0; padding:68px 0 52px; gap:22px; width:90%; }
+ .portfolio-page .terminal-hero h1 { font-size:clamp(29px,8vw,43px); letter-spacing:-.065em; line-height:1.2; }
+ .portfolio-page .terminal-hero .tag { font-size:10px; letter-spacing:.09em; max-width:290px; }
+ .portfolio-page .terminal-actions { margin-top:8px; gap:10px; }
+ body.portfolio-page .terminal-command { min-height:48px; padding:13px 14px; font-size:12px; gap:8px; }
+ .portfolio-page .section,.portfolio-page #work { width:92%; padding-top:30px; padding-bottom:30px; }
+ .portfolio-page .section-heading { padding-left:14px; margin-bottom:20px; }
+ .portfolio-page .section-heading h2 { font-size:25px; line-height:1.25; letter-spacing:-.045em; }
+ .portfolio-page .section-heading p { font-size:13px; line-height:1.65; }
+ .portfolio-page .project-filters { width:100%; margin:20px auto; }
+ body.portfolio-page .project-filters .glass-filter { font-size:11px; min-height:42px; padding:10px 4px; }
+ .portfolio-page .project-browser { display:flex; flex-direction:column; height:auto; min-height:0; max-height:none; border-radius:13px; }
+ .portfolio-page .project-list { display:flex !important; flex-direction:column !important; flex:none; max-height:230px; padding:10px; gap:8px; overflow-y:auto; overscroll-behavior-y:auto; }
+ body.portfolio-page .project-list .project-select { min-height:0; padding:13px 15px; border-radius:10px !important; }
+ .portfolio-page .project-select strong { font-size:13px; line-height:1.5; margin-bottom:5px; }
+ .portfolio-page .project-select span { font-size:10px; line-height:1.4; }
+ .portfolio-page .project-detail { max-height:none; overflow:visible; padding:23px 18px; min-height:0; overscroll-behavior:auto; }
+ .portfolio-page .project-detail h3 { font-size:23px; line-height:1.35; overflow-wrap:break-word; letter-spacing:-.04em; }
+ .portfolio-page .project-detail p,.portfolio-page .project-detail li { font-size:13px; line-height:1.8; }
+ .portfolio-page .portfolio-status { font-size:10px !important; letter-spacing:.08em; line-height:1.7; }
+ .portfolio-page .project-detail details { margin:18px 0; }
+ .portfolio-page .project-detail summary { font-size:13px; line-height:1.5; padding:12px 0; }
+ .portfolio-page .portfolio-skills { max-height:none; overflow:visible; padding:22px 18px; overscroll-behavior:auto; }
+ .portfolio-page .portfolio-skills h3 { font-size:22px; }
+ .portfolio-page .portfolio-skills h4 { font-size:11px; margin:20px 0 10px; }
+ body.portfolio-page .portfolio-skills .skill-filter { min-height:36px; font-size:11px; padding:8px 10px; }
+ .portfolio-page .portfolio-projects { grid-template-columns:1fr; gap:14px; }
+ .portfolio-page .portfolio-project { padding:22px 18px; }
+ .portfolio-page .portfolio-project h3 { font-size:22px; line-height:1.4; }
+ .portfolio-page .portfolio-project p { font-size:13px; }
+ .portfolio-page .ambient-backdrop::before { width:620px; right:-390px; top:5%; opacity:.2; filter:none !important; }
+ .portfolio-page .ambient-backdrop::after { width:560px; left:-380px; bottom:-10%; opacity:.15; filter:none !important; }
+ .portfolio-page .back-to-top { width:38px; height:38px; right:12px; bottom:18px; }
+ .portfolio-page section[id],.portfolio-page #project-workspace,.portfolio-page #skills { scroll-margin-top:110px; }
+}
