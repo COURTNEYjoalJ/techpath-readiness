@@ -242,3 +242,8 @@ body.portfolio-page[data-mode="light"][data-neon="true"] :is(.tag,.portfolio-sta
  .portfolio-page .back-to-top { width:38px; height:38px; right:12px; bottom:18px; }
  .portfolio-page section[id],.portfolio-page #project-workspace,.portfolio-page #skills { scroll-margin-top:110px; }
 }
+
+/* Let wheel/touch scrolling continue onto the page at pane boundaries. */
+.portfolio-page .project-list,.portfolio-page .project-detail,.portfolio-page .portfolio-skills { overscroll-behavior:auto !important; }
+.portfolio-page #experience h4 { color:var(--portfolio-accent); margin:24px 0 10px; }
+.portfolio-page #experience details { margin-top:20px; }
