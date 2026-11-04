@@ -247,3 +247,11 @@ body.portfolio-page[data-mode="light"][data-neon="true"] :is(.tag,.portfolio-sta
 .portfolio-page .project-list,.portfolio-page .project-detail,.portfolio-page .portfolio-skills { overscroll-behavior:auto !important; }
 .portfolio-page #experience h4 { color:var(--portfolio-accent); margin:24px 0 10px; }
 .portfolio-page #experience details { margin-top:20px; }
+.portfolio-page {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-page { scroll-behavior: auto; }
+}

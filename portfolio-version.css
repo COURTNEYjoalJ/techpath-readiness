@@ -1,0 +1,73 @@
+nav a.portfolio-version {
+  --switch-edge: #adb9ce66;
+  display: inline-grid;
+  grid-template-columns: auto 52px auto;
+  align-items: center;
+  gap: 7px;
+  flex: none;
+  padding: 2px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: inherit;
+  text-decoration: none;
+  font: 650 11px/1 system-ui, sans-serif;
+}
+.portfolio-version span { grid-row: 1; }
+.portfolio-version span:first-child { grid-column: 1; }
+.portfolio-version span:last-child { grid-column: 3; }
+.portfolio-version::before,
+.portfolio-version::after {
+  content: '';
+  grid-area: 1 / 2;
+  pointer-events: none;
+}
+.portfolio-version::before {
+  height: 27px;
+  border: 1px solid var(--switch-edge);
+  border-radius: 99px;
+  background:
+    linear-gradient(90deg, #40b6f4 30%, transparent 75%) 55% 39% / 65% 1px no-repeat,
+    linear-gradient(90deg, #40b6f4 30%, transparent 75%) 55% 50% / 65% 1px no-repeat,
+    linear-gradient(90deg, #40b6f4 30%, transparent 75%) 55% 61% / 65% 1px no-repeat,
+    linear-gradient(145deg, #b7c4da55, #dbe9f224);
+  box-shadow: inset 0 2px 5px #12172645, 0 0 8px #8ed8ed24;
+}
+.portfolio-version::after {
+  justify-self: start;
+  margin-inline-start: 2px;
+  width: 23px;
+  height: 23px;
+  border: 1px solid #72d9b899;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2ad983 0 2px, transparent 3px), linear-gradient(145deg, #eaf9ffed, #9cb5c5df);
+  box-shadow: 0 1px 5px #07111b66, inset 0 1px 2px #fff9;
+}
+.portfolio-version.is-v2::after { transform: translateX(24px); }
+nav a.portfolio-version:hover { --switch-edge: #80c8ed; }
+nav a.portfolio-version:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+/* Use each portfolio's accent inside the shared glass switch. */
+nav a.portfolio-version {
+  --switch-accent: var(--portfolio-accent, #ff9a55);
+  --switch-edge: color-mix(in srgb, var(--switch-accent) 38%, transparent);
+}
+nav a.portfolio-version.is-v2 { --switch-accent: #bcaaff; }
+.portfolio-version::before {
+  background:
+    linear-gradient(90deg, var(--switch-edge), transparent 80%) 55% 39% / 65% 1px no-repeat,
+    linear-gradient(90deg, var(--switch-accent), transparent 80%) 55% 50% / 65% 1px no-repeat,
+    linear-gradient(90deg, var(--switch-edge), transparent 80%) 55% 61% / 65% 1px no-repeat,
+    linear-gradient(155deg, #ffffff30, #ffffff08 46%, var(--switch-edge));
+  backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: inset 0 1px 1px #ffffff55, inset 0 -2px 5px #0005, 0 2px 8px #0003;
+}
+.portfolio-version::after {
+  border-color: var(--switch-edge);
+  background:
+    radial-gradient(circle, var(--switch-accent) 0 2px, transparent 3px),
+    radial-gradient(ellipse at 30% 20%, #ffffffc9, transparent 62%),
+    linear-gradient(145deg, #ffffff36, var(--switch-edge));
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 1px 2px #fffc, inset 0 -1px 2px #0005, 0 2px 6px #0006;
+}
+nav a.portfolio-version:hover { --switch-edge: color-mix(in srgb, var(--switch-accent) 66%, transparent); }

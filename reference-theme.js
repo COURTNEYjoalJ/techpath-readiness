@@ -34,6 +34,8 @@
 
 (() => {
  const backdrop=document.createElement('div');backdrop.className='ambient-backdrop';backdrop.setAttribute('aria-hidden','true');document.body.prepend(backdrop);
+ // The homepage's GSAP context owns background motion when available.
+ if(document.body.classList.contains('home-page') && window.gsap && window.ScrollTrigger) return;
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
  let current=window.scrollY,target=current,frame=0,last=0;
  function paint(time){

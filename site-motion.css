@@ -1,0 +1,23 @@
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.portfolio-page) .btn,
+  body:not(.portfolio-page) button:not(.menu-btn):not(.back-to-top),
+  body:not(.portfolio-page) [role="button"] {
+    transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease, filter .22s ease;
+    transform-origin: center;
+  }
+  body:not(.portfolio-page) .btn:hover,
+  body:not(.portfolio-page) button:not(.menu-btn):not(.back-to-top):hover,
+  body:not(.portfolio-page) [role="button"]:hover { transform: translateY(-2px); filter: brightness(1.04); }
+  body:not(.portfolio-page) .btn:active,
+  body:not(.portfolio-page) button:not(.menu-btn):not(.back-to-top):active,
+  body:not(.portfolio-page) [role="button"]:active { transform: scale(.97); }
+  body:not(.portfolio-page) :is(a,button,[role="button"]):focus-visible { outline: 3px solid #7660df; outline-offset: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.portfolio-page) .btn, body:not(.portfolio-page) button { transition: none !important; }
+}
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .home-page #supported-paths { overflow: clip; }
+  .home-page #supported-paths .role-grid { display: flex; flex-wrap: nowrap; gap: 22px; }
+  .home-page #supported-paths .role-card { flex: 0 0 min(330px, 30vw); }
+}

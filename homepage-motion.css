@@ -1,0 +1,18 @@
+/* Motion-only accents: existing content, grid geometry and colours are retained. */
+.home-page .home-process-grid,
+.home-page .timeline { position: relative; }
+.home-page .motion-track {
+  position: absolute;
+  inset: auto 0 -12px;
+  height: 2px;
+  background: linear-gradient(90deg, #7660df, #b4a3e3);
+  transform-origin: left;
+  pointer-events: none;
+}
+.home-page .hero h1 span { transform-origin: left center; }
+/* GSAP uses translate; the existing CSS hover transform remains independent. */
+.home-page .motion-reveal { transition-property: box-shadow, border-color; }
+@media (prefers-reduced-motion: reduce) {
+  .home-page .motion-track { display: none; }
+  .home-page { scroll-behavior: auto; }
+}
