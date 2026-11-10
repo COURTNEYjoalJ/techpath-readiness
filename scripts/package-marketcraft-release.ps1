@@ -38,8 +38,3 @@ try {
   if (Test-Path $stage) { Remove-Item -LiteralPath $stage -Recurse -Force }
   throw
 }
-
-
-
-
-
