@@ -1,8 +1,8 @@
 {
   "product": "MarketCraft Learning Beta",
   "sourceRepository": "https://github.com/COURTNEYjoalJ/marketcraft-v1",
-  "sourceBranch": "release/learning-beta-2026-11-11",
-  "sourceCommit": "1db88eb4b9ae567dafe2c06aba2c318c091e6bbd",
+  "sourceBranch": "feature/learning-tree-pnl-logo",
+  "sourceCommit": "a9e8342e8bb58d6311a130ead7ef270967c94150",
   "deploymentPath": "/marketcraft/learn/",
   "status": "prepared for review; not deployed"
 }

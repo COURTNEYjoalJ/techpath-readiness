@@ -9,6 +9,8 @@ import { renderDetective } from './frontend/components/detective/detective-ui.mj
 import { answerChartQuestion, returnToChartBoard, reviewChartSession, selectChartPoint, startChartLesson } from './frontend/game-engine/chart-engine.mjs';
 import { CHART_LESSONS } from './frontend/game-engine/chart-lessons.mjs';
 import { renderChartAcademy } from './frontend/components/chart-academy/chart-academy-ui.mjs';
+import { renderLearningTree } from './frontend/components/learning-tree/learning-tree-ui.mjs';
+import { formatSignedProfitLoss, getProfitLossStatus } from './frontend/ui/profit-loss.mjs';
 
 const money = (cents) => '$' + (cents / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const byId = (id) => document.getElementById(id);
@@ -83,6 +85,21 @@ function handleChartAction({ type, lessonId, pointId, answerId, sessionId } = {}
   else if (type === 'review') result = reviewChartSession(state, sessionId);
   if (result) updateChart(result, { focus: ['start', 'replay', 'review'].includes(type) ? 'title' : 'question', scrollToTop: ['start', 'replay', 'review'].includes(type) });
 }
+function handleLearningTreeAction(activityRef) {
+  if (!activityRef) return;
+  if (activityRef.kind === 'chart-board') { go('charts'); return; }
+  if (activityRef.kind === 'detective-board') { go('detective'); return; }
+  if (activityRef.kind === 'chart-lesson') {
+    updateChart(startChartLesson(state, activityRef.id), { focus: 'title', scrollToTop: true });
+    return;
+  }
+  if (activityRef.kind === 'detective-mission') {
+    const started = startMission(state, activityRef.id);
+    if (!started.ok) { detectiveNotice = started.error; go('detective'); return; }
+    const opened = beginInvestigation(started.state);
+    updateDetective(opened.ok ? opened : started);
+  }
+}
 function formatPercent(cents) {
   const percent = (cents / 1_000_000) * 100;
   return `${percent >= 0 ? '+' : ''}${percent.toFixed(2)}%`;
@@ -140,8 +157,14 @@ function renderPortfolio() {
   }
   const pnl = byId('portfolioReturn');
   if (pnl) {
-    pnl.textContent = `${portfolio.totalProfitLossCents >= 0 ? '▲' : '▼'} ${formatPercent(portfolio.totalProfitLossCents)} (${money(portfolio.totalProfitLossCents)}) total demo P/L`;
-    pnl.classList.toggle('negative', portfolio.totalProfitLossCents < 0);
+    const amount = portfolio.totalProfitLossCents;
+    const status = getProfitLossStatus(amount);
+    const indicator = status === 'profit' ? '▲' : status === 'loss' ? '▼' : '•';
+    pnl.classList.remove('profit', 'loss', 'neutral');
+    pnl.classList.add('pnl-status', status);
+    pnl.dataset.pnlStatus = status;
+    pnl.textContent = indicator + ' ' + formatPercent(amount) + ' (' + formatSignedProfitLoss(amount) + ') total demo P/L';
+    pnl.setAttribute('aria-label', (status === 'neutral' ? 'No profit or loss' : status === 'profit' ? 'Profit' : 'Loss') + ': ' + formatPercent(amount) + ', ' + formatSignedProfitLoss(amount) + ' total demo profit or loss');
   }
   document.querySelectorAll('[data-holding]').forEach((element) => {
     const asset = element.dataset.holding;
@@ -200,6 +223,7 @@ function renderAll() {
   renderProgress();
   renderDetective(byId('detective'), state, handleDetectiveAction, detectiveNotice);
   renderChartAcademy(byId('charts'), state, handleChartAction);
+  renderLearningTree(byId('learningTree'), state, handleLearningTreeAction);
   document.querySelectorAll('.view').forEach((view) => view.classList.toggle('visible', view.id === state.page));
   const navPage = navPageFor[state.page] || state.page;
   document.querySelectorAll('[data-page]').forEach((button) => button.classList.toggle('active', button.dataset.page === navPage));
@@ -263,6 +287,7 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 reducedMotion.addEventListener?.('change', syncHeroTheme);
+byId('brandHome')?.addEventListener('click', (event) => { event.preventDefault(); go('home'); });
 byId('themeToggle')?.addEventListener('click', () => {
   state = { ...state, theme: state.theme === 'dark' ? 'light' : 'dark' };
   persist();
