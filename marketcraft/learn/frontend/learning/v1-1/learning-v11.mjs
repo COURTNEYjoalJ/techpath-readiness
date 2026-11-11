@@ -48,13 +48,13 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
   const activeCandles = () => { const { module, scenario } = getActive(); return module.number === 3 ? (CHART_LESSONS.find((lesson) => lesson.id === 'candlesticks')?.charts?.candles?.candles || []) : scenario.chartData?.candles || []; };
   const preference = (patch) => { preferences = { ...preferences, ...patch }; saveLearningPreferences(storage, patch); };
   const route = (view) => { preference({ view }); };
-  const escapeLesson = (error) => `<div class="learn-v11-error" role="alert"><h2>Learning V1.1 could not be displayed.</h2><p>${esc(error?.message || 'A display error occurred.')}</p><button type="button" class="secondary" data-v11="fallback">Return to Learning V1</button></div>`;
+  const escapeLesson = (error) => `<div class="learn-v11-error" role="alert"><h2>MarketCraft Learning could not be displayed.</h2><p>${esc(error?.message || 'A display error occurred.')}</p><button type="button" class="secondary" data-v11="home">Return to Learning Home</button></div>`;
 
   const renderHome = () => {
     const summary = getLearningV11Summary(getState(), preferences, progress());
     const topicProgress = getTopicProgress(progress(), summary.currentTopic.id);
     const branchName = CURRICULUM_BRANCHES.find((branch) => branch.id === summary.currentModule.branchId)?.title || 'Chart Analysis';
-    return `<section class="learn-v11-home-screen"><header class="learn-v11-home-heading"><div><span class="learn-v11-kicker">MARKETCRAFT LEARNING · V1.1</span><h1>Master the market. One decision at a time.</h1><p>Learn one idea, inspect fictional data, make a decision, then review the reasoning.</p></div><div class="learn-v11-coverage"><strong>${summary.implementedModuleCount}<small> / ${summary.moduleCount}</small></strong><span>interactive modules authored</span><small>${summary.subtopicCount} topics in Module ${String(summary.currentModule.number).padStart(2, '0')} · ${summary.completedSubtopics} completed</small></div></header><article class="learn-v11-continue-card"><div><span class="learn-v11-kicker">${summary.inProgressSubtopics ? 'RESUME YOUR LAST TOPIC' : summary.moduleComplete ? 'MODULE COMPLETE · REVISIT ANY TOPIC' : 'YOUR NEXT VERIFIED LESSON'}</span><h2>${esc(summary.currentTopic.title)}</h2><p>${esc(branchName)} · Module ${String(summary.currentModule.number).padStart(2, '0')} · ${topicProgress.status.replaceAll('-', ' ')}${preferences.stage && preferences.view === 'stage' ? ` · Last step: ${esc(preferences.stage)}` : ''}</p><div class="learn-v11-progress"><i style="width:${summary.percent}%"></i></div><small>${summary.completedSubtopics} of ${summary.subtopicCount} module topics completed · ${summary.percent}%</small></div><button type="button" class="primary" data-v11="continue">${summary.inProgressSubtopics ? 'Resume lesson' : 'Start lesson'} →</button></article><div class="learn-v11-home-lower"><section class="learn-v11-path-preview"><div class="learn-v11-section-title"><div><span class="learn-v11-kicker">LEARNING PATHS</span><h2>Choose a branch</h2></div><button type="button" class="secondary" data-v11="tree">Open full curriculum →</button></div><div class="learn-v11-path-row">${CURRICULUM_BRANCHES.map((branch, index) => `<button type="button" class="learn-v11-path-chip" data-v11-branch="${branch.id}"><span>0${index + 1}</span><strong>${esc(branch.title)}</strong><small>${index === 0 ? '10 interactive Chart Analysis modules' : 'Additional modules are being authored'}</small></button>`).join('')}</div></section><aside class="learn-v11-home-quick"><span class="learn-v11-kicker">OPTIONAL PRACTICE</span><button type="button" data-v11="charts">Chart Academy <span>Existing lesson and reward system</span></button><button type="button" data-v11="detective">Market Detective <span>Existing evidence scenarios</span></button><button type="button" data-v11="terminal">Practice Terminal <span>Separate simulated portfolio</span></button></aside></div><p class="learn-v11-home-note">Only authored interactive topics are available here. Your Chart Academy and Market Detective history, XP and portfolio remain in their existing shared app state.</p></section>`;
+    return `<section class="learn-v11-home-screen"><header class="learn-v11-home-heading"><div><span class="learn-v11-kicker">MARKETCRAFT LEARNING</span><h1>Master the market. One decision at a time.</h1><p>Learn one idea, inspect fictional data, make a decision, then review the reasoning.</p></div><div class="learn-v11-coverage"><strong>${summary.implementedModuleCount}<small> / ${summary.moduleCount}</small></strong><span>interactive modules authored</span><small>${summary.subtopicCount} topics in Module ${String(summary.currentModule.number).padStart(2, '0')} · ${summary.completedSubtopics} completed</small></div></header><article class="learn-v11-continue-card"><div><span class="learn-v11-kicker">${summary.inProgressSubtopics ? 'RESUME YOUR LAST TOPIC' : summary.moduleComplete ? 'MODULE COMPLETE · REVISIT ANY TOPIC' : 'YOUR NEXT VERIFIED LESSON'}</span><h2>${esc(summary.currentTopic.title)}</h2><p>${esc(branchName)} · Module ${String(summary.currentModule.number).padStart(2, '0')} · ${topicProgress.status.replaceAll('-', ' ')}${preferences.stage && preferences.view === 'stage' ? ` · Last step: ${esc(preferences.stage)}` : ''}</p><div class="learn-v11-progress"><i style="width:${summary.percent}%"></i></div><small>${summary.completedSubtopics} of ${summary.subtopicCount} module topics completed · ${summary.percent}%</small></div><button type="button" class="primary" data-v11="continue">${summary.inProgressSubtopics ? 'Resume lesson' : 'Start lesson'} →</button></article><div class="learn-v11-home-lower"><section class="learn-v11-path-preview"><div class="learn-v11-section-title"><div><span class="learn-v11-kicker">LEARNING PATHS</span><h2>Choose a branch</h2></div><button type="button" class="secondary" data-v11="tree">Open full curriculum →</button></div><div class="learn-v11-path-row">${CURRICULUM_BRANCHES.map((branch, index) => `<button type="button" class="learn-v11-path-chip" data-v11-branch="${branch.id}"><span>0${index + 1}</span><strong>${esc(branch.title)}</strong><small>${index === 0 ? '10 interactive Chart Analysis modules' : 'Additional modules are being authored'}</small></button>`).join('')}</div></section><aside class="learn-v11-home-quick"><span class="learn-v11-kicker">OPTIONAL PRACTICE</span><button type="button" data-v11="charts">Chart Academy <span>Existing lesson and reward system</span></button><button type="button" data-v11="detective">Market Detective <span>Existing evidence scenarios</span></button><button type="button" data-v11="terminal">Practice Terminal <span>Separate simulated portfolio</span></button></aside></div><p class="learn-v11-home-note">Only authored interactive topics are available here. Learning progress and XP are saved in this browser.</p></section>`;
   };
 
   const renderTree = () => {
@@ -174,6 +174,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
   const onClick = (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
+    if (target.matches('.learn-v11-drawer')) { target.close(); return; }
     const zoneButton = target.closest('[data-v11-zone]');
     if (zoneButton && root.contains(zoneButton)) { selectedZoneId = zoneButton.dataset.v11Zone; render(); root.querySelector(`[data-v11-zone="${CSS.escape(selectedZoneId)}"]`)?.focus(); return; }
     const mark = target.closest('[data-v11-candle]');
@@ -182,7 +183,9 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     if (!button || !root.contains(button) || button.disabled) return;
     const action = button.dataset.v11;
     if (action === 'completion-tree') { const module = moduleForTopic(preferences.subtopicId); expandedBranch = module.branchId; expandedLevel = module.branchId + '|' + module.level; expandedModule = module.id; route('tree'); render(true); return; }
-    if (action === 'fallback') { document.querySelector('[data-learning-version="v1"]')?.click(); return; }
+    const drawer = root.querySelector('.learn-v11-drawer');
+    if (action === 'topics') { drawer.showModal(); return; }
+    if (action === 'close-topics') { drawer.close(); return; }
     if (action === 'home') { route('home'); render(true); }
     else if (action === 'tree') { route('tree'); render(true); }
     else if (action === 'continue') {
@@ -203,7 +206,11 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     else if (button.dataset.v11Module) { const selectedModule = FULL_SCREEN_MODULES.find((item) => item.id === button.dataset.v11Module); if (selectedModule) { const next = selectedModule.subtopics.find((topic) => !isComplete(topic, progress())) || selectedModule.subtopics[0]; const current = progress().topics[next.id]; openTopic(next.id, { resume: Boolean(current && !current.completed && current.visits > 0) }); } }
     else if (button.dataset.v11StageIndex != null) { const index = Number(button.dataset.v11StageIndex); const { topic } = getActive(); const entry = progress().topics[topic.id] || {}; const max = Math.max(Number.isInteger(entry.maxStageReached) ? entry.maxStageReached : STAGES.indexOf(entry.currentStage || 'understand'), entry.completed ? 4 : 0); if (Number.isInteger(index) && index <= max) setStage(topic, STAGES[index]); }
     else if (button.dataset.v11OpenTopic) openTopic(button.dataset.v11OpenTopic);
-    else if (button.dataset.v11Topic) openTopic(button.dataset.v11Topic);
+    else if (button.dataset.v11Topic) {
+      drawer.close();
+      openTopic(button.dataset.v11Topic, { resume: true });
+      root.querySelector('[data-v11="topics"]')?.focus();
+    }
   };
 
   const onChange = (event) => {
@@ -219,6 +226,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     if (candle) { const output = root.querySelector('.learn-v11-large-inspect, .learn-v11-stage-evidence .learn-v11-inspect'); if (output) output.innerHTML = candle; }
   };
   const onKey = (event) => {
+    if (event.key === 'Escape' && root.querySelector('.learn-v11-drawer[open]')) return;
     if (event.key === 'Escape' && preferences.view === 'stage') { event.preventDefault(); route('tree'); render(true); }
     if ((event.key === 'Enter' || event.key === ' ') && event.target instanceof Element && event.target.closest('[data-v11-candle]')) { event.preventDefault(); onPointer(event); }
   };
@@ -229,7 +237,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
   render();
   return {
     render,
-    setVersion(version) { preference({ version }); },
+    openHome() { route('home'); },
     destroy() { root.removeEventListener('click', onClick); root.removeEventListener('change', onChange); root.removeEventListener('pointerup', onPointer); root.removeEventListener('keydown', onKey); },
   };
 }

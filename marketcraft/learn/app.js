@@ -13,14 +13,12 @@ import { renderCurriculumTree } from './frontend/components/learning-tree/curric
 import { createPracticeTerminal } from './frontend/charts/practice-terminal.mjs';
 import { formatSignedProfitLoss, getProfitLossStatus } from './frontend/ui/profit-loss.mjs';
 import { createLearningV11 } from './frontend/learning/v1-1/learning-v11.mjs';
-import { loadLearningPreferences, saveLearningPreferences } from './frontend/learning/shared/learning-preferences.mjs';
 
 const money = (cents) => '$' + (cents / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const byId = (id) => document.getElementById(id);
 let storage;
 try { storage = window.localStorage; } catch { storage = null; }
 let state = loadDemoState(storage);
-let learningPreference = loadLearningPreferences(storage);
 let learningV11 = null;
 let detectiveNotice = '';
 const heroFrame = byId('heroFrame');
@@ -118,9 +116,19 @@ function syncHeroTheme() {
   const desired = `marketcraft-3d/index.html?embed=1&theme=${state.theme}&motion=${motion}`;
   if (heroFrame.getAttribute('src') !== desired) heroFrame.setAttribute('src', desired);
 }
+function syncLearningShell() {
+  const fullScreenLearning = state.page === 'learn';
+  byId('learn')?.classList.toggle('v11-fullscreen', fullScreenLearning);
+  document.querySelector('.frame')?.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
+  document.documentElement.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
+  document.body.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
+}
 function go(page) {
   if (!pageLabels[page]) return;
+  if (page === 'learn') learningV11?.openHome();
   state = { ...state, page };
+  syncLearningShell();
+  if (page === 'learn') learningV11?.render();
   persist();
   document.querySelectorAll('.view').forEach((view) => view.classList.toggle('visible', view.id === page));
   const navPage = navPageFor[page] || page;
@@ -237,19 +245,7 @@ function renderAll() {
     openTerminal: ({ instrumentId, tool }) => { go('markets'); practiceTerminal?.selectInstrument(instrumentId); practiceTerminal?.setTool(tool); },
   });
   learningV11?.render();
-  const showV11 = learningPreference.version === 'v1.1';
-  const fullScreenLearning = showV11 && state.page === 'learn';
-  const v1 = byId('learningV1Container'); const v11 = byId('learningV11Container');
-  if (v1) v1.hidden = showV11;
-  if (v11) v11.hidden = !showV11;
-  byId('learn')?.classList.toggle('v11-fullscreen', fullScreenLearning);
-  document.querySelector('.frame')?.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
-  document.documentElement.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
-  document.body.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
-  document.querySelectorAll('[data-learning-version]').forEach((button) => {
-    const active = button.dataset.learningVersion === learningPreference.version;
-    button.setAttribute('aria-pressed', String(active)); button.classList.toggle('is-selected', active);
-  });
+  syncLearningShell();
   practiceTerminal?.draw();
   document.querySelectorAll('.view').forEach((view) => view.classList.toggle('visible', view.id === state.page));
   const navPage = navPageFor[state.page] || state.page;
@@ -395,14 +391,6 @@ learningV11 = createLearningV11(byId('learningV11Container'), {
   onOpenDetective: () => go('detective'),
   onOpenTerminal: () => go('markets'),
 });
-document.querySelectorAll('[data-learning-version]').forEach((button) => button.addEventListener('click', () => {
-  const version = button.dataset.learningVersion;
-  learningPreference = loadLearningPreferences(storage);
-  saveLearningPreferences(storage, { version });
-  learningPreference = loadLearningPreferences(storage);
-  learningV11?.setVersion(version);
-  renderAll();
-}));
 renderAll();
 syncHeroTheme();
 setInterval(renderProgress, 30_000);
