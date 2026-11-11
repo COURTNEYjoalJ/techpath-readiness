@@ -104,7 +104,10 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
 
   const renderCompletion = () => {
     const summary = getLearningV11Summary(getState(), preferences, progress());
-    return `<section class="learn-v11-module-completion"><div class="learn-v11-completion-mark" aria-hidden="true">✓</div><span class="learn-v11-kicker">MODULE ${String(summary.currentModule.number).padStart(2, '0')} · ${esc(summary.currentModule.title.toUpperCase())}</span><h1 tabindex="-1">Module complete</h1><p>You reviewed all ${summary.subtopicCount} topics. Your learning record is saved in this browser.</p><div class="learn-v11-completion-stats"><strong>${summary.subtopicCount} / ${summary.subtopicCount}<small> topics completed</small></strong><span>Decision quality reflects evidence and risk awareness, not simulated profit.</span></div><button type="button" class="primary" data-v11="completion-tree">Return to learning path →</button></section>`;
+    if (!summary.moduleComplete) {
+      return `<section class="learn-v11-module-completion"><div class="learn-v11-completion-mark" aria-hidden="true">✓</div><span class="learn-v11-kicker">MODULE ${String(summary.currentModule.number).padStart(2, '0')} · ${esc(summary.currentModule.title.toUpperCase())}</span><h1 tabindex="-1">Topic complete</h1><p>${summary.completedSubtopics} of ${summary.subtopicCount} topics completed. Continue with the remaining topic to complete this module.</p><div class="learn-v11-completion-stats"><strong>${summary.completedSubtopics} / ${summary.subtopicCount}<small> topics completed</small></strong><span>Decision quality reflects evidence and risk awareness, not simulated profit.</span></div><button type="button" class="primary" data-v11="completion-next">Continue learning →</button></section>`;
+    }
+    return `<section class="learn-v11-module-completion"><div class="learn-v11-completion-mark" aria-hidden="true">✓</div><span class="learn-v11-kicker">MODULE ${String(summary.currentModule.number).padStart(2, '0')} · ${esc(summary.currentModule.title.toUpperCase())}</span><h1 tabindex="-1">Module complete</h1><p>You reviewed all ${summary.completedSubtopics} topics. Your learning record is saved in this browser.</p><div class="learn-v11-completion-stats"><strong>${summary.completedSubtopics} / ${summary.subtopicCount}<small> topics completed</small></strong><span>Decision quality reflects evidence and risk awareness, not simulated profit.</span></div><button type="button" class="primary" data-v11="completion-tree">Return to learning path →</button></section>`;
   };
 
   const renderStage = () => {
@@ -178,10 +181,11 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     const entry = progress().topics[topic.id] || {};
     if (!entry.selectedOptionId || !Number.isInteger(entry.lastScore)) return;
     updateTopicProgress(storage, topic.id, { ...entry, completed: true, status: 'completed', demonstratedUnderstanding: entry.demonstratedUnderstanding || entry.lastScore >= 70, currentStage: 'learn', maxStageReached: 4 });
-    const index = module.subtopics.findIndex((item) => item.id === topic.id);
-    const next = module.subtopics[index + 1];
-    if (next) openTopic(next.id);
-    else { preference({ view: 'complete', stage: 'learn' }); render(true); }
+    const next = module.subtopics.find((item) => !isComplete(item, progress()));
+    if (next) {
+      const nextProgress = progress().topics[next.id];
+      openTopic(next.id, { resume: Boolean(nextProgress && !nextProgress.completed && nextProgress.visits > 0) });
+    } else { preference({ view: 'complete', stage: 'learn' }); render(true); }
   };
 
   const onClick = (event) => {
@@ -196,6 +200,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     const action = button.dataset.v11;
     if (action === 'topics-open') { openTopics(); return; }
     if (action === 'topics-close') { closeTopics(); return; }
+    if (action === 'completion-next') { const { module } = getActive(); const next = module.subtopics.find((topic) => !isComplete(topic, progress())); if (next) { const entry = progress().topics[next.id]; openTopic(next.id, { resume: Boolean(entry && !entry.completed && entry.visits > 0) }); } else { route('tree'); render(true); } return; }
     if (action === 'completion-tree') { const module = moduleForTopic(preferences.subtopicId); expandedBranch = module.branchId; expandedLevel = module.branchId + '|' + module.level; expandedModule = module.id; route('tree'); render(true); return; }
     if (action === 'fallback') { route('home'); render(true); return; }
     if (action === 'home') { route('home'); render(true); }

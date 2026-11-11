@@ -12,7 +12,7 @@ import { renderChartAcademy } from './frontend/components/chart-academy/chart-ac
 import { renderCurriculumTree } from './frontend/components/learning-tree/curriculum-map.mjs';
 import { createPracticeTerminal } from './frontend/charts/practice-terminal.mjs';
 import { formatSignedProfitLoss, getProfitLossStatus } from './frontend/ui/profit-loss.mjs';
-import { createLearningV11 } from './frontend/learning/v1-1/learning-v11.mjs?v=premium-ui-2';
+import { createLearningV11 } from './frontend/learning/v1-1/learning-v11.mjs?v=premium-ui-3';
 import { saveLearningPreferences } from './frontend/learning/shared/learning-preferences.mjs';
 
 const money = (cents) => '$' + (cents / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
