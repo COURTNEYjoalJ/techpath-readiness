@@ -249,12 +249,12 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
   root.addEventListener('click', onClick);
   root.addEventListener('change', onChange);
   root.addEventListener('pointerup', onPointer);
-  root.addEventListener('keydown', onKey);
+  document.addEventListener('keydown', onKey);
   render();
   return {
     render,
     setVersion(version) { preference({ version }); },
-    destroy() { root.removeEventListener('click', onClick); root.removeEventListener('change', onChange); root.removeEventListener('pointerup', onPointer); root.removeEventListener('keydown', onKey); },
+    destroy() { root.removeEventListener('click', onClick); root.removeEventListener('change', onChange); root.removeEventListener('pointerup', onPointer); document.removeEventListener('keydown', onKey); },
   };
 }
 
