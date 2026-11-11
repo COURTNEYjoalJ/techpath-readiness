@@ -179,3 +179,81 @@ body.learning-v11-fullscreen>.beta-footer a{display:block;text-align:center;font
   .learn-v11-home-quick button:hover{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 10%,var(--lv-soft))}
   .learn-v11-home-quick button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 }
+
+
+/* Premium journey surfaces and custom curriculum controls */
+.learn-v11-home-heading h1{max-width:850px;letter-spacing:-.035em}
+.learn-v11-coverage{display:none}
+.learn-v11-home-lower{align-items:stretch}
+.learn-v11-path-preview,.learn-v11-continue-card,.learn-v11-home-quick{border:1px solid var(--lv-line);border-radius:20px;background:color-mix(in srgb,var(--lv-panel) 74%,transparent);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);box-shadow:0 16px 40px #0002,inset 0 1px #ffffff28}
+.learn-v11-path-chip,.learn-v11-tree-branch-button,.learn-v11-tree-level-button,.learn-v11-tree-module-button{appearance:none;box-sizing:border-box;color:var(--ink);font-family:inherit;cursor:pointer}
+.learn-v11-path-chip{position:relative;display:grid;align-content:start;gap:9px;min-height:125px;padding:16px;border:1px solid var(--lv-line);border-radius:16px;background:linear-gradient(145deg,color-mix(in srgb,var(--lv-panel) 84%,transparent),color-mix(in srgb,var(--lv-soft) 70%,transparent));text-align:left;box-shadow:inset 0 1px #ffffff28,0 10px 24px #00015;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .2s ease,border-color .2s ease}
+.learn-v11-path-chip:hover{transform:translateY(-3px);border-color:var(--gold)}
+.learn-v11-path-chip>span:first-child{color:var(--gold);font-weight:800}
+.learn-v11-path-chip strong{font-size:14px;line-height:1.3}
+.learn-v11-path-chip small{color:var(--muted);font-size:10px;line-height:1.4}
+.learn-v11-tree-root{display:grid;justify-items:center;gap:4px;width:max-content;margin:0 auto 14px;padding:11px 22px;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--lv-line));border-radius:999px;background:color-mix(in srgb,var(--lv-panel) 82%,transparent);color:var(--gold);box-shadow:0 8px 24px #0002,inset 0 1px #ffffff30}
+.learn-v11-tree-root span,.learn-v11-tree-root small{color:var(--muted);font-size:10px}
+.learn-v11-tree-branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:12px}
+.learn-v11-tree-branch{min-width:0;border:1px solid var(--lv-line);border-radius:18px;background:color-mix(in srgb,var(--lv-panel) 78%,transparent);box-shadow:0 12px 32px #0002,inset 0 1px #ffffff26;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);overflow:hidden}
+.learn-v11-tree-branch-button{display:flex;align-items:center;gap:12px;width:100%;min-height:94px;padding:15px;border:0;background:transparent;text-align:left}
+.learn-v11-tree-branch-button>span{display:grid;gap:7px;min-width:0}
+.learn-v11-tree-branch-button strong{font-size:14px}
+.learn-v11-tree-branch-button small{color:var(--muted);font-size:10px;line-height:1.4}
+.learn-v11-tree-branch-button b{margin-left:auto;color:var(--gold)}
+.learn-v11-tree-branch.is-open{border-color:color-mix(in srgb,var(--gold) 48%,var(--lv-line))}
+.learn-v11-tree-levels{display:grid;gap:7px;padding:0 10px 11px}
+.learn-v11-tree-level{border:1px solid var(--lv-line);border-radius:12px;background:color-mix(in srgb,var(--lv-soft) 66%,transparent);overflow:hidden}
+.learn-v11-tree-level-button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:48px;padding:8px 11px;border:0;background:transparent;text-align:left}
+.learn-v11-tree-level-button span{font-size:11px}
+.learn-v11-tree-level-button span+span{color:var(--muted)}
+.learn-v11-tree-modules{display:grid;gap:6px;padding:2px 8px 8px}
+.learn-v11-tree-module{border:1px solid var(--lv-line);border-radius:11px;background:color-mix(in srgb,var(--lv-panel) 76%,transparent);overflow:hidden}
+.learn-v11-tree-module-button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:10px;border:0;background:transparent;text-align:left}
+.learn-v11-tree-module-button strong{font-size:11px;line-height:1.35}
+.learn-v11-tree-module-button small{color:var(--muted);font-size:9px;line-height:1.35}
+.learn-v11-tree-module.is-ready{border-color:color-mix(in srgb,var(--gold) 48%,var(--lv-line))}
+.learn-v11-tree-module.is-dev{opacity:.76}
+.learn-v11-tree-module-button:disabled{cursor:not-allowed}
+.learn-v11-tree-subtopics{display:grid;gap:4px;padding:0 8px 8px}
+.learn-v11-tree-subtopics button{display:grid;grid-template-columns:20px 1fr;gap:2px 8px;padding:7px;border:1px solid var(--lv-line);border-radius:8px;background:var(--lv-soft);color:var(--ink);text-align:left}
+.learn-v11-tree-subtopics button>span{grid-row:span 2;color:var(--gold)}
+.learn-v11-tree-subtopics strong{font-size:10px}
+.learn-v11-tree-subtopics small{color:var(--muted);font-size:9px}
+.learn-v11-tree-branch-button:hover,.learn-v11-tree-level-button:hover{background:color-mix(in srgb,var(--gold) 9%,var(--lv-panel))}
+.learn-v11-tree-branch-button:focus-visible,.learn-v11-tree-level-button:focus-visible,.learn-v11-tree-module-button:focus-visible,.learn-v11-path-chip:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.learn-v11-stage-body[data-stage="understand"] .learn-v11-concept-pair{gap:8px}.learn-v11-stage-body[data-stage="understand"] .learn-v11-worked-example{margin-top:8px}
+.learn-v11-stage-body[data-stage="understand"] .learn-v11-definition{font-size:clamp(15px,1.6vw,20px);line-height:1.5}
+@media(max-width:760px){.learn-v11-tree-branches{grid-template-columns:1fr}.learn-v11-path-chip{min-height:100px}}
+@media(prefers-reduced-motion:reduce){.learn-v11-path-chip{transition:none}}
+
+.learn-v11-home-note{display:none}
+.learn-v11-home-quick{padding:11px 13px;align-content:start;opacity:.91}
+.learn-v11-home-quick>span{margin-bottom:3px}
+.learn-v11-home-quick button{min-height:38px}
+.learn-v11-home-quick button span{color:var(--muted)}
+.learn-v11-home-screen .learn-v11-section-title{margin-bottom:10px}
+.learn-v11-home-screen .learn-v11-path-preview{padding:14px}
+.learn-v11-continue-card{gap:12px}
+.learn-v11-continue-card p{margin:5px 0}
+.learn-v11-continue-card .learn-v11-progress{margin-top:8px}
+
+.learn-v11-tree-branch-button::before{display:grid;place-items:center;flex:none;width:38px;height:38px;border:1px solid color-mix(in srgb,var(--gold) 44%,var(--lv-line));border-radius:12px;background:color-mix(in srgb,var(--gold) 12%,transparent);color:var(--gold);font-size:18px}
+.learn-v11-tree-branch:nth-child(1) .learn-v11-tree-branch-button::before{content:"⌁"}
+.learn-v11-tree-branch:nth-child(2) .learn-v11-tree-branch-button::before{content:"⌇"}
+.learn-v11-tree-branch:nth-child(3) .learn-v11-tree-branch-button::before{content:"◈"}
+.learn-v11-tree-branch-button>span{display:grid;gap:5px;min-width:0}
+.learn-v11-tree-branch-button small{color:var(--muted);font-size:10px;line-height:1.35}
+.learn-v11-integrated-note{display:grid;gap:5px;margin-top:14px;padding:12px 14px;border:1px solid var(--lv-line);border-radius:14px;background:color-mix(in srgb,var(--lv-panel) 70%,transparent);color:var(--ink);line-height:1.4}
+.learn-v11-integrated-note span,.learn-v11-tree-foot{color:var(--muted);font-size:10px;line-height:1.45}
+.learn-v11-tree-foot{margin:8px 0 0}
+
+.learn-v11-more-context{margin-top:10px;border-top:1px solid var(--lv-line);padding-top:8px}
+.learn-v11-more-context>summary{color:var(--gold);font-size:11px;font-weight:700;cursor:pointer}
+.learn-v11-more-context[open]>summary{margin-bottom:9px}
+.learn-v11-stage-body[data-stage="understand"] .learn-v11-concept-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.learn-v11-observe{grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr)}
+.learn-v11-chart-board{grid-column:1;grid-row:1;min-height:0}
+.learn-v11-observe-copy{grid-column:2;grid-row:1}
+.learn-v11-stage-chart{width:100%;min-height:210px}
+@media(max-width:760px){.learn-v11-observe{grid-template-columns:minmax(0,1fr)}.learn-v11-chart-board,.learn-v11-observe-copy{grid-column:1;grid-row:auto}.learn-v11-chart-board{order:-1}.learn-v11-stage-chart{min-height:155px}}
