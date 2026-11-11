@@ -171,10 +171,15 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     else { preference({ view: 'complete', stage: 'learn' }); render(true); }
   };
 
+  const closeTopics = (drawer) => {
+    drawer.close();
+    root.querySelector('[data-v11=topics]')?.focus();
+  };
+
   const onClick = (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
-    if (target.matches('.learn-v11-drawer')) { target.close(); return; }
+    if (target.matches('.learn-v11-drawer')) { closeTopics(target); return; }
     const zoneButton = target.closest('[data-v11-zone]');
     if (zoneButton && root.contains(zoneButton)) { selectedZoneId = zoneButton.dataset.v11Zone; render(); root.querySelector(`[data-v11-zone="${CSS.escape(selectedZoneId)}"]`)?.focus(); return; }
     const mark = target.closest('[data-v11-candle]');
@@ -184,8 +189,8 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     const action = button.dataset.v11;
     if (action === 'completion-tree') { const module = moduleForTopic(preferences.subtopicId); expandedBranch = module.branchId; expandedLevel = module.branchId + '|' + module.level; expandedModule = module.id; route('tree'); render(true); return; }
     const drawer = root.querySelector('.learn-v11-drawer');
-    if (action === 'topics') { drawer.showModal(); return; }
-    if (action === 'close-topics') { drawer.close(); return; }
+    if (action === 'topics') { button.focus(); drawer.showModal(); return; }
+    if (action === 'close-topics') { closeTopics(drawer); return; }
     if (action === 'home') { route('home'); render(true); }
     else if (action === 'tree') { route('tree'); render(true); }
     else if (action === 'continue') {
@@ -226,7 +231,8 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     if (candle) { const output = root.querySelector('.learn-v11-large-inspect, .learn-v11-stage-evidence .learn-v11-inspect'); if (output) output.innerHTML = candle; }
   };
   const onKey = (event) => {
-    if (event.key === 'Escape' && root.querySelector('.learn-v11-drawer[open]')) return;
+    const drawer = root.querySelector('.learn-v11-drawer[open]');
+    if (event.key === 'Escape' && drawer) { event.preventDefault(); closeTopics(drawer); return; }
     if (event.key === 'Escape' && preferences.view === 'stage') { event.preventDefault(); route('tree'); render(true); }
     if ((event.key === 'Enter' || event.key === ' ') && event.target instanceof Element && event.target.closest('[data-v11-candle]')) { event.preventDefault(); onPointer(event); }
   };

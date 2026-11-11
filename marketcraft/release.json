@@ -2,7 +2,7 @@
   "product": "MarketCraft Learning Beta",
   "sourceRepository": "https://github.com/COURTNEYjoalJ/marketcraft-v1",
   "sourceBranch": "feature/learning-v2-rebuild",
-  "sourceCommit": "926cb0f10efbd210f919b38ed1e341abd9ff5772",
+  "sourceCommit": "b653384daa693f4409df24ac3fa8b6350aa04376",
   "deploymentPath": "/marketcraft/learn/",
   "status": "prepared for review; not deployed"
 }
