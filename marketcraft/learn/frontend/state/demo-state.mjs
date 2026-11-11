@@ -2,7 +2,7 @@ import { ASSETS, INITIAL_CASH_CENTS } from '../game-engine/trading.mjs';
 import { createInitialDetectiveState, sanitizeDetectiveState, validateDetectiveState } from './detective-state.mjs';
 import { createInitialChartProgress, sanitizeChartProgress, validateChartProgress } from './chart-progress.mjs';
 
-export const DEMO_SCHEMA_VERSION = 3;
+export const DEMO_SCHEMA_VERSION = 4;
 export const DEMO_STORAGE_KEY = 'marketcraft-demo-state';
 export const LEGACY_THEME_KEY = 'marketcraft-theme';
 export const LESSON_REWARD_XP = 50;
@@ -32,11 +32,12 @@ function isNonNegativeInteger(value) {
 }
 
 export function validateDemoCoreState(value) {
-  if (!value || typeof value !== 'object' || ![1, 2, DEMO_SCHEMA_VERSION].includes(value.schemaVersion)) return false;
+  if (!value || typeof value !== 'object' || ![1, 2, 3, DEMO_SCHEMA_VERSION].includes(value.schemaVersion)) return false;
   if (!['dark', 'light'].includes(value.theme) || (value.motionEnabled !== undefined && typeof value.motionEnabled !== 'boolean') || !['home', 'learn', 'markets', 'arena', 'crash', 'detective', 'charts', 'risk'].includes(value.page)) return false;
   if (!Object.hasOwn(ASSETS, value.asset) || !isNonNegativeInteger(value.cashCents) || !isNonNegativeInteger(value.xp)) return false;
   if (!value.positions || typeof value.positions !== 'object' || Array.isArray(value.positions)) return false;
-  if (!Object.keys(ASSETS).every((asset) => isNonNegativeInteger(value.positions[asset]))) return false;
+  const requiredPositionIds = value.schemaVersion < 4 ? ['BTC', 'ETH', 'XAU'] : Object.keys(ASSETS);
+  if (!requiredPositionIds.every((asset) => isNonNegativeInteger(value.positions[asset]))) return false;
   if (!value.completedLessons || typeof value.completedLessons !== 'object' || Array.isArray(value.completedLessons)) return false;
   if (!value.completedChallenges || typeof value.completedChallenges !== 'object' || Array.isArray(value.completedChallenges)) return false;
   if (!Object.values(value.completedLessons).every((done) => done === true) || !Object.values(value.completedChallenges).every((done) => done === true)) return false;
@@ -55,6 +56,7 @@ export function migrateDemoState(value) {
       ...value,
       schemaVersion: DEMO_SCHEMA_VERSION,
       motionEnabled: value.motionEnabled ?? true,
+      positions: Object.fromEntries(Object.keys(ASSETS).map((asset) => [asset, value.positions[asset] || 0])),
       detective: createInitialDetectiveState(),
       chartAcademy: createInitialChartProgress(),
     };
@@ -63,8 +65,9 @@ export function migrateDemoState(value) {
     ...value,
     schemaVersion: DEMO_SCHEMA_VERSION,
     motionEnabled: value.motionEnabled ?? true,
+    positions: Object.fromEntries(Object.keys(ASSETS).map((asset) => [asset, value.positions[asset] || 0])),
     detective: sanitizeDetectiveState(value.detective),
-    chartAcademy: value.schemaVersion === 2 ? createInitialChartProgress() : sanitizeChartProgress(value.chartAcademy),
+    chartAcademy: value.schemaVersion <= 2 ? createInitialChartProgress() : sanitizeChartProgress(value.chartAcademy),
   };
 }
 

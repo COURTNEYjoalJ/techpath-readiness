@@ -9,14 +9,19 @@ import { renderDetective } from './frontend/components/detective/detective-ui.mj
 import { answerChartQuestion, returnToChartBoard, reviewChartSession, selectChartPoint, startChartLesson } from './frontend/game-engine/chart-engine.mjs';
 import { CHART_LESSONS } from './frontend/game-engine/chart-lessons.mjs';
 import { renderChartAcademy } from './frontend/components/chart-academy/chart-academy-ui.mjs';
-import { renderLearningTree } from './frontend/components/learning-tree/learning-tree-ui.mjs';
+import { renderCurriculumTree } from './frontend/components/learning-tree/curriculum-map.mjs';
+import { createPracticeTerminal } from './frontend/charts/practice-terminal.mjs';
 import { formatSignedProfitLoss, getProfitLossStatus } from './frontend/ui/profit-loss.mjs';
+import { createLearningV11 } from './frontend/learning/v1-1/learning-v11.mjs';
+import { loadLearningPreferences, saveLearningPreferences } from './frontend/learning/shared/learning-preferences.mjs';
 
 const money = (cents) => '$' + (cents / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const byId = (id) => document.getElementById(id);
 let storage;
 try { storage = window.localStorage; } catch { storage = null; }
 let state = loadDemoState(storage);
+let learningPreference = loadLearningPreferences(storage);
+let learningV11 = null;
 let detectiveNotice = '';
 const heroFrame = byId('heroFrame');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -60,6 +65,7 @@ function handleDetectiveAction({ type, missionId, sessionId, evidenceId, decisio
   if (result) updateDetective(result);
 }
 let chartNotice = '';
+let practiceTerminal = null;
 function updateChart(result, { focus = 'question', scrollToTop = false } = {}) {
   if (!result.ok) { chartNotice = result.error; renderChartAcademy(byId('charts'), state, handleChartAction); const message = document.createElement('p'); message.className = 'result'; message.setAttribute('role', 'alert'); message.textContent = chartNotice; byId('charts')?.prepend(message); return; }
   chartNotice = '';
@@ -140,7 +146,9 @@ function renderJournal() {
   }
   for (const trade of state.journal) {
     const row = document.createElement('tr');
-    const values = [trade.side.toUpperCase(), ASSETS[trade.asset].name, formatQuantity(trade.quantityUnits), money(trade.notionalCents), money(trade.feeCents)];
+    const asset = ASSETS[trade.asset];
+    const price = asset.unit.includes('index points') ? (trade.priceCents / 100).toFixed(2) + ' pts' : money(trade.priceCents);
+    const values = [trade.side.toUpperCase(), asset.name, formatQuantity(trade.quantityUnits), price, money(trade.feeCents)];
     for (const value of values) {
       const cell = document.createElement('td');
       cell.textContent = value;
@@ -223,7 +231,21 @@ function renderAll() {
   renderProgress();
   renderDetective(byId('detective'), state, handleDetectiveAction, detectiveNotice);
   renderChartAcademy(byId('charts'), state, handleChartAction);
-  renderLearningTree(byId('learningTree'), state, handleLearningTreeAction);
+  renderCurriculumTree(byId('curriculumMap'), state, {
+    state: () => state,
+    openLesson: (lessonId) => updateChart(startChartLesson(state, lessonId), { focus: 'title', scrollToTop: true }),
+    openTerminal: ({ instrumentId, tool }) => { go('markets'); practiceTerminal?.selectInstrument(instrumentId); practiceTerminal?.setTool(tool); },
+  });
+  learningV11?.render();
+  const showV11 = learningPreference.version === 'v1.1';
+  const v1 = byId('learningV1Container'); const v11 = byId('learningV11Container');
+  if (v1) v1.hidden = showV11;
+  if (v11) v11.hidden = !showV11;
+  document.querySelectorAll('[data-learning-version]').forEach((button) => {
+    const active = button.dataset.learningVersion === learningPreference.version;
+    button.setAttribute('aria-pressed', String(active)); button.classList.toggle('is-selected', active);
+  });
+  practiceTerminal?.draw();
   document.querySelectorAll('.view').forEach((view) => view.classList.toggle('visible', view.id === state.page));
   const navPage = navPageFor[state.page] || state.page;
   document.querySelectorAll('[data-page]').forEach((button) => button.classList.toggle('active', button.dataset.page === navPage));
@@ -232,14 +254,9 @@ function renderAll() {
 }
 function updateMarket() {
   const price = byId('assetPrice');
-  if (price) price.textContent = money(ASSETS[state.asset].priceCents);
-  document.querySelectorAll('[data-asset]').forEach((button) => button.classList.toggle('selected', button.dataset.asset === state.asset));
-  const variants = {
-    BTC: '0,133 50,120 100,128 150,102 200,110 250,77 300,89 350,62 400,47 450,52 500,20',
-    XAU: '0,118 50,112 100,101 150,117 200,98 250,100 300,84 350,92 400,73 450,66 500,64',
-    ETH: '0,125 50,93 100,104 150,112 200,76 250,92 300,62 350,82 400,45 450,58 500,38',
-  };
-  byId('priceLine')?.setAttribute('points', variants[state.asset]);
+  if (price) price.textContent = ASSETS[state.asset].unit.includes('index points') ? (ASSETS[state.asset].priceCents / 100).toFixed(2) + ' pts' : money(ASSETS[state.asset].priceCents);
+  const instrumentSelect = byId('terminalInstrument');
+  if (instrumentSelect) instrumentSelect.value = state.asset;
 }
 function trade(side) {
   const result = executeTrade(state, side, state.asset, byId('qty')?.value);
@@ -357,6 +374,30 @@ byId('reveal')?.addEventListener('click', () => {
   byId('crashFeedback').innerHTML = `<strong>Simulated market shock revealed.</strong><br>Technology −25%; gold +5%; cash unchanged.<br><br><strong>Final virtual value: ${money(endCents)} (${((endCents / INITIAL_CASH_CENTS - 1) * 100).toFixed(1)}%).</strong>${rewarded ? ` <br>+${CHALLENGE_REWARD_XP} XP earned.` : ' <br>Challenge reward already earned.'}<br><br>One outcome cannot prove a strategy is universally best.`;
 });
 
+practiceTerminal = createPracticeTerminal(byId('practiceTerminal'), {
+  initialInstrument: state.asset,
+  onInstrumentChange(instrument) {
+    if (state.asset === instrument.id) return;
+    state = { ...state, asset: instrument.id };
+    persist();
+    updateMarket();
+    renderPortfolio();
+  },
+});
+learningV11 = createLearningV11(byId('learningV11Container'), {
+  getState: () => state, storage,
+  onOpenChart: () => go('charts'),
+  onOpenDetective: () => go('detective'),
+  onOpenTerminal: () => go('markets'),
+});
+document.querySelectorAll('[data-learning-version]').forEach((button) => button.addEventListener('click', () => {
+  const version = button.dataset.learningVersion;
+  learningPreference = loadLearningPreferences(storage);
+  saveLearningPreferences(storage, { version });
+  learningPreference = loadLearningPreferences(storage);
+  learningV11?.setVersion(version);
+  renderAll();
+}));
 renderAll();
 syncHeroTheme();
 setInterval(renderProgress, 30_000);

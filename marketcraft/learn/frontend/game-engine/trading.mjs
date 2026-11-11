@@ -1,11 +1,9 @@
+import { PRACTICE_INSTRUMENTS } from '../charts/market-instruments.mjs';
+
 export const INITIAL_CASH_CENTS = 1_000_000;
 export const QUANTITY_SCALE = 10_000;
 export const FEE_BPS = 20;
-export const ASSETS = Object.freeze({
-  BTC: Object.freeze({ name: 'Bitcoin', priceCents: 5_000_000 }),
-  XAU: Object.freeze({ name: 'Gold', priceCents: 200_000 }),
-  ETH: Object.freeze({ name: 'Ethereum', priceCents: 300_000 }),
-});
+export const ASSETS = Object.freeze(Object.fromEntries(PRACTICE_INSTRUMENTS.map((instrument) => [instrument.id, Object.freeze({ name: instrument.name, priceCents: instrument.priceCents, unit: instrument.unit, symbol: instrument.symbol, instrumentType: instrument.instrumentType })])));
 
 export function parseQuantity(value) {
   const text = typeof value === 'number' ? String(value) : String(value ?? '').trim();
