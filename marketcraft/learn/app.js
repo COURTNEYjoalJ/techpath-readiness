@@ -238,9 +238,14 @@ function renderAll() {
   });
   learningV11?.render();
   const showV11 = learningPreference.version === 'v1.1';
+  const fullScreenLearning = showV11 && state.page === 'learn';
   const v1 = byId('learningV1Container'); const v11 = byId('learningV11Container');
   if (v1) v1.hidden = showV11;
   if (v11) v11.hidden = !showV11;
+  byId('learn')?.classList.toggle('v11-fullscreen', fullScreenLearning);
+  document.querySelector('.frame')?.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
+  document.documentElement.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
+  document.body.classList.toggle('learning-v11-fullscreen', fullScreenLearning);
   document.querySelectorAll('[data-learning-version]').forEach((button) => {
     const active = button.dataset.learningVersion === learningPreference.version;
     button.setAttribute('aria-pressed', String(active)); button.classList.toggle('is-selected', active);
