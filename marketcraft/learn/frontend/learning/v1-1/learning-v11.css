@@ -171,3 +171,11 @@ body.learning-v11-fullscreen>.beta-footer a{display:block;text-align:center;font
   .learn-v11-mobile-evidence[open]>summary{border-bottom:1px solid var(--lv-line)}
   .learn-v11-mobile-evidence .learn-v11-stage-evidence{display:block;max-height:none;padding:8px;border:0;background:transparent}
 }
+@media(min-width:761px){
+  .learn-v11-home-quick{grid-template-columns:minmax(0,1fr);align-content:center;gap:5px}
+  .learn-v11-home-quick>span{grid-column:auto}
+  .learn-v11-home-quick button{appearance:none;display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:40px;padding:7px 9px;border:1px solid var(--lv-line);border-radius:9px;background:var(--lv-soft);color:var(--ink);font:inherit;font-size:10px;font-weight:700;text-align:left;cursor:pointer;box-shadow:inset 0 1px #ffffff22}
+  .learn-v11-home-quick button span{max-width:120px;font-size:9px;line-height:1.25;text-align:right}
+  .learn-v11-home-quick button:hover{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 10%,var(--lv-soft))}
+  .learn-v11-home-quick button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+}
