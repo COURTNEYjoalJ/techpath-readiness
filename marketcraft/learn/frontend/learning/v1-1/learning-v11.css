@@ -315,3 +315,4 @@ body.learning-v11-fullscreen>.beta-footer{position:fixed;right:0;bottom:0;left:0
  .learn-v11-stage-footer{position:sticky;bottom:0}
 }
 @media(prefers-reduced-motion:reduce){.learn-v11-stage-navigation *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+.learn-v11-zone-band{fill:color-mix(in srgb,var(--gold) 15%,transparent);stroke:color-mix(in srgb,var(--gold) 58%,transparent);stroke-dasharray:5 4;pointer-events:none}.learn-v11-zone-band.is-active{fill:color-mix(in srgb,var(--gold) 28%,transparent);stroke-width:2}.learn-v11-zone-selectors{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}.learn-v11-zone-selectors button{min-height:30px;padding:5px 9px;font-size:10px}.learn-v11-zone-selectors button.is-selected{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 16%,var(--lv-panel))}
