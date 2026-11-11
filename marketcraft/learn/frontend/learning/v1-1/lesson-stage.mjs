@@ -12,7 +12,18 @@ function chartMarkup(selectedId = null) {
 }
 
 function navRail(module, currentId, progress) {
-  return `<nav class="learn-v11-stage-rail" aria-label="Candlestick module topics"><span class="learn-v11-rail-title">MODULE 03 · TOPICS</span>${module.subtopics.map((topic, index) => { const status = progress.topics?.[topic.id]; const complete = Boolean(status?.completed); return `<button type="button" class="${topic.id === currentId ? 'is-current' : ''} ${complete ? 'is-done' : ''}" data-v11-topic="${topic.id}" aria-current="${topic.id === currentId ? 'step' : 'false'}"><span>${complete ? '✓' : String(index + 1).padStart(2, '0')}</span><b>${esc(topic.title)}</b></button>`; }).join('')}<button type="button" class="learn-v11-rail-back" data-v11="tree">← Curriculum</button></nav>`;
+  const currentIndex = module.subtopics.findIndex((topic) => topic.id === currentId);
+  const currentTopic = module.subtopics[currentIndex] || module.subtopics[0];
+  const rows = module.subtopics.map((topic, index) => {
+    const status = progress.topics?.[topic.id];
+    const complete = Boolean(status?.completed);
+    const marker = complete ? '✓' : String(index + 1).padStart(2, '0');
+    return '<button type="button" class="learn-v11-topic-button ' + (topic.id === currentId ? 'is-current ' : '') + (complete ? 'is-done' : '') + '" data-v11-topic="' + esc(topic.id) + '" aria-current="' + (topic.id === currentId ? 'step' : 'false') + '"><span aria-hidden="true">' + marker + '</span><b>' + esc(topic.title) + '</b></button>';
+  }).join('');
+  const curriculum = '<button type="button" class="learn-v11-rail-back" data-v11="tree">← Curriculum</button>';
+  const list = '<span class="learn-v11-rail-title">MODULE 03 · TOPICS</span>' + rows + curriculum;
+  const mobileList = '<details class="learn-v11-topic-drawer"><summary><span>Module 03 · ' + String(currentIndex + 1).padStart(2, '0') + ' · ' + esc(currentTopic.title) + '</span><b aria-hidden="true">⌄</b></summary><nav aria-label="Choose a lesson topic">' + rows + curriculum + '</nav></details>';
+  return '<div class="learn-v11-topic-navigation"><nav class="learn-v11-stage-rail" aria-label="Candlestick module topics">' + list + '</nav>' + mobileList + '</div>';
 }
 
 function evidencePanel(scenario, selectedCandle) {
