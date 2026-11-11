@@ -19,6 +19,9 @@ const byId = (id) => document.getElementById(id);
 let storage;
 try { storage = window.localStorage; } catch { storage = null; }
 let state = loadDemoState(storage);
+if (/\/marketcraft\/learn(?:\/index\.html|\/)?$/.test(window.location.pathname)) {
+  state = { ...state, page: 'learn' };
+}
 let learningV11 = null;
 let detectiveNotice = '';
 const heroFrame = byId('heroFrame');
