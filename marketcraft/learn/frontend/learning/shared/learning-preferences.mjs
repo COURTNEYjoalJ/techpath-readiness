@@ -4,7 +4,7 @@ export const LEARNING_VERSIONS = Object.freeze(['v1', 'v1.1']);
 export function loadLearningPreferences(storage) {
   try {
     const value = JSON.parse(storage?.getItem(LEARNING_PREFERENCE_KEY) || '{}');
-    return Object.freeze({ version: LEARNING_VERSIONS.includes(value.version) ? value.version : 'v1', moduleId: typeof value.moduleId === 'string' ? value.moduleId : null, subtopicId: typeof value.subtopicId === 'string' ? value.subtopicId : null, view: ['home', 'tree', 'stage'].includes(value.view) ? value.view : 'home', stage: ['understand', 'observe', 'decide', 'consequence', 'learn'].includes(value.stage) ? value.stage : 'understand' });
+    return Object.freeze({ version: LEARNING_VERSIONS.includes(value.version) ? value.version : 'v1', moduleId: typeof value.moduleId === 'string' ? value.moduleId : null, subtopicId: typeof value.subtopicId === 'string' ? value.subtopicId : null, view: ['home', 'tree', 'stage', 'complete'].includes(value.view) ? value.view : 'home', stage: ['understand', 'observe', 'decide', 'consequence', 'learn'].includes(value.stage) ? value.stage : 'understand' });
   } catch { return Object.freeze({ version: 'v1', moduleId: null, subtopicId: null, view: 'home', stage: 'understand' }); }
 }
 

@@ -82,6 +82,11 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     return { topic, scenario: scenarioFor(topic), progress: progress() };
   };
 
+  const renderCompletion = () => {
+    const summary = getLearningV11Summary(getState(), preferences, progress());
+    return '<section class="learn-v11-module-completion"><div class="learn-v11-completion-mark" aria-hidden="true">✓</div><span class="learn-v11-kicker">MODULE 03 · CANDLESTICK FUNDAMENTALS</span><h1 tabindex="-1">Module complete</h1><p>You reviewed all ' + summary.subtopicCount + ' candlestick topics. Your learning record is saved in this browser.</p><div class="learn-v11-completion-stats"><strong>' + summary.subtopicCount + ' / ' + summary.subtopicCount + '<small> topics completed</small></strong><span>Decision quality reflects evidence and risk awareness, not simulated profit.</span></div><button type="button" class="primary" data-v11="completion-tree">Return to learning path →</button></section>';
+  };
+
   const renderStage = () => {
     const { topic, scenario, progress: currentProgress } = getActive();
     if (!scenario) throw new Error(`No verified scenario for ${topic.title}.`);
@@ -98,10 +103,10 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
   const render = (focus = false) => {
     if (!root) return;
     try {
-      const view = ['home', 'tree', 'stage'].includes(preferences.view) ? preferences.view : 'home';
-      root.innerHTML = view === 'stage' ? renderStage() : view === 'tree' ? renderTree() : renderHome();
+      const view = ['home', 'tree', 'stage', 'complete'].includes(preferences.view) ? preferences.view : 'home';
+      root.innerHTML = view === 'stage' ? renderStage() : view === 'tree' ? renderTree() : view === 'complete' ? renderCompletion() : renderHome();
     } catch (error) { root.innerHTML = escapeLesson(error); }
-    if (focus) requestAnimationFrame(() => root.querySelector('.learn-v11-immersive h1, .learn-v11-tree-header h1, .learn-v11-home-heading h1')?.focus({ preventScroll: true }));
+    if (focus) requestAnimationFrame(() => root.querySelector('.learn-v11-immersive h1, .learn-v11-module-completion h1, .learn-v11-tree-header h1, .learn-v11-home-heading h1')?.focus({ preventScroll: true }));
   };
 
   const openTopic = (topicId, { resume = false } = {}) => {
@@ -117,7 +122,11 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
 
   const setStage = (topic, stage) => {
     if (!STAGES.includes(stage)) return;
-    updateTopicProgress(storage, topic.id, { currentStage: stage });
+    const entry = progress().topics[topic.id] || {};
+    const previousMax = Math.max(Number.isInteger(entry.maxStageReached) ? entry.maxStageReached : STAGES.indexOf(entry.currentStage || 'understand'), entry.completed ? 4 : 0);
+    const target = STAGES.indexOf(stage);
+    if (target > previousMax + 1) return;
+    updateTopicProgress(storage, topic.id, { currentStage: stage, maxStageReached: Math.max(previousMax, target) });
     preference({ view: 'stage', moduleId: CANDLESTICK_MODULE.id, subtopicId: topic.id, stage });
     render(true);
   };
@@ -147,11 +156,11 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     const { topic } = getActive();
     const entry = progress().topics[topic.id] || {};
     if (!entry.selectedOptionId || !Number.isInteger(entry.lastScore)) return;
-    updateTopicProgress(storage, topic.id, { ...entry, completed: true, status: 'completed', demonstratedUnderstanding: entry.demonstratedUnderstanding || entry.lastScore >= 70, currentStage: 'learn' });
+    updateTopicProgress(storage, topic.id, { ...entry, completed: true, status: 'completed', demonstratedUnderstanding: entry.demonstratedUnderstanding || entry.lastScore >= 70, currentStage: 'learn', maxStageReached: 4 });
     const index = CANDLESTICK_MODULE.subtopics.findIndex((item) => item.id === topic.id);
     const next = CANDLESTICK_MODULE.subtopics[index + 1];
     if (next) openTopic(next.id);
-    else { preference({ view: 'tree', stage: 'learn' }); expandedBranch = CANDLESTICK_MODULE.branchId; expandedLevel = `${CANDLESTICK_MODULE.branchId}|Beginner`; expandedModule = CANDLESTICK_MODULE.id; render(true); }
+    else { preference({ view: 'complete', stage: 'learn' }); render(true); }
   };
 
   const onClick = (event) => {
@@ -162,6 +171,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     const button = target.closest('button');
     if (!button || !root.contains(button) || button.disabled) return;
     const action = button.dataset.v11;
+    if (action === 'completion-tree') { expandedBranch = CANDLESTICK_MODULE.branchId; expandedLevel = CANDLESTICK_MODULE.branchId + '|Beginner'; expandedModule = CANDLESTICK_MODULE.id; route('tree'); render(true); return; }
     if (action === 'fallback') { document.querySelector('[data-learning-version="v1"]')?.click(); return; }
     if (action === 'home') { route('home'); render(true); }
     else if (action === 'tree') { route('tree'); render(true); }
@@ -181,6 +191,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     else if (button.dataset.v11Branch) { expandedBranch = expandedBranch === button.dataset.v11Branch ? null : button.dataset.v11Branch; expandedLevel = null; expandedModule = null; route('tree'); render(true); }
     else if (button.dataset.v11Level) { expandedLevel = expandedLevel === button.dataset.v11Level ? null : button.dataset.v11Level; expandedModule = null; render(true); }
     else if (button.dataset.v11Module) { if (button.dataset.v11Module === CANDLESTICK_MODULE.id) { const next = CANDLESTICK_MODULE.subtopics.find((topic) => !isComplete(topic, progress())) || CANDLESTICK_MODULE.subtopics[0]; const current = progress().topics[next.id]; openTopic(next.id, { resume: Boolean(current && !current.completed && current.visits > 0) }); } }
+    else if (button.dataset.v11StageIndex != null) { const index = Number(button.dataset.v11StageIndex); const { topic } = getActive(); const entry = progress().topics[topic.id] || {}; const max = Math.max(Number.isInteger(entry.maxStageReached) ? entry.maxStageReached : STAGES.indexOf(entry.currentStage || 'understand'), entry.completed ? 4 : 0); if (Number.isInteger(index) && index <= max) setStage(topic, STAGES[index]); }
     else if (button.dataset.v11OpenTopic) openTopic(button.dataset.v11OpenTopic);
     else if (button.dataset.v11Topic) openTopic(button.dataset.v11Topic);
   };
