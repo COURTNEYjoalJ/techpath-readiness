@@ -5,7 +5,7 @@ import { CHART_ANALYSIS_MODULES, chartAnalysisScenarioFor } from '../content/cha
 import { evaluateScenarioDecision } from '../scenario-engine.mjs';
 import { loadLearningPreferences, saveLearningPreferences } from '../shared/learning-preferences.mjs';
 import { getTopicProgress, loadLearningProgress, updateTopicProgress } from '../progress-service.mjs';
-import { renderLessonStage } from './lesson-stage.mjs';
+import { renderLessonStage } from './lesson-stage.mjs?v=premium-ui-1';
 import { CHART_LESSONS } from '../../game-engine/chart-lessons.mjs';
 
 const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -42,19 +42,32 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
   let expandedModule = null;
   let selectedCandleId = null;
   let selectedZoneId = null;
+  let topicsOpen = false;
   let pendingDecision = null;
 
   const progress = () => loadLearningProgress(storage);
   const activeCandles = () => { const { module, scenario } = getActive(); return module.number === 3 ? (CHART_LESSONS.find((lesson) => lesson.id === 'candlesticks')?.charts?.candles?.candles || []) : scenario.chartData?.candles || []; };
   const preference = (patch) => { preferences = { ...preferences, ...patch }; saveLearningPreferences(storage, patch); };
   const route = (view) => { preference({ view }); };
-  const escapeLesson = (error) => `<div class="learn-v11-error" role="alert"><h2>MarketCraft Learning could not be displayed.</h2><p>${esc(error?.message || 'A display error occurred.')}</p><button type="button" class="secondary" data-v11="home">Return to Learning Home</button></div>`;
+  const openTopics = () => { topicsOpen = true; render(); requestAnimationFrame(() => root.querySelector('.learn-v11-topics-close')?.focus()); };
+  const closeTopics = () => { if (!topicsOpen) return; topicsOpen = false; render(); requestAnimationFrame(() => root.querySelector('[data-v11="topics-open"]')?.focus()); };
+  const escapeLesson = (error) => `<div class="learn-v11-error" role="alert"><h2>Learning V1.1 could not be displayed.</h2><p>${esc(error?.message || 'A display error occurred.')}</p><button type="button" class="secondary" data-v11="fallback">Return to Learning home</button></div>`;
 
   const renderHome = () => {
     const summary = getLearningV11Summary(getState(), preferences, progress());
     const topicProgress = getTopicProgress(progress(), summary.currentTopic.id);
     const branchName = CURRICULUM_BRANCHES.find((branch) => branch.id === summary.currentModule.branchId)?.title || 'Chart Analysis';
-    return `<section class="learn-v11-home-screen"><header class="learn-v11-home-heading"><div><span class="learn-v11-kicker">MARKETCRAFT LEARNING</span><h1>Master the market. One decision at a time.</h1><p>Learn one idea, inspect fictional data, make a decision, then review the reasoning.</p></div><div class="learn-v11-coverage"><strong>${summary.implementedModuleCount}<small> / ${summary.moduleCount}</small></strong><span>interactive modules authored</span><small>${summary.subtopicCount} topics in Module ${String(summary.currentModule.number).padStart(2, '0')} · ${summary.completedSubtopics} completed</small></div></header><article class="learn-v11-continue-card"><div><span class="learn-v11-kicker">${summary.inProgressSubtopics ? 'RESUME YOUR LAST TOPIC' : summary.moduleComplete ? 'MODULE COMPLETE · REVISIT ANY TOPIC' : 'YOUR NEXT VERIFIED LESSON'}</span><h2>${esc(summary.currentTopic.title)}</h2><p>${esc(branchName)} · Module ${String(summary.currentModule.number).padStart(2, '0')} · ${topicProgress.status.replaceAll('-', ' ')}${preferences.stage && preferences.view === 'stage' ? ` · Last step: ${esc(preferences.stage)}` : ''}</p><div class="learn-v11-progress"><i style="width:${summary.percent}%"></i></div><small>${summary.completedSubtopics} of ${summary.subtopicCount} module topics completed · ${summary.percent}%</small></div><button type="button" class="primary" data-v11="continue">${summary.inProgressSubtopics ? 'Resume lesson' : 'Start lesson'} →</button></article><div class="learn-v11-home-lower"><section class="learn-v11-path-preview"><div class="learn-v11-section-title"><div><span class="learn-v11-kicker">LEARNING PATHS</span><h2>Choose a branch</h2></div><button type="button" class="secondary" data-v11="tree">Open full curriculum →</button></div><div class="learn-v11-path-row">${CURRICULUM_BRANCHES.map((branch, index) => `<button type="button" class="learn-v11-path-chip" data-v11-branch="${branch.id}"><span>0${index + 1}</span><strong>${esc(branch.title)}</strong><small>${index === 0 ? '10 interactive Chart Analysis modules' : 'Additional modules are being authored'}</small></button>`).join('')}</div></section><aside class="learn-v11-home-quick"><span class="learn-v11-kicker">OPTIONAL PRACTICE</span><button type="button" data-v11="charts">Chart Academy <span>Existing lesson and reward system</span></button><button type="button" data-v11="detective">Market Detective <span>Existing evidence scenarios</span></button><button type="button" data-v11="terminal">Practice Terminal <span>Separate simulated portfolio</span></button></aside></div><p class="learn-v11-home-note">Only authored interactive topics are available here. Learning progress and XP are saved in this browser.</p></section>`;
+    const hasProgress = summary.inProgressSubtopics > 0 || summary.completedSubtopics > 0;
+    const pathCards = CURRICULUM_BRANCHES.map((branch, index) => {
+      const mapped = CURRICULUM_MODULES.filter((module) => module.branch === branch.id);
+      const playable = FULL_SCREEN_MODULES.filter((module) => module.branchId === branch.id);
+      const complete = playable.filter((module) => module.subtopics.every((topic) => isComplete(topic, progress()))).length;
+      const descriptions = ['Read fictional charts, compare patterns, and practise evidence-led decisions.', 'Learn how indicators describe data while leaving room for uncertainty.', 'Explore economic and company information without treating forecasts as facts.'];
+      const icons = ['⌁', '↗', '◈'];
+      const status = playable.length ? `${complete} of ${playable.length} modules complete · ${playable.length} interactive` : `${mapped.length} modules mapped · lessons in development`;
+      return `<article class="learn-v11-path-card"><span class="learn-v11-path-icon" aria-hidden="true">${icons[index]}</span><div class="learn-v11-path-copy"><h3>${esc(branch.title)}</h3><p>${descriptions[index]}</p></div><small class="learn-v11-path-status">${status}</small><button type="button" class="${playable.length ? 'secondary' : 'secondary'}" data-v11-branch="${branch.id}">Explore path <span aria-hidden="true">→</span></button></article>`;
+    }).join('');
+    return `<section class="learn-v11-home-screen"><header class="learn-v11-home-hero"><span class="learn-v11-kicker">MARKETCRAFT ACADEMY</span><h1>Master the market. One decision at a time.</h1><p>Learn through interactive charts, market scenarios and practical decisions.</p></header><section class="learn-v11-continue-card" aria-labelledby="learn-v11-continue-title"><div class="learn-v11-continue-copy"><span class="learn-v11-kicker">${summary.moduleComplete ? 'MODULE COMPLETE · READY TO REVISIT' : hasProgress ? 'PICK UP WHERE YOU LEFT OFF' : 'YOUR FIRST LESSON STARTS HERE'}</span><h2 id="learn-v11-continue-title">${esc(summary.currentTopic.title)}</h2><p>${esc(branchName)} · Module ${String(summary.currentModule.number).padStart(2, '0')} · ${esc(summary.currentModule.title)} · ${topicProgress.status.replaceAll('-', ' ')}${preferences.view === 'stage' ? ` · ${esc(preferences.stage)}` : ''}</p><div class="learn-v11-continue-progress"><div class="learn-v11-progress" role="progressbar" aria-label="Module topic completion" aria-valuemin="0" aria-valuemax="${summary.subtopicCount}" aria-valuenow="${summary.completedSubtopics}"><i style="width:${summary.percent}%"></i></div><small>${summary.completedSubtopics} of ${summary.subtopicCount} topics · ${summary.percent}%</small></div></div><button type="button" class="primary learn-v11-resume-button" data-v11="continue">${hasProgress ? 'Resume learning' : 'Start learning'} <span aria-hidden="true">→</span></button></section><section class="learn-v11-learning-paths" aria-labelledby="learn-v11-paths-title"><div class="learn-v11-path-heading"><div><span class="learn-v11-kicker">CHOOSE YOUR LEARNING PATH</span><h2 id="learn-v11-paths-title">Find your starting point</h2></div><span class="learn-v11-path-count">${CURRICULUM_MODULES.length} curriculum modules</span></div><div class="learn-v11-path-grid">${pathCards}</div></section><details class="learn-v11-practice"><summary><span><b>Optional practice</b><small>Extra tools to apply what you are learning</small></span><span class="learn-v11-practice-arrow" aria-hidden="true">⌄</span></summary><div class="learn-v11-practice-links"><button type="button" data-v11="charts"><span aria-hidden="true">▥</span>Chart Academy<span>Existing lessons</span></button><button type="button" data-v11="detective"><span aria-hidden="true">◇</span>Market Detective<span>Evidence scenarios</span></button><button type="button" data-v11="terminal"><span aria-hidden="true">⌁</span>Practice Terminal<span>Simulated portfolio</span></button></div></details></section>`;
   };
 
   const renderTree = () => {
@@ -104,7 +117,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
       decision = evaluateScenarioDecision(scenario, entry.selectedOptionId);
       if (!decision.ok) preference({ stage: 'decide' });
     }
-    return renderLessonStage({ module, topic, stage: decision?.ok ? stage : preferences.stage, progress: currentProgress, scenario, decision: decision?.ok ? decision : null, selectedCandleId, selectedZoneId });
+    return renderLessonStage({ module, topic, stage: decision?.ok ? stage : preferences.stage, progress: currentProgress, scenario, decision: decision?.ok ? decision : null, selectedCandleId, selectedZoneId, topicsOpen });
   };
 
   const render = (focus = false) => {
@@ -123,7 +136,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     const stage = resume && STAGES.includes(before.currentStage) ? before.currentStage : 'understand';
     const selectedOptionId = stage === 'consequence' || stage === 'learn' ? before.selectedOptionId : null;
     updateTopicProgress(storage, topic.id, { ...before, visits: before.visits + 1, status: before.completed ? 'completed' : 'in-progress', currentStage: stage, selectedOptionId });
-    selectedCandleId = null; selectedZoneId = null; pendingDecision = null;
+    selectedCandleId = null; selectedZoneId = null; topicsOpen = false; pendingDecision = null;
     preference({ view: 'stage', moduleId: module.id, subtopicId: topic.id, stage });
     render(true);
   };
@@ -171,15 +184,9 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     else { preference({ view: 'complete', stage: 'learn' }); render(true); }
   };
 
-  const closeTopics = (drawer) => {
-    drawer.close();
-    root.querySelector('[data-v11=topics]')?.focus();
-  };
-
   const onClick = (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
-    if (target.matches('.learn-v11-drawer')) { closeTopics(target); return; }
     const zoneButton = target.closest('[data-v11-zone]');
     if (zoneButton && root.contains(zoneButton)) { selectedZoneId = zoneButton.dataset.v11Zone; render(); root.querySelector(`[data-v11-zone="${CSS.escape(selectedZoneId)}"]`)?.focus(); return; }
     const mark = target.closest('[data-v11-candle]');
@@ -187,10 +194,10 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     const button = target.closest('button');
     if (!button || !root.contains(button) || button.disabled) return;
     const action = button.dataset.v11;
+    if (action === 'topics-open') { openTopics(); return; }
+    if (action === 'topics-close') { closeTopics(); return; }
     if (action === 'completion-tree') { const module = moduleForTopic(preferences.subtopicId); expandedBranch = module.branchId; expandedLevel = module.branchId + '|' + module.level; expandedModule = module.id; route('tree'); render(true); return; }
-    const drawer = root.querySelector('.learn-v11-drawer');
-    if (action === 'topics') { button.focus(); drawer.showModal(); return; }
-    if (action === 'close-topics') { closeTopics(drawer); return; }
+    if (action === 'fallback') { route('home'); render(true); return; }
     if (action === 'home') { route('home'); render(true); }
     else if (action === 'tree') { route('tree'); render(true); }
     else if (action === 'continue') {
@@ -211,11 +218,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     else if (button.dataset.v11Module) { const selectedModule = FULL_SCREEN_MODULES.find((item) => item.id === button.dataset.v11Module); if (selectedModule) { const next = selectedModule.subtopics.find((topic) => !isComplete(topic, progress())) || selectedModule.subtopics[0]; const current = progress().topics[next.id]; openTopic(next.id, { resume: Boolean(current && !current.completed && current.visits > 0) }); } }
     else if (button.dataset.v11StageIndex != null) { const index = Number(button.dataset.v11StageIndex); const { topic } = getActive(); const entry = progress().topics[topic.id] || {}; const max = Math.max(Number.isInteger(entry.maxStageReached) ? entry.maxStageReached : STAGES.indexOf(entry.currentStage || 'understand'), entry.completed ? 4 : 0); if (Number.isInteger(index) && index <= max) setStage(topic, STAGES[index]); }
     else if (button.dataset.v11OpenTopic) openTopic(button.dataset.v11OpenTopic);
-    else if (button.dataset.v11Topic) {
-      drawer.close();
-      openTopic(button.dataset.v11Topic, { resume: true });
-      root.querySelector('[data-v11="topics"]')?.focus();
-    }
+    else if (button.dataset.v11Topic) openTopic(button.dataset.v11Topic);
   };
 
   const onChange = (event) => {
@@ -231,8 +234,15 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
     if (candle) { const output = root.querySelector('.learn-v11-large-inspect, .learn-v11-stage-evidence .learn-v11-inspect'); if (output) output.innerHTML = candle; }
   };
   const onKey = (event) => {
-    const drawer = root.querySelector('.learn-v11-drawer[open]');
-    if (event.key === 'Escape' && drawer) { event.preventDefault(); closeTopics(drawer); return; }
+    if (event.key === 'Escape' && topicsOpen) { event.preventDefault(); closeTopics(); return; }
+    if (topicsOpen && event.key === 'Tab') {
+      const focusable = [...root.querySelectorAll('.learn-v11-topics-panel button:not(:disabled)')];
+      if (focusable.length) {
+        const first = focusable[0]; const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    }
     if (event.key === 'Escape' && preferences.view === 'stage') { event.preventDefault(); route('tree'); render(true); }
     if ((event.key === 'Enter' || event.key === ' ') && event.target instanceof Element && event.target.closest('[data-v11-candle]')) { event.preventDefault(); onPointer(event); }
   };
@@ -243,7 +253,7 @@ export function createLearningV11(root, { getState, storage, onOpenChart, onOpen
   render();
   return {
     render,
-    openHome() { route('home'); },
+    setVersion(version) { preference({ version }); },
     destroy() { root.removeEventListener('click', onClick); root.removeEventListener('change', onChange); root.removeEventListener('pointerup', onPointer); root.removeEventListener('keydown', onKey); },
   };
 }
