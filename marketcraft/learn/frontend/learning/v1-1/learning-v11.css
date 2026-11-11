@@ -163,3 +163,11 @@ body.learning-v11-fullscreen>.beta-footer a{display:block;text-align:center;font
   .learn-v11-home-quick>span{grid-column:1/-1}
 }
 @media(max-width:420px){.learn-v11-home-quick{grid-template-columns:1fr}.learn-v11-home-quick>span{grid-column:auto}}
+.learn-v11-mobile-evidence{display:none}
+@media(max-width:760px){
+  .learn-v11-stage-evidence{display:none}
+  .learn-v11-mobile-evidence{display:block;grid-column:1;grid-row:3;max-height:40dvh;overflow:auto;border:1px solid var(--lv-line);border-radius:10px;background:color-mix(in srgb,var(--lv-panel) 91%,transparent)}
+  .learn-v11-mobile-evidence>summary{padding:7px 9px;color:var(--muted);font-size:10px;font-weight:700;cursor:pointer}
+  .learn-v11-mobile-evidence[open]>summary{border-bottom:1px solid var(--lv-line)}
+  .learn-v11-mobile-evidence .learn-v11-stage-evidence{display:block;max-height:none;padding:8px;border:0;background:transparent}
+}
